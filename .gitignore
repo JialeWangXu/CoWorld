@@ -1,0 +1,18 @@
+# Dependencias y caché
+node_modules/
+.next/
+
+# Configuración y archivos generados automáticamente
+next-env.d.ts
+package-lock.json
+yarn.lock
+*.log
+
+# Archivos específicos del sistema
+.DS_Store
+
+# Configuración de herramientas
+.eslintcache
+.vercel/
+.netlify/
+
