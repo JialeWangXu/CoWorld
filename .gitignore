@@ -16,3 +16,5 @@ yarn.lock
 .vercel/
 .netlify/
 
+# Archivo de configuración de Entorno
+.env
