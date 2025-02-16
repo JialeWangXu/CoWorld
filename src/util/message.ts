@@ -2,7 +2,8 @@ export const message= {
     sucess:{
         UserCreated:"User created successfully!",
         UserLogged:"User logged in successfully!",
-        EmialSent:"Email is sent successfully! Please check your email!"
+        EmialSent:"Email has been sent successfully! Please check your email!",
+        PwdChanged:"Your password has been changed successfully!"
     },
     error:{
         notFull:"Please, complete all the fields!",
@@ -26,6 +27,7 @@ export const message= {
             msg: "There is no user exists with provided email, please revise or try ",
             rediUrl: "/api/auth/register",
             linkmsg: "Create account."   
-        }
+        },
+        pwdCantChange:"The password cannot be changed, try later."
     }
 }
