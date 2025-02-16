@@ -3,8 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { message } from "util/message";
 import { isEmail, onlyLetters, onlyLastNames } from "util/patterns";
 import User, {IUserDocument} from "models/User";
-import { CANDIDATE } from "util/constants";
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 
 export async function POST(request:NextRequest) {
     try{
@@ -28,7 +28,9 @@ export async function POST(request:NextRequest) {
 
         if(findUser){
             return NextResponse.json({
-                error: message.error.alreadyExist
+                msg: message.error.alreadyExist.msg,
+                rediUrl:message.error.alreadyExist.rediUrl,
+                linkMsg:message.error.alreadyExist.linkmsg
             },{status:400})
         }
 
@@ -69,11 +71,45 @@ export async function POST(request:NextRequest) {
             lastname:lastname,
             email:email,
             password:pwdEncrypted,
-            role:CANDIDATE
+            role:role
         });
         await newUser.save();
 
+        //@ts-ignore
+        //Extraer el pwd de usuario y almacena en userPass(porq password esta utilizado como 
+        // un constante ya), y asi, usamos restos datos para generar token. (Seguridad))
+        const {password:userPass, ...rest} = newUser._doc;
+
+        const accsessToken = jwt.sign({data:rest},"accessToken",{expiresIn:'15m',})
+        const refreshToken = jwt.sign({data:rest},"refreshToken",{expiresIn:'7d',})
+
+        // datas de response
+        const response = NextResponse.json({
+            newUser: rest,
+            sucess:message.sucess.UserCreated
+        },{status:200})
+
+        // generar tokens para la sesion
+        response.cookies.set("acessTokenCookie",accsessToken,{
+            sameSite:"strict",
+            secure:process.env.NODE_ENV==="production",
+            maxAge:900, //15 minutos= 15x60
+            httpOnly:true,
+            path:"/"
+        });
+        
+        response.cookies.set("refreshTokenCookie",refreshToken,{
+            sameSite:"strict",
+            secure:process.env.NODE_ENV==="production",
+            maxAge:604800, //7dias = 7x24x60x60
+            httpOnly:true,
+            path:"/"
+        });
+        return response;
+
     }catch(e){
-        console.log("Error registering", e);
+        return NextResponse.json({
+            error:message.error.genericError,e
+        },{status:500})
     }
 }
