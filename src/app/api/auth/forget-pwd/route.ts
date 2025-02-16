@@ -31,11 +31,13 @@ export async function POST(request:NextRequest) {
             })
         }
 
+        const url = `http://localhost:3000/reset-pwd?email=${email}`
+
         resend.emails.send({
             from: 'onboarding@resend.dev',
             to: email,
             subject: 'Reset your password',
-            html: '<h2>Please click follow button to start password rest process.<h2>'
+            html: `<h2>Please click follow button to start password rest process.<h2><br><a href=${url}>Reset your password here</a>`
         });
         
     }catch(e){
