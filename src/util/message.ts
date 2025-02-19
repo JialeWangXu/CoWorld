@@ -2,7 +2,7 @@ export const message= {
     sucess:{
         UserCreated:"User created successfully!",
         UserLogged:"User logged in successfully!",
-        EmialSent:"Email has been sent successfully! Please check your email!",
+        EmailSent:"Email has been sent successfully! Please check your email!",
         PwdChanged:"Your password has been changed successfully!"
     },
     error:{
@@ -28,6 +28,9 @@ export const message= {
             rediUrl: "/api/auth/register",
             linkmsg: "Create account."   
         },
-        pwdCantChange:"The password cannot be changed, try later."
+        pwdCantChange:"The password cannot be changed, try later.",
+        passwordRestrict:"The password must contain at least 8 characters, a lowercase letter, an uppercase letter, a number, and a special character.",
+        noToken:"There is no permission to continue the process, please, restart the process.",
+        invalidToken:"The token is invalid, please, restart the process."
     }
 }

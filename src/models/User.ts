@@ -1,5 +1,5 @@
 import mongoose, {Schema, ObjectId, Document } from 'mongoose';
-import { CANDIDATE} from '../util/constants';
+import { CANDIDATE,COMPANY} from '../util/constants';
 
 const userSchema:Schema = new Schema({
     firstname:{
@@ -21,6 +21,7 @@ const userSchema:Schema = new Schema({
     },
     role:{
         type: Number,
+        enum: [CANDIDATE, COMPANY],
         default: CANDIDATE
     }
     },{timestamps: true});

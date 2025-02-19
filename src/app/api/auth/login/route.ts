@@ -29,8 +29,7 @@ export async function POST(request: NextRequest) {
         }
 
         // comprobar la existencia del correo: 
-        //@ts-ignore
-        const findUser = await User.find({email:email})
+        const findUser = await User.findOne({email:email})
 
         if(!findUser){
             return NextResponse.json({
@@ -40,7 +39,8 @@ export async function POST(request: NextRequest) {
             }, {status:400})
         }
 
-        const comparePwd = await bcrypt.compare(password,findUser.password)
+        // comprobar si la contraseña es correcta
+        const comparePwd = await bcrypt.compare(password, findUser.password)
 
         if(!comparePwd){
             return NextResponse.json({
@@ -50,8 +50,8 @@ export async function POST(request: NextRequest) {
 
         const {password:UserPass, ...rest} = findUser._doc;
         // Generar tokens para la sesion
-        const accsessToken = jwt.sign({data:rest},"accessToken",{expiresIn:'15m',})
-        const refreshToken = jwt.sign({data:rest},"refreshToken",{expiresIn:'7d',})
+        const accsessToken = jwt.sign({data:rest},process.env.ACCESS_TOKEN_SECRET,{expiresIn:'15m',})
+        const refreshToken = jwt.sign({data:rest},process.env.REFRESH_TOKEN_SECRET,{expiresIn:'7d',})        
 
         const response = NextResponse.json({
             success:message.sucess.UserLogged,

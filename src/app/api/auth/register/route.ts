@@ -1,7 +1,7 @@
 import {connectMD} from "../../../../lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 import { message } from "util/message";
-import { isEmail, onlyLetters, onlyLastNames } from "util/patterns";
+import { isEmail, onlyLetters, onlyLastNames, passwordRestrict } from "util/patterns";
 import User, {IUserDocument} from "models/User";
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
@@ -23,7 +23,6 @@ export async function POST(request:NextRequest) {
         }
 
         // Comprueba si el email ya sido registrado 
-        //@ts-ignore
         const findUser = await User.findOne({email:email});
 
         if(findUser){
@@ -38,6 +37,15 @@ export async function POST(request:NextRequest) {
         if(!isEmail(email)){
             return NextResponse.json({
                 error:message.error.invalidEmial
+            },{
+                status:400
+            })
+        }
+
+        // Comrprueba si el password cumple con las retsriciones:
+        if(passwordRestrict(password)){
+            return NextResponse.json({
+                error: message.error.passwordRestrict
             },{
                 status:400
             })
@@ -75,13 +83,13 @@ export async function POST(request:NextRequest) {
         });
         await newUser.save();
 
-        //@ts-ignore
         //Extraer el pwd de usuario y almacena en userPass(porq password esta utilizado como 
         // un constante ya), y asi, usamos restos datos para generar token. (Seguridad))
-        const {password:userPass, ...rest} = newUser._doc;
+        const {password:userPass, ...rest} = newUser.toObject();
 
-        const accsessToken = jwt.sign({data:rest},"accessToken",{expiresIn:'15m',})
-        const refreshToken = jwt.sign({data:rest},"refreshToken",{expiresIn:'7d',})
+        // despues de registrar, debemos generar tokens para la sesion
+        const accsessToken = jwt.sign({data:rest},process.env.ACCESS_TOKEN_SECRET,{expiresIn:'15m',})
+        const refreshToken = jwt.sign({data:rest},process.env.REFRESH_TOKEN_SECRET,{expiresIn:'7d',})
 
         // datas de response
         const response = NextResponse.json({
@@ -89,7 +97,7 @@ export async function POST(request:NextRequest) {
             sucess:message.sucess.UserCreated
         },{status:200})
 
-        // generar tokens para la sesion
+        // guardar en los cookies
         response.cookies.set("acessTokenCookie",accsessToken,{
             sameSite:"strict",
             secure:process.env.NODE_ENV==="production",
