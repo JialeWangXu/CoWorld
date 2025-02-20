@@ -3,7 +3,8 @@ export const message= {
         UserCreated:"User created successfully!",
         UserLogged:"User logged in successfully!",
         EmailSent:"Email has been sent successfully! Please check your email!",
-        PwdChanged:"Your password has been changed successfully!"
+        PwdChanged:"Your password has been changed successfully!",
+        TokenRefreshed:"The token has been refreshed successfully!"
     },
     error:{
         notFull:"Please, complete all the fields!",
