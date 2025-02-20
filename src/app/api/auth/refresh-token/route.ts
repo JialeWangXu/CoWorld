@@ -25,18 +25,9 @@ export async function POST() {
         const newAccsessToken = jwt.sign({data},process.env.ACCESS_TOKEN_SECRET,{expiresIn:'15m',})
 
         const response = NextResponse.json({
-            success:message.sucess.TokenRefreshed,
+            newAccsessToken: newAccsessToken
         },{status:200})
 
-        // reemplazar con el nuevo token
-        response.cookies.set("acessTokenCookie",newAccsessToken,{
-            sameSite:"strict",
-            secure:process.env.NODE_ENV==="production",
-            maxAge:900, //15 minutos= 15x60
-            httpOnly:true,
-            path:"/"
-        });
-        
         return response;
 
     }catch(e){

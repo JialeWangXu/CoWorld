@@ -98,7 +98,7 @@ export async function POST(request:NextRequest) {
         },{status:200})
 
         // guardar en los cookies
-        response.cookies.set("acessTokenCookie",accsessToken,{
+        response.cookies.set("accessTokenCookie",accsessToken,{
             sameSite:"strict",
             secure:process.env.NODE_ENV==="production",
             maxAge:900, //15 minutos= 15x60
