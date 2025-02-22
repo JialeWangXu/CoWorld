@@ -1,8 +1,25 @@
 import React from 'react'
-export default function RootLayout({ children }) {
+import { Metadata } from 'next'
+import {Inter} from 'next/font/google'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const inter = Inter({subsets: ['latin']})
+
+export const meta: Metadata = {
+  title: 'Hi! This is CoWorld!',
+  description: 'This project is a Next.js app with TypeScript, ESLint, Prettier, and Bootstrap.' 
+}
+
+interface RootLayoutProps {
+  children: React.ReactNode 
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
     return (
       <html lang="en">
-        <body>{children}</body>
+        <body className={inter.className}>
+          <main className='container-fluid p-0'>{children}</main>
+        </body>
       </html>
     )
   }

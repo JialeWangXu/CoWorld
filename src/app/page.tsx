@@ -1,5 +1,36 @@
+'use client';
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Form } from './components/Form';
+import { auto } from '@popperjs/core';
 
-export default function Page() {
-    return <h1>Hello, Next.js!</h1>
-  }
+export default function LoginInPage() {
+    return(
+        <div className="card m-0 p-0" style={{ width: '100%', height: '100vh' }}>
+            <div className="row g-0 h-100">
+                <div className="col-sm-5 d-none d-md-block">
+                  <img src="/imgs/team-green.jpg" className="img-fluid" alt="Log in image" style={{ width: '100%', height: '100%' }}/>
+                </div>
+                <div className="col-md-7">
+                    <div className="card-body" style={{ height:'100%', flexDirection:'column', display:'flex', justifyContent:'center', alignItems:'center' }}>
+                        
+                        <div className='row mb-3'>
+                          <div className='col'></div>
+                          <img src="/imgs/CoWorldLogoLogin.png" alt="CoWorld logo" className='col-sm-8' style={{ width: '80%', height: auto }}/>
+                          <div className='col'></div>
+                        </div>
+                        <Form title="Iniciar sesión" onSubmit={(formProperties) => console.log(formProperties)} >
+                            <Form.Input id="email" htmlfor="email" label="EMAIL" type="text" placeholder="Introduce tu email"/>
+                            <Form.Input id="password" htmlfor="password" label="CONTRASEÑA" type="password" placeholder="Introduce tu contraseña"/>
+                            <Form.Links href="/forget-password" text="¿Has olvidado tu contraseña? " linkText='Recuperar contraseña'/>
+                            <Form.SubmitButton text="ENTRAR" loading={false}/>
+                            <div className='text-center'>
+                            <Form.Links href="/register" text="¿No tienes cuenta? " linkText='Regístrate'/>
+                            </div>
+                        </Form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    ); 
+  }         
