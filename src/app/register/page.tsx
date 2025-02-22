@@ -25,7 +25,7 @@ export default function RegisterPage(){
                                 validationClass="invalid-feedback" validationMsg="Apellidos es necesario!"/>
                                 <ValidationForm.Input id="email" htmlfor="email" label="EMAIL" type="text" className="col-md-12" required={true}
                                 validationClass="invalid-feedback" validationMsg="Email es necesario!"/>
-                                <ValidationForm.Input id="password" htmlfor="password" label="CONTRASEÑA" type="password" className="col-md-12" required={true}
+                                <ValidationForm.Input id="password" htmlfor="password" label="CONTRASEÑA" type="password" className="col-md-12" required={true} help={true}
                                 validationClass="invalid-feedback" validationMsg="Contraseña es necesario!"/>
                                 <div className="col-12">
                                     <ValidationForm.Checkbox id="role" htmlfor="role" label="Regístrese como empresa"/>

@@ -27,9 +27,7 @@ export async function POST(request:NextRequest) {
 
         if(findUser){
             return NextResponse.json({
-                msg: message.error.alreadyExist.msg,
-                rediUrl:message.error.alreadyExist.rediUrl,
-                linkMsg:message.error.alreadyExist.linkmsg
+                msg: message.error.alreadyExist.msg
             },{status:400})
         }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next'
 import {Inter} from 'next/font/google'
+import { ToastProvider } from './context/ToastContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const inter = Inter({subsets: ['latin']})
@@ -18,7 +19,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
     return (
       <html lang="en">
         <body className={inter.className}>
-          <main className='container-fluid p-0'>{children}</main>
+          <ToastProvider>
+            <main className='container-fluid p-0'>{children}</main>
+          </ToastProvider>
         </body>
       </html>
     )

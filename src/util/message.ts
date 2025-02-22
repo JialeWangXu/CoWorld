@@ -1,37 +1,31 @@
 export const message= {
     sucess:{
-        UserCreated:"User created successfully!",
-        UserLogged:"User logged in successfully!",
-        EmailSent:"Email has been sent successfully! Please check your email!",
-        PwdChanged:"Your password has been changed successfully!",
-        TokenRefreshed:"The token has been refreshed successfully!"
+        UserCreated:"¡Usuario creado con éxito!",
+        UserLogged:"¡Usuario iniciado con éxito!",
+        EmailSent:"El correo electrónico se ha enviado correctamente. Compruebe su correo electrónico.",
+        PwdChanged:"¡Su contraseña ha sido modificada correctamente!",
+        TokenRefreshed:"El token se ha actualizado correctamente."
     },
     error:{
-        notFull:"Please, complete all the fields!",
-        invalidEmial: "The email address provided is invalid!",
-        notMatchPwd:"The passwords do not match!",
-        onlyLetterName: "The first name con only contain letters!",
-        onlyLetterSpace:"Please revise your last name!",
+        notFull:"Por favor, rellene todos los campos.",
+        invalidEmial: "¡El correo electrónico proporcionado no es válido!",
+        notMatchPwd:"¡Las contraseñas no coinciden!",
+        onlyLetterName: "¡El nombre sólo puede tener letras!",
+        onlyLetterSpace:"Por favor, ¡revisa su apellidos!",
         alreadyExist:{
-            msg:"The email already exists, try ",
-            rediUrl:"/api/auth/login",
-            linkmsg:"Log in."
+            msg:"El correo electrónico ya existe, intente Iniciar sesión",
         },
         notFoundUser:{
-            msg: "Incorrect email address or password. Please try again or ",
-            rediUrl: "/api/auth/register",
-            linkmsg: "Create account."    
+            msg: "El correo o la contraseña incorrecta. Inténtelo de nuevo." 
         },
-        pwdIncorrect:"The password is incorrect, try again.",
+        pwdIncorrect:"La contraseña es incorrecta, inténtelo de nuevo.",
         genericError:"Something is wrong...",
         notFoundEmail:{
-            msg: "There is no user exists with provided email, please revise or try ",
-            rediUrl: "/api/auth/register",
-            linkmsg: "Create account."   
+            msg: "No existe ningún usuario con el correo proporcionado. Por favor, revise o intente registrarse.",
         },
-        pwdCantChange:"The password cannot be changed, try later.",
-        passwordRestrict:"The password must contain at least 8 characters, a lowercase letter, an uppercase letter, a number, and a special character.",
-        noToken:"There is no permission to continue the process, please, restart the process.",
-        invalidToken:"The token is invalid, please, restart the process."
+        pwdCantChange:"No se puede cambiar la contraseña, inténtelo más tarde.",
+        passwordRestrict:"La contraseña debe contener al menos 8 caracteres, 1 letra minúscula, 1 mayúscula, 1 número y 1 carácter especial.",
+        noToken:"No hay permiso para continuar el proceso, por favor, reinicie el proceso.",
+        invalidToken:"El token no es válido, por favor, reinicie el proceso."
     }
 }
