@@ -43,7 +43,7 @@ export async function POST(request:NextRequest) {
             userId: findUser._id,
         }
         // dejamos que se invalida este proceso en una hora 60*60*1000
-        const token = jwt.sign({data:tokenForChangePwd},process.env.ACCESS_TOKEN_SECRET,{expiresIn:'1h'});
+        const token = jwt.sign({data:tokenForChangePwd},process.env.RESET_PWD_TOKEN_SECRETE,{expiresIn:'1h'});
 
         const url = `http://localhost:3000/reset-password?token=${token}`;
 

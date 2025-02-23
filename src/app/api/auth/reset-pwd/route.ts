@@ -5,17 +5,19 @@ import bcrypt from 'bcryptjs';
 import { message } from "util/message";
 import { passwordRestrict } from "util/patterns";
 import jwt from 'jsonwebtoken';
+import { headers } from "next/headers";
 
 
-export async function PUT(request:NextRequest) {
+export async function POST(request:NextRequest) {
     
     try{
-        await connectMD;
+        await connectMD();
 
         const body = await request.json();
         const {pwd, confirmpwd} = body
 
-        let token = request.nextUrl.searchParams.get('token');
+        const headerList = headers()
+        const token = (await headerList).get('Token')
 
         if(!token){
             return NextResponse.json({
@@ -24,7 +26,7 @@ export async function PUT(request:NextRequest) {
         }
 
         try{
-            const isVliadToken = jwt.verify(token,process.env.ACCESS_TOKEN_SECRET);
+            const isVliadToken = jwt.verify(token,process.env.RESET_PWD_TOKEN_SECRETE);
             // @ts-ignore
             const {data} = isVliadToken;
             if(!pwd || !confirmpwd){
@@ -65,8 +67,6 @@ export async function PUT(request:NextRequest) {
             },{status:400})
         }
 
-        // para invalidar el token, el usuario debe logear de nuevo despues de cambiar la contraseña
-        token = null;
 
         return NextResponse.json({
             sucess:message.sucess.PwdChanged

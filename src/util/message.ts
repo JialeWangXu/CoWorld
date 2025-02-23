@@ -20,6 +20,6 @@ export const message= {
         pwdCantChange:"No se puede cambiar la contraseña, inténtelo más tarde.",
         passwordRestrict:"La contraseña debe contener al menos 8 caracteres, 1 letra minúscula, 1 mayúscula, 1 número y 1 carácter especial.",
         noToken:"No hay permiso para continuar el proceso, por favor, reinicie el proceso.",
-        invalidToken:"El token no es válido, por favor, reinicie el proceso."
+        invalidToken:"El permiso de restablecer contraseña se ha expirado, por favor, reinicie el proceso."
     }
 }
