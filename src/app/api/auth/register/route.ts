@@ -5,7 +5,6 @@ import { isEmail, onlyLetters, onlyLastNames, passwordRestrict } from "util/patt
 import User, {IUserDocument} from "models/User";
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { error } from "console";
 
 export async function POST(request:NextRequest) {
     try{

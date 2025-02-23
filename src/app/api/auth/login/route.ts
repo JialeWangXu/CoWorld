@@ -74,9 +74,9 @@ export async function POST(request: NextRequest) {
         });
         return response;
 
-    } catch (error) {
+    } catch (e) {
         return NextResponse.json({
-            msg:message.error.genericError,error
+            error:message.error.genericError,e
         },{status:500})
     }
 }
