@@ -5,16 +5,17 @@ import { isEmail, onlyLetters, onlyLastNames, passwordRestrict } from "util/patt
 import User, {IUserDocument} from "models/User";
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { error } from "console";
 
 export async function POST(request:NextRequest) {
     try{
         await connectMD();
 
         const body = await request.json();
-        const {firstname, lastname, email, password, confirmPwd, role} = body
+        const {firstname, lastname, email, password, role} = body
 
         // Primero se valida si tiene todos los campos rellenados:
-        if(!firstname|| !lastname || !email || !password || !confirmPwd){
+        if(!firstname|| !lastname || !email || !password){
             return NextResponse.json({
                 error:message.error.notFull
             },{
@@ -27,7 +28,7 @@ export async function POST(request:NextRequest) {
 
         if(findUser){
             return NextResponse.json({
-                msg: message.error.alreadyExist.msg
+                error: message.error.alreadyExist
             },{status:400})
         }
 
@@ -44,15 +45,6 @@ export async function POST(request:NextRequest) {
         if(passwordRestrict(password)){
             return NextResponse.json({
                 error: message.error.passwordRestrict
-            },{
-                status:400
-            })
-        }
-
-        // Comprueba si los pwds se coninciden: 
-        if(password!==confirmPwd){
-            return NextResponse.json({
-                error: message.error.notMatchPwd
             },{
                 status:400
             })

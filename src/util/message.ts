@@ -12,17 +12,11 @@ export const message= {
         notMatchPwd:"¡Las contraseñas no coinciden!",
         onlyLetterName: "¡El nombre sólo puede tener letras!",
         onlyLetterSpace:"Por favor, ¡revisa su apellidos!",
-        alreadyExist:{
-            msg:"El correo electrónico ya existe, intente Iniciar sesión",
-        },
-        notFoundUser:{
-            msg: "El correo o la contraseña incorrecta. Inténtelo de nuevo." 
-        },
+        alreadyExist:"El correo electrónico ya existe, intente Iniciar sesión",
+        notFoundUser:"El correo o la contraseña incorrecta. Inténtelo de nuevo." ,
         pwdIncorrect:"La contraseña es incorrecta, inténtelo de nuevo.",
         genericError:"Something is wrong...",
-        notFoundEmail:{
-            msg: "No existe ningún usuario con el correo proporcionado. Por favor, revise o intente registrarse.",
-        },
+        notFoundEmail:"No existe ningún usuario con el correo proporcionado. Por favor, revise o intente registrarse.",
         pwdCantChange:"No se puede cambiar la contraseña, inténtelo más tarde.",
         passwordRestrict:"La contraseña debe contener al menos 8 caracteres, 1 letra minúscula, 1 mayúscula, 1 número y 1 carácter especial.",
         noToken:"No hay permiso para continuar el proceso, por favor, reinicie el proceso.",

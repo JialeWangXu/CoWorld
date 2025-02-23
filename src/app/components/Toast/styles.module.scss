@@ -10,11 +10,12 @@
     z-index: 5;
     height: 50px;
     width: fit-content;
-    padding: .6rem 1rem;
+    padding: 2rem 1rem 1rem;
     transition: 10s;
     border: .5px solid gainsboro;
     border-radius: 10px 0 0 10px;
     outline: .5px solid transparent;
+    background-color: white;
 
     &.Good{
         outline: 1.5px solid greenyellow;

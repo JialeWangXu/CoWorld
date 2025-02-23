@@ -15,12 +15,12 @@ export function Checkbox({id, htmlfor: htmlFor, label}: inputProps) {
     const [checked, setChecked] = useState(0)
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setChecked(event.target.checked ? 1 : 0);
         setFormProperties({...formProperties, [id]: (event.target.checked? COMPANY:CANDIDATE)});
+        setChecked(event.target.checked ? COMPANY : CANDIDATE);
     }
     return(
         <div className='form-check'>
-            <input type='checkbox' className='form-check-input'id={id} name={id} onChange={handleChange} value={formProperties[id] || ''}
+            <input type='checkbox' className='form-check-input'id={id} name={id} onChange={handleChange} value={formProperties[id] || CANDIDATE}
             checked={!!checked}/>
             <label htmlFor={htmlFor} className='form-check-label'>{label}</label>
         </div>

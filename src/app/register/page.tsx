@@ -1,9 +1,21 @@
 'use client';
 import { ValidationForm } from "app/components/ValidationForm";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { useAuthFetch } from "app/hooks/useAuthFetch";
+import { useSnipper } from "app/hooks/useSnipper";
 
 export default function RegisterPage(){
+    const authFetch=useAuthFetch();
+    const {isLoading,setIsLoading}=useSnipper();
+
+    const register = async(data:any)=>{
+        console.log('Registrado');
+        setIsLoading(true);
+        await authFetch({endpoint:'register',nextPath:'/home',fetchdata:data})
+        setIsLoading(false);
+        console.log('Finished')
+    }
+
         return(
             <div className="card m-0 p-0" style={{ width: '100%', height: '100vh' }}>
                 <div className="row g-0 h-100">
@@ -18,7 +30,7 @@ export default function RegisterPage(){
                                 <img src="/imgs/CoWorldLogoLogin.png" alt="CoWorld logo" className='col-sm-8' style={{ width: '80%', height: 'auto' }}/>
                                 <div className='col'></div>
                             </div>
-                            <ValidationForm title="Únete a CoWorld " onSubmit={(formProperties) => console.log(formProperties)} >
+                            <ValidationForm title="Únete a CoWorld " onSubmit={register} >
                                 <ValidationForm.Input id="firstname" htmlfor="firstname" label="NOMBRE" type="text" className="col-md-6" required={true}
                                 validationClass="invalid-feedback" validationMsg="Nombre es necesario!"/>
                                 <ValidationForm.Input id="lastname" htmlfor="lastname" label="APELLIDOS" type="text" className="col-md-6" required={true}
@@ -30,8 +42,8 @@ export default function RegisterPage(){
                                 <div className="col-12">
                                     <ValidationForm.Checkbox id="role" htmlfor="role" label="Regístrese como empresa"/>
                                 </div>
-                                <ValidationForm.SubmitButton text="UNIRSE" loading={false} />
-                                <div className='text-center'>
+                                <ValidationForm.SubmitButton text="UNIRSE" loading={isLoading} />
+                                <div className='text-center'style={{marginTop:0}}>
                                 <ValidationForm.Links href="/" text="¿Ya tienes cuenta? " linkText='Iniciar sesión'/>
                                 </div>
                             </ValidationForm>

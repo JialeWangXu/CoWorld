@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
 
         if(!findUser){
             return NextResponse.json({
-                error:message.error.notFoundEmail.msg
+                error:message.error.notFoundEmail
             }, {status:400})
         }
 
