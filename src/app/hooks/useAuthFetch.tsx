@@ -15,7 +15,11 @@ import { useContext } from "react";
     const {showToast} = useContext(ToastContext)
     const authFetch=async({endpoint,nextPath,config,fetchdata}:authProps)=>{
         try{
-           const {data} =await axios.post(`/api/auth/${endpoint}`,fetchdata,config)
+            const updatedConfig = {
+               ...config,
+               withCredentials: true,
+            };
+           const {data} =await axios.post(`/api/auth/${endpoint}`,fetchdata,updatedConfig)
            showToast({msg:data.success, type:'Good',visible:true})
            router.push(nextPath)
         }catch(e:any){

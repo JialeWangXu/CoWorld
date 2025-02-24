@@ -21,14 +21,7 @@ const axiosInstance = axios.create({
           if (isRefreshing) {
             return new Promise(function(resolve) {
               unautorizedQueue.push((accessToken) => {
-                originalRequest.headers['Authorization'] = 'Bearer ' + accessToken;
-                const cookiesstore = cookies();
-                cookiesstore.set("accessTokenCookie",accessToken,{
-                  sameSite:"strict",
-                  secure:process.env.NODE_ENV==="production",
-                  maxAge:900, //15 minutos= 15x60
-                  httpOnly:true
-                });
+                originalRequest.headers['authorization'] = `Bearer ${accessToken}`;
                 resolve(axiosInstance(originalRequest));
               });
             });
@@ -36,21 +29,29 @@ const axiosInstance = axios.create({
           originalRequest._retry = true;
           isRefreshing = true;
           try{
-            const newAccessToken = await axios.post("/auth/refresh-token");
+            const cookiesStore = await cookies();
+            const refreshToken = cookiesStore.get('refreshTokenCookie')?.value;
+            if (!refreshToken) {
+              throw new Error('No se encontró el refresh token');
+            }
+            cookiesStore.set('refreshTokenCookie',refreshToken)
+            const response = await axiosInstance.post("/auth/refresh-token", {}, {
+              withCredentials: true,
+              headers: {
+                Cookie: `refreshTokenCookie=${refreshToken};`
+              }
+            });
+            const newAccsessToken = response.data.newAccsessToken
             isRefreshing = false;
             originalRequest._retry = false;
-            unautorizedQueue.forEach(callback => callback(newAccessToken));
+
+            unautorizedQueue.forEach(callback => callback(newAccsessToken));
             unautorizedQueue = [];
-            originalRequest.headers['Authorization'] = 'Bearer ' + newAccessToken;
-            const cookiesstore = cookies();
-            cookiesstore.set("accessTokenCookie",newAccessToken,{
-                sameSite:"strict",
-                secure:process.env.NODE_ENV==="production",
-                maxAge:900, //15 minutos= 15x60
-                httpOnly:true
-            });
+            originalRequest.headers['authorization'] = `Bearer ${newAccsessToken}`;
+
             return axiosInstance(originalRequest);
           }catch(e){
+            console.log('Hay error actualizar'+e)
             isRefreshing = false;
             originalRequest._retry = false;
             return Promise.reject(e);

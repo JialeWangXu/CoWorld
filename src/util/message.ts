@@ -4,7 +4,8 @@ export const message= {
         UserLogged:"¡Usuario iniciado con éxito!",
         EmailSent:"El correo electrónico se ha enviado correctamente. Compruebe su correo electrónico.",
         PwdChanged:"¡Su contraseña ha sido modificada correctamente!",
-        TokenRefreshed:"El token se ha actualizado correctamente."
+        TokenRefreshed:"El token se ha actualizado correctamente.",
+        UserAuthorized:"User is authorized."
     },
     error:{
         notFull:"Por favor, rellene todos los campos.",
