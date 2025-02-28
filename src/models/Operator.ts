@@ -1,7 +1,7 @@
 import mongoose, {Schema, ObjectId, Document } from 'mongoose';
-import { CANDIDATE} from '../util/constants';
+import { OPERATOR} from '../util/constants';
 
-const userSchema:Schema = new Schema({
+const operatorSchema:Schema = new Schema({
     firstname:{
         type: String,
         required: true
@@ -21,8 +21,14 @@ const userSchema:Schema = new Schema({
     },
     role:{
         type: Number,
-        default: CANDIDATE
+        default: OPERATOR
+    },
+    company_id: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Company', 
+        required: true 
     }
+
     },{timestamps: true});
 
 export interface IUser{
@@ -32,6 +38,7 @@ export interface IUser{
     email: string;
     password: string;
     role: number;
+    company_id: ObjectId
     createdAt?: Date;
     updatedAt?: Date;
 }
@@ -43,10 +50,11 @@ export interface IUserDocument extends Document{
     email: string;
     password: string;
     role: number;
+    company_id: ObjectId;
     createdAt?: Date;
     updatedAt?: Date;
 }
 
 // Para evitar el error de cuando el model ya esta creada.
-const User = mongoose.models.User || mongoose.model('User', userSchema);
-export default User;
+const Operator = mongoose.models.Operator || mongoose.model('Operator', operatorSchema);
+export default Operator;

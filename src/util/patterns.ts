@@ -21,3 +21,10 @@ export function passwordRestrict(str:string): boolean{
     const strRgx = /^(.{0,7}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$/;
     return strRgx.test(str);
 }
+
+// Validador para cif, aqui solo estamos comprobando con el regex para facilitar las pruebas, pero 
+// en realidad es mucho mas complicado, si tengo tiempo, lo mejoro: 
+export function cifValidator(str:string): boolean{
+    const strRgx = /^([ABCDEFGHJKLMNPQRSUVW])(\d{7})([0-9A-J])$/;
+    return strRgx.test(str);
+}

@@ -1,7 +1,7 @@
 import mongoose, {Schema, ObjectId, Document } from 'mongoose';
-import { CANDIDATE} from '../util/constants';
+import { CANDIDATE,COMPANY} from '../util/constants';
 
-const userSchema:Schema = new Schema({
+const companySchema:Schema = new Schema({
     firstname:{
         type: String,
         required: true
@@ -19,34 +19,47 @@ const userSchema:Schema = new Schema({
         type: String,
         required: true
     },
+
     role:{
         type: Number,
-        default: CANDIDATE
+        default: COMPANY
+    },
+    companyName:{
+        type: String,
+        required: true
+    },
+    cif:{
+        type: String,
+        required: true
     }
     },{timestamps: true});
 
-export interface IUser{
+export interface ICompany{
     _id?: ObjectId;
     firstname: string;
     lastname: string;
     email: string;
     password: string;
     role: number;
+    companyName: string;
+    cif: string;
     createdAt?: Date;
     updatedAt?: Date;
 }
 
-export interface IUserDocument extends Document{
+export interface ICompanyDocument extends Document{
     _id: ObjectId;
     firstname: string;
     lastname: string;
     email: string;
     password: string;
     role: number;
+    companyName: string;
+    cif: string;
     createdAt?: Date;
     updatedAt?: Date;
 }
 
 // Para evitar el error de cuando el model ya esta creada.
-const User = mongoose.models.User || mongoose.model('User', userSchema);
-export default User;
+const Company = mongoose.models.Company || mongoose.model('Company', companySchema);
+export default Company;

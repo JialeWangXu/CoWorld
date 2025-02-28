@@ -20,7 +20,7 @@ import { useContext } from "react";
                withCredentials: true,
             };
            const {data} =await axios.post(`/api/auth/${endpoint}`,fetchdata,updatedConfig)
-           showToast({msg:data.success, type:'Good',visible:true})
+           showToast({msg:data.sucess, type:'Good',visible:true})
            router.push(nextPath)
         }catch(e:any){
            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
