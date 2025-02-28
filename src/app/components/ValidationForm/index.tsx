@@ -27,7 +27,6 @@ export function ValidationForm({children, title, onSubmit}: FormProviderProps) {
     useEffect(()=>{
         'use strict';
         const forms = document.querySelectorAll('.needs-validation');
-        setFormProperties({...formProperties, ['role']:0});
         Array.from(forms).forEach(form => {
             form.addEventListener('submit', event => {
               if (!(form as HTMLFormElement).checkValidity()) {

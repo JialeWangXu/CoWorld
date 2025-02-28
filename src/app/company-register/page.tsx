@@ -47,8 +47,8 @@ export default function CompanyRegisterPage(){
                                 <ValidationForm.SubmitButton text="UNIRSE" loading={isLoading} />
                                 </div>
                                 <div className='text-center'style={{marginTop:0}}>
-                                <ValidationForm.Links href="/" text="¿Ya tienes cuenta? " linkText='Iniciar sesión'/>
-                                <ValidationForm.Links href="/" text="¿Buscaba trabajo? " linkText='Descubrir las ofertas de trabajos' />
+                                <ValidationForm.Links href="/company-login" text="¿Ya tienes cuenta? " linkText='Iniciar sesión'/>
+                                <ValidationForm.Links href="/register" text="¿Buscaba registrar como candidato? " linkText='Crear una cuenta de candidato' />
                                 </div>
                             </ValidationForm>
                         </div>

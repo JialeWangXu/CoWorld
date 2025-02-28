@@ -39,12 +39,10 @@ export default function RegisterPage(){
                                 validationClass="invalid-feedback" validationMsg="Email es necesario!"/>
                                 <ValidationForm.Input id="password" htmlfor="password" label="CONTRASEÑA" type="password" className="col-md-12" required={true} help={true}
                                 validationClass="invalid-feedback" validationMsg="Contraseña es necesario!"/>
-                                <div className="col-12">
-                                    <ValidationForm.Checkbox id="role" htmlfor="role" label="Regístrese como empresa"/>
-                                </div>
                                 <ValidationForm.SubmitButton text="UNIRSE" loading={isLoading} />
                                 <div className='text-center'style={{marginTop:0}}>
                                 <ValidationForm.Links href="/" text="¿Ya tienes cuenta? " linkText='Iniciar sesión'/>
+                                <ValidationForm.Links href="/company-register" text="¿Buscaba registrarse como empresa? " linkText='Crear cuenta de empresa'/>
                                 </div>
                             </ValidationForm>
                         </div>
