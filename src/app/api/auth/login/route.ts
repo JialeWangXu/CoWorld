@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
         const refreshToken = jwt.sign({data:rest},process.env.REFRESH_TOKEN_SECRET,{expiresIn:'7d',})        
 
         const response = NextResponse.json({
-            success:message.sucess.UserLogged,
+            sucess:message.sucess.UserLogged,
             findUser:rest
         },{status:200})
 

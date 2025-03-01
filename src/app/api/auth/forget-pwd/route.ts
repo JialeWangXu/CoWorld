@@ -55,7 +55,7 @@ export async function POST(request:NextRequest) {
         });
 
         return NextResponse.json({
-            success:message.sucess.EmailSent
+            sucess:message.sucess.EmailSent
         },{status:200});
         
     }catch(e){

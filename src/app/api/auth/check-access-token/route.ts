@@ -21,7 +21,7 @@ export async function GET(){
                 const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
 
                 return NextResponse.json({
-                    authorized:true, success:message.sucess.UserAuthorized
+                    authorized:true, sucess:message.sucess.UserAuthorized
                 },{status:200})
 
             }catch(e){

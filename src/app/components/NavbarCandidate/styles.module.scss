@@ -1,0 +1,28 @@
+
+.logo{
+    color: white;
+    font-weight: bolder;
+    background-color: #3b8725;
+    padding: 4px;
+}
+
+.power-off{
+    padding: 8px;
+}
+
+.hov {
+    &:hover{
+        color: #306d1f;
+        font-weight: bold;
+      }
+    &:active{
+        color: #306d1f;
+        font-weight: bold;
+    }
+}
+
+.active{
+    color: #306d1f;
+    font-weight: bold;
+    text-decoration: underline;
+}
