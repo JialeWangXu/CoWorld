@@ -1,13 +1,34 @@
 'use client'
 import styles from './styles.module.scss'
 import { useState } from 'react';
+import { ToastContext } from "app/context/ToastContext";
+import { useContext } from 'react';
+import axios from 'axios';
+import { useRouter } from "next/navigation";
 
 export function NavbarCandidate(){
 
     const [activePage, setActivePage] = useState('');
+    const {showToast} = useContext(ToastContext);
+    const router = useRouter();
+
+
     
     const handleActivePage = (page:string) => {
         setActivePage(page);
+    }
+
+    const handleLogOut = async () =>{
+        try{
+        console.log('cerrando')
+        
+        const {data} =await axios.post(`/api/auth/logout`)
+        showToast({msg:data.sucess, type:'Good',visible:true})
+        router.push('/')
+        console.log('fin')
+        }catch(e){
+            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+        }
     }
 
     return (
@@ -37,7 +58,8 @@ export function NavbarCandidate(){
                     onClick={()=>{handleActivePage('ayuda')}}>Ayuda</a>
                     </li>
                 </ul>
-                <a className="nav-link ms-auto" href="#"><img src='/imgs/power-off.png' style={{paddingRight:'8px'}}></img></a>
+                <a className="nav-link ms-auto" href="/"
+                    onClick={()=>{handleLogOut()}}><img src='/imgs/power-off.png' style={{paddingRight:'8px'}}></img></a>
                 </div>
             </div>
         </nav>

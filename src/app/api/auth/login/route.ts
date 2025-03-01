@@ -48,8 +48,8 @@ export async function POST(request: NextRequest) {
 
         const {password:UserPass, ...rest} = findUser._doc;
         // Generar tokens para la sesion
-        const accsessToken = jwt.sign({data:rest},process.env.ACCESS_TOKEN_SECRET,{expiresIn:'15m',})
-        const refreshToken = jwt.sign({data:rest},process.env.REFRESH_TOKEN_SECRET,{expiresIn:'7d',})        
+        const accsessToken = jwt.sign({data:rest},process.env.ACCESS_TOKEN_SECRET,{expiresIn:'15s'})
+        const refreshToken = jwt.sign({data:rest},process.env.REFRESH_TOKEN_SECRET,{expiresIn:'7d'})        
 
         const response = NextResponse.json({
             sucess:message.sucess.UserLogged,
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
         response.cookies.set("accessTokenCookie",accsessToken,{
             sameSite:"strict",
             secure:process.env.NODE_ENV==="production",
-            maxAge:900, //15 minutos= 15x60
+            maxAge:7200, //2H 2x60x60
             httpOnly:true,
             path:"/"
         });

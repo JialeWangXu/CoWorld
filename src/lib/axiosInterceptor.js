@@ -21,6 +21,13 @@ const axiosInstance = axios.create({
           if (isRefreshing) {
             return new Promise(function(resolve) {
               unautorizedQueue.push((accessToken) => {
+                originalRequest.cookies.set("accessTokenCookie",accessToken,{
+                  sameSite:"strict",
+                  secure:process.env.NODE_ENV==="production",
+                  maxAge:7200, //2H 2x60x60
+                  httpOnly:true,
+                  path: "/"
+                });
                 originalRequest.headers['authorization'] = `Bearer ${accessToken}`;
                 resolve(axiosInstance(originalRequest));
               });

@@ -9,6 +9,7 @@ export async function GET(){
         const token = headerList.get('authorization');
 
         if(!token){
+            console.log("no tiene accessToken")
             return NextResponse.json({
                 error:message.error.noToken
             },{status:400})
@@ -19,7 +20,7 @@ export async function GET(){
             try{
                 //@ts-ignore
                 const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
-
+                console.log("El token access es valido: "+accessToken)
                 return NextResponse.json({
                     authorized:true, sucess:message.sucess.UserAuthorized
                 },{status:200})

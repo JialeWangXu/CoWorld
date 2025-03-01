@@ -7,7 +7,8 @@ export const message= {
         EmailSent:"El correo electrónico se ha enviado correctamente. Compruebe su correo electrónico.",
         PwdChanged:"¡Su contraseña ha sido modificada correctamente!",
         TokenRefreshed:"El token se ha actualizado correctamente.",
-        UserAuthorized:"User is authorized."
+        UserAuthorized:"User is authorized.",
+        UserLoggedOut:"¡Usuario cerrado sesión con éxito!"
     },
     error:{
         notFull:"Por favor, rellene todos los campos.",
@@ -25,6 +26,7 @@ export const message= {
         passwordRestrict:"La contraseña debe contener al menos 8 caracteres, 1 letra minúscula, 1 mayúscula, 1 número y 1 carácter especial.",
         noToken:"No hay permiso para continuar el proceso, por favor, reinicie el proceso.",
         invalidToken:"El permiso de restablecer contraseña se ha expirado, por favor, reinicie el proceso.",
-        notValidCif:"¡El C.I.F proporcionado no es válido!"
+        notValidCif:"¡El C.I.F proporcionado no es válido!",
+        logOutError:"¡Ocurrido error en cerrar sesión!"
     }
 }
