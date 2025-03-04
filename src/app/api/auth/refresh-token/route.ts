@@ -1,9 +1,11 @@
+"use server";
 import jwt from 'jsonwebtoken';
 import {  NextRequest, NextResponse } from "next/server";
 import { message } from 'util/message';
 
 export async function POST(request:NextRequest) {
     try{
+        console.log("Request Headers:", Array.from(request.headers.entries())); //ELIMINAMOS CUADO TERMINA
         const refreshToken = request.cookies.get('refreshTokenCookie')?.value;
         if(!refreshToken){
             console.log('No tienes refresh')
@@ -22,7 +24,7 @@ export async function POST(request:NextRequest) {
         // @ts-ignore
         const {data} = isVliadToken;
         // Si el refreshToken es valido, generamos un nuevo accessToken con la data del refreshToken
-        const newAccsessToken = jwt.sign({data},process.env.ACCESS_TOKEN_SECRET,{expiresIn:'15s'})
+        const newAccsessToken = jwt.sign({data},process.env.ACCESS_TOKEN_SECRET,{expiresIn:'15m'})
 
         console.log('devuevlo nuevo access')
         const response = NextResponse.json({
@@ -30,14 +32,15 @@ export async function POST(request:NextRequest) {
         },{status:200})
 
         response.cookies.set("accessTokenCookie",newAccsessToken,{
-            sameSite:"strict",
+            sameSite:"lax",
             secure:process.env.NODE_ENV==="production",
             maxAge:7200, //2H 2x60x60
             httpOnly:true,
             path: "/"
         });
 
-        console.log("MIRAR SI ESTA ACTUALIZANDO COOKIE"+response.headers)
+        console.log("Response Headers:", Array.from(response.headers.entries()));
+        console.log("MIRAR SI ESTA ACTUALIZANDO COOKIE"+response.cookies.get('accessTokenCookie').value)
 
         return response;
 

@@ -1,70 +1,55 @@
 import axios from "axios";
-import { cookies } from 'next/headers'
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:3000/api',
-    timeout: 1000,
-    withCredentials: true // para poder enviar cookies con las solicitudes
-  });
+  baseURL: 'http://localhost:3000/api',
+  timeout: 5000,
+  withCredentials: true 
+});
 
-  let isRefreshing = false;
-  let unautorizedQueue =[]; // para manejar el caso de que se realicen varias solicitudes al mismo tiempo y todas devuelvan 401
+let isRefreshing = false;
+let subscribers = [];
 
 
-  axiosInstance.interceptors.response.use(
-    response => { // Si la solicitud es exitosa, simplemente devuelva la respuesta
-      return response; 
-    },
-    async(error) => { // sino tenemos que verificar si se puede renovar el accesstoken o no
-        const originalRequest = error.config;
-        if (error.response.status === 401 && !originalRequest._retry) {
-          if (isRefreshing) {
-            return new Promise(function(resolve) {
-              unautorizedQueue.push((accessToken) => {
-                originalRequest.cookies.set("accessTokenCookie",accessToken,{
-                  sameSite:"strict",
-                  secure:process.env.NODE_ENV==="production",
-                  maxAge:7200, //2H 2x60x60
-                  httpOnly:true,
-                  path: "/"
-                });
-                originalRequest.headers['authorization'] = `Bearer ${accessToken}`;
-                resolve(axiosInstance(originalRequest));
-              });
-            });
-          }
-          originalRequest._retry = true;
-          isRefreshing = true;
-          try{
-            const cookiesStore = await cookies();
-            const refreshToken = cookiesStore.get('refreshTokenCookie')?.value;
-            if (!refreshToken) {
-              throw new Error('No se encontró el refresh token');
-            }
-            cookiesStore.set('refreshTokenCookie',refreshToken)
-            const response = await axiosInstance.post("/auth/refresh-token", {}, {
-              withCredentials: true,
-              headers: {
-                Cookie: `refreshTokenCookie=${refreshToken};`
-              }
-            });
-            const newAccsessToken = response.data.newAccsessToken
-            isRefreshing = false;
-            originalRequest._retry = false;
-
-            unautorizedQueue.forEach(callback => callback(newAccsessToken));
-            unautorizedQueue = [];
-            originalRequest.headers['authorization'] = `Bearer ${newAccsessToken}`;
-
-            return axiosInstance(originalRequest);
-          }catch(e){
-            console.log('Hay error actualizar'+e)
-            isRefreshing = false;
-            originalRequest._retry = false;
-            return Promise.reject(e);
-          }
-        }
-      return Promise.reject(e);
+const handleTokenRefresh = async (error) => {
+  const originalRequest = error.config;
+  
+  if (error.response?.status === 401 && !originalRequest._retry) {
+    if (isRefreshing) {
+      return new Promise((resolve) => {
+        subscribers.push(() => resolve(axiosInstance(originalRequest))); // manejar caso de que se realiza multiples request de refesh a la vez
+      });
     }
-  );
+
+    originalRequest._retry = true;
+    isRefreshing = true;
+
+    try {
+      const { data } = await axios.post('/api/auth/refresh-token', {}, {
+        withCredentials: true,
+        headers: {
+          'Cache-Control': 'no-cache' // para que no usa contenido de cache! Comprueba siempre si el contenido actualziado o no
+        }
+      });
+
+      const retryOriginal = await axiosInstance(originalRequest);
+      subscribers.forEach(cb => cb());
+      subscribers = [];
+      return retryOriginal;
+
+    } catch (refreshError) {
+      console.error('No se ha podido actualizar el accessToken', refreshError);
+      window.location.href = '/login'; // par que redirige a pagina de login
+      return Promise.reject(refreshError);
+    } finally {
+      isRefreshing = false;
+    }
+  }
+  return Promise.reject(error);
+};
+
+axiosInstance.interceptors.response.use(
+  response => response, // si no falla, devolvemos la respuesta
+  error => handleTokenRefresh(error)
+);
+
 export default axiosInstance;

@@ -23,6 +23,8 @@ const operatorSchema:Schema = new Schema({
         type: Number,
         default: OPERATOR
     },
+    // relacion one to many con el company, 
+    // el company puede tener varios operadores pero el operador solo 1 company
     company_id: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'Company', 
@@ -31,7 +33,7 @@ const operatorSchema:Schema = new Schema({
 
     },{timestamps: true});
 
-export interface IUser{
+export interface IOperator{
     _id?: ObjectId;
     firstname: string;
     lastname: string;
@@ -43,7 +45,7 @@ export interface IUser{
     updatedAt?: Date;
 }
 
-export interface IUserDocument extends Document{
+export interface IOperatorDocument extends Document{
     _id: ObjectId;
     firstname: string;
     lastname: string;

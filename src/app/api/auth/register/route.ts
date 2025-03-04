@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { message } from "util/message";
 import { isEmail, onlyLetters, onlyLastNames, passwordRestrict } from "util/patterns";
 import User, {IUserDocument} from "models/User";
+import CandidateProfile,{ICandidateProfileDocument} from "models/CandidateProfile";
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
@@ -72,6 +73,26 @@ export async function POST(request:NextRequest) {
         });
         await newUser.save();
 
+        // creo el perfil ya tambien para el usuario nuevo
+        console.log("El usuario creado :"+newUser._id)
+        const profile: ICandidateProfileDocument = new CandidateProfile({
+            user_id: newUser._id,
+            phone: "",
+            city: "",
+            photo: "",
+            disabilities: [],
+            state: "",
+            huntingJob: false,
+            desiredJob:[],
+            description: "",
+            studies:[],
+            workExperience:[],
+            skills:[],
+            languages:[],
+            certifications:[]
+        });
+        await profile.save();
+
         //Extraer el pwd de usuario y almacena en userPass(porq password esta utilizado como 
         // un constante ya), y asi, usamos restos datos para generar token. (Seguridad))
         const {password:userPass, ...rest} = newUser.toObject();
@@ -83,6 +104,7 @@ export async function POST(request:NextRequest) {
         // datas de response
         const response = NextResponse.json({
             newUser: rest,
+            profile: profile,
             sucess:message.sucess.UserCreated
         },{status:200})
 

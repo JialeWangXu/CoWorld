@@ -1,5 +1,5 @@
 import mongoose, {Schema, ObjectId, Document } from 'mongoose';
-import { CANDIDATE,COMPANY} from '../util/constants';
+import { COMPANY} from '../util/constants';
 
 const companySchema:Schema = new Schema({
     firstname:{

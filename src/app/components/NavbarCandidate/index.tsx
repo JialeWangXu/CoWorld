@@ -30,6 +30,18 @@ export function NavbarCandidate(){
             showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
         }
     }
+    const handleProfile = async () =>{
+        try{
+        console.log('ir profile-------------------------------------------------')
+        
+        const {data} =await axios.get(`/api/profile/get-profile`)
+        router.push('/home/profile')
+        console.log('fin '+data)
+        }catch(e){
+            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+        }
+    }
+    
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -50,8 +62,8 @@ export function NavbarCandidate(){
                     onClick={()=> handleActivePage('misEmpleos')}>Mis Empleos</a>
                     </li>
                     <li className="nav-item">
-                    <a className={`${styles.hov} nav-link ${activePage ==='perfil' ? styles.active : ''}`}  href="#"
-                    onClick={()=>{handleActivePage('perfil')}}>Perfil</a>
+                    <a className={`${styles.hov} nav-link ${activePage ==='perfil' ? styles.active : ''}`}  href="/home/profile"
+                    onClick={()=>{handleActivePage('perfil'), handleProfile()}}>Perfil</a>
                     </li>
                     <li className="nav-item">
                     <a className={`${styles.hov} nav-link ${activePage ==='ayuda' ? styles.active : ''}`} href="#"

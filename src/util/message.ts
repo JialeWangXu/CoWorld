@@ -27,6 +27,8 @@ export const message= {
         noToken:"No hay permiso para continuar el proceso, por favor, reinicie el proceso.",
         invalidToken:"El permiso de restablecer contraseña se ha expirado, por favor, reinicie el proceso.",
         notValidCif:"¡El C.I.F proporcionado no es válido!",
-        logOutError:"¡Ocurrido error en cerrar sesión!"
+        logOutError:"¡Ocurrido error en cerrar sesión!",
+        profileLoadError:"¡Ha ocurrido un error al cargar perfil del usuario!"
+
     }
 }
