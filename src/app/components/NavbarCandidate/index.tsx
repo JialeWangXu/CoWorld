@@ -5,15 +5,15 @@ import { ToastContext } from "app/context/ToastContext";
 import { useContext } from 'react';
 import axios from 'axios';
 import { useRouter } from "next/navigation";
+import { UserContext } from 'app/context/UserContext';
 
 export function NavbarCandidate(){
 
     const [activePage, setActivePage] = useState('');
+    const {waiting,user}=useContext(UserContext);
     const {showToast} = useContext(ToastContext);
     const router = useRouter();
 
-
-    
     const handleActivePage = (page:string) => {
         setActivePage(page);
     }
@@ -61,10 +61,10 @@ export function NavbarCandidate(){
                     <a className={`${styles.hov} nav-link ${activePage ==='misEmpleos' ? styles.active : ''}`} href="#"
                     onClick={()=> handleActivePage('misEmpleos')}>Mis Empleos</a>
                     </li>
-                    <li className="nav-item">
+                    { !waiting && user && (                    <li className="nav-item">
                     <a className={`${styles.hov} nav-link ${activePage ==='perfil' ? styles.active : ''}`}  href="/home/profile"
                     onClick={()=>{handleActivePage('perfil'), handleProfile()}}>Perfil</a>
-                    </li>
+                    </li>)}
                     <li className="nav-item">
                     <a className={`${styles.hov} nav-link ${activePage ==='ayuda' ? styles.active : ''}`} href="#"
                     onClick={()=>{handleActivePage('ayuda')}}>Ayuda</a>

@@ -17,7 +17,7 @@ export async function GET(request:NextRequest) {
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
             console.log("Access aprobado")
             console.log(data._id)
-            const profile = await CandidateProfile.findOne({user_id: data._id}).lean();
+            const profile = await CandidateProfile.findOne({user_id: data._id}).populate('user_id').lean();
 
             if(!profile){
                 return NextResponse.json({

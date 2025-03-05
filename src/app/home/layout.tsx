@@ -2,6 +2,8 @@ import React from 'react'
 import { Metadata } from 'next'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavbarCandidate } from 'app/components/NavbarCandidate';
+import { UserProvider } from 'app/context/UserContext';
+import AccessChecker from 'app/components/AccessChecker';
 
 
 export const meta: Metadata = {
@@ -15,9 +17,11 @@ interface HomeLayoutProps {
 
 export default function HomeLayout({ children }: HomeLayoutProps) {
     return (
-        <div>
-            <NavbarCandidate/>
-            {children}
-        </div>
+      <AccessChecker>
+        <UserProvider>
+              <NavbarCandidate/>
+              {children}
+        </UserProvider>
+      </AccessChecker>
     )
   }
