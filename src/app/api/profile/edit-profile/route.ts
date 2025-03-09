@@ -88,6 +88,25 @@ export async function POST(request:NextRequest) {
                 },{status:200})
             }
 
+            const {description} = body;
+            if(description){
+                const resul = await CandidateProfile.findOneAndUpdate(
+                    { user_id: data._id },
+                    {
+                        description: description
+                    },
+                    {new:true}
+                );
+                if(!resul){
+                    return NextResponse.json({
+                        error:message.error.profileEditError
+                    },{status:400})
+                }
+                return NextResponse.json({
+                    sucess:message.sucess.ProfileEdited
+                },{status:200})
+            }
+
             }catch(tokenError){
                 return NextResponse.json({
                     error:message.error.noToken,tokenError

@@ -7,6 +7,7 @@ import { DegreeSelect } from './components/DegreeSelect';
 import { StateSelect } from './components/StateSelect';
 import { Checkbox } from './components/Checkbox';
 import { TagInput } from './components/TagInput';
+import { TextAreas } from './components/TextAreas';
 import { SubmitButton } from './components/SubmitButton';
 import { FormContext,FormProperties } from '../../context/FormContext';
 
@@ -52,6 +53,7 @@ Form.DegreeSelect = DegreeSelect;
 Form.StateSelect = StateSelect;
 Form.Checkbox = Checkbox;
 Form.TagInput = TagInput;
+Form.TextAreas = TextAreas;
 Form.SubmitButton = SubmitButton;
 
 

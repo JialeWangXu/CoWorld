@@ -23,10 +23,10 @@ export default function profilePage(){
                 </div>
                 <div className="col-md-8 col-sm-12">
                     <h3 style={{fontWeight:'bold'}}>{user.firstname} {user.lastname}</h3>
-                    <h6>{dis.length>0 ? dis:''}</h6>
-                    <h6>{user.city ? user.city : ''}</h6>
-                    <h6>{user.phone ? user.phone : ''}</h6>
-                    <h6>{user.email}</h6>
+                    <h5>{dis.length>0 ? dis:''}</h5>
+                    <h5>{user.city ? user.city : ''}</h5>
+                    <h5>{user.phone ? user.phone : ''}</h5>
+                    <h5>{user.email}</h5>
                 </div>
                 <div className="col-md-2 col-sm-12" style={{display:"flex", flexDirection:'column',justifyContent:'end'}}>
                     <EditButton nextPath="/home/profile/edit-info"/>
@@ -37,7 +37,7 @@ export default function profilePage(){
                 <h2 style={{fontWeight:'bold'}}>Situación laboral y empleos previstos</h2>
                 <div className="row">
                     <div className="col-md-10 col-sm-12" >
-                        <ul style={{listStyle:'none'}}>
+                        <ul style={{listStyle:'none', paddingLeft:'0'}}>
                             <li style={{display:'flex', alignItems:"center", gap:'5px'}}><h4>Estado actual: </h4><h5 className={`${styles.stateDisplay}`}>{user.state || `Libre`}</h5></li>
                             <li style={{display:'flex', alignItems:"center", gap:'5px'}}><h4>Buscando trabjo: </h4><h5 className={`${styles.stateDisplay}`}>{user.huntingJob ? `Si`:`No`}</h5></li>
                             <li style={{display:'flex', alignItems:"center", gap:'8px'}}><h4>Trabajos que busco:</h4>{user.desiredJob.map(job => <h5 key={job} className={`${styles.jobDisplay}`}>{job}</h5>)}</li>
@@ -48,6 +48,20 @@ export default function profilePage(){
                     </div>
                 </div>
             </div>
+            <hr/>
+            <div>
+                <h2 style={{fontWeight:'bold'}}>Descripción personal</h2>
+                <div className="row">
+                    <div className="col-md-10 col-sm-12">
+                        {user.description? <p>{user.description}</p>:<p style={{color:'gray', fontSize:'1.2rem'}}>Cuéntenos algo sobre usted!:D </p>}
+                    </div>
+                    <div className="col-md-2 col-sm-12" style={{display:"flex", flexDirection:'column',justifyContent:'end'}}>
+                        <EditButton nextPath="/home/profile/edit-description"/>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            
         </div>
     );
 }
