@@ -10,7 +10,7 @@ import { UserContext } from 'app/context/UserContext';
 export function NavbarCandidate(){
 
     const [activePage, setActivePage] = useState('');
-    const {waiting,user}=useContext(UserContext);
+    const {waiting,user, getUser}=useContext(UserContext);
     const {showToast} = useContext(ToastContext);
     const router = useRouter();
 
@@ -33,10 +33,8 @@ export function NavbarCandidate(){
     const handleProfile = async () =>{
         try{
         console.log('ir profile-------------------------------------------------')
-        
-        const {data} =await axios.get(`/api/profile/get-profile`)
+        await getUser()
         router.push('/home/profile')
-        console.log('fin '+data)
         }catch(e){
             showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
         }
@@ -44,7 +42,7 @@ export function NavbarCandidate(){
     
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{marginBottom:'20px'}}>
             <div className="container-fluid">
                 <a className={`${styles.logo} navbar-brand logo`} href="/home"
                 onClick={() => handleActivePage('')}>CoWorld</a>

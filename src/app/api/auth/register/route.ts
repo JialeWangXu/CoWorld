@@ -6,6 +6,7 @@ import User, {IUserDocument} from "models/User";
 import CandidateProfile,{ICandidateProfileDocument} from "models/CandidateProfile";
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import { HABLAR,FISICA,MENTAL,AUDITIVA,INTELECTUAL,PLURIDISCAPACIDAD,VISUAL } from "util/constants";
 
 export async function POST(request:NextRequest) {
     try{
@@ -80,8 +81,15 @@ export async function POST(request:NextRequest) {
             phone: "",
             city: "",
             photo: "",
-            disabilities: [],
-            state: "",
+            disabilities: [
+                {type:FISICA, degree:-1},
+                {type:AUDITIVA,degree:-1},
+                {type:VISUAL,degree:-1},
+                {type:MENTAL,degree:-1},
+                {type:HABLAR,degree:-1},
+                {type:INTELECTUAL,degree:-1},
+                {type:PLURIDISCAPACIDAD,degree:-1}],
+            state: "Libre",
             huntingJob: false,
             desiredJob:[],
             description: "",

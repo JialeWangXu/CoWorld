@@ -1,8 +1,12 @@
 "use client";
 
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import { Input } from './components/Input';
 import { Links } from './components/Link';
+import { DegreeSelect } from './components/DegreeSelect';
+import { StateSelect } from './components/StateSelect';
+import { Checkbox } from './components/Checkbox';
+import { TagInput } from './components/TagInput';
 import { SubmitButton } from './components/SubmitButton';
 import { FormContext,FormProperties } from '../../context/FormContext';
 
@@ -12,11 +16,18 @@ import { FormContext,FormProperties } from '../../context/FormContext';
 interface FormProviderProps {
     children: React.ReactNode;
     title: string;
+    oldValues?:FormProperties;
     onSubmit: (formProperties: FormProperties) => void;
 }
 
-export function Form({children, title, onSubmit}: FormProviderProps) {
-    const [formProperties, setFormProperties] = useState<FormProperties>({})
+export function Form({children, title, onSubmit, oldValues={} }: FormProviderProps) {
+    //iniciamos oldValues con {} para caso de que no tiene valores viejos. 
+    const [formProperties, setFormProperties] = useState<FormProperties>(oldValues)
+
+    useEffect(()=>{
+        setFormProperties(oldValues);
+    },[oldValues])
+
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault(); // Evitar que el formulario se actualice
         onSubmit(formProperties); // Llamar a la función onSubmit con los datos del formulario
@@ -37,6 +48,10 @@ export function Form({children, title, onSubmit}: FormProviderProps) {
 // Exponer hijos:
 Form.Input = Input; 
 Form.Links = Links;
+Form.DegreeSelect = DegreeSelect;
+Form.StateSelect = StateSelect;
+Form.Checkbox = Checkbox;
+Form.TagInput = TagInput;
 Form.SubmitButton = SubmitButton;
 
 

@@ -8,7 +8,8 @@ export const message= {
         PwdChanged:"¡Su contraseña ha sido modificada correctamente!",
         TokenRefreshed:"El token se ha actualizado correctamente.",
         UserAuthorized:"User is authorized.",
-        UserLoggedOut:"¡Usuario cerrado sesión con éxito!"
+        UserLoggedOut:"¡Usuario cerrado sesión con éxito!",
+        ProfileEdited:"¡Perfil actualizado con éxito!"
     },
     error:{
         notFull:"Por favor, rellene todos los campos.",
@@ -28,7 +29,7 @@ export const message= {
         invalidToken:"El permiso de restablecer contraseña se ha expirado, por favor, reinicie el proceso.",
         notValidCif:"¡El C.I.F proporcionado no es válido!",
         logOutError:"¡Ocurrido error en cerrar sesión!",
-        profileLoadError:"¡Ha ocurrido un error al cargar perfil del usuario!"
-
+        profileLoadError:"¡Ha ocurrido un error al cargar perfil del usuario!",
+        profileEditError:"¡Ha ocurrido un error al editar perfil del usuario!"
     }
 }
