@@ -107,10 +107,84 @@ export async function POST(request:NextRequest) {
                 },{status:200})
             }
 
+            const {newStudy} = body;
+            if(newStudy){
+                const {iniDate, finDate, institution, specialty, title }=body;
+                var resul;
+                if(finDate !== undefined){
+                    resul = await CandidateProfile.findOneAndUpdate(
+                    { user_id: data._id },
+                    {
+                        $push: {studies: {iniDate:iniDate, 
+                            finDate:finDate,
+                            institution:institution, 
+                            specialty:specialty, 
+                            title:title}}
+                    },
+                        {new:true}
+                    );
+                }else{
+                    resul = await CandidateProfile.findOneAndUpdate(
+                        { user_id: data._id },
+                        {
+                            $push: {studies: {iniDate:iniDate, 
+                                institution:institution, 
+                                specialty:specialty, 
+                                title:title}}
+                        },
+                            {new:true}
+                        );
+                }
+                if(!resul){
+                    return NextResponse.json({
+                        error:message.error.profileEditError
+                    },{status:400})
+                }
+                return NextResponse.json({
+                    sucess:message.sucess.ProfileEdited
+                },{status:200})
+            }
+
+            const {modifyStudy} = body;
+            if(modifyStudy){
+                const {iniDate, finDate, institution, specialty, title, index }=body;
+                const profile = await CandidateProfile.findOne({user_id: data._id});
+                if(finDate !== undefined){
+                    profile.studies.set(index, {iniDate:iniDate, finDate:finDate, institution:institution, specialty:specialty, title:title} );
+                }else{
+                    profile.studies.set(index, {iniDate:iniDate, institution:institution, specialty:specialty, title:title} );
+                }
+                const resul = await profile.save();
+                if(!resul){
+                    return NextResponse.json({
+                        error:message.error.profileEditError
+                    },{status:400})
+                }
+                return NextResponse.json({
+                    sucess:message.sucess.ProfileEdited
+                },{status:200})
+            }
+
+            const {deleteStudy} = body;
+            if(deleteStudy){
+                console.log('Eliminar estudio!!!!!!!!!!!!!!!!!!!');
+                const profile = await CandidateProfile.findOne({user_id: data._id});
+                profile.studies.splice(body.index,1);
+                const resul = await profile.save();
+                if(!resul){
+                    return NextResponse.json({
+                        error:message.error.profileEditError
+                    },{status:400})
+                }
+                return NextResponse.json({
+                    sucess:message.sucess.ProfileEdited
+                },{status:200})
+            }
+
             }catch(tokenError){
                 return NextResponse.json({
                     error:message.error.noToken,tokenError
-                },{status:401})
+                },{status:400})
             }
 
     }catch(e){

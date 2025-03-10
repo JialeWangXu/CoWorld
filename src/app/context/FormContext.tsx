@@ -2,7 +2,20 @@ import {createContext} from 'react';
 
 // Uso contexto para compartir los datos del formulario entre componentes, evitar pasando props nivel por nivel
 
-export type formValues = | string | number | boolean | string[] | undefined| null;
+export type date = {
+    month: number;
+    year: number;
+}
+
+export type study ={
+    institution: string;
+    title: string;
+    specialty: string;
+    iniDate: date;
+    finDate?: date;
+}
+
+export type formValues = | string | number | boolean | string[] | undefined| null | study[] | date;
 
 
 export type FormProperties = Record<string, formValues>; 

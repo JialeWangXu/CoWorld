@@ -3,16 +3,19 @@ import { UserContext } from "app/context/UserContext";
 import { useContext } from "react";
 import { EditButton } from "app/components/PerfilComponents/EditButton";
 import styles from './styles.module.scss'
+import { useRouter } from "next/navigation";
 
 export default function profilePage(){
     const {user,getUser,waiting} = useContext(UserContext)
-    
+    const router = useRouter();
+
     if (waiting) {
         return <div>Cargando datos del usuario...</div>
     }
     if (!user) {
         return <div>No user</div> 
     }
+    
 
     const dis = user.disabilities.filter(({type,degree})=> degree>-1).map(({type,degree})=> `Discapacidad ${type}: Grado ${degree}`).join(" | ")
     return(
@@ -61,7 +64,35 @@ export default function profilePage(){
                 </div>
             </div>
             <hr/>
-            
+            <div>
+                <h2 style={{fontWeight:'bold'}}>Estudios</h2>
+                <div className="row">
+                    <div className="col-md-10 col-sm-12">
+                        <ul style={{listStyle:'none', paddingLeft:'0'}}>
+                            {user.studies.map((study, index)=>{
+                                return(
+                                    <li key={index} style={{display:'flex', alignItems:"left", flexDirection:'column', marginBottom:"10px"}}className={`${styles.studyCard} `}>
+                                        <h5 style={{fontWeight:"bold"}}>{study.institution}</h5>
+                                        <h6>{study.title}</h6>
+                                        <h6>{study.specialty}</h6>
+                                        <h6>{study.iniDate.month <10 ? `0${study.iniDate.month}` : study.iniDate.month }/{study.iniDate.year} - {study.finDate ? study.finDate.month<10 ? `0${study.finDate.month}/${study.finDate.year}`:`${study.finDate.month}/${study.finDate.year}` : "Current"}</h6>
+                                        <div>
+                                        <button type="button" className="btn btn-light" onClick={()=>{router.push(`/home/profile/edit-studies/${index}`)}}>Modificar</button>
+                                        </div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    <div className="col-md-2 col-sm-12" style={{display:"flex", flexDirection:'column',justifyContent:'end'}}>
+                        <div  style={{margin:'10px', textAlign:'center'}}>
+                            <button type="button" className="btn btn-success fw-bold fs-5 --bs-bg-opacity: .5" style={{width:'100px', height:'3rem'}} onClick={()=>{router.push(`/home/profile/edit-studies`)}}> Añadir </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div></div>
         </div>
     );
 }

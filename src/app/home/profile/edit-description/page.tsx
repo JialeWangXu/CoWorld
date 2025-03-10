@@ -9,7 +9,7 @@ import axiosInstance from "lib/axiosInterceptor";
 import { ToastContext } from "app/context/ToastContext";
 
 
-export default function editInfoPage(){
+export default function editDescriptionPage(){
     const {user, waiting, getUser} = useContext(UserContext);
     const [oldValues, setOldValues] = useState<FormProperties>({});
     const {isLoading,setIsLoading} = useSnipper();

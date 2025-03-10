@@ -11,7 +11,7 @@ import { ToastContext } from "app/context/ToastContext";
 import styles from './styles.module.scss'
 
 
-export default function editInfoPage(){
+export default function editStatePage(){
     const {user, waiting, getUser} = useContext(UserContext);
     const [oldValues, setOldValues] = useState<FormProperties>({});
     const {isLoading,setIsLoading} = useSnipper();

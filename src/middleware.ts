@@ -9,7 +9,7 @@ export async function middleware(request: NextRequest) {
 
   if (!accessToken && path.startsWith('/home')) { // sino, significa el usuario esta en la paginas relacionados con la autenticacion 
     const url = request.nextUrl.clone(); // hacer una copia del objeto Request actual para modificar el url a pagina de logear
-    url.pathname = '/login';
+    url.pathname = '/';
     return NextResponse.redirect(url);
   }
 

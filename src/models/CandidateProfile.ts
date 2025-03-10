@@ -22,7 +22,7 @@ const candidateProfileSchema:Schema = new Schema({
     disabilities: [
         {
             type:{type: String, required: true},
-            degree: {type: Number, min:1, max:5, required: true},
+            degree: {type: Number, min:-1, max:4, required: true},
         }
     ],
     // Situacion laboral 

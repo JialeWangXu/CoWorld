@@ -38,7 +38,7 @@ const handleTokenRefresh = async (error) => {
 
     } catch (refreshError) {
       console.error('No se ha podido actualizar el accessToken', refreshError);
-      window.location.href = '/login'; // par que redirige a pagina de login
+      window.location.href = '/'; // par que redirige a pagina de login
       return Promise.reject(refreshError);
     } finally {
       isRefreshing = false;
