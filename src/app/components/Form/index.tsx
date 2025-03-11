@@ -1,11 +1,12 @@
 "use client";
 
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useState} from 'react';
 import { Input } from './components/Input';
 import { Links } from './components/Link';
 import { DegreeSelect } from './components/DegreeSelect';
 import { TitleSelect } from './components/TitleSelect';
 import { StateSelect } from './components/StateSelect';
+import { ContractTypeSelect } from './components/ContractTypeSelect';
 import { DateInput } from './components/DateInput';
 import { Checkbox } from './components/Checkbox';
 import { TagInput } from './components/TagInput';
@@ -27,7 +28,6 @@ export function Form({children, title, onSubmit, oldValues={} }: FormProviderPro
     //iniciamos oldValues con {} para caso de que no tiene valores viejos. 
     const [formProperties, setFormProperties] = useState<FormProperties>(oldValues)
 
-    const previousOldValues = useRef(oldValues);
     useEffect(()=>{
         setFormProperties(oldValues);
     },[oldValues])
@@ -55,6 +55,7 @@ Form.Links = Links;
 Form.DegreeSelect = DegreeSelect;
 Form.TitleSelect = TitleSelect;
 Form.StateSelect = StateSelect;
+Form.ContractTypeSelect = ContractTypeSelect;
 Form.Checkbox = Checkbox;
 Form.TagInput = TagInput;
 Form.TextAreas = TextAreas;

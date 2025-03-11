@@ -25,6 +25,7 @@ export async function POST(request:NextRequest) {
             const body = await request.json();
             const {photo, firstname, lastname, fisica, auditiva, intelectual, hablar, pluridiscapacidad, visual, mental, city, phone } = body
 
+            // Section to edit personal information
             if(photo){
                 const resul = await CandidateProfile.findOneAndUpdate(
                     { user_id: data._id },
@@ -66,6 +67,7 @@ export async function POST(request:NextRequest) {
                 },{status:200})
             }
             
+            // Section to edit situacion laboral
             const {huntingJob, desiredJob, state} = body;
             if(huntingJob){
                 const resul = await CandidateProfile.findOneAndUpdate(
@@ -88,6 +90,7 @@ export async function POST(request:NextRequest) {
                 },{status:200})
             }
 
+            // Section to edit personal description
             const {description} = body;
             if(description){
                 const resul = await CandidateProfile.findOneAndUpdate(
@@ -107,6 +110,7 @@ export async function POST(request:NextRequest) {
                 },{status:200})
             }
 
+            // Section to add  new study
             const {newStudy} = body;
             if(newStudy){
                 const {iniDate, finDate, institution, specialty, title }=body;
@@ -145,6 +149,7 @@ export async function POST(request:NextRequest) {
                 },{status:200})
             }
 
+            // Section to modify study
             const {modifyStudy} = body;
             if(modifyStudy){
                 const {iniDate, finDate, institution, specialty, title, index }=body;
@@ -165,11 +170,91 @@ export async function POST(request:NextRequest) {
                 },{status:200})
             }
 
+            // Section to delete study
             const {deleteStudy} = body;
             if(deleteStudy){
-                console.log('Eliminar estudio!!!!!!!!!!!!!!!!!!!');
                 const profile = await CandidateProfile.findOne({user_id: data._id});
                 profile.studies.splice(body.index,1);
+                const resul = await profile.save();
+                if(!resul){
+                    return NextResponse.json({
+                        error:message.error.profileEditError
+                    },{status:400})
+                }
+                return NextResponse.json({
+                    sucess:message.sucess.ProfileEdited
+                },{status:200})
+            }
+
+            // Section to add new work experience
+            const {newWork} = body;
+            if(newWork){
+                const {iniDate, finDate, responsability, companyName, contractType }=body;
+                var resul;
+                if(finDate !== undefined){
+                    resul = await CandidateProfile.findOneAndUpdate(
+                    { user_id: data._id },
+                    {
+                        $push: {workExperience: {
+                            responsability:responsability, 
+                            companyName:companyName, 
+                            contractType:contractType,
+                            iniDate:iniDate, 
+                            finDate:finDate,
+                        }}
+                    },
+                        {new:true}
+                    );
+                }else{
+                    resul = await CandidateProfile.findOneAndUpdate(
+                        { user_id: data._id },
+                        {
+                            $push: {workExperience: {
+                                responsability:responsability, 
+                                companyName:companyName, 
+                                contractType:contractType,
+                                iniDate:iniDate, 
+}}
+                        },
+                            {new:true}
+                        );
+                }
+                if(!resul){
+                    return NextResponse.json({
+                        error:message.error.profileEditError
+                    },{status:400})
+                }
+                return NextResponse.json({
+                    sucess:message.sucess.ProfileEdited
+                },{status:200})
+            }
+
+            // Section to modify work experience
+            const {modifyWorkExp} = body;
+            if(modifyWorkExp){
+                const {iniDate, finDate, responsability, companyName, contractType,index }=body;
+                const profile = await CandidateProfile.findOne({user_id: data._id});
+                if(finDate !== undefined){
+                    profile.workExperience.set(index, { responsability:responsability, companyName:companyName, contractType:contractType, iniDate:iniDate, finDate:finDate} );
+                }else{
+                    profile.workExperience.set(index, {responsability:responsability, companyName:companyName, contractType:contractType, iniDate:iniDate} );
+                }
+                const resul = await profile.save();
+                if(!resul){
+                    return NextResponse.json({
+                        error:message.error.profileEditError
+                    },{status:400})
+                }
+                return NextResponse.json({
+                    sucess:message.sucess.ProfileEdited
+                },{status:200})
+            }
+
+            // Section to delete work experience
+            const {deleteWorkExp} = body;
+            if(deleteWorkExp){
+                const profile = await CandidateProfile.findOne({user_id: data._id});
+                profile.workExperience.splice(body.index,1);
                 const resul = await profile.save();
                 if(!resul){
                     return NextResponse.json({
@@ -184,7 +269,7 @@ export async function POST(request:NextRequest) {
             }catch(tokenError){
                 return NextResponse.json({
                     error:message.error.noToken,tokenError
-                },{status:400})
+                },{status:401})
             }
 
     }catch(e){

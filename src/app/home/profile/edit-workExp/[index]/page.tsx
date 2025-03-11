@@ -1,7 +1,7 @@
 'use client'
 import { Form } from "app/components/Form";
 import { useContext, useEffect, useState } from "react";
-import { FormProperties, study } from "app/context/FormContext";
+import { FormProperties, study, workExperience } from "app/context/FormContext";
 import { UserContext } from "app/context/UserContext";
 import { useSnipper } from "app/hooks/useSnipper";
 import { useRouter } from "next/navigation";
@@ -11,12 +11,12 @@ import { useParams } from 'next/navigation';
 
 
 
-export default function editStudyPage(){
+export default function editWorkExpPage(){
     const {user, waiting, getUser} = useContext(UserContext);
     const [oldValues, setOldValues] = useState<FormProperties>({});
     const {isLoading,setIsLoading} = useSnipper();
     const {showToast} = useContext(ToastContext);
-    const [cursando, setCursando] = useState(false);
+    const [trabajando, setTrabajando] = useState(false);
     const router = useRouter()
     const [error, setError] = useState('')
     const params = useParams<{ index: string}>()
@@ -28,16 +28,16 @@ export default function editStudyPage(){
             return
         }
         if (!waiting && user) {
-            const study = user.studies[parseInt(params.index)];
-            const initialValues:study = {
-                institution: study.institution,
-                title: study.title,
-                specialty: study.specialty,
-                iniDate: study.iniDate,
-                finDate: study.finDate,
+            const work = user.workExperience[parseInt(params.index)];
+            const initialValues:workExperience = {
+                responsability: work.responsability,
+                companyName: work.companyName,
+                contractType: work.contractType,
+                iniDate:work.iniDate,
+                finDate:work.finDate
             }
             setOldValues(initialValues)
-            setCursando(!study.finDate)
+            setTrabajando(!work.finDate)
         }
         
     }
@@ -49,10 +49,13 @@ export default function editStudyPage(){
 
 
     const update = async (data:any)=>{
-        console.log('Aniadir 1 estudio personal')
+        console.log('Modificar 1 experiencia laboral')
+
+
 
         const {finDate, iniDate, ...rest} = data
-        if(!cursando){
+        console.log(finDate)
+        if(!trabajando){
             if(finDate===undefined ){
                 setError('Fecha de fin no puede ser nula')
                 return
@@ -65,12 +68,12 @@ export default function editStudyPage(){
         setError('')
 
         var finalData = data;
-        if(cursando){
+        if(trabajando){
             finalData = {...rest, iniDate}
         }
         setIsLoading(true)        
         try{
-           const response = await axiosInstance.post(`/profile/edit-profile`,{...finalData, modifyStudy:true, index:params.index},{
+           const response = await axiosInstance.post(`/profile/edit-profile`,{...finalData, modifyWorkExp:true, index:params.index},{
                 withCredentials:true
            })
            showToast({msg:response.data.sucess, type:'Good',visible:true})
@@ -82,12 +85,12 @@ export default function editStudyPage(){
         }
     }
 
-    const deleteStudy = async ()=>{
-        console.log('Eliminar estudio');
+    const deleteWorkExp = async ()=>{
+        console.log('Eliminar experiencia laboral');
         setIsLoading(true);
         setDeleted(true)
         try{
-            const response = await axiosInstance.post(`/profile/edit-profile`,{index:params.index, deleteStudy:true},{
+            const response = await axiosInstance.post(`/profile/edit-profile`,{index:params.index, deleteWorkExp:true},{
                 withCredentials:true
             })
             showToast({msg:response.data.sucess, type:'Good',visible:true})
@@ -101,38 +104,38 @@ export default function editStudyPage(){
 
     return (
         <div className="container-fluid" style={{ height:'100%', flexDirection:'column', display:'flex', justifyContent:'center', alignItems:'center' }}>         
-            <Form title="Modificar un estudio" onSubmit={update} oldValues={oldValues}>
+            <Form title="Modificar una experiencia laboral" onSubmit={update} oldValues={oldValues}>
                 <div className="row" style={{marginBottom:'20px'}}>
-                    <Form.Input 
-                        id="institution" 
-                        htmlfor="institution" 
-                        label="Centro de estudios" 
+                <Form.Input 
+                        id="responsability" 
+                        htmlfor="responsability" 
+                        label="Nombre del puesto" 
                         type="text" 
                         className='col-sm-12' 
                         required={true}
                         validationClass='invalid-feedback'
-                        validationMsg='Nombre es necesario!'/>
+                        validationMsg='Nombre del puesto es necesario!'/>
                 </div> 
                 <div className="row" style={{marginBottom:'20px'}}>
-                    <Form.TitleSelect 
-                        id="title" 
-                        htmlfor="title" 
-                        label="Título" 
+                    <Form.Input 
+                        id="companyName"
+                        htmlfor="companyName" 
+                        label="Nombre de la empresa" 
+                        type="text" 
+                        className='col-sm-12' 
+                        required={true}
+                        validationClass='invalid-feedback'
+                        validationMsg='Nombre de la empresa es necesario!'/>
+                </div>
+                <div className="row" style={{marginBottom:'20px'}}>
+                    <Form.ContractTypeSelect
+                        id="contractType" 
+                        htmlfor="contractType"
+                        label="Tipo de contrato: " 
                         className='col-sm-12' />
                 </div> 
-                <div className="row" style={{marginBottom:'20px'}}>
-                    <Form.Input 
-                        id="specialty"
-                        htmlfor="specialty" 
-                        label="Especialidad" 
-                        type="text" 
-                        className='col-sm-12' 
-                        required={true}
-                        validationClass='invalid-feedback'
-                        validationMsg='Especialidad es necesario!'/>
-                </div>
                 <div className="row" style={{marginBottom:'20px', display: 'flex', alignItems: 'center', gap: '8px'}}> 
-                    <label>Cursando actualmente <input type="checkbox" checked={!!cursando} onChange={(event: React.ChangeEvent<HTMLInputElement>)=>{setCursando(event.target.checked? true:false)}}></input></label>
+                    <label>Trabajando actualmente: <input type="checkbox" checked={!!trabajando} onChange={(event: React.ChangeEvent<HTMLInputElement>)=>{setTrabajando(event.target.checked? true:false)}}></input></label>
                 </div>
                 <div className="row" style={{marginBottom:'20px'}}> 
                     <Form.DateInput 
@@ -140,7 +143,7 @@ export default function editStudyPage(){
                         label="Fecha de inicio" 
                         type="number" 
                         className='input-group col-sm-4' />
-                    { cursando ? null :   
+                    { trabajando ? null :   
                     <Form.DateInput 
                         id="finDate" 
                         label="Fecha Fin" 
@@ -171,12 +174,11 @@ export default function editStudyPage(){
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="button" className="btn btn-danger" data-bs-dismiss="modal" onClick={deleteStudy}>Eliminar</button>
+                                <button type="button" className="btn btn-danger" data-bs-dismiss="modal" onClick={deleteWorkExp}>Eliminar</button>
                             </div>
                             </div>
                         </div>
                         </div>
-                    
                     <Form.Links href="/home/profile" text="" linkText='Volver'/>
                 </div>   
             </Form>

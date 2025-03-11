@@ -15,8 +15,15 @@ export type study ={
     finDate?: date;
 }
 
-export type formValues = | string | number | boolean | string[] | undefined| null | study[] | date;
+export type workExperience ={
+    responsability: string;
+    companyName: string;
+    contractType: string;
+    iniDate: date;
+    finDate?: date;
+}
 
+export type formValues = | string | number | boolean | string[] | undefined| null | study[] | date | workExperience[]; 
 
 export type FormProperties = Record<string, formValues>; 
 // Para definir el tipo de datos del formulario, restringimos a string tanto key como value, lo que compartimos entre componentes

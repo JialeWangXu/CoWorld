@@ -1,28 +1,28 @@
 'use client'
 import { Form } from "app/components/Form";
 import { useContext, useEffect, useState } from "react";
-import { FormProperties, study } from "app/context/FormContext";
+import { FormProperties, workExperience } from "app/context/FormContext";
 import { UserContext } from "app/context/UserContext";
 import { useSnipper } from "app/hooks/useSnipper";
 import { useRouter } from "next/navigation";
 import axiosInstance from "lib/axiosInterceptor";
 import { ToastContext } from "app/context/ToastContext";
 
-export default function addStudyPage(){
+export default function addWorkExpPage(){
     const {user, waiting, getUser} = useContext(UserContext);
     const [oldValues, setOldValues] = useState<FormProperties>({});
     const {isLoading,setIsLoading} = useSnipper();
     const {showToast} = useContext(ToastContext);
-    const [cursando, setCursando] = useState(false);
+    const [trabajando, setTrabajando] = useState(false);
     const router = useRouter()
     const [error, setError] = useState('')
     
     useEffect(() => {
         if (!waiting && user) {
-            const initialValues:study = {
-                institution: '',
-                title: '',
-                specialty: '',
+            const initialValues:workExperience = {
+                responsability: '',
+                companyName: '',
+                contractType: '',
                 iniDate:{
                     month: 0,
                     year: 0
@@ -40,10 +40,10 @@ export default function addStudyPage(){
 
 
     const add = async (data:any)=>{
-        console.log('Aniadir 1 estudio personal')
+        console.log('Aniadir 1 experiencia laboral')
 
         const {finDate, iniDate, ...rest} = data
-        if(!cursando){
+        if(!trabajando){
             if(finDate===undefined ){
                 setError('Fecha de fin no puede ser nula')
                 return
@@ -56,12 +56,12 @@ export default function addStudyPage(){
         setError('')
 
         var finalData = data;
-        if(cursando){
+        if(trabajando){
             finalData = {...rest, iniDate}
         }
         setIsLoading(true)        
         try{
-           const response = await axiosInstance.post(`/profile/edit-profile`,{...finalData, newStudy:true},{
+           const response = await axiosInstance.post(`/profile/edit-profile`,{...finalData, newWork:true},{
                 withCredentials:true
            })
            showToast({msg:response.data.sucess, type:'Good',visible:true})
@@ -75,38 +75,38 @@ export default function addStudyPage(){
 
     return (
         <div className="container-fluid" style={{ height:'100%', flexDirection:'column', display:'flex', justifyContent:'center', alignItems:'center' }}>         
-            <Form title="Añadir un estudio" onSubmit={add} oldValues={oldValues}>
+            <Form title="Añadir una experiencia laboral" onSubmit={add} oldValues={oldValues}>
                 <div className="row" style={{marginBottom:'20px'}}>
                     <Form.Input 
-                        id="institution" 
-                        htmlfor="institution" 
-                        label="Centro de estudios" 
+                        id="responsability" 
+                        htmlfor="responsability" 
+                        label="Nombre del puesto" 
                         type="text" 
                         className='col-sm-12' 
                         required={true}
                         validationClass='invalid-feedback'
-                        validationMsg='Nombre es necesario!'/>
+                        validationMsg='Nombre del puesto es necesario!'/>
                 </div> 
                 <div className="row" style={{marginBottom:'20px'}}>
-                    <Form.TitleSelect 
-                        id="title" 
-                        htmlfor="title" 
-                        label="Título" 
+                    <Form.Input 
+                        id="companyName"
+                        htmlfor="companyName" 
+                        label="Nombre de la empresa" 
+                        type="text" 
+                        className='col-sm-12' 
+                        required={true}
+                        validationClass='invalid-feedback'
+                        validationMsg='Nombre de la empresa es necesario!'/>
+                </div>
+                <div className="row" style={{marginBottom:'20px'}}>
+                    <Form.ContractTypeSelect
+                        id="contractType" 
+                        htmlfor="contractType"
+                        label="Tipo de contrato: " 
                         className='col-sm-12' />
                 </div> 
-                <div className="row" style={{marginBottom:'20px'}}>
-                    <Form.Input 
-                        id="specialty"
-                        htmlfor="specialty" 
-                        label="Especialidad" 
-                        type="text" 
-                        className='col-sm-12' 
-                        required={true}
-                        validationClass='invalid-feedback'
-                        validationMsg='Especialidad es necesario!'/>
-                </div>
                 <div className="row" style={{marginBottom:'20px', display: 'flex', alignItems: 'center', gap: '8px'}}> 
-                    <label>Cursando actualmente <input type="checkbox" checked={!!cursando} onChange={(event: React.ChangeEvent<HTMLInputElement>)=>{setCursando(event.target.checked? true:false)}}></input></label>
+                    <label>Trabajando actualmente: <input type="checkbox" checked={!!trabajando} onChange={(event: React.ChangeEvent<HTMLInputElement>)=>{setTrabajando(event.target.checked? true:false)}}></input></label>
                 </div>
                 <div className="row" style={{marginBottom:'20px'}}> 
                     <Form.DateInput 
@@ -114,7 +114,7 @@ export default function addStudyPage(){
                         label="Fecha de inicio" 
                         type="number" 
                         className='input-group col-sm-4' />
-                    { cursando ? null :   
+                    { trabajando ? null :   
                     <Form.DateInput 
                         id="finDate" 
                         label="Fecha Fin" 

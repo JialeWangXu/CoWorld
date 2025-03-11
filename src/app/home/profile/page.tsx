@@ -92,7 +92,33 @@ export default function profilePage(){
                 </div>
             </div>
             <hr/>
-            <div></div>
+            <div>
+                <h2 style={{fontWeight:'bold'}}>Experiencia Laboral</h2>
+                <div className="row">
+                    <div className="col-md-10 col-sm-12">
+                        <ul style={{listStyle:'none', paddingLeft:'0'}}>
+                            {user.workExperience.map((work, index)=>{
+                                return(
+                                    <li key={index} style={{display:'flex', alignItems:"left", flexDirection:'column', marginBottom:"10px"}}className={`${styles.workExpCard} `}>
+                                        <h5 style={{fontWeight:"bold"}}>{work.responsability}</h5>
+                                        <h6>{work.companyName}</h6>
+                                        {work.contractType&&<h6>{work.contractType}</h6>}
+                                        <h6>{work.iniDate.month <10 ? `0${work.iniDate.month}` : work.iniDate.month }/{work.iniDate.year} - {work.finDate ? work.finDate.month<10 ? `0${work.finDate.month}/${work.finDate.year}`:`${work.finDate.month}/${work.finDate.year}` : "Current"}</h6>
+                                        <div>
+                                        <button type="button" className="btn btn-light" onClick={()=>{router.push(`/home/profile/edit-workExp/${index}`)}}> Modificar </button>
+                                        </div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    <div className="col-md-2 col-sm-12" style={{display:"flex", flexDirection:'column',justifyContent:'end'}}>
+                        <div  style={{margin:'10px', textAlign:'center'}}>
+                            <button type="button" className="btn btn-success fw-bold fs-5 --bs-bg-opacity: .5" style={{width:'100px', height:'3rem'}} onClick={()=>{router.push(`/home/profile/edit-workExp`)}}> Añadir </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
