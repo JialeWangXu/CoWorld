@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { EditButton } from "app/components/PerfilComponents/EditButton";
 import styles from './styles.module.scss'
 import { useRouter } from "next/navigation";
+import { Form } from "app/components/Form";
+import { wrap } from "module";
 
 export default function profilePage(){
     const {user,getUser,waiting} = useContext(UserContext)
@@ -115,6 +117,76 @@ export default function profilePage(){
                     <div className="col-md-2 col-sm-12" style={{display:"flex", flexDirection:'column',justifyContent:'end'}}>
                         <div  style={{margin:'10px', textAlign:'center'}}>
                             <button type="button" className="btn btn-success fw-bold fs-5 --bs-bg-opacity: .5" style={{width:'100px', height:'3rem'}} onClick={()=>{router.push(`/home/profile/edit-workExp`)}}> Añadir </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div>
+                <h2 style={{fontWeight:'bold'}}>Habilidades</h2>
+                <div className="row">
+                    <div className="col-md-10 col-sm-12">
+                        <ul style={{listStyle:'none', paddingLeft:'0', flexWrap:"wrap",display:'flex', alignItems:"center", gap:'10px', marginBottom:0}}>
+                            {user.skills.map((skill, index)=>{
+                                return(
+                                    <li key={index} style={{display:'flex', alignItems:"left", flexDirection:'column', marginBottom:"10px"}}className={`${styles.skillCard} `}>
+                                        <h5 style={{fontWeight:"bold", marginBottom:0}}>{skill}</h5>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    <div className="col-md-2 col-sm-12" style={{display:"flex", flexDirection:'column',justifyContent:'end'}}>
+                        <EditButton nextPath="/home/profile/edit-skills"/>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div>
+                <h2 style={{fontWeight:'bold'}}>Licencias y certificaciones</h2>
+                <div className="row">
+                    <div className="col-md-10 col-sm-12">
+                        <ul style={{listStyle:'none', paddingLeft:'0'}}>
+                            {user.certifications.map((certification, index)=>{
+                                return(
+                                    <li key={index} style={{display:'flex', alignItems:"left", flexDirection:'column', marginBottom:"10px"}}className={`${styles.certificationCard} `}>
+                                        <h5 style={{fontWeight:"550"}}>{certification.title} </h5> <h6 style={{fontWeight:"400", color:"#9e9e9e"}}>{certification.emitter}</h6>
+                                        <div>
+                                        <button type="button" className="btn btn-light" onClick={()=>{router.push(`/home/profile/edit-certifications/${index}`)}}> Modificar </button>
+                                        </div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    <div className="col-md-2 col-sm-12" style={{display:"flex", flexDirection:'column',justifyContent:'end'}}>
+                        <div  style={{margin:'10px', textAlign:'center'}}>
+                            <button type="button" className="btn btn-success fw-bold fs-5 --bs-bg-opacity: .5" style={{width:'100px', height:'3rem'}} onClick={()=>{router.push(`/home/profile/edit-certifications`)}}> Añadir </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div>
+                <h2 style={{fontWeight:'bold'}}>Idiomas</h2>
+                <div className="row">
+                    <div className="col-md-10 col-sm-12">
+                        <ul style={{listStyle:'none', paddingLeft:'0'}}>
+                            {user.languages.map((language, index)=>{
+                                return(
+                                    <li key={index} style={{display:'flex', alignItems:"left", flexDirection:'column', marginBottom:"10px"}}className={`${styles.languageCard} `}>
+                                        <h5 style={{fontWeight:"550"}}>{language.language} </h5> <h6 style={{fontWeight:"400", color:"#9e9e9e"}}>{language.level}</h6>
+                                        <div>
+                                        <button type="button" className="btn btn-light" onClick={()=>{router.push(`/home/profile/edit-languages/${index}`)}}> Modificar </button>
+                                        </div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                    <div className="col-md-2 col-sm-12" style={{display:"flex", flexDirection:'column',justifyContent:'end'}}>
+                        <div  style={{margin:'10px', textAlign:'center'}}>
+                            <button type="button" className="btn btn-success fw-bold fs-5 --bs-bg-opacity: .5" style={{width:'100px', height:'3rem'}} onClick={()=>{router.push(`/home/profile/edit-languages`)}}> Añadir </button>
                         </div>
                     </div>
                 </div>

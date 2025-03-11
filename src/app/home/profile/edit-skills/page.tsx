@@ -6,9 +6,8 @@ import { UserContext } from "app/context/UserContext";
 import { useSnipper } from "app/hooks/useSnipper";
 import { useRouter } from "next/navigation";
 import axiosInstance from "lib/axiosInterceptor";
-import { HABLAR,FISICA,MENTAL,AUDITIVA,INTELECTUAL,PLURIDISCAPACIDAD,VISUAL } from "util/constants";
 import { ToastContext } from "app/context/ToastContext";
-import styles from './styles.module.scss'
+
 
 
 export default function editStatePage(){
@@ -20,11 +19,8 @@ export default function editStatePage(){
     useEffect(() => {
         if (!waiting && user) {
             const initialValues = {
-                state: user.state,
-                huntingJob: user.huntingJob,
-                desiredJob: user.desiredJob
+                skills: user.skills
             }
-            console.log(initialValues)
             setOldValues(initialValues)
         }
     }, [waiting, user])
@@ -34,7 +30,7 @@ export default function editStatePage(){
     }
 
     const edit = async (data:any)=>{
-        console.log('Editar estado laboral')
+        console.log('Editar habilidades')
         setIsLoading(true)
         try{
            const response = await axiosInstance.post(`/profile/edit-profile`,data,{
@@ -51,32 +47,19 @@ export default function editStatePage(){
 
     return (
         <div className="container-fluid" style={{ height:'100%', flexDirection:'column', display:'flex', justifyContent:'center', alignItems:'center' }}>         
-            <Form title="Editar Situación laboral y empleos previstos" onSubmit={edit} oldValues={oldValues}>
-            <div className="row" style={{marginBottom:'20px'}}> 
-                    <Form.StateSelect
-                        id="state"
-                        htmlfor="state"
-                        label="Estado actual: "
-                        className='col-sm-12'
-                    />
-                </div>
-                <div className="row" style={{marginBottom:'20px'}}>
-                    <Form.Checkbox 
-                        id="huntingJob" 
-                        htmlfor="huntingJob" 
-                        label="Buscando trabajo: " 
-                     />
-                </div> 
+            <Form title="Editar aptitud y conocimientos" onSubmit={edit} oldValues={oldValues}>
                 <div className="row" style={{marginBottom:'30px'}}>
+                    <div className="col"/>
                     <Form.TagInput 
-                        id="desiredJob"
-                        htmlfor="desiredJob" 
-                        label="Puestos de trabajo que busco:" 
-                        placeholder="Escribe un puesto de trabajo"
-                        maxTag={5}
-                        unit="trabajos"
-                        warning="Has alcanzado el límite de trabajos, elimina uno para añadir otro."
-                        className='col-md-6' />
+                        id="skills"
+                        htmlfor="skills" 
+                        label="Nombre de la habilidad: " 
+                        placeholder="Ej: Microsoft Excel, Java, atención al cliente, etc."
+                        maxTag={40 }
+                        unit="habilidades"
+                        warning="Has alcanzado el límite de habilidades, elimina uno para añadir otro."
+                        className='col-md-8' />
+                    <div className="col"/>
                 </div> 
                 <div className='text-center'>
                     <Form.SubmitButton text="Guardar" loading={isLoading}/>

@@ -266,6 +266,139 @@ export async function POST(request:NextRequest) {
                 },{status:200})
             }
 
+            // Section to edit skills
+            const {skills} = body;
+            if(skills){
+                const resul = await CandidateProfile.findOneAndUpdate(
+                    { user_id: data._id },
+                    {
+                        skills: skills
+                    },
+                    {new:true}
+                );
+                if(!resul){
+                    return NextResponse.json({
+                        error:message.error.profileEditError
+                    },{status:400})
+                }
+
+                return NextResponse.json({
+                    sucess:message.sucess.ProfileEdited
+                },{status:200})
+            }
+
+            // Section to add new certification
+            const {newCertification} = body;
+            if(newCertification){
+                const { title, emitter}=body;
+                const resul = await CandidateProfile.findOneAndUpdate(
+                    { user_id: data._id },
+                    {
+                        $push: {certifications: {
+                            title:title, 
+                            emitter:emitter}}
+                    },
+                        {new:true}
+                );
+                if(!resul){
+                    return NextResponse.json({
+                        error:message.error.profileEditError
+                    },{status:400})
+                }
+                return NextResponse.json({
+                    sucess:message.sucess.ProfileEdited
+                },{status:200})
+            }
+
+            // Section to modify certication
+            const {modifyCertification} = body;
+            if(modifyCertification){
+            const {title, emitter,index }=body;
+            const profile = await CandidateProfile.findOne({user_id: data._id});
+            profile.certifications.set(index, { title:title, emitter:emitter} );
+            const resul = await profile.save();
+            if(!resul){
+                return NextResponse.json({
+                error:message.error.profileEditError
+                },{status:400})
+            }
+            return NextResponse.json({
+                sucess:message.sucess.ProfileEdited
+                },{status:200})
+            }
+
+            // Section to delete certification
+            const {deleteCertification} = body;
+            if(deleteCertification){
+                const profile = await CandidateProfile.findOne({user_id: data._id});
+                profile.certifications.splice(body.index,1);
+                const resul = await profile.save();
+                if(!resul){
+                    return NextResponse.json({
+                        error:message.error.profileEditError
+                    },{status:400})
+                    }
+                    return NextResponse.json({
+                        sucess:message.sucess.ProfileEdited
+                    },{status:200})
+            }
+
+            // Section to add language
+            const {newLanguage} = body;
+            if(newLanguage){
+                const { language, level}=body;
+                const resul = await CandidateProfile.findOneAndUpdate(
+                    { user_id: data._id },
+                    {
+                        $push: {languages: {
+                            language:language, 
+                            level:level}}
+                    },
+                        {new:true}
+                );
+                if(!resul){
+                    return NextResponse.json({
+                        error:message.error.profileEditError
+                    },{status:400})
+                }
+                return NextResponse.json({
+                    sucess:message.sucess.ProfileEdited
+                },{status:200})
+            } 
+            
+            // Section to modify certication
+            const {modifyLanguage} = body;
+            if(modifyLanguage){
+            const {language, level,index }=body;
+            const profile = await CandidateProfile.findOne({user_id: data._id});
+            profile.languages.set(index, { language:language, level:level} );
+            const resul = await profile.save();
+            if(!resul){
+                return NextResponse.json({
+                error:message.error.profileEditError
+                },{status:400})
+            }
+            return NextResponse.json({
+                sucess:message.sucess.ProfileEdited
+                },{status:200})
+            }
+
+            // Section to delete language
+            const {deleteLanguage} = body;
+            if(deleteLanguage){
+                const profile = await CandidateProfile.findOne({user_id: data._id});
+                profile.languages.splice(body.index,1);
+                const resul = await profile.save();
+                if(!resul){
+                    return NextResponse.json({
+                        error:message.error.profileEditError
+                    },{status:400})
+                    }
+                    return NextResponse.json({
+                        sucess:message.sucess.ProfileEdited
+                    },{status:200})
+            }
+
             }catch(tokenError){
                 return NextResponse.json({
                     error:message.error.noToken,tokenError

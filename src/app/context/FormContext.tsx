@@ -23,7 +23,19 @@ export type workExperience ={
     finDate?: date;
 }
 
-export type formValues = | string | number | boolean | string[] | undefined| null | study[] | date | workExperience[]; 
+export type certification ={
+    title: string;
+    emitter: string;
+}
+
+export type language ={
+    language: string;
+    level: string;
+}
+
+export type formValues = | string | number | boolean | string[] | undefined| null | study[] | date | workExperience[]| certification[]|language[]; 
+// Para definir el tipo de datos del formulario, restringimos a string tanto key como value, lo que compartimos entre componentes
+
 
 export type FormProperties = Record<string, formValues>; 
 // Para definir el tipo de datos del formulario, restringimos a string tanto key como value, lo que compartimos entre componentes
