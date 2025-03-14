@@ -4,8 +4,6 @@ import { useContext } from "react";
 import { EditButton } from "app/components/PerfilComponents/EditButton";
 import styles from './styles.module.scss'
 import { useRouter } from "next/navigation";
-import { Form } from "app/components/Form";
-import { wrap } from "module";
 
 export default function profilePage(){
     const {user,getUser,waiting} = useContext(UserContext)

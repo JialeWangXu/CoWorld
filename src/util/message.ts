@@ -30,6 +30,7 @@ export const message= {
         notValidCif:"¡El C.I.F proporcionado no es válido!",
         logOutError:"¡Ocurrido error en cerrar sesión!",
         profileLoadError:"¡Ha ocurrido un error al cargar perfil del usuario!",
-        profileEditError:"¡Ha ocurrido un error al editar perfil del usuario!"
+        profileEditError:"¡Ha ocurrido un error al editar perfil del usuario!",
+        companyProfileEditError:"¡Ha ocurrido un error al editar perfil de la empresa!"
     }
 }

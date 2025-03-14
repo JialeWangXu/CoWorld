@@ -62,7 +62,8 @@ export const UserProvider=({children}:userProviderProps)=>{
         console.log("cargando contenido de usuario")
         getUser()
         console.log("Terminod e cargar")
-    },[]) // sospecho que tengo que poner dependencia para que se hace fetch cada vez actualiza. 
+    },[]) //No ponemos dependencia de actualizacion en aqui es porqu sino se causa un bulce infinito de actualizacionnes.
+          //Por eso actualizamos manualmente cada vez hay cambio en el profile, haciendo getUser(). 
 
     return(
         <UserContext.Provider value={{user,waiting,getUser}}>
