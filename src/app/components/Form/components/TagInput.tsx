@@ -23,6 +23,7 @@ export function TagInput({id, htmlfor: htmlFor, label, placeholder, className, m
 
     const [tag, setTag] = useState<string[]>(initialTags);
     const [job, setJob] = useState<string>("");
+    const [error, setError] = useState("");
 
     useEffect(() => {
         setTag(initialTags);
@@ -33,9 +34,18 @@ export function TagInput({id, htmlfor: htmlFor, label, placeholder, className, m
     }, [tag]);
     
     const handleAddJob = () => {
+        if(job===""){
+            setError("No se puede añadir contenido vacio!")
+            return
+        }
+        if(tag.includes(job.trim())){
+            setError("Contenido repetido!")
+            return            
+        }
         if(tag.length < maxTag && !tag.includes(job.trim())){
             setTag([...tag, job.trim()]);
             setJob("");
+            setError("")
         }           
     }
 
@@ -58,6 +68,7 @@ export function TagInput({id, htmlfor: htmlFor, label, placeholder, className, m
                 </div>
               </div>}
             </div>
+            {error && <span style={{ color: "red" }}>{error}</span>}
             <div className="d-flex flex-wrap">
                 {tag.map((job, index) => (
                     <div key={index} className="badge bg-primary rounded-pill m-1" style={{fontSize: '1rem'}}>

@@ -9,7 +9,9 @@ export const message= {
         TokenRefreshed:"El token se ha actualizado correctamente.",
         UserAuthorized:"User is authorized.",
         UserLoggedOut:"¡Usuario cerrado sesión con éxito!",
-        ProfileEdited:"¡Perfil actualizado con éxito!"
+        ProfileEdited:"¡Perfil actualizado con éxito!",
+        JobPublicated:"¡Oferta de trabajo publicada con éxito!",
+        JobEdited:"¡Oferta de trabajo editado con éxito!",
     },
     error:{
         notFull:"Por favor, rellene todos los campos.",
@@ -31,6 +33,10 @@ export const message= {
         logOutError:"¡Ocurrido error en cerrar sesión!",
         profileLoadError:"¡Ha ocurrido un error al cargar perfil del usuario!",
         profileEditError:"¡Ha ocurrido un error al editar perfil del usuario!",
-        companyProfileEditError:"¡Ha ocurrido un error al editar perfil de la empresa!"
+        jobEditError:"¡Ha ocurrido un error la oferta del trabajo!",
+        companyProfileEditError:"¡Ha ocurrido un error al editar perfil de la empresa!",
+        jobsLoadError:"¡Ha ocurrido un error al cargar las ofertas de trabajo de la empresa!",
+        jobPublicateError:"¡Ha ocurrido un error al publicar la oferta del trabajo!",
+        jobLoadError:"¡Ha ocurrido un error al cargar la oferta del trabajo!"
     }
 }

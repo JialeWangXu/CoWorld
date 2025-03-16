@@ -2,6 +2,7 @@
 import React, { createContext, useState, useEffect } from "react"
 import { ICompanyProfile } from "models/CompanyProfile"
 import axiosInstance from "lib/axiosInterceptor";
+import { job } from "./FormContext";
 
 export interface companyContextType extends ICompanyProfile{  // solo parte de datos, para inicializar mas conveniente
         firstname: string;
@@ -9,6 +10,7 @@ export interface companyContextType extends ICompanyProfile{  // solo parte de d
         email: string;
         companyName: string;
         cif:string;
+        jobs:job[];
 }
 
 export interface ICompany {
@@ -32,6 +34,9 @@ export const CompanyProvider=({children}:companyProviderProps)=>{
         const {data} =await axiosInstance.get(`/company-profile/get-profile` ,{
             withCredentials:true
         });
+        const  jobs = await axiosInstance.get(`/company-jobs/get-jobs` ,{
+            withCredentials:true
+        });
         const company:companyContextType = {
             _id:data.profile._id,
             company_id:data.profile.company_id._id,
@@ -45,7 +50,8 @@ export const CompanyProvider=({children}:companyProviderProps)=>{
             scale:data.profile.scale,
             url:data.profile.url,
             logo:data.profile.logo,
-            description:data.profile.description
+            description:data.profile.description,
+            jobs:jobs.data.jobs
         }
         setCompany(company);
         console.log("Seteado empresa");

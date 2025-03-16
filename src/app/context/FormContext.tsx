@@ -1,4 +1,5 @@
 import {createContext} from 'react';
+import { ObjectId } from 'mongodb';
 
 // Uso contexto para compartir los datos del formulario entre componentes, evitar pasando props nivel por nivel
 
@@ -33,7 +34,49 @@ export type language ={
     level: string;
 }
 
-export type formValues = | string | number | boolean | string[] | undefined| null | study[] | date | workExperience[]| certification[]|language[]; 
+export type disability ={
+    type:string;
+    degree:number;
+}
+
+export type newjob ={
+    currentStatus:string;
+    jobTitle: string;
+    city: string;
+    mode: string;
+    workHours:string;
+    experience:string;
+    intership:boolean;
+    workCategory: string;
+    disabilities: { type: string; degree: number; }[];
+    minumumEducation: string;
+    languages:{language:string, level:string}[];
+    requiredKnowledge:string[];
+    companysRequirements:string;
+    description:string;
+}
+
+export type job ={
+    _id?: ObjectId;
+    company_id: ObjectId;
+    applicants:ObjectId[];
+    currentStatus:string;
+    jobTitle: string;
+    city: string;
+    mode: string;
+    workHours:string;
+    experience:string;
+    intership:boolean;
+    workCategory: string;
+    disabilities: { type: string; degree: number; }[];
+    minumumEducation: string;
+    languages:{language:string, level:string}[];
+    requiredKnowledge:string[];
+    companysRequirements:string;
+    description:string;
+}
+
+export type formValues = | string | number | boolean | string[] | undefined| null | study[] | date | workExperience[]| certification[]|language[]| disability[]; 
 // Para definir el tipo de datos del formulario, restringimos a string tanto key como value, lo que compartimos entre componentes
 
 

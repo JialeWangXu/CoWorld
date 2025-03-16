@@ -5,6 +5,13 @@ import { Input } from './components/Input';
 import { Links } from './components/Link';
 import { DegreeSelect } from './components/DegreeSelect';
 import { TitleSelect } from './components/TitleSelect';
+import { ModeSelect } from './components/ModeSelect';
+import { ExperienceSelect } from './components/ExperienceSelect';
+import { WorkHoursSelect } from './components/WorkHoursSelect';
+import { JobCategorySelect } from './components/JobCategorySelect';
+import { CitySelect } from './components/CitySelector';
+import {LanguageInput} from './components/LanguageInput'
+import { JobStatusSelect } from './components/JobStatusSelect';
 import { ScaleSelect } from './components/ScaleSelect';
 import { StateSelect } from './components/StateSelect';
 import {LevelSelect} from './components/LevelSelect';
@@ -59,11 +66,16 @@ Form.TitleSelect = TitleSelect;
 Form.StateSelect = StateSelect;
 Form.ScaleSelect = ScaleSelect;
 Form.LevelSelect = LevelSelect;
+Form.ModeSelect = ModeSelect;
+Form.ExperienceSelect = ExperienceSelect;
+Form.WorkHoursSelect = WorkHoursSelect;
+Form.JobCategorySelect =JobCategorySelect;
+Form.CitySelect=CitySelect;
 Form.ContractTypeSelect = ContractTypeSelect;
 Form.Checkbox = Checkbox;
+Form.JobStatusSelect = JobStatusSelect;
 Form.TagInput = TagInput;
+Form.LanguageInput = LanguageInput;
 Form.TextAreas = TextAreas;
 Form.DateInput = DateInput;
 Form.SubmitButton = SubmitButton;
-
-

@@ -53,7 +53,9 @@ export default function editDescriptionPage(){
                     <Form.TextAreas 
                         id="description"
                         placeholder="Cuéntenos algo sobre su empresa! :D"
-                        className='form col-sm-12' />
+                        className='form col-sm-12'
+                        row={10}
+                        length={1000} />
                 </div> 
                 <div className='text-center'>
                     <Form.SubmitButton text="Guardar" loading={isLoading}/>

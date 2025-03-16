@@ -1,0 +1,32 @@
+
+.text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+ }
+
+ .hov {
+    &:hover{
+        color: #306d1f;
+        font-weight: bold;
+      }
+    &:active{
+        color: #306d1f;
+        font-weight: bold;
+    }
+}
+
+.active{
+    font-weight: bold;
+    background-color: #f2f4f4;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.jobCard{
+    background-color: #d5f5e3;
+    padding: 7px;
+    border-radius: 6px;
+}

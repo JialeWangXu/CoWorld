@@ -137,11 +137,10 @@ export default function editInfoPage(){
                     />
                 </div> 
                 <div className="row" style={{marginBottom:'30px'}}>
-                    <Form.Input 
+                    <Form.CitySelect 
                         id="city" 
                         htmlfor="city" 
                         label="Ciudad" 
-                        type="text" 
                         className='col-md-6' />
                     <Form.Input 
                         id="phone" 

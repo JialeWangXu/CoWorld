@@ -20,6 +20,7 @@ export function TitleSelect({id, htmlfor: htmlFor, label,className}: inputProps)
             <label htmlFor={htmlFor} className='form-label'>{label}</label>
             <select className='form-select' id={id}  onChange={handleChange} value={String(formProperties[id])} required>
                 <option value="">Elegir un título </option>
+                <option value="Sin estudios">Sin estudios</option>
                 <option value="Educación Secundaria Obligatoria">Educación Secundaria Obligatoria</option>
                 <option value="Bachillerato">Bachillerato</option>
                 <option value="Ciclo Formativo Grado Medio">Ciclo Formativo Grado Medio</option>

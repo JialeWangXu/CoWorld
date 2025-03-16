@@ -43,7 +43,7 @@ export function NavbarCompany(){
     
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{marginBottom:'20px'}}>
+        <nav className="navbar navbar-expand-lg navbar-light" style={{marginBottom:'20px', backgroundColor:"#d5f5e3 "}}>
             <div className="container-fluid">
                 <a className={`${styles.logo} navbar-brand logo`} href="/company-home"
                 onClick={() => handleActivePage('')}>CoWorld</a>
