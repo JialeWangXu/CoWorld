@@ -89,7 +89,7 @@ const jobSchema:Schema = new Schema({
 export interface IJob{
     _id?: ObjectId;
     company_id: ObjectId;
-    applicants:[ObjectId];
+    applicants:ObjectId[];
     currentStatus:string;
     jobTitle: string;
     city: string;
@@ -98,10 +98,10 @@ export interface IJob{
     experience:string;
     intership:boolean;
     workCategory: string;
-    disabilities: [{type:string; degree:number;}];
+    disabilities: {type:string; degree:number;}[];
     minumumEducation: string;
-    languages:[{language:string, level:string}];
-    requiredKnowledge:[string];
+    languages:{language:string, level:string}[];
+    requiredKnowledge:string[];
     companysRequirements:string;
     description:string;
     createdAt?: Date;
@@ -111,7 +111,7 @@ export interface IJob{
 export interface IJobDocument extends Document{
     _id: ObjectId;
     company_id: ObjectId;
-    applicants:[ObjectId];
+    applicants:ObjectId[];
     currentStatus:string;
     jobTitle: string;
     city: string;
@@ -120,10 +120,10 @@ export interface IJobDocument extends Document{
     experience:string;
     intership:boolean;
     workCategory: string;
-    disabilities: [{type:string; degree:number;}];
+    disabilities:{type:string; degree:number;}[];
     minumumEducation: string;
-    languages:[{language:string, level:string}];
-    requiredKnowledge:[string];
+    languages:{language:string, level:string}[];
+    requiredKnowledge:string[];
     companysRequirements:string;
     description:string;
     createdAt?: Date;
