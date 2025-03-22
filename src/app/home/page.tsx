@@ -101,7 +101,7 @@ export default function HomePage(){
                                             <div className="row" style={{display:"flex", flexWrap:"nowrap"}}>
                                                 <div className="col-sm-8"style={{display:"flex", flexDirection:"column", textAlign:"end"}} >
                                                     <h4 style={{fontWeight:"bold"}}>{job.company_id.companyName}</h4>
-                                                    <h6 >{job.company_id?.industry}  {job.company_id?.scale}</h6>
+                                                    <h6>{job.company_id?.industry ? job.company_id?.industry:""}  {job.company_id?.scale ? job.company_id?.scale+" empleos":""}</h6>
                                                 </div>
                                                 <div className={`${styles.profilePhoto} col-sm-4`} style={{textAlign:'center'}}>
                                                     <img src={ job.company_id.logo as Base64URLString||"/imgs/user.png"} 

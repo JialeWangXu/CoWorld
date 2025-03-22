@@ -106,7 +106,7 @@ export async function GET(request:NextRequest) {
                         ...job,
                         company_id: {
                         ...job.companyInfo,
-                        profile: job.companyProfile 
+                        ...job.companyProfile 
                         }
                     })) as IJobAndCompany[];
                     console.log("DESPUES DE CONVERTIR "+jobParser)
