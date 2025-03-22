@@ -20,7 +20,7 @@ export default function profilePage(){
         <div className="container-fluid">
             <div className="row">
                 <div className={`${styles.profilePhoto} col-md-2 col-sm-12`} style={{textAlign:'center'}}>
-                    <img src={ company.logo as Base64URLString||"/imgs/user.png"} alt="foto de perfil" style={{width:'110px',height:'110px', borderRadius:'100%'}}></img>
+                    <img src={ company.logo as Base64URLString||"/imgs/company.png"} alt="foto de perfil" style={{width:'110px',height:'110px', borderRadius:'100%'}}></img>
                 </div>
                 <div className="col-md-8 col-sm-12">
                     <h3 style={{fontWeight:'bold'}}>{company.companyName}</h3>

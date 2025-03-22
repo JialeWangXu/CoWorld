@@ -55,7 +55,7 @@ export default function editInfoPage(){
             <Form title="Editar información de la empresa" onSubmit={edit} oldValues={oldValues}>
                 <div className="row"style={{marginBottom:'20px', textAlign:'center'}}>
                     <label htmlFor="logo" className={`${styles.profilePhoto}`}>
-                        <img src={ oldValues.logo as Base64URLString||"/imgs/user.png"} alt="foto de perfil empresa" style={{width:'110px',height:'110px', borderRadius:'100%'}}></img>
+                        <img src={ oldValues.logo as Base64URLString||"/imgs/company.png"} alt="foto de perfil empresa" style={{width:'110px',height:'110px', borderRadius:'100%'}}></img>
                     </label>
                     <p style={{textAlign:'center', color:'GrayText', marginBottom:0, marginTop:'10px'}}>Pinchar para subir foto</p>
                     <Form.Input 

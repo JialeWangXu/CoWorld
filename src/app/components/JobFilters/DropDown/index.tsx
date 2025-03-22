@@ -19,7 +19,7 @@ export function DropDown({DefaultName,options,selected,onChange}:Props){
 
     return(
         <div  style={{display:'flex', justifyContent:"center", gap:'5px', marginBottom:"2rem"}}>
-            <select className="form-select" id={DefaultName}  onChange={(event: React.ChangeEvent<HTMLSelectElement>)=>{setValues(event.target.value),onChange(event.target.value)}} value={values}  style={{width:'165px', borderColor:"rgb(25, 135, 84)", color:"rgb(25, 135, 84)"}}> 
+            <select className="form-select" id={DefaultName}  onChange={(event: React.ChangeEvent<HTMLSelectElement>)=>{setValues(event.target.value),onChange(event.target.value)}} value={values}  style={{width:'165px', borderColor:"rgb(25, 135, 84)", color:"rgb(25, 135, 84)", cursor:"pointer"}}> 
                 <option value={""}>{DefaultName}</option>
                 {options.map(option => <option key={option} value={option}>{option}</option>)}
             </select>
