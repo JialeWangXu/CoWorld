@@ -1,3 +1,4 @@
+import { ICompanyProfile } from "models/CompanyProfile";
 import { IJob } from "models/Job";
 import { ObjectId } from "mongoose";
 
@@ -25,3 +26,7 @@ export interface IJobAndCompany extends Omit<IJob,'company_id'>{
     _id:ObjectId;
 }
 
+export interface companyDetail extends ICompanyProfile{
+        companyName: string;
+        jobs:IJobAndCompany[];
+}

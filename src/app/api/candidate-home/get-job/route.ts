@@ -3,9 +3,8 @@ import { ObjectId } from "mongodb";
 import jwt from 'jsonwebtoken';
 import Job from "models/Job";
 import { NextRequest, NextResponse } from "next/server";
-import { IJobAndCompany, JobFilters,ICompanyWithProfileSimple } from "types/JobFilter";
+import { IJobAndCompany} from "types/JobFilter";
 import { message } from "util/message";
-import mongoose from "mongoose";
 
 export  async function POST(request:NextRequest){
 

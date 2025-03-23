@@ -68,3 +68,30 @@
     border-radius:6px;
     padding:1rem;
 }
+
+.companyLogo {
+    margin: auto;
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+    padding: 0;
+}
+
+.hovA {
+    &:hover{
+        color: #306d1f;
+        font-weight: bold;
+      }
+    &:active{
+        color: #306d1f;
+        font-weight: bold;
+    }
+}
+
+.activeA{
+    font-weight: bold;
+    background-color: #f2f4f4;
+    padding: 5px;
+    border-radius: 8px;
+}

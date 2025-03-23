@@ -40,7 +40,7 @@ export default function jobViewPage(){
         }
     }
     const [job, setJob] = useState<IJobAndCompany>(initalIJobAndCompany);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const params = useParams<{ id: string}>()
 
@@ -65,8 +65,14 @@ export default function jobViewPage(){
                 }
             }
             fetchJob();
-
     },[])
+
+    if (loading) {
+        return <div>Cargando datos...</div>
+    }
+    if (error) {
+        return <div>Error al cargar datos.</div> 
+    }
 
     return(
     <div>
@@ -83,9 +89,10 @@ export default function jobViewPage(){
                     </div>
                     <div className="col-6">
                         <div className="row" style={{display:"flex", flexWrap:"nowrap",alignItems:"center"}}>
-                            <div className="col-sm-8"style={{display:"flex", flexDirection:"column", textAlign:"end"}} >
+                            <div className="col-sm-8"style={{display:"flex", flexDirection:"column", textAlign:"end", alignItems:"end"}} >
                                 <h2 style={{fontWeight:"bold"}}>{job.company_id.companyName}</h2>
                                 <h6>{job.company_id?.industry ? job.company_id?.industry:""}  {job.company_id?.scale ? job.company_id?.scale+" empleos":""}</h6>
+                                <a href={`/home/view-company/${job.company_id?.company_id?.toString()}`} className="link-success">Ver perfil de la empresa</a>
                             </div>
                             <div className={`${styles.profilePhoto} col-sm-4`} style={{textAlign:'center', marginLeft:"15px"}}>
                             <img src={ job.company_id?.logo as Base64URLString||"/imgs/company.png"} 

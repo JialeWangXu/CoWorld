@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import "./models";
 const MONGODB_URL = process.env.MONGODB_URL;
 
 export const connectMD = async () => {

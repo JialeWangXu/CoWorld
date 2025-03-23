@@ -33,7 +33,7 @@ export default function CompanyJobListPage() {
     return (
         <div className="container-fluid">
             <div className="row" style={{marginBottom:"1.5rem"}}>
-                <div className="col-md-6 col-sm-12" style={{display:'flex', alignItems:"center", gap:'5px'}}>  
+                <div className="col-md-6 col-sm-12" style={{display:'flex', alignItems:"center", gap:'5px', fontSize:"1.8rem"}}>  
                     <a className={`${styles.hov} nav-link ${activePage ==='EnCurso' ? styles.active : ''}`}  href="#"
                             onClick={()=>{setActivePage("EnCurso"), setInProgress(true)}} style={{fontSize:"1.8rem"}}> {`En curso (${actives})`} </a> | <a className={`${styles.hov} nav-link ${activePage ==='Cerrado' ? styles.active : ''}`} href="#"
                             onClick={()=>{setActivePage("Cerrado"), setInProgress(false)}} style={{fontSize:"1.8rem"}}> {`Cerrado (${closed})`} </a>
