@@ -38,3 +38,33 @@
         display: none;
     }
 }
+
+.jobDetail{
+    padding:0;
+    display:flex;
+    gap:8px;
+    height:50px;
+    align-items:center
+}
+
+.jobDetailText{
+    font-size:1.2rem;
+    margin:0;
+
+}
+
+
+.disbilityCard{
+    width: 196px;
+    border-radius: 6px;
+    padding: 12px;
+    margin-right:5px;
+    margin-bottom: 1rem;
+}
+
+.jobRequirementCard{
+    margin-bottom:1rem;
+    background-color:#f4f6f6;
+    border-radius:6px;
+    padding:1rem;
+}

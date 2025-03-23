@@ -105,8 +105,11 @@ export async function GET(request:NextRequest) {
                     const jobParser = job.map(job => ({
                         ...job,
                         company_id: {
-                        ...job.companyInfo,
-                        ...job.companyProfile 
+                            company_id:job.companyInfo._id,
+                            companyName: job.companyInfo.companyName,
+                            logo:job.companyProfile?.logo,
+                            scale:job.companyProfile?.scale,
+                            industry:job.companyProfile?.industry
                         }
                     })) as IJobAndCompany[];
                     console.log("DESPUES DE CONVERTIR "+jobParser)

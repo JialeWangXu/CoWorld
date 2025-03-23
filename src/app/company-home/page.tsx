@@ -1,7 +1,6 @@
 "use client"
 import {  useEffect, useState, useContext } from "react";
 import { useRouter } from "next/navigation";
-import { job } from "app/context/FormContext";
 import styles from './styles.module.scss'
 import { CompanyContext } from "app/context/CompanyContext";
 

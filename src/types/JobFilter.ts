@@ -21,5 +21,7 @@ export interface ICompanyWithProfileSimple {
   }
 
 export interface IJobAndCompany extends Omit<IJob,'company_id'>{
-    company_id:ICompanyWithProfileSimple
+    company_id:ICompanyWithProfileSimple;
+    _id:ObjectId;
 }
+

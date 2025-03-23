@@ -91,7 +91,7 @@ export default function HomePage(){
                 {jobList.length > 0 ? (
                     jobList.map((job, index) => (
                         <div className="row" key={index} style={{marginTop:"15px"}}>
-                                <div className={`${styles.jobCard} ${styles.hov} col-sm-12`} onClick={()=>{router.push(`/company-home/edit-job/${job._id.toString()}`)}}>
+                                <div className={`${styles.jobCard} ${styles.hov} col-sm-12`} onClick={()=>{router.push(`/home/view-job/${job._id.toString()}`)}}>
                                     <div className="row" style={{display:"flex", flexWrap:"nowrap", marginLeft:"1rem"}}>
                                         <div className="col-6" style={{paddingLeft:0}}>
                                         <h4 style={{fontWeight:"bold"}}>{job.jobTitle}</h4>
