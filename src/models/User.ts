@@ -19,6 +19,10 @@ const userSchema:Schema = new Schema({
         type: String,
         required: true
     },
+    savedJob:{
+        type:[{ type: mongoose.Schema.Types.ObjectId, ref: "Job" }],
+        default:[]
+    },
     role:{
         type: Number,
         default: CANDIDATE
@@ -31,6 +35,7 @@ export interface IUser{
     lastname: string;
     email: string;
     password: string;
+    savedJob: ObjectId[];
     role: number;
     createdAt?: Date;
     updatedAt?: Date;
@@ -42,6 +47,7 @@ export interface IUserDocument extends Document{
     lastname: string;
     email: string;
     password: string;
+    savedJob: ObjectId[];
     role: number;
     createdAt?: Date;
     updatedAt?: Date;

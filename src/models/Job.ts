@@ -10,7 +10,14 @@ const jobSchema:Schema = new Schema({
     },
     // applicants of this offer
     applicants:{
-        type:[{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+        type:[
+            {
+                user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required:true},
+                status:{
+                    type:String, default:"solicitado"
+                }
+            }
+        ],
         default:[]
     },
     // current status of job
@@ -89,7 +96,7 @@ const jobSchema:Schema = new Schema({
 export interface IJob{
     _id?: ObjectId;
     company_id: ObjectId;
-    applicants:ObjectId[];
+    applicants:{user:ObjectId, status:string}[];
     currentStatus:string;
     jobTitle: string;
     city: string;
@@ -111,7 +118,7 @@ export interface IJob{
 export interface IJobDocument extends Document{
     _id: ObjectId;
     company_id: ObjectId;
-    applicants:ObjectId[];
+    applicants:{user:ObjectId, status:string}[];
     currentStatus:string;
     jobTitle: string;
     city: string;

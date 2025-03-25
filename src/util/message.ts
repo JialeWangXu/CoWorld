@@ -12,6 +12,8 @@ export const message= {
         ProfileEdited:"¡Perfil actualizado con éxito!",
         JobPublicated:"¡Oferta de trabajo publicada con éxito!",
         JobEdited:"¡Oferta de trabajo editado con éxito!",
+        GenericSuccess:"El cambio guardado con exito!",
+        JobSaved:"Trabajo aplicado con exito! Buena suerte!:)"
     },
     error:{
         notFull:"Por favor, rellene todos los campos.",
@@ -37,6 +39,8 @@ export const message= {
         companyProfileEditError:"¡Ha ocurrido un error al editar perfil de la empresa!",
         jobsLoadError:"¡Ha ocurrido un error al cargar las ofertas de trabajo de la empresa!",
         jobPublicateError:"¡Ha ocurrido un error al publicar la oferta del trabajo!",
-        jobLoadError:"¡Ha ocurrido un error al cargar la oferta del trabajo!"
+        jobLoadError:"¡Ha ocurrido un error al cargar la oferta del trabajo!",
+        saveJobError:"¡Ha ocurrido un error al guardar la oferta del trabajo!",
+        JobApplyError: "¡Ha ocurrido un error al aplicar la oferta del trabajo!"
     }
 }

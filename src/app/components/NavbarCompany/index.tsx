@@ -53,7 +53,7 @@ export function NavbarCompany(){
                 <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav linknav">
                     <li className="nav-item">
-                    <a className={`${styles.hov} nav-link ${activePage ==='ofertas' ? styles.active : ''}`} aria-current="page" href="#"
+                    <a className={`${styles.hov} nav-link ${activePage ==='ofertas' ? styles.active : ''}`} aria-current="page" href="/company-home"
                     onClick={()=>{handleActivePage('ofertas')}}>Ofertas</a>
                     </li>
                     <li className="nav-item">

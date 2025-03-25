@@ -2,11 +2,13 @@
 import React, { createContext, useState, useEffect } from "react"
 import { ICandidateProfile } from "models/CandidateProfile"
 import axiosInstance from "lib/axiosInterceptor";
+import { ObjectId } from "mongoose";
 
 export interface userContextType extends ICandidateProfile{  // solo parte de datos, para inicializar mas conveniente
         firstname: string;
         lastname: string;
         email: string;
+        savedJob: ObjectId[];
 }
 
 export interface IUser {
@@ -32,7 +34,7 @@ export const UserProvider=({children}:userProviderProps)=>{
         });
         const user:userContextType = {
             _id:data.profile._id,
-            user_id:data.profile.user_id,
+            user_id:data.profile.user_id._id,
             firstname:data.profile.user_id.firstname,
             lastname: data.profile.user_id.lastname,
             email: data.profile.user_id.email,
@@ -48,7 +50,8 @@ export const UserProvider=({children}:userProviderProps)=>{
             workExperience:data.profile.workExperience,
             skills:data.profile.skills,
             languages:data.profile.languages,
-            certifications:data.profile.certifications
+            certifications:data.profile.certifications,
+            savedJob:data.profile.user_id.savedJob
         }
         setUser(user);
         console.log("Seteado usuario");

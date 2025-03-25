@@ -1,30 +1,27 @@
 import { connectMD } from "lib/mongodb";
 import { ObjectId } from "mongodb";
 import jwt from 'jsonwebtoken';
-import Job from "models/Job";
 import { NextRequest, NextResponse } from "next/server";
-import { IJobAndCompany} from "types/JobFilter";
 import { message } from "util/message";
+import Job from "models/Job";
+import { IJobAndCompany } from "types/JobFilter";
 
-export  async function POST(request:NextRequest){
-
+export async function GET(request:NextRequest) {
+    
     try{
         await connectMD();
 
         try{
             const accessToken = request.cookies.get('accessTokenCookie').value;
-             //@ts-ignore
+            //@ts-ignore
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
             console.log("Access aprobado para editar")
-
             try{
-                const body = await request.json();
-
-                const {id} = body
-                console.log("El id es :"+id)
 
                 const job= await Job.aggregate([
-                    {$match:{_id: new ObjectId(id)}},
+                    {$match: {
+                        applicants: { $elemMatch: { user: new ObjectId(data._id) } }
+                    }},
                     {$lookup:{
                         from: "companies",
                         localField:"company_id",
@@ -55,15 +52,13 @@ export  async function POST(request:NextRequest){
                 })) as IJobAndCompany[];
 
                 return NextResponse.json({
-                    job:jobParser[0]
+                    job:jobParser
                 },{status:200})
-
             }catch(e){
                 return NextResponse.json({
-                    error:message.error.jobLoadError,e
+                    error:message.error.genericError,e
                 },{status:400})
             }
-
         }catch(tokenError){
             return NextResponse.json({
                 error:message.error.noToken,tokenError

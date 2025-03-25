@@ -1,11 +1,16 @@
 'use client'
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import axiosInstance from "lib/axiosInterceptor"
 import { IJobAndCompany } from "types/JobFilter"
 import { useParams } from "next/navigation";
 import styles from './../../styles.module.scss'
 import { IJob } from "models/Job";
+import { UserContext } from "app/context/UserContext";
+import { useSnipper } from "app/hooks/useSnipper";
+import { Spinner } from '../../../components/Spinner'
+
 import { AUDITIVA, DISABILITIES_INITIAL_VALUE, FISICA, HABLAR, INTELECTUAL, MENTAL, PLURIDISCAPACIDAD, VISUAL} from "util/constants";
+import { ToastContext } from "app/context/ToastContext";
 
 
 export default function jobViewPage(){
@@ -42,13 +47,17 @@ export default function jobViewPage(){
     const [job, setJob] = useState<IJobAndCompany>(initalIJobAndCompany);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    const [saved, setSaved] = useState(false);
+    const [disableApply, setdisableApply] = useState(false);
     const params = useParams<{ id: string}>()
+    const {user, waiting, getUser} = useContext(UserContext);
+    const {isLoading,setIsLoading} = useSnipper();
+    const {showToast} = useContext(ToastContext);
 
     useEffect(()=>{
 
         setLoading(true);
 
-        
             const fetchJob = async() =>{
                 try{
                     const {data} = await axiosInstance.post(`/candidate-home/get-job` ,{id:params.id},{
@@ -57,6 +66,15 @@ export default function jobViewPage(){
                     })
                     setError("");
                     setJob(data.job)
+                    console.table(data.job.applicants)
+                    console.log(user.user_id)
+                    if(data.job.applicants.find(elem => elem.user===user.user_id)){
+                        console.log("Ha detectado tiene aplicado este trabajo......")
+                        setdisableApply(true);
+                    }
+                    if(user?.savedJob.includes(data.job._id)){
+                        setSaved(true);
+                    }
                 }catch(e){
                     setError("Hubido error al cargar datos de la oferta...");
                     console.log("Error al cargar el trabjo... check it out:"+e)
@@ -65,13 +83,60 @@ export default function jobViewPage(){
                 }
             }
             fetchJob();
-    },[])
+    },[waiting,user,saved,disableApply])
 
-    if (loading) {
+    if (loading||waiting) {
         return <div>Cargando datos...</div>
     }
     if (error) {
         return <div>Error al cargar datos.</div> 
+    }
+
+    const handleSaveJob= async()=>{
+        console.log('Guardar o desguardar el trabajo')
+        setIsLoading(true)
+        try{
+           const response = await axiosInstance.post(`/candidate-home/save-job`,{job:job._id},{
+                withCredentials:true
+           })
+           showToast({msg:response.data.sucess, type:'Good',visible:true})
+           getUser()
+           setSaved(saved? false:true);
+           setIsLoading(false);
+        }catch(e:any){
+           showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+           setIsLoading(false);
+        }
+    }
+
+    const handleApplyJob= async()=>{
+        console.log('Aplicar el trabajo')
+        setIsLoading(true)
+        setdisableApply(true)
+        try{
+           const response = await axiosInstance.post(`/candidate-home/apply-job`,{job:job._id},{
+                withCredentials:true
+           })
+           showToast({msg:response.data.sucess, type:'Good',visible:true})
+           if(user.savedJob.find(elem => elem===job._id)){
+                try{
+                    const response = await axiosInstance.post(`/candidate-home/save-job`,{job:job._id},{
+                        withCredentials:true
+                    })
+                    showToast({msg:response.data.sucess, type:'Good',visible:true})
+                    getUser()
+                    setSaved(!saved)
+                }catch(e:any){
+                    showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+                }
+           }
+           setIsLoading(false);
+
+        }catch(e:any){
+           showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+           setdisableApply(false);
+           setIsLoading(false);
+        }
     }
 
     return(
@@ -83,9 +148,10 @@ export default function jobViewPage(){
                     <div className="col-6" style={{paddingLeft:0}}>
                         <h2 style={{fontWeight:"bold"}}>{job?.jobTitle}</h2>
                         <p style={{fontSize:"20px"}}>{job?.city} | {job?.mode}</p>
-                        <div style={{display:"flex", gap:"8px", flexDirection:"row"}}>
-                            <button type="button" className="btn btn-success btn-lg" style={{fontWeight:"bold"}}>Aplicar ahora</button > <button type="button" className="btn btn-outline-success btn-lg">Guardar</button>
-                        </div>
+                        {(disableApply)?(<div style={{display:"flex", justifyContent:"center"}}><h6>Ha aplicado el puesto, esté atento a la notificación por correo electrónico o teléfono. ¡Buena suerte! &#128521;</h6></div>):( <div style={{display:"flex", gap:"8px", flexDirection:"row"}}>
+                                <button type="button" className="btn btn-success btn-lg" style={{fontWeight:"bold"}} onClick={handleApplyJob} disabled={isLoading&&disableApply}>{(isLoading&&disableApply)?<Spinner/>:"Aplicar ahora"}</button > 
+                                <button type="button" className="btn btn-outline-success btn-lg" disabled={isLoading} onClick={handleSaveJob}>{(isLoading)? <Spinner/> : saved?"Quitar de guardados":"Guardar"}</button>
+                        </div>)}
                     </div>
                     <div className="col-6">
                         <div className="row" style={{display:"flex", flexWrap:"nowrap",alignItems:"center"}}>
@@ -180,9 +246,10 @@ export default function jobViewPage(){
                      <p style={{fontSize:"1.2rem"}}>{job.description? job.description: "La empresa no ha añadido una descripción a esta oferta."}</p>
                 }
             </div>
-            <div style={{display:"flex", gap:"8px", flexDirection:"row", justifyContent:"center"}}>
-                    <button type="button" className="btn btn-success btn-lg" style={{fontWeight:"bold"}}>Aplicar ahora</button > <button type="button" className="btn btn-outline-success btn-lg">Guardar</button>
-            </div>
+            {(disableApply)?(<div style={{display:"flex", justifyContent:"center"}}><h6>Ha aplicado el puesto, esté atento a la notificación por correo electrónico o teléfono. ¡Buena suerte! &#128521;</h6></div>):( <div style={{display:"flex", gap:"8px", flexDirection:"row", justifyContent:"center"}}>
+                    <button type="button" className="btn btn-success btn-lg" style={{fontWeight:"bold"}} onClick={handleApplyJob} disabled={isLoading&&disableApply}>{(isLoading&&disableApply)?<Spinner/>:"Aplicar ahora"}</button > 
+                    <button type="button" className="btn btn-outline-success btn-lg" disabled={isLoading} onClick={handleSaveJob}>{(isLoading)? <Spinner/> : saved?"Quitar de guardados":"Guardar"}</button>
+            </div>)}
         </div>
 
     </div>
