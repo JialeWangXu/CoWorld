@@ -41,6 +41,7 @@ export const message= {
         jobPublicateError:"¡Ha ocurrido un error al publicar la oferta del trabajo!",
         jobLoadError:"¡Ha ocurrido un error al cargar la oferta del trabajo!",
         saveJobError:"¡Ha ocurrido un error al guardar la oferta del trabajo!",
-        JobApplyError: "¡Ha ocurrido un error al aplicar la oferta del trabajo!"
+        JobApplyError: "¡Ha ocurrido un error al aplicar la oferta del trabajo!",
+        candiateLoadError:"¡Ha ocurrido un error al cargar los candidatos de la oferta del trabajo!"
     }
 }

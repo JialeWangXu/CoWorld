@@ -1,0 +1,57 @@
+
+.text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+ }
+
+.jobCard{
+    background-color: #d5f5e3;
+    padding: 7px;
+    border-radius: 6px;
+    
+    &:hover{
+        cursor: pointer;
+        background-color: bisque;
+    }
+}
+
+.candidateCard{
+    background-color: #d5f5e3;
+    padding: 7px;
+    border-radius: 6px;
+    
+    &:hover{
+        cursor: pointer;
+        background-color: #aed6f1;
+    }
+}
+
+.profilePhoto {
+    margin: auto;
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    border-radius: 100%;
+    padding: 0;
+  }
+
+.hovA {
+    &:hover{
+        color: #306d1f;
+        font-weight: bold;
+      }
+    &:active{
+        color: #306d1f;
+        font-weight: bold;
+    }
+}
+
+.activeA{
+    font-weight: bold;
+    background-color: #f2f4f4;
+    padding: 5px;
+    border-radius: 8px;
+}

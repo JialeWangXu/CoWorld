@@ -1,6 +1,5 @@
 'use client'
 import { useState, useContext, useEffect } from "react"
-import { UserContext } from "app/context/UserContext"
 import styles from './../styles.module.scss'
 import axiosInstance from "lib/axiosInterceptor"
 import { IJobAndCompany } from "types/JobFilter"
