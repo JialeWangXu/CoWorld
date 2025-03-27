@@ -30,3 +30,15 @@
     padding: 7px;
     border-radius: 6px;
 }
+
+.helpContainer{
+    display:flex;
+    flex-direction:column;
+    text-align:center; 
+    justify-content:center;
+    align-items:center;
+    min-height:85vh;
+    overflow:hidden; 
+    margin-bottom:20px; 
+    padding:1rem;
+}

@@ -69,7 +69,7 @@ export function NavbarCompany(){
                     onClick={()=>{handleActivePage('perfil'), handleProfile()}}>Perfil</a>
                     </li>)}
                     <li className="nav-item">
-                    <a className={`${styles.hov} nav-link ${activePage ==='ayuda' ? styles.active : ''}`} href="#"
+                    <a className={`${styles.hov} nav-link ${activePage ==='ayuda' ? styles.active : ''}`} href="/company-home/help"
                     onClick={()=>{handleActivePage('ayuda')}}>Ayuda</a>
                     </li>
                 </ul>

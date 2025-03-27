@@ -28,10 +28,10 @@ export default function CompanyLoginInPage() {
         <div className="card m-0 p-0" style={{ width: '100%', height: '100%' }}>
             <div className="row g-0 h-100">
                 <div className="col-sm-5 d-none d-md-block">
-                  <img src="/imgs/company-logo.jpg" className="img-fluid" alt="Log in image" style={{ width: '100%', height: '100vh' }}/>
+                  <img src="/imgs/company-logo.jpg" className="img-fluid" alt="Log in image" style={{ width: '100%', height: '100vh',overflow:"hidden" }}/>
                 </div>
                 <div className="col-md-7">
-                    <div className="card-body" style={{ height:'100%', flexDirection:'column', display:'flex', justifyContent:'center', alignItems:'center' }}>
+                    <div className="card-body" style={{ height:'100vh', flexDirection:'column', display:'flex', justifyContent:'center', alignItems:'center',overflow:"hidden" }}>
                         
                         <div className='row mb-3'>
                           <div className='col'></div>
