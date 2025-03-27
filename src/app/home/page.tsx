@@ -87,10 +87,10 @@ export default function HomePage(){
             <JobFilter filters={filter} setFilters={setFilter}></JobFilter>
             {loading&&<div>Cargando los datos....</div>}
             {error&&<div>Tenido error al cargar los datos</div>}
-            {!loading&&!error&&<div className="container">
+            {!loading&&!error&&<div className="container"style={{marginTop:"15px"}}>
                 {jobList.length > 0 ? (
                     jobList.map((job, index) => (
-                        <div className="row" key={index} style={{marginTop:"15px"}}>
+                        <div className="row" key={index} style={{marginBottom:"15px"}}>
                                 <div className={`${styles.jobCard} ${styles.hov} col-sm-12`} onClick={()=>{router.push(`/home/view-job/${job._id.toString()}`)}}>
                                     <div className="row" style={{display:"flex", flexWrap:"nowrap", marginLeft:"1rem"}}>
                                         <div className="col-6" style={{paddingLeft:0}}>

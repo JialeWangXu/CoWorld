@@ -148,7 +148,7 @@ export default function jobViewPage(){
                     <div className="col-6" style={{paddingLeft:0}}>
                         <h2 style={{fontWeight:"bold"}}>{job?.jobTitle}</h2>
                         <p style={{fontSize:"20px"}}>{job?.city} | {job?.mode}</p>
-                        {(disableApply)?(<div style={{display:"flex", justifyContent:"center"}}><h6>Ha aplicado el puesto, esté atento a la notificación por correo electrónico o teléfono. ¡Buena suerte! &#128521;</h6></div>):( <div style={{display:"flex", gap:"8px", flexDirection:"row"}}>
+                        {(job.currentStatus==="closed")?(<div style={{display:"flex"}}><h6 style={{color:"red"}}>Ya no se aceptan solicitudes 🚫</h6></div>):(disableApply)?(<div style={{display:"flex", justifyContent:"center"}}><h6>Ha aplicado el puesto, esté atento a la notificación por correo electrónico o teléfono. ¡Buena suerte! &#128521;</h6></div>):( <div style={{display:"flex", gap:"8px", flexDirection:"row"}}>
                                 <button type="button" className="btn btn-success btn-lg" style={{fontWeight:"bold"}} onClick={handleApplyJob} disabled={isLoading&&disableApply}>{(isLoading&&disableApply)?<Spinner/>:"Aplicar ahora"}</button > 
                                 <button type="button" className="btn btn-outline-success btn-lg" disabled={isLoading} onClick={handleSaveJob}>{(isLoading)? <Spinner/> : saved?"Quitar de guardados":"Guardar"}</button>
                         </div>)}
@@ -184,7 +184,7 @@ export default function jobViewPage(){
                 job.experience&&(<div className={ `${styles.jobDetail} col`} style={{marginBottom:"1rem"}}><img src="/imgs/expertise.png"/><p className={ `${styles.jobDetailText}`}>{job.experience==="No requerido"? job.experience+" experiencia": job.experience}</p></div>)
             }
             {
-                (<div className={ `${styles.jobDetail} col`} style={{marginBottom:"1rem"}}><img src="/imgs/internship.png"/><p className={ `${styles.jobDetailText}`}>Becario</p></div>)
+                job.intership&&(<div className={ `${styles.jobDetail} col`} style={{marginBottom:"1rem"}}><img src="/imgs/internship.png"/><p className={ `${styles.jobDetailText}`}>Becario</p></div>)
             }
 
            </div>
@@ -246,7 +246,7 @@ export default function jobViewPage(){
                      <p style={{fontSize:"1.2rem"}}>{job.description? job.description: "La empresa no ha añadido una descripción a esta oferta."}</p>
                 }
             </div>
-            {(disableApply)?(<div style={{display:"flex", justifyContent:"center"}}><h6>Ha aplicado el puesto, esté atento a la notificación por correo electrónico o teléfono. ¡Buena suerte! &#128521;</h6></div>):( <div style={{display:"flex", gap:"8px", flexDirection:"row", justifyContent:"center"}}>
+            {(job.currentStatus==="closed")?(<div style={{display:"flex", justifyContent:"center"}}><h6 style={{color:"red"}}>Ya no se aceptan solicitudes 🚫</h6></div>):(disableApply&&job.currentStatus!=="closed")?(<div style={{display:"flex", justifyContent:"center"}}><h6>Ha aplicado el puesto, esté atento a la notificación por correo electrónico o teléfono. ¡Buena suerte! &#128521;</h6></div>):( <div style={{display:"flex", gap:"8px", flexDirection:"row", justifyContent:"center"}}>
                     <button type="button" className="btn btn-success btn-lg" style={{fontWeight:"bold"}} onClick={handleApplyJob} disabled={isLoading&&disableApply}>{(isLoading&&disableApply)?<Spinner/>:"Aplicar ahora"}</button > 
                     <button type="button" className="btn btn-outline-success btn-lg" disabled={isLoading} onClick={handleSaveJob}>{(isLoading)? <Spinner/> : saved?"Quitar de guardados":"Guardar"}</button>
             </div>)}

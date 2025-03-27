@@ -46,8 +46,8 @@ export default function ApplicationViewPage(){
         return <div>Error al cargar datos...</div>
     }
 
-    const inProgressJobs = jobList.filter(elem => !!elem.applicants.find(i => i.status === "a comunicar")); // para lista en curso
-    const activeJobs = jobList.filter(elem => elem.currentStatus==="active"); // para lista solicitados
+    const inProgressJobs = jobList.filter(elem => elem.currentStatus==="active").filter(elem => !!elem.applicants.find(i => (i.status === "a comunicar"||"comunicado"))); // para lista en curso
+    const activeJobs = jobList.filter(elem => elem.currentStatus==="active").filter(elem => !!elem.applicants.find(i => i.status === "solicitado")); // para lista solicitados
     const closedJobs = jobList.filter(elem => elem.currentStatus==="closed"); // para lista cerrados
 
     return(

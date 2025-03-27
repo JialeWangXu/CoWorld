@@ -1,3 +1,5 @@
+import { ICandidateProfileWithUserInfo } from "types/Company";
+
 export const CANDIDATE =0;
 export const COMPANY = 1;
 export const OPERATOR = 2;
@@ -31,10 +33,31 @@ export const JobFiltersOPTIONS ={
         "Formación Profesional Grado Medio","Formación Profesional Grado Superior"]
     }
 
-    export const DISABILITIES_INITIAL_VALUE= [{type:FISICA,degree:-1},
-        {type:AUDITIVA,degree:-1},
-        {type:VISUAL,degree:-1},
-        {type:HABLAR,degree:-1},
-        {type:MENTAL,degree:-1},
-        {type:INTELECTUAL,degree:-1},
-        {type:PLURIDISCAPACIDAD,degree:-1}]
+export const DISABILITIES_INITIAL_VALUE= [
+    {type:FISICA,degree:-1},
+    {type:AUDITIVA,degree:-1},
+    {type:VISUAL,degree:-1},
+    {type:HABLAR,degree:-1},
+    {type:MENTAL,degree:-1},
+    {type:INTELECTUAL,degree:-1},
+    {type:PLURIDISCAPACIDAD,degree:-1}]
+
+export const INITIAL_CANDIATE_DETAIL: ICandidateProfileWithUserInfo={
+    firstname:"",
+    lastname:"",
+    email:"",
+    user_id:null,
+    phone:"",
+    city:"",
+    disabilities: [],
+    state: "",
+    huntingJob: false,
+    desiredJob:[], 
+    description: "",
+    studies:[],
+    workExperience:[],
+    skills:[],
+    languages:[],
+    certifications:[],
+    photo:""
+}

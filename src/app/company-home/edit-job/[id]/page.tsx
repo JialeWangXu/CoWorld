@@ -88,7 +88,7 @@ export default function editInfoPage(){
 
     return (
         <div className="container-fluid" style={{ height:'100%', flexDirection:'column', display:'flex', justifyContent:'center', alignItems:'center' }}>         
-            <Form title="Editar una oferta" onSubmit={edit} oldValues={oldValues}>
+            <Form title="Editar oferta" onSubmit={edit} oldValues={oldValues}>
                 <div className="row" style={{marginBottom:'20px'}}>
                     <Form.JobStatusSelect
                         id="currentStatus"
@@ -255,7 +255,7 @@ export default function editInfoPage(){
                                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div className="modal-body">
-                                Esta seguro de que quiere eliminar este estudio?
+                                Esta seguro de que quiere eliminar esta oferta?
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

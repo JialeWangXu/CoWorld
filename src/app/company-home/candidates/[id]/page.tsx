@@ -64,7 +64,7 @@ export default function ViewOneJobCandidatesPage(){
             {pendingCandidats.map((cant, index)=>(
                 <div className="row" key={index} style={{marginBottom:"15px"}}>
                 <div className="col"/>
-                <div className={`${styles.candidateCard} col-md-8 col-sm-12`} style={{padding:"20px"}} onClick={()=>{router.push(`/company-home/candidates/${params.id.toString()}/${cant.user_id._id.toString()}`)}}>
+                <div className={`${styles.candidateCard} col-md-8 col-sm-12`} style={{padding:"20px"}} onClick={()=>{router.push(`/company-home/candidates/${params.id.toString()}/${cant.user_id._id.toString()}?status=${cant.status}`)}}>
                     <div className="row">
                         <div className={`${styles.profilePhoto} col-2`} style={{textAlign:'center'}}>
                             <img src={ cant.photo as Base64URLString||"/imgs/user.png"} alt="foto de perfil" style={{width:'110px',height:'110px', borderRadius:'100%'}}></img>
@@ -91,7 +91,7 @@ export default function ViewOneJobCandidatesPage(){
             {toComunicateCandidats.map((cant, index)=>(
                 <div className="row" key={index} style={{marginBottom:"15px"}}>
                 <div className="col"/>
-                <div className={`${styles.candidateCard} col-md-8 col-sm-12`} style={{padding:"20px"}} onClick={()=>{router.push(`/company-home/candidates/${params.id.toString()}/${cant.user_id._id.toString()}`)}}>
+                <div className={`${styles.candidateCard} col-md-8 col-sm-12`} style={{padding:"20px"}} onClick={()=>{router.push(`/company-home/candidates/${params.id.toString()}/${cant.user_id._id.toString()}?status=${cant.status}`)}}>
                     <div className="row">
                         <div className={`${styles.profilePhoto} col-2`} style={{textAlign:'center'}}>
                             <img src={ cant.photo as Base64URLString||"/imgs/user.png"} alt="foto de perfil" style={{width:'110px',height:'110px', borderRadius:'100%'}}></img>
@@ -118,7 +118,7 @@ export default function ViewOneJobCandidatesPage(){
             {comunicatedCandidats.map((cant, index)=>(
                 <div className="row" key={index} style={{marginBottom:"15px"}}>
                 <div className="col"/>
-                <div className={`${styles.candidateCard} col-md-8 col-sm-12`} style={{padding:"20px"}} onClick={()=>{router.push(`/company-home/candidates/${params.id.toString()}/${cant.user_id._id.toString()}`)}}>
+                <div className={`${styles.candidateCard} col-md-8 col-sm-12`} style={{padding:"20px"}} onClick={()=>{router.push(`/company-home/candidates/${params.id.toString()}/${cant.user_id._id.toString()}?status=${cant.status}`)}}>
                     <div className="row">
                         <div className={`${styles.profilePhoto} col-2`} style={{textAlign:'center'}}>
                             <img src={ cant.photo as Base64URLString||"/imgs/user.png"} alt="foto de perfil" style={{width:'110px',height:'110px', borderRadius:'100%'}}></img>

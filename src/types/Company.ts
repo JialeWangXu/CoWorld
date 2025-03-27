@@ -21,3 +21,9 @@ export interface IUserSimpleWithSimpleUserProfile {
     status:string;
     photo:string;
 }
+
+export interface ICandidateProfileWithUserInfo extends ICandidateProfile{
+    firstname: string;
+    lastname: string;
+    email: string;
+}

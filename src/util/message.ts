@@ -13,7 +13,8 @@ export const message= {
         JobPublicated:"¡Oferta de trabajo publicada con éxito!",
         JobEdited:"¡Oferta de trabajo editado con éxito!",
         GenericSuccess:"El cambio guardado con exito!",
-        JobSaved:"Trabajo aplicado con exito! Buena suerte!:)"
+        JobSaved:"Trabajo aplicado con exito! Buena suerte!:)",
+        StatusUpdated:"Estado del candiadto actualizado con exito!"
     },
     error:{
         notFull:"Por favor, rellene todos los campos.",
@@ -42,6 +43,7 @@ export const message= {
         jobLoadError:"¡Ha ocurrido un error al cargar la oferta del trabajo!",
         saveJobError:"¡Ha ocurrido un error al guardar la oferta del trabajo!",
         JobApplyError: "¡Ha ocurrido un error al aplicar la oferta del trabajo!",
-        candiateLoadError:"¡Ha ocurrido un error al cargar los candidatos de la oferta del trabajo!"
+        candiateLoadError:"¡Ha ocurrido un error al cargar los candidatos de la oferta del trabajo!",
+        statusUpdateError:"¡Ha ocurrido un error al actualizar el estado de candidato en la oferta del trabajo!"
     }
 }

@@ -44,7 +44,7 @@ export function DisabilitiestSelectionModal({buttonName,options,title,selected,o
 
     return(
         <div style={{display: "flex", justifyContent: "center",marginBottom:"2rem"}}>
-            <button type="button" style={{width:"165px"}} className={`btn ${selected.filter(e=>e.degree>-1).length>0?'btn btn-success':'btn-outline-success'}`} data-bs-toggle="modal" data-bs-target="#DisabilityModal">{<div style={{display:"flex", alignItems:"center", gap:"8px"}}>{buttonName} {selected.filter(e=>e.degree>-1).length>0&&(<div style={{borderRadius:"52%", width:"22px", height:"22px",textAlign:"center", backgroundColor:"white", color:"green", fontWeight:"bold"}}>{selected.filter(e=>e.degree>-1).length}</div>)}</div>}</button>
+            <button type="button" style={{width:"200px"}} className={`btn ${selected.filter(e=>e.degree>-1).length>0?'btn-success':'btn-outline-success'}`} data-bs-toggle="modal" data-bs-target="#DisabilityModal">{<div style={{display:"flex", alignItems:"center", justifyContent:"space-between", gap:"8px"}}>{buttonName} {selected.filter(e=>e.degree>-1).length>0&&(<div style={{borderRadius:"52%", width:"22px", height:"22px", backgroundColor:"white", color:"green", fontWeight:"bold", display:"flex", justifyContent:"center",alignItems:"center"}}>{selected.filter(e=>e.degree>-1).length}</div>)}</div>}</button>
 
             <div className="modal fade" id="DisabilityModal" tabIndex={-1} aria-labelledby="DisabilityModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
