@@ -1,0 +1,27 @@
+.btnCustom {
+    width: 200px;
+  }
+  
+.btnSelected {
+    background-color: #198754;
+    color:white;
+}
+
+.buttonDisplay{
+    display:flex; 
+    justify-content:space-between; 
+    align-items: center; 
+    gap:8px
+}
+.selectedNumber{
+    border-radius:50%; 
+    width:22px; 
+    height:22px; 
+    background-color:white; 
+    color:green;
+    font-weight:bold;
+    display:flex;
+    justify-content:center; 
+    align-items:center;
+
+}

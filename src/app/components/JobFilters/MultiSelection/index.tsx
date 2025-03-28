@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react";
+import styles from "../styles.module.scss"
 
 interface Props {
     buttonName:string;
@@ -33,14 +34,22 @@ export function MultiSelectModal({buttonName,options,title,selected,modalId,moda
         onChange(selected);
     }
 
-    // useEffect(()=>{
-    //     setValues(selected);
-    // },[selected])
+     useEffect(()=>{
+         setValues(selected);
+     },[selected])
 
     return(
         <div style={{display: "flex", justifyContent: "center",marginBottom:"2rem"}}>
-            <button type="button" style={{width:"200px"}} className={`btn ${selected.length>0?'btn-success':'btn-outline-success'}`} data-bs-toggle="modal" data-bs-target={`#${modalId}`}>{<div style={{display:"flex", justifyContent:"space-between",alignItems:"center", gap:"8px"}}>{buttonName} {selected.length>0&&(<div style={{borderRadius:"50%", width:"22px", height:"22px", backgroundColor:"white", color:"green", fontWeight:"bold", display:"flex", justifyContent:"center", alignItems:"center"}}>{selected.length}</div>)}</div>}</button>
-
+            <button type="button" 
+            className={`btn btn-outline-success ${styles.btnCustom} 
+            ${selected.length > 0 ? styles.btnSelected : ''}`} 
+            data-bs-toggle="modal" 
+            data-bs-target={`#${modalId}`}>
+                {<div className={`${styles.buttonDisplay}`}>{buttonName}
+                {selected.length > 0 && 
+                (<div className={`${styles.selectedNumber}`}>{selected.length}</div>)}
+                </div>}
+            </button>
             <div className="modal fade" id={modalId} tabIndex={-1} aria-labelledby={modalLableId} aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">

@@ -1,30 +1,27 @@
+"use client"
 import { useState, useEffect } from "react";
 
 export default function useLocalStorage<T>(key:string, initalValues:T){
 
-    const [values, setValues] = useState<T>(()=>{
 
-        if(typeof window==="undefined"){ // cuando esta rederizando
-            return initalValues;
-        }else{
-            try{
-            // intentar leer los valores que tenemos guardado 
-            const historial = localStorage.getItem(key);
-            return historial? JSON.parse(historial):initalValues;
-            }catch(e){
-                console.log("Error al recuperar la historial, devuelvo valor inicial"+e);
-                return initalValues;
-            }
+    const [value, setValue] = useState<T>(initalValues);
+
+    useEffect(() => {
+        try {
+        const stored = localStorage.getItem(key);
+        if (stored) setValue(JSON.parse(stored));
+        } catch (e) {
+        console.error("LocalStorage read error:", e);
         }
-    });
+    }, [key]);
 
     useEffect(()=>{
         try{
-            localStorage.setItem(key,JSON.stringify(values));
+            localStorage.setItem(key,JSON.stringify(value));
         }catch(e){
             console.log("Error en actualizar contenido de localStorage!!!"+e)
         }
-    },[key,values])
+    },[key,value])
 
-    return [values,setValues] as const
+    return [value,setValue] as const
 }
