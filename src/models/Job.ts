@@ -1,4 +1,5 @@
 import mongoose, {Schema, ObjectId, Document } from 'mongoose';
+import Company from './Company';
 
 const jobSchema:Schema = new Schema({
     // Informaciones de 1 trabajo
@@ -7,6 +8,11 @@ const jobSchema:Schema = new Schema({
             type: mongoose.Schema.Types.ObjectId, 
             ref: 'Company',
             required:true
+    },
+    companyName:{
+        type:String,
+        required:true,
+        index:true
     },
     // applicants of this offer
     applicants:{
@@ -92,10 +98,25 @@ const jobSchema:Schema = new Schema({
     }
     },{timestamps: true});
 
+    // este middleware lo definimos para despues del save el documento nuevo de Job, popula automaticamente el 
+    // nombre de empresa.
+    jobSchema.pre('save', async function (next) {
+        try{
+            const company = await Company.findOne({_id:this.company_id});
+            if(!company){
+                throw new Error("No existe la compania ERROR!");
+            }
+            this.companyName = company.companyName;
+            next();
+        }catch(e){
+            next(e as Error);
+        }
+    });
 
 export interface IJob{
     _id?: ObjectId;
     company_id: ObjectId;
+    companyName: string;
     applicants:{user:ObjectId, status:string}[];
     currentStatus:string;
     jobTitle: string;
@@ -118,6 +139,7 @@ export interface IJob{
 export interface IJobDocument extends Document{
     _id: ObjectId;
     company_id: ObjectId;
+    companyName:string;
     applicants:{user:ObjectId, status:string}[];
     currentStatus:string;
     jobTitle: string;

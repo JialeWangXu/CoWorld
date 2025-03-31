@@ -57,6 +57,8 @@ export async function GET(request:NextRequest) {
         if(filter?.intership){
             console.log("inter:"+filter.intership)
             query.intership=(String(filter.intership)==="true")
+        }else{
+            query.intership=(String(filter.intership)==="false")
         }
         
         return query;
@@ -85,13 +87,6 @@ export async function GET(request:NextRequest) {
                         {$match:{currentStatus:"active"}},
                         {$match:jobQuery},
                         {$lookup:{
-                            from: "companies",
-                            localField:"company_id",
-                            foreignField:"_id",
-                            as: "companyInfo"
-                        }}, // para obtener companyName
-                        {$unwind:{path:"$companyInfo",preserveNullAndEmptyArrays:true}},
-                        {$lookup:{
                             from:"companyprofiles",
                             localField:"company_id",
                             foreignField:"company_id",
@@ -102,11 +97,12 @@ export async function GET(request:NextRequest) {
 
                     
                     console.log("Hay trabajos? "+job.length)
+                    console.log("A ver el formato del trabajo es: ...."+JSON.stringify(job))
                     const jobParser = job.map(job => ({
                         ...job,
                         company_id: {
-                            company_id:job.companyInfo._id,
-                            companyName: job.companyInfo.companyName,
+                            company_id:job.companyProfile.company_id,
+                            companyName: job.companyName,
                             logo:job.companyProfile?.logo,
                             scale:job.companyProfile?.scale,
                             industry:job.companyProfile?.industry

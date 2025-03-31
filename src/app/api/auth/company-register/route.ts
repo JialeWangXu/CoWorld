@@ -5,6 +5,7 @@ import { isEmail, onlyLetters, onlyLastNames, passwordRestrict, cifValidator } f
 import Company, {ICompanyDocument} from "models/Company";
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import CompanyProfile, { ICompanyProfile, ICompanyProfileDocument } from "models/CompanyProfile";
 
 export async function POST(request:NextRequest) {
     try{
@@ -80,6 +81,18 @@ export async function POST(request:NextRequest) {
             cif: cif
         });
         await newCompany.save();
+
+        const profile: ICompanyProfileDocument = new CompanyProfile({
+                company_id: newCompany._id,
+                industry: "",
+                city: "",
+                scale: "",
+                url: "",
+                logo: "",
+                description: ""
+        })
+
+        await profile.save()
 
         //Extraer el pwd de usuario y almacena en userPass(porq password esta utilizado como 
         // un constante ya), y asi, usamos restos datos para generar token. (Seguridad))

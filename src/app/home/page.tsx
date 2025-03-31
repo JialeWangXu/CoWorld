@@ -1,7 +1,8 @@
 "use client"
 
 import JobFilter from "app/components/JobFilters";
-import { useState, useEffect } from "react";
+import JobListDisplay from "app/components/JobsDisplay";
+import { useState, useEffect, FormEvent } from "react";
 import useLocalStorage from "app/hooks/useLocalStorage";
 import axiosInstance from "lib/axiosInterceptor";
 import { IJobAndCompany, JobFilters } from "types/JobFilter";
@@ -14,6 +15,7 @@ export default function HomePage(){
     // tengo que hacer 1 esqueleto para cuando carga...
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
+    const [searched, setSearched] = useState(false);
     const [debounce, setDebounce] = useState<NodeJS.Timeout>()
     const router = useRouter();
     const [filter, setFilter] = useLocalStorage<JobFilters>("JobFilters",{
@@ -27,6 +29,7 @@ export default function HomePage(){
         intership:false
     })
     const [jobList, setJobList] = useState<IJobAndCompany[]>([]);
+    const [searchedList, setSearchedList] =useState<IJobAndCompany[]>([]);
 
     useEffect(()=>{
         const controller = new AbortController();
@@ -72,8 +75,15 @@ export default function HomePage(){
         if(debounce){
             clearTimeout(debounce)
         }
-        const timeOut = setTimeout(fetchFilteredJobs,500)
-        setDebounce(timeOut)
+        if(!searched){
+            console.log("Buscando por API")
+            const timeOut = setTimeout(fetchFilteredJobs,500)
+            setDebounce(timeOut)
+        }else{
+            console.log("Buscando de buscados")
+            var jobs:IJobAndCompany[] = filterJobs(jobList,filter);
+            setSearchedList(jobs);
+        }
 
         return () => {
             controller.abort()
@@ -81,46 +91,143 @@ export default function HomePage(){
         }
     },[filter])
 
+    const filterJobs=(jobs: IJobAndCompany[], filters: JobFilters) =>{
+        if(jobs?.length>0){
+        let temp:IJobAndCompany[] = [...jobs];
+        console.log("Temp es: "+JSON.stringify(temp))
+        console.log("El filtro actual es"+JSON.stringify(filters))
+        if(filters?.city.length > 0){
+            temp = temp.filter(job => filters.city.includes(job.city));
+            console.log("comprobando ciudad...."+JSON.stringify(temp));
+            if(!temp){
+                return [];
+            }
+        }
+        if(filters?.disabilities.length>0){
+            let tempFilter = filters.disabilities.filter(({type, degree})=> degree!==-1);
+            temp = temp.filter( job => {tempFilter.forEach(element => {
+                let jobDegree = job?.disabilities.find(ele => ele.type === element.type)?.degree;
+                if(jobDegree<element.degree && jobDegree!==-1){
+                    return false;
+                }
+            })
+            return true;  
+            }  
+            )
+            console.log("comprobando disa...."+JSON.stringify(temp));
+            if(!temp){
+                return [];
+            }
+        }
+        if(filters?.mode.length>0){
+            temp = temp.filter(job => filters.mode.includes(job.mode));
+            console.log("comprobando mode...."+JSON.stringify(temp));
+            if(!temp){
+                return [];
+            }
+        }
+        if(filters?.workHours.length>0){
+            temp = temp.filter(job => filters.workHours.includes(job.workHours));
+            console.log("comprobando WH...."+JSON.stringify(temp));
+            if(!temp){
+                return [];
+            }
+        }
+        if(filters?.workCategory.length>0){
+            temp = temp.filter(job => filters.workCategory.includes(job.workCategory));
+            console.log("comprobando WC...."+JSON.stringify(temp));
+            if(!temp){
+                return [];
+            }
+        }
+        if(filters?.experience.length>0){
+            temp = temp.filter(job => filters.experience===job.experience);
+            console.log("comprobando EXP...."+JSON.stringify(temp));
+            if(!temp){
+                return [];
+            }
+        }
+        if(filters?.minumumEducation.length>0){
+            temp = temp.filter(job => filters.minumumEducation.includes(job.minumumEducation));
+            console.log("comprobando EDu...."+JSON.stringify(temp));
+            if(!temp){
+                return [];
+            }
+        }
+        if(filter?.intership){
+            temp = temp.filter(job => job.intership===true);
+            console.log("comprobando inter true...."+JSON.stringify(temp));
+        }else{
+            temp = temp.filter(job => job.intership===false);
+            console.log("comprobando inter false...."+JSON.stringify(temp));
+        }
+        console.log("Devolviendo tempo ...."+JSON.stringify(temp))
+        return temp;
+        } else{return jobs}
+    }
+    const handleSearch=async(event: React.FormEvent)=>{
+        event.preventDefault();
+        const searchContent = new FormData(event.target as HTMLFormElement);
+        const search = searchContent.get("search") as string;
+
+        if(search==="" || search.replace(/\s/g, '').length===0){
+            setSearched(false);
+            setFilter({
+                city:[],
+                disabilities:DISABILITIES_INITIAL_VALUE,
+                mode:[],
+                workHours:[],
+                workCategory:[],
+                experience:"",
+                minumumEducation:[],
+                intership:false
+            })
+        }else{
+            setFilter({
+                city:[],
+                disabilities:DISABILITIES_INITIAL_VALUE,
+                mode:[],
+                workHours:[],
+                workCategory:[],
+                experience:"",
+                minumumEducation:[],
+                intership:false
+            })
+            try{
+                setLoading(true);
+                setSearched(true);
+                const {data} = await axiosInstance.post(`/candidate-home/search-jobs` ,{search: search},{
+                    withCredentials:true
+                })
+                console.log("Lo que hemos buscado es: "+JSON.stringify(data.job));
+                setJobList(data.job);
+                setSearchedList(data.job);
+                console.log("Ha seteado el list con lo qu eha buscado: "+jobList.length)
+                setError("");
+    
+            }catch(e){
+                    setError("Error al cargar los datos de trabajos buscados");
+                    console.log("ERRORRRRRR CARGAR TRABAJOS BUSCADOS",e);
+            }finally{
+                    setLoading(false);
+            }
+        }
+
+    }
 
     return(
         <div>
+            <div className="bg-white p-4">
+                <form onSubmit={handleSearch} className="d-flex justify-content-center">
+                    <input name="search" style={{width:"600px"}}className="form-control " type="search" placeholder="Buscar por empresa, puesto, palabra clave...  " aria-label="Search"/>
+                    <button className="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
             <JobFilter filters={filter} setFilters={setFilter}></JobFilter>
             {loading&&<div>Cargando los datos....</div>}
             {error&&<div>Tenido error al cargar los datos</div>}
             {!loading&&!error&&<div className="container"style={{marginTop:"15px"}}>
-                {jobList.length > 0 ? (
-                    jobList.map((job, index) => (
-                        <div className="row" key={index} style={{marginBottom:"15px"}}>
-                                <div className={`${styles.jobCard} ${styles.hov} col-sm-12`} onClick={()=>{router.push(`/home/view-job/${job._id.toString()}`)}}>
-                                    <div className="row" style={{display:"flex", flexWrap:"nowrap", marginLeft:"1rem"}}>
-                                        <div className="col-6" style={{paddingLeft:0}}>
-                                        <h4 style={{fontWeight:"bold"}}>{job.jobTitle}</h4>
-                                        <p style={{fontSize:"20px"}}>{job.city} | {job.mode}</p>
-                                        </div>
-                                        <div className="col-6">
-                                            <div className="row" style={{display:"flex", flexWrap:"nowrap"}}>
-                                                <div className="col-sm-8"style={{display:"flex", flexDirection:"column", textAlign:"end"}} >
-                                                    <h4 style={{fontWeight:"bold"}}>{job.company_id.companyName}</h4>
-                                                    <h6>{job.company_id?.industry ? job.company_id?.industry:""}  {job.company_id?.scale ? job.company_id?.scale+" empleos":""}</h6>
-                                                    <a href={`/home/view-company/${job.company_id?.company_id?.toString()}`} className="link-success">Ver perfil de la empresa</a>
-                                                </div>
-                                                <div className={`${styles.profilePhoto} col-sm-4`} style={{textAlign:'center'}}>
-                                                    <img src={ job.company_id.logo as Base64URLString||"/imgs/company.png"} 
-                                                    alt="logo de empresa" style={{width:'90px',height:'90px', borderRadius:'100%'}}/>
-                                                </div>
-                                                <div className="col-1" style={{padding:0, width:"36px"}}></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p className={`${styles.text}`}>{job.description}</p>
-                                </div>
-                        </div>
-                    ))
-                ) : (
-                    <div className="row">
-                        <div className="col-sm-12" style={{fontSize:"1.4rem", color:"GrayText", fontWeight:"500"}}> No se ha encontrado ningún trabajo que cumpla con los filtros introducidos.</div>
-                    </div>
-                )}
+                {searched? <JobListDisplay jobList={searchedList}/>:<JobListDisplay jobList={jobList}/>}
             </div>}
         </div>
     );
