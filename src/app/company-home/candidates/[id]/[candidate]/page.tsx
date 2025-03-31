@@ -236,7 +236,7 @@ export default function candiateDetailPage(){
         </div></>)}
         <hr/>
         <div className="container " style={{display:"flex", flexDirection:'column',justifyContent:'center', alignItems:"center", paddingBottom:"1rem"}}>
-            {searchParams.get("status")==="solicitado"&&(<div >
+            {searchParams.get("status")==="solicitado"&&(<div style={{gap:'10px',display:"flex",flexDirection:"row",justifyContent:"flex-end",marginRight:"10px"}}>
                 <button type="button" className="btn btn-success fw-bold fs-5 --bs-bg-opacity: .5" style={{width:'200px', height:'auto'}} onClick={()=>{handleUpdateStatus("a comunicar")}} disabled={isLoading} > {isLoading?<Spinner/>:"A comunicar"} </button>
                 <button type="button" className="btn btn-outline-success fw-bold fs-5 --bs-bg-opacity: .5" style={{width:'200px', height:'auto'}} onClick={()=>{handleUpdateStatus("comunicado")}} disabled={isLoading}> {isLoading?<Spinner/>:"Comunicado"} </button>
             </div>)}

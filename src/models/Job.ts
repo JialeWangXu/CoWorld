@@ -11,8 +11,7 @@ const jobSchema:Schema = new Schema({
     },
     companyName:{
         type:String,
-        required:true,
-        index:true
+        default:""
     },
     // applicants of this offer
     applicants:{

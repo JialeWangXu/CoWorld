@@ -11,7 +11,7 @@ export default function CompanyRegisterPage(){
     const companyRegister = async(data:any)=>{
         console.log('Registrado');
         setIsLoading(true);
-        await authFetch({endpoint:'company-register',nextPath:'/home',fetchdata:data})
+        await authFetch({endpoint:'company-register',nextPath:'/company-home',fetchdata:data})
         setIsLoading(false);
         console.log('Finished')
     }

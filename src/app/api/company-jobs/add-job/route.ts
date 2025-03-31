@@ -69,7 +69,7 @@ export async function POST(request:NextRequest){
         }catch(tokenError){
             return NextResponse.json({
                 error:message.error.noToken,tokenError
-            },{status:401})            
+            },{status:400})            
         }
 
     }catch(e){
