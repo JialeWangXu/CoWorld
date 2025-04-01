@@ -8,7 +8,7 @@ import { IJob } from "models/Job";
 import { UserContext } from "app/context/UserContext";
 import { useSnipper } from "app/hooks/useSnipper";
 import { Spinner } from '../../../components/Spinner'
-
+import { DetailPageSkeleton } from "app/components/DetailPageSkeleton";
 import { AUDITIVA, DISABILITIES_INITIAL_VALUE, FISICA, HABLAR, INTELECTUAL, MENTAL, PLURIDISCAPACIDAD, VISUAL} from "util/constants";
 import { ToastContext } from "app/context/ToastContext";
 
@@ -16,6 +16,7 @@ import { ToastContext } from "app/context/ToastContext";
 export default function jobViewPage(){
 
     const initialJob:IJob={
+        companyName:"",
         currentStatus: "active",
         jobTitle: "",
         city: "",
@@ -86,7 +87,7 @@ export default function jobViewPage(){
     },[waiting,user,saved,disableApply])
 
     if (loading||waiting) {
-        return <div>Cargando datos...</div>
+        return <DetailPageSkeleton/>
     }
     if (error) {
         return <div>Error al cargar datos.</div> 

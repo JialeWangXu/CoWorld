@@ -5,6 +5,7 @@ import { companyDetail } from "types/JobFilter"
 import { useParams } from "next/navigation";
 import styles from './../../styles.module.scss'
 import { useRouter } from "next/navigation";
+import { ProfileSkeleton } from "app/components/ProfileSkeleton";
 
 export default function companyViewPage(){
 
@@ -64,7 +65,7 @@ export default function companyViewPage(){
                 fetchCompany();
         },[])
         if (loading) {
-            return <div>Cargando datos de la empresa...</div>
+            return <ProfileSkeleton/>
         }
         if (error) {
             return <div>Error al cargar datos de la empresa</div> 

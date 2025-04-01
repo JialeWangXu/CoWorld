@@ -3,12 +3,12 @@ import styles from "./styles.module.scss"
 import { useRouter } from "next/navigation";
 
 interface Props {
-    jobList: IJobAndCompany[]
+    jobList: IJobAndCompany[],
 }
 
 export default function JobListDisplay({jobList}:Props){
     const router = useRouter();
-    return(<>{jobList?.length > 0 ? (
+    return(<>{(jobList?.length > 0) ? (
         jobList.map((job, index) => (
             <div className="row" key={index} style={{marginBottom:"15px"}}>
                     <div className={`${styles.jobCard} ${styles.hov} col-sm-12`} onClick={()=>{router.push(`/home/view-job/${job._id.toString()}`)}}>

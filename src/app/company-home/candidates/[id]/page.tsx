@@ -6,6 +6,7 @@ import { IUserSimpleWithSimpleUserProfile } from "types/Company"
 import axiosInstance from "lib/axiosInterceptor"
 import styles from './../styles.module.scss'
 import { useRouter } from "next/navigation"
+import { ListsSkeleton } from "app/components/ListsSkeleton"
 
 export default function ViewOneJobCandidatesPage(){
 
@@ -38,7 +39,7 @@ export default function ViewOneJobCandidatesPage(){
     },[params.id])
 
     if(loading){
-        return<div>Cargando datos....</div>
+        return <ListsSkeleton/>
     }
     if(error){
         return <div>Hubido error cargar datos...</div>

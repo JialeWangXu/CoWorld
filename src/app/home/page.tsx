@@ -7,8 +7,10 @@ import useLocalStorage from "app/hooks/useLocalStorage";
 import axiosInstance from "lib/axiosInterceptor";
 import { IJobAndCompany, JobFilters } from "types/JobFilter";
 import { DISABILITIES_INITIAL_VALUE } from "util/constants";
-import styles from './styles.module.scss'
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import { useRouter } from "next/navigation";
+import { CardSkeleton } from "app/components/CardSkeleton";
 
 export default function HomePage(){
 
@@ -224,10 +226,10 @@ export default function HomePage(){
                 </form>
             </div>
             <JobFilter filters={filter} setFilters={setFilter}></JobFilter>
-            {loading&&<div>Cargando los datos....</div>}
+            {loading&&<CardSkeleton cards={2}/>}
             {error&&<div>Tenido error al cargar los datos</div>}
             {!loading&&!error&&<div className="container"style={{marginTop:"15px"}}>
-                {searched? <JobListDisplay jobList={searchedList}/>:<JobListDisplay jobList={jobList}/>}
+                {searched? <JobListDisplay jobList={searchedList} />:<JobListDisplay jobList={jobList} />}
             </div>}
         </div>
     );

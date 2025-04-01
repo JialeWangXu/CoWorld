@@ -4,13 +4,14 @@ import { useContext } from "react";
 import { EditButton } from "app/components/PerfilComponents/EditButton";
 import styles from './styles.module.scss'
 import { useRouter } from "next/navigation";
+import { ProfileSkeleton } from "app/components/ProfileSkeleton";
 
 export default function profilePage(){
     const {user,getUser,waiting} = useContext(UserContext)
     const router = useRouter();
 
     if (waiting) {
-        return <div>Cargando datos del usuario...</div>
+        return <ProfileSkeleton/>
     }
     if (!user) {
         return <div>No user</div> 

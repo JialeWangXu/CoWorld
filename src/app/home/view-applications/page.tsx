@@ -4,6 +4,7 @@ import styles from './../styles.module.scss'
 import axiosInstance from "lib/axiosInterceptor"
 import { IJobAndCompany } from "types/JobFilter"
 import { useRouter } from "next/navigation"
+import { ListsSkeleton } from "app/components/ListsSkeleton"
 
 export default function ApplicationViewPage(){
 
@@ -40,7 +41,7 @@ export default function ApplicationViewPage(){
     },[])
 
     if(loading){
-        return <div>Cargando datos...</div>
+        return <ListsSkeleton/>
     }
     if(error){
         return <div>Error al cargar datos...</div>

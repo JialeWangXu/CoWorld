@@ -3,6 +3,7 @@ import {  useEffect, useState, useContext } from "react";
 import { useRouter } from "next/navigation";
 import styles from './styles.module.scss'
 import { CompanyContext } from "app/context/CompanyContext";
+import { ListsSkeleton } from "app/components/ListsSkeleton";
 
 export default function CompanyJobListPage() {
     
@@ -22,7 +23,7 @@ export default function CompanyJobListPage() {
     },[company?.jobs])    
 
     if (waiting) {
-        return <div>Cargando datos de la empresa...</div>
+        return <ListsSkeleton/>
     }
     if (!company) {
         return <div>No Company</div> 

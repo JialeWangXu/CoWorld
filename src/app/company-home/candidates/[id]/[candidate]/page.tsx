@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { useSnipper } from "app/hooks/useSnipper";
 import { Spinner } from '../../../../components/Spinner'
 import { ToastContext } from "app/context/ToastContext";
+import { ProfileSkeleton } from "app/components/ProfileSkeleton";
 
 export default function candiateDetailPage(){
     const params = useParams<{candidate:string, id:string}>()
@@ -66,7 +67,7 @@ export default function candiateDetailPage(){
     }
 
     if(loading){
-        return<div>Cargando datos....</div>
+        return <ProfileSkeleton/>
     }
 
     const handleUpdateStatus= async(status:string)=>{
