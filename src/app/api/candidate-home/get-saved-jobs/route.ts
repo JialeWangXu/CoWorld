@@ -7,7 +7,7 @@ import {ObjectId} from "mongodb"
 import { IJobAndCompany } from "types/JobFilter";
 import User from "models/User";
 
-export async function GET(request:NextRequest) {
+export async function POST(request:NextRequest) {
     
     try{
         await connectMD();
@@ -18,6 +18,8 @@ export async function GET(request:NextRequest) {
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
             console.log("Access aprobado para editar")
             try{
+                const body = await request.json();
+                const{page}=body;
                 const user = await User.aggregate([
                     {$match:{_id: new ObjectId(data._id)}},
                     {$lookup:{
@@ -27,30 +29,13 @@ export async function GET(request:NextRequest) {
                             {$match:{
                                 $expr:{ $in:["$_id","$$savedJobs"] } // para poder usar la varianle local, con expr
                             }},
-                            // empieza popular con datos de company como otras veces
-                            {
-                                $lookup:{
-                                    from: "companies",
-                                    localField:"company_id",
-                                    foreignField:"_id",
-                                    as: "companyInfo"
-                                }
-                            },
-                            {$unwind:{path:"$companyInfo",preserveNullAndEmptyArrays:true}},
                             {$lookup:{
                                 from:"companyprofiles",
                                 localField:"company_id",
                                 foreignField:"company_id",
                                 as:"companyProfile"
                             }},
-                            {$unwind:{path:"$companyProfile",preserveNullAndEmptyArrays: true}},
-                            {$addFields:{
-                                companyInfo:{
-                                    $mergeObjects: ["$companyInfo", "$companyProfile"]
-                                },
-                                __debug: "=== AFTER MERGE ==="
-                            }},
-                            {$project:{companyProfile:0}}
+                            {$unwind:{path:"$companyProfile",preserveNullAndEmptyArrays: true}}
                         ],
                         as: "savedJobPopulated"
                     }},
@@ -71,16 +56,22 @@ export async function GET(request:NextRequest) {
                 const jobParser = user[0].savedJobPopulated.map(job => ({
                     ...job,
                     company_id: {
-                        company_id:job.companyInfo._id,
-                        companyName: job.companyInfo.companyName,
-                        logo:job.companyInfo?.logo,
-                        scale:job.companyInfo?.scale,
-                        industry:job.companyInfo?.industry
+                        company_id:job.companyProfile.company_id,
+                        companyName: job.companyProfile.companyName,
+                        logo:job.companyProfile?.logo,
+                        scale:job.companyProfile?.scale,
+                        industry:job.companyProfile?.industry
                     }
                 })) as IJobAndCompany[];
 
+                const totalPage = Math.ceil(jobParser.length/5);
+                console.log("En total hay x paginas"+jobParser.length)
+                const start= (parseInt(page)-1)*5;
+                const slciedJobList = jobParser.slice(start,start+5);
+
                 return NextResponse.json({
-                    job:jobParser
+                    job:slciedJobList,
+                    totalPage:totalPage
                 },{status:200})
             }catch(e){
                 return NextResponse.json({

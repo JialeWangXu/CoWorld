@@ -18,11 +18,12 @@ export async function POST(request:NextRequest){
 
             try{
                 const body = await request.json();
-                const {id} = body;
+                const {id, status, page} = body;
 
                 const candidates = await Job.aggregate([
                     { $match: { _id: new ObjectId(id) } },
                     { $unwind: "$applicants" },
+                    { $match: { "applicants.status": status } },
                     {$lookup:{
                         from:"candidateprofiles",
                         localField:"applicants.user",
@@ -59,8 +60,14 @@ export async function POST(request:NextRequest){
                     status:elem.applicants.status
                 })) as IUserSimpleWithSimpleUserProfile[]
 
+                const totalPage = Math.ceil(candidateParser.length/5);
+                console.log("En total hay x paginas"+candidateParser.length)
+                const start= (parseInt(page)-1)*5;
+                const slicedJobList = candidateParser.slice(start,start+5);
+
                 return NextResponse.json(
-                    {candidates:candidateParser},
+                    {candidates:slicedJobList,
+                    totalPage:totalPage},
                     {status:200}
                 )
 

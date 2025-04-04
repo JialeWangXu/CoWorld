@@ -109,9 +109,15 @@ export async function GET(request:NextRequest) {
                         }
                     })) as IJobAndCompany[];
                     console.log("DESPUES DE CONVERTIR "+jobParser)
+
+                    const totalPage = Math.ceil(jobParser.length/5);
+                    console.log("En total hay x paginas"+jobParser.length)
+                    const start= (parseInt(params.page)-1)*5;
+                    const slicedJobList = jobParser.slice(start,start+5);
                 
                     return NextResponse.json({
-                        jobList:jobParser
+                        jobList:slicedJobList,
+                        totalPage:totalPage
                     },{status:200})
                 }catch(e){
                     return NextResponse.json({

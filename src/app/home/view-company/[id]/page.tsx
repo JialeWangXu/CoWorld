@@ -27,6 +27,11 @@ export default function companyViewPage(){
         const [activePage,setActivePage] = useState("Info");
         const params = useParams<{ id: string}>()
         const router = useRouter();
+        const [currentPage, setCurrentPage] = useState(1);
+        const [totalPages, setTotalPages] = useState(1);
+        const [jobLits, setJobList] = useState([]);
+        const [demonstratingPages, setDemonstratingPages]= useState(0);
+        const [paginationLimit, setPaginationLimit]=useState(0);
 
         useEffect(()=>{
         
@@ -53,6 +58,16 @@ export default function companyViewPage(){
                         }
                         console.table(companyDetail)
                         setCompany(companyDetail)
+                        setCurrentPage(1);
+                        setTotalPages(Math.ceil(jobs.data.jobList.length/5));
+                        setJobList(jobs.data.jobList);
+                        if(Math.ceil(jobs.data.jobList.length/5)>5){
+                            setDemonstratingPages(5);
+                            setPaginationLimit(5);
+                        }else{ 
+                            setDemonstratingPages(Math.ceil(jobs.data.jobList.length/5));
+                            setPaginationLimit(Math.ceil(jobs.data.jobList.length/5));
+                        } 
                         setError("");
                     }catch(e){
                         setError("Hubido error al cargar datos de la empresa...");
@@ -64,12 +79,55 @@ export default function companyViewPage(){
 
                 fetchCompany();
         },[])
+
+        const handlePaginationJobs=(page:number)=>{
+            const start=(page-1)*5
+            setJobList(
+                company.jobs.slice(start, start+5)
+            )
+            setCurrentPage(page);
+        }
         if (loading) {
             return <ProfileSkeleton/>
         }
         if (error) {
             return <div>Error al cargar datos de la empresa</div> 
         }
+
+        const handleNextPagenation =()=>{
+            if(currentPage%5===0){
+                if((currentPage+5)> totalPages){
+                    setDemonstratingPages(totalPages);
+                    setPaginationLimit(totalPages-currentPage);
+                }else{
+                    setDemonstratingPages(currentPage+5)
+                }
+            }
+        }
+    
+        const handlePrePagination =()=>{
+            if( currentPage%5==1 ){
+                if(currentPage!==1){
+                    setDemonstratingPages(currentPage-1);
+                }
+            }
+        }
+
+        const displayPagesNumber= ()=>{
+            const start = demonstratingPages -(paginationLimit-1);
+            return Array.from({ length: paginationLimit }, (_, i) => start + i).map((index)=>(<button key={index}
+                className={`${styles.paginationButton}`}
+                onClick={()=>{ handlePaginationJobs(index)}}
+                style={{ 
+                fontWeight: currentPage===(index)? 'bold':'normal',
+                margin: '0 5px',
+                backgroundColor:  currentPage===(index)?'#306d1f':'white',
+                color: currentPage===(index)? 'white':'#306d1f'
+                }}
+                >
+                    {index}
+            </button>))
+            }
 
         return(
             <div className="container-fluid">
@@ -106,7 +164,7 @@ export default function companyViewPage(){
                     </div> ):(<div>
                         { <div className="container-fluid">
                             {company.jobs.length > 0 ? (
-                                company.jobs.map((job, index) => (
+                                jobLits.map((job, index) => (
                                     <div className="row" key={index} >
                                             <div className={`${styles.jobCard} ${styles.hov} col-sm-12`} style={{marginTop:"1rem"}} onClick={()=>{router.push(`/home/view-job/${job._id.toString()}`)}}>
                                                 <div className="row" style={{display:"flex", flexWrap:"nowrap", marginLeft:"1rem"}}>
@@ -130,13 +188,29 @@ export default function companyViewPage(){
                                                 </div>
                                                 <p className={`${styles.text}`}>{job.description}</p>
                                             </div>
-                                    </div>
+                                    </div>  
                                 ))
                             ) : (
                                 <div className="row">
                                     <div className="col-sm-12" style={{fontSize:"1.4rem", color:"GrayText", fontWeight:"500"}}> No se ha encontrado ningún trabajo que cumpla con los filtros introducidos.</div>
                                 </div>
                             )}
+                            {(company.jobs.length > 0)&&<div style={{ marginTop: '20px', textAlign: 'center' }}>
+                                
+                                <button className={`${styles.paginationButton}`}
+                                onClick={()=>{handlePrePagination(),handlePaginationJobs(currentPage-1)}}
+                                disabled={currentPage===1}
+                                >
+                                &laquo;
+                                </button>
+                                {displayPagesNumber()}
+                                <button className={`${styles.paginationButton}`}
+                                onClick={()=>{handleNextPagenation(),handlePaginationJobs(currentPage+1)}}
+                                disabled={currentPage===(totalPages)}
+                                >
+                                &raquo;
+                                </button>
+                            </div>}
                     </div>}
                 </div>)}
             </div>

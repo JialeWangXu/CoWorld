@@ -31,14 +31,9 @@
     border-radius: 6px;
 }
 
-.helpContainer{
-    display:flex;
-    flex-direction:column;
-    text-align:center; 
-    justify-content:center;
-    align-items:center;
-    min-height:85vh;
-    overflow:hidden; 
-    margin-bottom:20px; 
-    padding:1rem;
+.paginationButton{
+    color: #306d1f;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }

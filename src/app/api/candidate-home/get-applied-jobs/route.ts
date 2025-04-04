@@ -6,7 +6,7 @@ import { message } from "util/message";
 import Job from "models/Job";
 import { IJobAndCompany } from "types/JobFilter";
 
-export async function GET(request:NextRequest) {
+export async function POST(request:NextRequest) {
     
     try{
         await connectMD();
@@ -17,18 +17,15 @@ export async function GET(request:NextRequest) {
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
             console.log("Access aprobado para editar")
             try{
-
-                const job= await Job.aggregate([
+                const body = await request.json();
+                const {activePage,page} = body;
+                var job:any;
+                if(activePage==="solicitados"){
+                    job= await Job.aggregate([
+                    {$match:{currentStatus:"active"}},    
                     {$match: {
-                        applicants: { $elemMatch: { user: new ObjectId(data._id) } }
+                        applicants: { $elemMatch: { user: new ObjectId(data._id), status:"solicitado"  } }
                     }},
-                    {$lookup:{
-                        from: "companies",
-                        localField:"company_id",
-                        foreignField:"_id",
-                        as: "companyInfo"
-                    }}, // para obtener companyName
-                    {$unwind:{path:"$companyInfo",preserveNullAndEmptyArrays:true}},
                     {$lookup:{
                         from:"companyprofiles",
                         localField:"company_id",
@@ -36,23 +33,61 @@ export async function GET(request:NextRequest) {
                         as:"companyProfile"
                     }},
                     {$unwind:{path:"$companyProfile",preserveNullAndEmptyArrays: true}}
-                ])
-
+                    ])
+                }else if(activePage ==="enCurso"){
+                    job= await Job.aggregate([
+                        {$match:{currentStatus:"active"}},    
+                        {$match: {
+                            applicants: { $elemMatch: { user: new ObjectId(data._id), $or:[{status:"a comunicar"},{status:"comunicado"}] } }
+                        }},
+                        {$lookup:{
+                            from:"companyprofiles",
+                            localField:"company_id",
+                            foreignField:"company_id",
+                            as:"companyProfile"
+                        }},
+                        {$unwind:{path:"$companyProfile",preserveNullAndEmptyArrays: true}}
+                        ])
+                }else if(activePage==="cerrados"){
+                    job= await Job.aggregate([
+                        {$match:{currentStatus:"closed"}},    
+                        {$match: {
+                            applicants: { $elemMatch: { user: new ObjectId(data._id) } }
+                        }},
+                        {$lookup:{
+                            from:"companyprofiles",
+                            localField:"company_id",
+                            foreignField:"company_id",
+                            as:"companyProfile"
+                        }},
+                        {$unwind:{path:"$companyProfile",preserveNullAndEmptyArrays: true}}
+                    ])
+                }else{
+                    return NextResponse.json({
+                        error:message.error.genericError
+                    },{status:400})
+                }
                 console.log("Encontrado el trabajo"+job.length)
 
                 const jobParser = job.map(job => ({
                     ...job,
                     company_id: {
-                        company_id:job.companyInfo._id,
-                        companyName: job.companyInfo.companyName,
+                        company_id:job.companyProfile.company_id,
+                        companyName: job.companyProfile.companyName,
                         logo:job.companyProfile?.logo,
                         scale:job.companyProfile?.scale,
                         industry:job.companyProfile?.industry
                     }
                 })) as IJobAndCompany[];
 
+                const totalPage = Math.ceil(jobParser.length/5);
+                console.log("En total hay x paginas"+jobParser.length)
+                const start= (parseInt(page)-1)*5;
+                const slciedJobList = jobParser.slice(start,start+5);
+
                 return NextResponse.json({
-                    job:jobParser
+                    job:slciedJobList,
+                    totalPage:totalPage
                 },{status:200})
             }catch(e){
                 return NextResponse.json({

@@ -2,24 +2,21 @@
 
 import JobFilter from "app/components/JobFilters";
 import JobListDisplay from "app/components/JobsDisplay";
-import { useState, useEffect, FormEvent } from "react";
+import { useState, useEffect } from "react";
 import useLocalStorage from "app/hooks/useLocalStorage";
 import axiosInstance from "lib/axiosInterceptor";
 import { IJobAndCompany, JobFilters } from "types/JobFilter";
 import { DISABILITIES_INITIAL_VALUE } from "util/constants";
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import styles from "./styles.module.scss"
 import { useRouter } from "next/navigation";
 import { CardSkeleton } from "app/components/CardSkeleton";
 
 export default function HomePage(){
 
-    // tengo que hacer 1 esqueleto para cuando carga...
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
     const [searched, setSearched] = useState(false);
     const [debounce, setDebounce] = useState<NodeJS.Timeout>()
-    const router = useRouter();
     const [filter, setFilter] = useLocalStorage<JobFilters>("JobFilters",{
         city:[],
         disabilities:DISABILITIES_INITIAL_VALUE,
@@ -32,11 +29,15 @@ export default function HomePage(){
     })
     const [jobList, setJobList] = useState<IJobAndCompany[]>([]);
     const [searchedList, setSearchedList] =useState<IJobAndCompany[]>([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
+    const [demonstratingPages, setDemonstratingPages]= useState(0);
+    const [paginationLimit, setPaginationLimit]=useState(0);
 
     useEffect(()=>{
         const controller = new AbortController();
 
-        const fetchFilteredJobs = async ()=>{
+        const fetchFilteredJobs = async (page:number)=>{
 
             try{
                 
@@ -49,7 +50,8 @@ export default function HomePage(){
                     workCategory: filter.workCategory.join(','),
                     experience: filter.experience,
                     minumumEducation: filter.minumumEducation.join(','),
-                    intership:filter.intership
+                    intership:filter.intership,
+                    page:page
                 }
                 setLoading(true);
 
@@ -60,6 +62,15 @@ export default function HomePage(){
                 })
 
                 setJobList(data.jobList);
+                setCurrentPage(page);
+                setTotalPages(data.totalPage);
+                if(data.totalPage>5){
+                    setDemonstratingPages(5);
+                    setPaginationLimit(5);
+                }else{
+                    setDemonstratingPages(data.totalPage);
+                    setPaginationLimit(data.totalPage);
+                }
                 setError("")
 
             }catch(e){
@@ -70,6 +81,7 @@ export default function HomePage(){
             }finally{
                 if(!controller.signal.aborted){
                     setLoading(false);
+                    console.log("UCrrent page es:"+currentPage)
                 }
             }
         }
@@ -79,12 +91,23 @@ export default function HomePage(){
         }
         if(!searched){
             console.log("Buscando por API")
-            const timeOut = setTimeout(fetchFilteredJobs,500)
+            const timeOut = setTimeout(()=>fetchFilteredJobs(1),500)
             setDebounce(timeOut)
         }else{
             console.log("Buscando de buscados")
             var jobs:IJobAndCompany[] = filterJobs(jobList,filter);
+            setTotalPages(Math.ceil(jobs.length/5));
+            if(Math.ceil(jobs.length/5)>5){
+                setDemonstratingPages(5);
+                setPaginationLimit(5);
+            }else{
+                setDemonstratingPages(Math.ceil(jobs.length/5));
+                setPaginationLimit(Math.ceil(jobs.length/5));
+            }
+            jobs = jobs.slice(0,5);
             setSearchedList(jobs);
+            setCurrentPage(1);
+
         }
 
         return () => {
@@ -203,8 +226,17 @@ export default function HomePage(){
                 })
                 console.log("Lo que hemos buscado es: "+JSON.stringify(data.job));
                 setJobList(data.job);
-                setSearchedList(data.job);
-                console.log("Ha seteado el list con lo qu eha buscado: "+jobList.length)
+                setTotalPages(Math.ceil(data.job.length/5));
+                setCurrentPage(1);
+                setSearchedList(data.job.slice(0,5));
+                if(Math.ceil(data.job.length/5)>5){
+                    setDemonstratingPages(5);
+                    setPaginationLimit(5);
+                }else{
+                    setDemonstratingPages(Math.ceil(data.job.length/5));
+                    setPaginationLimit(Math.ceil(data.job.length/5));
+                }
+                console.log("Ha seteado el list con lo qu eha buscado: "+searchedList.length)
                 setError("");
     
             }catch(e){
@@ -217,6 +249,82 @@ export default function HomePage(){
 
     }
 
+    
+    const displayPagesNumber= ()=>{
+        const start = demonstratingPages -(paginationLimit-1);
+        return Array.from({ length: paginationLimit }, (_, i) => start + i).map((index)=>(<button key={index}
+            className={`${styles.paginationButton}`}
+            onClick={()=>{searched? handlePaginationSearched(index): handlePaginationJobs(index)}}
+            style={{ 
+            fontWeight: currentPage===(index)? 'bold':'normal',
+            margin: '0 5px',
+            backgroundColor:  currentPage===(index)?'#306d1f':'white',
+            color: currentPage===(index)? 'white':'#306d1f'
+            }}
+        >
+            {index}
+        </button>
+        ))
+    }
+
+    const handlePaginationSearched =(page:number)=>{
+        const start=(page-1)*5
+        console.log("El start es: "+start+" y el page es: "+page);
+        setSearchedList(
+            jobList.slice(start, start+5)
+        )
+        setCurrentPage(page);
+    }
+
+    const handlePaginationJobs= async(page:number)=>{
+        console.log("Ha entrado aqui")
+        try{
+            const param ={
+                city: filter.city.join(','),
+                disabilities: encodeURIComponent(JSON.stringify(filter.disabilities)),
+                mode: filter.mode.join(','),
+                workHours: filter.workHours.join(','),
+                workCategory: filter.workCategory.join(','),
+                experience: filter.experience,
+                minumumEducation: filter.minumumEducation.join(','),
+                intership:filter.intership,
+                page:page
+            }
+            setLoading(true);
+
+            const {data} = await axiosInstance.get(`/candidate-home/get-jobs` ,{
+                params: param,
+                withCredentials:true
+            })
+
+            setJobList(data.jobList);
+            setCurrentPage(page);
+            setLoading(false);
+            setError("")
+        }catch(e){
+            console.log("bad request for pagination"+e);
+        }
+    }
+
+    const handleNextPagenation =()=>{
+        if(currentPage%5===0){
+            if((currentPage+5)> totalPages){
+                setDemonstratingPages(totalPages);
+                setPaginationLimit(totalPages-currentPage);
+            }else{
+                setDemonstratingPages(currentPage+5)
+            }
+        }
+    }
+
+    const handlePrePagination =()=>{
+        if( currentPage%5==1 ){
+            if(currentPage!==1){
+                setDemonstratingPages(currentPage-1);
+            }
+        }
+    }
+
     return(
         <div>
             <div className="bg-white p-4">
@@ -226,11 +334,28 @@ export default function HomePage(){
                 </form>
             </div>
             <JobFilter filters={filter} setFilters={setFilter}></JobFilter>
-            {loading&&<CardSkeleton cards={2}/>}
+            {loading&&<CardSkeleton cards={5}/>}
             {error&&<div>Tenido error al cargar los datos</div>}
             {!loading&&!error&&<div className="container"style={{marginTop:"15px"}}>
                 {searched? <JobListDisplay jobList={searchedList} />:<JobListDisplay jobList={jobList} />}
-            </div>}
+                <div style={{ marginTop: '20px', textAlign: 'center' }}>
+                <button className={`${styles.paginationButton}`}
+                    onClick={()=>{handlePrePagination(),(searched? handlePaginationSearched(currentPage-1): handlePaginationJobs(currentPage-1))}}
+                    disabled={currentPage===1}
+                    >
+                    &laquo;
+                    </button>
+                    {displayPagesNumber()}
+                    <button className={`${styles.paginationButton}`}
+                    onClick={()=>{handleNextPagenation(),(searched? handlePaginationSearched(currentPage+1): handlePaginationJobs(currentPage+1))}}
+                    disabled={currentPage===(totalPages)}
+                    >
+                    &raquo;
+                    </button>
+                </div>
+                </div>
+            }
+            
         </div>
     );
 }
