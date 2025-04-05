@@ -189,7 +189,7 @@ export default function editInfoPage(){
                         placeholder="Puede completar más requisitos en aqui!"
                         className="col-md-10"
                         row={5}
-                        length={1000}
+                        length={5000}
                     />
                 </div>
                 <hr/>
@@ -200,7 +200,7 @@ export default function editInfoPage(){
                         placeholder="Dar un descripción breve para que los aplicantes puede conocer mejor el puesto!"
                         className="col-md-10"
                         row={5}
-                        length={1000}
+                        length={5000}
                     />
                 </div>
                 <div className='text-center'>

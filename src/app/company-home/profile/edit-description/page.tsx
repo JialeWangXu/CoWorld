@@ -55,7 +55,7 @@ export default function editDescriptionPage(){
                         placeholder="Cuéntenos algo sobre su empresa! :D"
                         className='form col-sm-12'
                         row={10}
-                        length={1000} />
+                        length={5000} />
                 </div> 
                 <div className='text-center'>
                     <Form.SubmitButton text="Guardar" loading={isLoading}/>

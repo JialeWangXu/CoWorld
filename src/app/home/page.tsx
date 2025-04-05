@@ -320,7 +320,10 @@ export default function HomePage(){
     const handlePrePagination =()=>{
         if( currentPage%5==1 ){
             if(currentPage!==1){
+                console.log("El current page es: "+currentPage+" y el total pages es: "+totalPages)
+                console.log("Demonstrating pages es: "+demonstratingPages+" y el pagination limit es: "+paginationLimit)
                 setDemonstratingPages(currentPage-1);
+                setPaginationLimit(5);
             }
         }
     }

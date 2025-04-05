@@ -74,6 +74,7 @@ export default function ViewCandidatePage(){
             if( currentPage%5==1 ){
                 if(currentPage!==1){
                     setDemonstratingPages(currentPage-1);
+                    setPaginationLimit(5);
                 }
             }
         }
