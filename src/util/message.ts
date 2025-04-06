@@ -14,7 +14,10 @@ export const message= {
         JobEdited:"¡Oferta de trabajo editado con éxito!",
         GenericSuccess:"El cambio guardado con exito!",
         JobSaved:"Trabajo aplicado con exito! Buena suerte!:)",
-        StatusUpdated:"Estado del candiadto actualizado con exito!"
+        StatusUpdated:"Estado del candiadto actualizado con exito!",
+        OperatorCreated:"¡Operador creado con éxito!",
+        OperatorDeleted:"¡Operador eliminado con éxito!",
+        OperatorModified:"¡Operador modificado con éxito!"
     },
     error:{
         notFull:"Por favor, rellene todos los campos.",
@@ -44,6 +47,7 @@ export const message= {
         saveJobError:"¡Ha ocurrido un error al guardar la oferta del trabajo!",
         JobApplyError: "¡Ha ocurrido un error al aplicar la oferta del trabajo!",
         candiateLoadError:"¡Ha ocurrido un error al cargar los candidatos de la oferta del trabajo!",
-        statusUpdateError:"¡Ha ocurrido un error al actualizar el estado de candidato en la oferta del trabajo!"
+        statusUpdateError:"¡Ha ocurrido un error al actualizar el estado de candidato en la oferta del trabajo!",
+        operatorLoadError:"¡Ha ocurrido un error al iniciar sesión como operator!",
     }
 }

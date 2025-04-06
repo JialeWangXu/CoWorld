@@ -20,6 +20,7 @@ export default function ResetPwdPage(){
         const urlToken = searchParams.get('token');
         if (urlToken) setToken(urlToken);
         const initialValues = {
+            tempPwd:'',
             pwd: '',
             confirmpwd: ''
         }
@@ -36,7 +37,7 @@ export default function ResetPwdPage(){
                 token: token ?? ''
             }
         }
-        await authFetch({endpoint:'/reset-pwd',nextPath:'/',fetchdata:data,config:config})
+        await authFetch({endpoint:'/reset-pwd-operator',nextPath:'/company-login',fetchdata:data,config:config})
         setIsLoading(false)
     }
 
@@ -46,7 +47,16 @@ export default function ResetPwdPage(){
                 <div className='col-md-7 col-sm-12'>
                     <div className='card'>
                         <div className={`${styles.center} card-body`} >
-                            <Form title="Restablecer tu contraseña" onSubmit={resetPwd} oldValues={oldValues}>
+                            <Form title="Cambiar su contraseña" onSubmit={resetPwd} oldValues={oldValues}>
+                                <Form.Input 
+                                    id="tempPwd" 
+                                    htmlfor="tempPwd" 
+                                    label="CONTRASEÑA TEMPORAL" 
+                                    type="password" 
+                                    placeholder="Introduce tu contraseña temporal" 
+                                    className='mb-3' 
+                                    required={true}
+                                />
                                 <Form.Input 
                                     id="pwd" 
                                     htmlfor="pwd" 

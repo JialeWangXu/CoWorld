@@ -27,8 +27,15 @@ export default function ViewOneJobCandidatesPage(){
                 withCredentials:true
             })
             setCandidateList(data.candidates);
-            setTotalPages(Math.ceil(data.totalPage));
+            setTotalPages(data.totalPage);
             setCurrentPage(page);
+            if(data.totalPage>5){
+                setDemonstratingPages(5);
+                setPaginationLimit(5);
+            }else{
+                setDemonstratingPages(data.totalPage);
+                setPaginationLimit(data.totalPage);
+            }
             setError("")
             setLoading(false)
         }catch(e){
@@ -38,13 +45,6 @@ export default function ViewOneJobCandidatesPage(){
     }
     useEffect(()=>{
         fetchCandiates("solicitado",1);
-        if(totalPages>5){
-            setDemonstratingPages(5);
-            setPaginationLimit(5);
-        }else{
-            setDemonstratingPages(totalPages);
-            setPaginationLimit(totalPages);
-        }
     },[params.id])
 
     useEffect(()=>{
@@ -55,13 +55,6 @@ export default function ViewOneJobCandidatesPage(){
         }
         else if(activePage==="Comunicado"){
             fetchCandiates("comunicado",1);
-        }
-        if(totalPages>5){
-            setDemonstratingPages(5);
-            setPaginationLimit(5);
-        }else{
-            setDemonstratingPages(totalPages);
-            setPaginationLimit(totalPages);
         }
     },[activePage])
 
@@ -114,6 +107,7 @@ export default function ViewOneJobCandidatesPage(){
         if( currentPage%5==1 ){
             if(currentPage!==1){
                 setDemonstratingPages(currentPage-1);
+                setPaginationLimit(5);
             }
         }
     }
@@ -157,7 +151,7 @@ export default function ViewOneJobCandidatesPage(){
             <div style={{textAlign:"center"}}>{`La oferta no tiene ningún candidat@ ${activePage==="pending"? "de pendiente":activePage==="aComunicar"?"a comunicar":"comunicado"} de momento, `}<a href='/company-home/candidates' className='link-success'>ver otras ofertas</a> &#128204;</div>
         )}
         {candiateList?.length>0&&<div style={{ marginTop: '20px', textAlign: 'center' }}>
-               <button className={`${styles.paginationButton}`}
+            <button className={`${styles.paginationButton}`}
                     onClick={()=>{handlePrePagination(),handlePaginationJobs(currentPage-1)}}
                     disabled={currentPage===1}
                     >
@@ -169,7 +163,7 @@ export default function ViewOneJobCandidatesPage(){
                     disabled={currentPage===(totalPages)}
                     >
                     &raquo;
-                    </button>
+            </button>
                 </div>}
         </div>)
 }

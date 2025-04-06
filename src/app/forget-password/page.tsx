@@ -4,10 +4,13 @@ import { useSnipper } from "app/hooks/useSnipper";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAuthFetch } from "app/hooks/useAuthFetch";
 import styles from './styles.module.scss'
+import { FormProperties } from 'app/context/FormContext';
+import { useEffect, useState } from 'react';
 
 export default function ForgetPwdPage(){
     const authFetch = useAuthFetch();
         const {isLoading,setIsLoading} = useSnipper();
+        const [oldValues, setOldValues] = useState<FormProperties>({});
     
         const forgetPwd = async (data:any)=>{
             console.log('fogrt starting')
@@ -16,13 +19,20 @@ export default function ForgetPwdPage(){
             setIsLoading(false)
             console.log('fin')
         }
+
+    useEffect(() => {
+        const initialValues = {
+                email: ''
+        }
+        setOldValues(initialValues);
+    }, [])
     return(
         <div className={`${styles.allViewPort} row`}>
                 <div className='col'></div>
                 <div className='col-sm-7'>
                     <div className='card'>
                         <div className={`${styles.center} card-body`} >
-                            <Form title="¿Has olvidado tu contraseña?" onSubmit={forgetPwd}>
+                            <Form title="¿Has olvidado tu contraseña?" onSubmit={forgetPwd} oldValues={oldValues}>
                                 <Form.Input 
                                     id="email" 
                                     htmlfor="email" 

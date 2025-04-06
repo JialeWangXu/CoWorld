@@ -59,7 +59,7 @@ export default function ApplicationViewPage(){
     if(error){
         return <div>Error al cargar datos...</div>
     }
-   
+
     const handlePaginationJobs=async(page:number, activePage:string)=>{
         if(activePage==="guardados"){
             try{

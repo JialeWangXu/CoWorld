@@ -96,7 +96,7 @@ export default function ViewCandidatePage(){
                 ))}
             </div>)}
             {jobList?.length>0&&<div style={{ marginTop: '20px', textAlign: 'center' }}>
-               <button className={`${styles.paginationButton}`}
+            <button className={`${styles.paginationButton}`}
                     onClick={()=>{handlePrePagination(),handlePaginationJobs(currentPage-1)}}
                     disabled={currentPage===1}
                     >

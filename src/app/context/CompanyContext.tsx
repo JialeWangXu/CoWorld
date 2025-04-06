@@ -11,6 +11,7 @@ export interface companyContextType extends ICompanyProfile{  // solo parte de d
         companyName: string;
         cif:string;
         jobs:job[];
+        isOperator:number;
 }
 
 export interface ICompany {
@@ -37,6 +38,9 @@ export const CompanyProvider=({children}:companyProviderProps)=>{
         const  jobs = await axiosInstance.get(`/company-jobs/get-jobs` ,{
             withCredentials:true
         });
+        const role = await axiosInstance.get(`/auth/company-check-role` ,{
+            withCredentials:true
+        });
         const company:companyContextType = {
             _id:data.profile._id,
             company_id:data.profile.company_id._id,
@@ -51,10 +55,12 @@ export const CompanyProvider=({children}:companyProviderProps)=>{
             url:data.profile.url,
             logo:data.profile.logo,
             description:data.profile.description,
-            jobs:jobs.data.jobs
+            jobs:jobs.data.jobs,
+            isOperator: role.data.isOperator,
         }
         setCompany(company);
         console.log("Seteado empresa");
+        console.log("es operdador? "+company.isOperator)
         setWaiting(false);
         }catch(e){
             console.log("Hubido problema en cargar datos de empresa:"+e);

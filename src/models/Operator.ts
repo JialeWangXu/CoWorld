@@ -19,6 +19,10 @@ const operatorSchema:Schema = new Schema({
         type: String,
         required: true
     },
+    changedPassword:{
+        type: Boolean,
+        default: false
+    },
     role:{
         type: Number,
         default: OPERATOR
@@ -39,6 +43,7 @@ export interface IOperator{
     lastname: string;
     email: string;
     password: string;
+    changedPassword: boolean;
     role: number;
     company_id: ObjectId
     createdAt?: Date;
@@ -51,6 +56,7 @@ export interface IOperatorDocument extends Document{
     lastname: string;
     email: string;
     password: string;
+    changedPassword: boolean;
     role: number;
     company_id: ObjectId;
     createdAt?: Date;

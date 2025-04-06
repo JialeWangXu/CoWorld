@@ -29,6 +29,16 @@ export type certification ={
     emitter: string;
 }
 
+export type operator={
+    _id?: ObjectId;
+    firstname: string;
+    lastname: string;
+    email: string;
+    changedPassword: boolean;
+    role: number;
+    company_id?: ObjectId
+}
+
 export type language ={
     language: string;
     level: string;
@@ -76,7 +86,7 @@ export type job ={
     description:string;
 }
 
-export type formValues = | string | number | boolean | string[] | undefined| null | study[] | date | workExperience[]| certification[]|language[]| disability[]; 
+export type formValues = | string | number | boolean | string[] | undefined| null | study[] | date | workExperience[]| certification[]|language[]| disability[];
 // Para definir el tipo de datos del formulario, restringimos a string tanto key como value, lo que compartimos entre componentes
 
 

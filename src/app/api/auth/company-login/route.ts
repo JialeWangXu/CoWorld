@@ -6,6 +6,7 @@ import Company from "models/Company";
 import Operator from "models/Operator";
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import {OPERATOR,COMPANY} from "util/constants";
 
 export async function POST(request: NextRequest) {
     
@@ -39,6 +40,11 @@ export async function POST(request: NextRequest) {
             }, {status:400})
         }
 
+        if(findOperator&& findOperator.changedPassword===false){
+            return NextResponse.json({  
+                error:message.error.operatorLoadError
+            }, {status:400})
+        }
         // comprobar si la contraseña es correcta
         const comparePwd = findCompany? await bcrypt.compare(password, findCompany.password) : await bcrypt.compare(password, findOperator.password)
 
@@ -48,10 +54,16 @@ export async function POST(request: NextRequest) {
             }, {status:400})
         }
 
-        const {password:UserPass, ...rest} = findCompany? findCompany._doc : findOperator._doc;
+        var operatorCompany = null;
+        if(findOperator){
+            operatorCompany = await Company.findOne({_id:findOperator.company_id});
+        }
+        const {password:UserPass, ...rest} = operatorCompany? operatorCompany._doc : findCompany._doc;
+
+
         // Generar tokens para la sesion
-        const accsessToken = jwt.sign({data:rest},process.env.ACCESS_TOKEN_SECRET,{expiresIn:'15m',})
-        const refreshToken = jwt.sign({data:rest},process.env.REFRESH_TOKEN_SECRET,{expiresIn:'7d',})        
+        const accsessToken = jwt.sign({data:{...rest, isOperator: findOperator ? OPERATOR : COMPANY}},process.env.ACCESS_TOKEN_SECRET,{expiresIn:'15m',})
+        const refreshToken = jwt.sign({data:{...rest, isOperator: findOperator ? OPERATOR : COMPANY}},process.env.REFRESH_TOKEN_SECRET,{expiresIn:'7d',})        
 
         const response = NextResponse.json({
             sucess:message.sucess.CompanyLogged,
