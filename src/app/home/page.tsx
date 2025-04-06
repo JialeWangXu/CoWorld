@@ -341,6 +341,7 @@ export default function HomePage(){
             {error&&<div>Tenido error al cargar los datos</div>}
             {!loading&&!error&&<div className="container"style={{marginTop:"15px"}}>
                 {searched? <JobListDisplay jobList={searchedList} />:<JobListDisplay jobList={jobList} />}
+                {((searched&&searchedList.length>0) || (!searched && jobList.length>0) )&&
                 <div style={{ marginTop: '20px', textAlign: 'center' }}>
                 <button className={`${styles.paginationButton}`}
                     onClick={()=>{handlePrePagination(),(searched? handlePaginationSearched(currentPage-1): handlePaginationJobs(currentPage-1))}}
@@ -356,6 +357,7 @@ export default function HomePage(){
                     &raquo;
                     </button>
                 </div>
+                }
                 </div>
             }
             

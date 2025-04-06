@@ -52,22 +52,28 @@ export default function editStatePage(){
     return (
         <div className="container-fluid" style={{ height:'100%', flexDirection:'column', display:'flex', justifyContent:'center', alignItems:'center' }}>         
             <Form title="Editar Situación laboral y empleos previstos" onSubmit={edit} oldValues={oldValues}>
-            <div className="row" style={{marginBottom:'20px'}}> 
+            <div className="row" style={{marginBottom:'20px', marginTop:'20px'}}> 
+                <div className="col"></div>
                     <Form.StateSelect
                         id="state"
                         htmlfor="state"
                         label="Estado actual: "
-                        className='col-sm-12'
+                        className='col-md-8'
                     />
+                    <div className="col"></div>
                 </div>
                 <div className="row" style={{marginBottom:'20px'}}>
+                <div className="col"></div>
                     <Form.Checkbox 
                         id="huntingJob" 
                         htmlfor="huntingJob" 
                         label="Buscando trabajo: " 
-                     />
+                        className="col-md-8"
+                    />
+                    <div className="col"></div>
                 </div> 
                 <div className="row" style={{marginBottom:'30px'}}>
+                    <div className="col"></div>
                     <Form.TagInput 
                         id="desiredJob"
                         htmlfor="desiredJob" 
@@ -76,7 +82,8 @@ export default function editStatePage(){
                         maxTag={5}
                         unit="trabajos"
                         warning="Has alcanzado el límite de trabajos, elimina uno para añadir otro."
-                        className='col-md-6' />
+                        className='col-md-8' />
+                    <div className="col"></div>
                 </div> 
                 <div className='text-center'>
                     <Form.SubmitButton text="Guardar" loading={isLoading}/>

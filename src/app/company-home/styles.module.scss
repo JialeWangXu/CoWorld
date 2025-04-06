@@ -5,13 +5,13 @@
     -webkit-line-clamp: 2; /* number of lines to show */
             line-clamp: 2; 
     -webkit-box-orient: vertical;
- }
+}
 
- .hov {
+.hov {
     &:hover{
         color: #306d1f;
         font-weight: bold;
-      }
+    }
     &:active{
         color: #306d1f;
         font-weight: bold;
@@ -29,6 +29,18 @@
     background-color: #d5f5e3;
     padding: 7px;
     border-radius: 6px;
+}
+
+.helpContainer{
+    display:flex;
+    flex-direction:column;
+    text-align:center; 
+    justify-content:center;
+    align-items:center;
+    min-height:85vh;
+    overflow:hidden; 
+    margin-bottom:20px; 
+    padding:1rem;
 }
 
 .paginationButton{
