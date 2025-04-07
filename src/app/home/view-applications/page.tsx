@@ -179,7 +179,7 @@ export default function ApplicationViewPage(){
                                             <div className="col-6">
                                                 <div className="row" style={{display:"flex", flexWrap:"nowrap"}}>
                                                     <div className="col-sm-8"style={{display:"flex", flexDirection:"column", textAlign:"end"}} >
-                                                        <h4 style={{fontWeight:"bold"}}>{job.company_id.companyName}</h4>
+                                                        <h4 style={{fontWeight:"bold"}}>{job.companyName}</h4>
                                                         <h6>{job.company_id?.industry ? job.company_id?.industry:""}  {job.company_id?.scale ? job.company_id?.scale+" empleos":""}</h6>
                                                         <a href={`/home/view-company/${job.company_id?.company_id?.toString()}`} className="link-success">Ver perfil de la empresa</a>
                                                     </div>
@@ -217,7 +217,7 @@ export default function ApplicationViewPage(){
                                             <div className="col-6">
                                                 <div className="row" style={{display:"flex", flexWrap:"nowrap"}}>
                                                     <div className="col-sm-8"style={{display:"flex", flexDirection:"column", textAlign:"end"}} >
-                                                        <h4 style={{fontWeight:"bold"}}>{job.company_id.companyName}</h4>
+                                                        <h4 style={{fontWeight:"bold"}}>{job.companyName}</h4>
                                                         <h6>{job.company_id?.industry ? job.company_id?.industry:""}  {job.company_id?.scale ? job.company_id?.scale+" empleos":""}</h6>
                                                         <a href={`/home/view-company/${job.company_id?.company_id?.toString()}`} className="link-success">Ver perfil de la empresa</a>
                                                     </div>
@@ -242,8 +242,8 @@ export default function ApplicationViewPage(){
                         </div>)
                     
                     )} 
-               {jobList.length>0&&<div style={{ marginTop: '20px', textAlign: 'center' }}>
-               <button className={`${styles.paginationButton}`}
+            {jobList.length>0&&<div style={{ marginTop: '20px', textAlign: 'center' }}>
+                <button className={`${styles.paginationButton}`}
                     onClick={()=>{handlePrePagination(),handlePaginationJobs(currentPage-1,activePage)}}
                     disabled={currentPage===1}
                     >
