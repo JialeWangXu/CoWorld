@@ -4,7 +4,7 @@ Plataforma de Empleo para Personas con Discapacidad
 
 ## Description
 
-CoWorld es una aplicación web desarrollada como Trabajo de Fin de Grado (TFG) por Jiale Wang, con el objetivo de facilitar la búsqueda de empleo a personas con discapacidad.
+CoWorld es una aplicación web desarrollada como Trabajo de Fin de Grado (TFG) del Grado en Ingeniería de Software en la Universidad Politécnica de Madrid, por Jiale Wang, con el objetivo de facilitar la búsqueda de empleo a personas con discapacidad.
 A diferencia de las plataformas de empleo tradicionales, CoWorld está diseñada con un enfoque inclusivo, integrando funcionalidades que permiten a los usuarios encontrar con mayor eficiencia y precisión ofertas laborales adaptadas a sus necesidades.
 El proyecto ha sido desarrollado utilizando el stack MongoDB, React, Node.js y el framework Next.js como base principal.
 
@@ -51,11 +51,11 @@ Para que la aplicación funcione correctamente, es imprescindible tener bien con
 
 ## Author
 
-Jiale Wang
-https://github.com/JialeWangXu
-www.linkedin.com/in/jiale-wang-11a5342b3
+- Jiale Wang
+- https://github.com/JialeWangXu
+- www.linkedin.com/in/jiale-wang-11a5342b3
 
 ## License
 
-Este proyecto está licenciado bajo la licencia UPM 
+Este proyecto está licenciado bajo la licencia UPM ETSISI.
 
