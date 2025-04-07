@@ -28,22 +28,19 @@ Sistema operativo: Windows, Linux o macOS
 
 1. Clona este repositorio:
    
-  git clone https://github.com/JialeWangXu/CoWorld.git
-  cd CoWorld
+  - git clone https://github.com/JialeWangXu/CoWorld.git
+  - cd CoWorld
 
-2. Instala las dependencias:
-   npm install
+2. Instala las dependencias: npm install
    
 3. Configura las variables de entorno (.env):
 
    
 ### Executing program
 
-1. Ejecuta la aplicación con el comando:
-   npm run dev
+1. Ejecuta la aplicación con el comando: npm run dev
 
-2. Abre tu navegador y acceder a:
-   http://localhost:3000
+2. Abre tu navegador y acceder a: http://localhost:3000
 
 ## Help
 
