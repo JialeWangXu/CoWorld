@@ -43,6 +43,11 @@ export function TagInput({id, htmlfor: htmlFor, label, placeholder, className, m
             return            
         }
         if(tag.length < maxTag && !tag.includes(job.trim())){
+            if(job.trim()===""){
+                setError("No se puede añadir contenido vacio!")
+                setJob("");
+                return
+            }
             setTag([...tag, job.trim()]);
             setJob("");
             setError("")

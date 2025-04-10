@@ -242,7 +242,7 @@ export default function ApplicationViewPage(){
                         </div>)
                     
                     )} 
-            {jobList.length>0&&<div style={{ marginTop: '20px', textAlign: 'center' }}>
+            {((jobList.length>0&&activePage!=="guardados")||(activePage=="guardados"&&savedJobList.length>0))&&<div style={{ marginTop: '20px', textAlign: 'center' }}>
                 <button className={`${styles.paginationButton}`}
                     onClick={()=>{handlePrePagination(),handlePaginationJobs(currentPage-1,activePage)}}
                     disabled={currentPage===1}

@@ -75,6 +75,8 @@ export default function jobViewPage(){
                     }
                     if(user?.savedJob.includes(data.job._id)){
                         setSaved(true);
+                    }else{
+                        setSaved(false);
                     }
                 }catch(e){
                     setError("Hubido error al cargar datos de la oferta...");
@@ -97,16 +99,16 @@ export default function jobViewPage(){
         console.log('Guardar o desguardar el trabajo')
         setIsLoading(true)
         try{
-           const response = await axiosInstance.post(`/candidate-home/save-job`,{job:job._id},{
+            const response = await axiosInstance.post(`/candidate-home/save-job`,{job:job._id},{
                 withCredentials:true
-           })
-           showToast({msg:response.data.sucess, type:'Good',visible:true})
-           getUser()
-           setSaved(saved? false:true);
-           setIsLoading(false);
+        })
+            showToast({msg:response.data.sucess, type:'Good',visible:true})
+            getUser()
+            setSaved(saved? false:true);
+            setIsLoading(false);
         }catch(e:any){
-           showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
-           setIsLoading(false);
+            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+            setIsLoading(false);
         }
     }
 

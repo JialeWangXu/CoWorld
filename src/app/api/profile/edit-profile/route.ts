@@ -4,6 +4,7 @@ import { message } from "util/message";
 import CandidateProfile from "models/CandidateProfile";
 import jwt from 'jsonwebtoken';
 import User from "models/User";
+import { onlyLastNames, onlyLetters } from "util/patterns";
 
 
 export async function POST(request:NextRequest) {
@@ -26,7 +27,19 @@ export async function POST(request:NextRequest) {
             const {photo, firstname, lastname, fisica, auditiva, intelectual, hablar, pluridiscapacidad, visual, mental, city, phone } = body
 
             // Section to edit personal information
-            if(photo){
+            if(firstname){
+
+                if(!onlyLetters(firstname)){
+                    return NextResponse.json({
+                        error: message.error.onlyLetterName
+                    }, {status:400})
+                }
+                if(!onlyLastNames(lastname)){
+                    return NextResponse.json({
+                        error: message.error.onlyLetterSpace
+                    }, {status:400})
+                }
+
                 const resul = await CandidateProfile.findOneAndUpdate(
                     { user_id: data._id },
                     {

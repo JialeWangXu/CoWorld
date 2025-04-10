@@ -6,6 +6,8 @@ import { connectMD } from 'lib/mongodb';
 import User from 'models/User';
 import jwt from 'jsonwebtoken';
 import { EmailTemplate } from 'app/components/EmailTemplate';
+import Operator from 'models/Operator';
+import Company from 'models/Company';
 
 const RESEND_KEY = process.env.RESEND_KEY;
 const resend = new Resend(RESEND_KEY);
@@ -28,20 +30,27 @@ export async function POST(request:NextRequest) {
         console.log("email correcto")
 
         const findUser = await User.findOne({email:email});
-        console.log(`Usuario encontrado: ${findUser ? findUser.userId : "No encontrado"}`);
+        const findCompany = await Company.findOne({email:email});
+        const findOperator = await Operator.findOne({email:email});
 
-
-        if(!findUser){
+        if(!findUser&&!findCompany&&!findOperator){
             console.log("no encuentra")
             return NextResponse.json({
                 error: message.error.notFoundEmail
             },{status:400})
         }
 
+        const targetEntity = findUser || findCompany || findOperator;
+        console.log("encuentra" + targetEntity.email + " " + targetEntity._id)
+
+
         const tokenForChangePwd = {
-            email:findUser.email,
-            userId: findUser._id,
+            email:targetEntity.email,
+            userId: targetEntity._id,
         }
+
+        console.log("crea token")
+
         // dejamos que se invalida este proceso en una hora 60*60*1000
         const token = jwt.sign({data:tokenForChangePwd},process.env.RESET_PWD_TOKEN_SECRETE,{expiresIn:'1h'});
 
@@ -49,9 +58,9 @@ export async function POST(request:NextRequest) {
 
         await resend.emails.send({
             from: "onboarding@resend.dev",
-            to: email,
+            to: "wangjiale0928@gmail.com",
             subject: "Reset your password",
-            react: EmailTemplate({url:url,firstname:findUser.firstname})
+            react: EmailTemplate({url:url,firstname:targetEntity.firstname}),
         });
 
         return NextResponse.json({

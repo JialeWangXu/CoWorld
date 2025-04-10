@@ -3,6 +3,7 @@ import {  NextRequest,NextResponse } from "next/server";
 import { message } from "util/message";
 import jwt from 'jsonwebtoken';
 import Operator from "models/Operator";
+import { onlyLetters, onlyLastNames } from "util/patterns";
 
 export async function POST(request:NextRequest) {
 
@@ -34,6 +35,16 @@ export async function POST(request:NextRequest) {
                     sucess:message.sucess.OperatorDeleted
                 },{status:200})
             }else{
+                if(!onlyLetters(firstname)){
+                    return NextResponse.json({
+                        error: message.error.onlyLetterName
+                    }, {status:400})
+                }
+                if(!onlyLastNames(lastname)){
+                    return NextResponse.json({
+                        error: message.error.onlyLetterSpace
+                    }, {status:400})
+                }                
                 operator.firstname = firstname;
                 operator.lastname = lastname;
                 await operator.save();

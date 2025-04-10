@@ -123,70 +123,69 @@ export default function HomePage(){
         console.log("El filtro actual es"+JSON.stringify(filters))
         if(filters?.city.length > 0){
             temp = temp.filter(job => filters.city.includes(job.city));
-            console.log("comprobando ciudad...."+JSON.stringify(temp));
+
             if(!temp){
                 return [];
             }
         }
         if(filters?.disabilities.length>0){
-            let tempFilter = filters.disabilities.filter(({type, degree})=> degree!==-1);
-            temp = temp.filter( job => {tempFilter.forEach(element => {
+            let tempFilter = filters.disabilities.filter(({type, degree})=> degree>-1);
+            console.log("El tempFilter es: "+JSON.stringify(tempFilter))
+            temp = temp.filter( job => {let aux=true;tempFilter.forEach(element => {
                 let jobDegree = job?.disabilities.find(ele => ele.type === element.type)?.degree;
                 if(jobDegree<element.degree && jobDegree!==-1){
-                    return false;
+                    aux= false;
                 }
-            })
-            return true;  
+            }) 
+                return aux;
             }  
             )
-            console.log("comprobando disa...."+JSON.stringify(temp));
             if(!temp){
                 return [];
             }
         }
         if(filters?.mode.length>0){
             temp = temp.filter(job => filters.mode.includes(job.mode));
-            console.log("comprobando mode...."+JSON.stringify(temp));
             if(!temp){
                 return [];
             }
         }
         if(filters?.workHours.length>0){
             temp = temp.filter(job => filters.workHours.includes(job.workHours));
-            console.log("comprobando WH...."+JSON.stringify(temp));
+
             if(!temp){
                 return [];
             }
         }
         if(filters?.workCategory.length>0){
             temp = temp.filter(job => filters.workCategory.includes(job.workCategory));
-            console.log("comprobando WC...."+JSON.stringify(temp));
+
             if(!temp){
                 return [];
             }
         }
         if(filters?.experience.length>0){
             temp = temp.filter(job => filters.experience===job.experience);
-            console.log("comprobando EXP...."+JSON.stringify(temp));
+
             if(!temp){
                 return [];
             }
         }
         if(filters?.minumumEducation.length>0){
             temp = temp.filter(job => filters.minumumEducation.includes(job.minumumEducation));
-            console.log("comprobando EDu...."+JSON.stringify(temp));
+
             if(!temp){
                 return [];
             }
         }
         if(filter?.intership){
             temp = temp.filter(job => job.intership===true);
-            console.log("comprobando inter true...."+JSON.stringify(temp));
+
         }else{
             temp = temp.filter(job => job.intership===false);
-            console.log("comprobando inter false...."+JSON.stringify(temp));
+
         }
-        console.log("Devolviendo tempo ...."+JSON.stringify(temp))
+
         return temp;
         } else{return jobs}
     }

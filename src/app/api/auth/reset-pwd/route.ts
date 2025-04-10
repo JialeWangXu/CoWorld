@@ -6,6 +6,8 @@ import { message } from "util/message";
 import { passwordRestrict } from "util/patterns";
 import jwt from 'jsonwebtoken';
 import { headers } from "next/headers";
+import Company from "models/Company";
+import Operator from "models/Operator";
 
 
 export async function POST(request:NextRequest) {
@@ -54,23 +56,28 @@ export async function POST(request:NextRequest) {
     
             const newPwd = await bcrypt.hash(pwd,10)
     
-            const user = await User.findOneAndUpdate({_id:data.userId},{password:newPwd},{new:true});
+            var user = await User.findOneAndUpdate({_id:data.userId},{password:newPwd},{new:true});
+            if(!user){
+                user = await Company.findOneAndUpdate({_id:data.userId},{password:newPwd},{new:true});
+            }
+            if(!user){
+                user = await Operator.findOneAndUpdate({_id:data.userId},{password:newPwd},{new:true});
+            }
             if(!user){
                 return NextResponse.json({
                     error:message.error.pwdCantChange
                 },{status:400})
             }
 
+            return NextResponse.json({
+                sucess:message.sucess.PwdChanged
+            },{status:200})
+
         }catch(e){
             return NextResponse.json({
                 error:message.error.invalidToken
             },{status:400})
         }
-
-
-        return NextResponse.json({
-            sucess:message.sucess.PwdChanged
-        },{status:200})
         
     }catch(e){
         return NextResponse.json({

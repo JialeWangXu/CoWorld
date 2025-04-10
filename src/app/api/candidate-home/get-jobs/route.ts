@@ -29,7 +29,7 @@ export async function GET(request:NextRequest) {
         if(filter?.disabilities.length>0){
             console.log("Disabilidad"+filter.disabilities)
             query.$and = filter.disabilities.map(({ type, degree }) => ({
-              $or: [
+            $or: [
                 { disabilities: { $elemMatch: { type: type, degree: -1 } } }, // Si la empresa no impone restricciones
                 { disabilities: { $elemMatch: { type: type, degree: { $gte: degree } } } } // Si el trabajo acepta el grado del candidato o uno mayor
             ]
@@ -222,7 +222,7 @@ export async function GET(request:NextRequest) {
 
                     
                     console.log("Hay trabajos? "+job.length)
-                    console.log("A ver el formato del trabajo es: ...."+JSON.stringify(job))
+                    console.log("Final score: "+job.map(job=>job.jobTitle+"     "+job.finalScore));
                     const jobParser = job.map(job => ({
                         ...job,
                         company_id: {
@@ -233,7 +233,6 @@ export async function GET(request:NextRequest) {
                             industry:job.companyProfile?.industry
                         }
                     })) as IJobAndCompany[];
-                    console.log("DESPUES DE CONVERTIR "+jobParser)
 
                     const totalPage = Math.ceil(jobParser.length/5);
                     console.log("En total hay x paginas"+jobParser.length)

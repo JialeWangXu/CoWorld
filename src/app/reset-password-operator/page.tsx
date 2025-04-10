@@ -62,6 +62,7 @@ export default function ResetPwdPage(){
                                     htmlfor="pwd" 
                                     label="NUEVA CONTRASEÑA" 
                                     type="password" 
+                                    help={true}
                                     placeholder="Introduce tu nueva contraseña" 
                                     className='mb-3' 
                                     required={true}

@@ -15,9 +15,10 @@ interface inputProps {
     validationClass?: string;
     help?:boolean;
     accept?:string
+    pattern?: string;
 }
 
-export function Input({id, htmlfor: htmlFor, label, type, placeholder, className, required, validationMsg, validationClass,help, accept}: inputProps) {
+export function Input({pattern,id, htmlfor: htmlFor, label, type, placeholder, className, required, validationMsg, validationClass,help, accept}: inputProps) {
     const {formProperties, setFormProperties} = useContext(FormContext)!;
 
     const convertToBase64 = async function convertToBase64(file:File) {
@@ -48,7 +49,7 @@ export function Input({id, htmlfor: htmlFor, label, type, placeholder, className
         <div className={className}>
             <label htmlFor={htmlFor} className='form-label'>{label}{help &&<div className={`${styles.tooltip}`}> ❔<span className={`${styles.tooltiptext}`}>
             La contraseña debe contener al menos 8 caracteres, 1 letra minúscula, 1 mayúscula, 1 número y 1 carácter especial.</span></div>}</label>
-            <input required={required} type={type} className='form-control' id={id} name={id} placeholder={placeholder} onChange={handleChange} {...(type !== 'file' ? { value: (formProperties[id] as string | number | readonly string[] || '') } : {})} accept={accept} style={{ display: type === "file" ? "none" : "" }}/>
+            <input pattern={pattern} required={required} type={type} className='form-control' id={id} name={id} placeholder={placeholder} onChange={handleChange} {...(type !== 'file' ? { value: (formProperties[id] as string | number | readonly string[] || '') } : {})} accept={accept} style={{ display: type === "file" ? "none" : "" }}/>
             {required && <div className={validationClass}>{validationMsg}</div>}
         </div>
     )

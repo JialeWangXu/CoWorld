@@ -54,6 +54,7 @@ export default function ResetPwdPage(){
                                     type="password" 
                                     placeholder="Introduce tu nueva contraseña" 
                                     className='mb-3' 
+                                    help={true}
                                     required={true}
                                 />
                                 <Form.Input 

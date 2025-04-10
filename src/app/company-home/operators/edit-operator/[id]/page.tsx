@@ -5,6 +5,8 @@ import axiosInstance from "lib/axiosInterceptor";
 import { Form } from "app/components/Form";
 import { useSnipper } from "app/hooks/useSnipper";
 import { ToastContext } from "app/context/ToastContext";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function EditOperatorPage() {
     const params = useParams<{ id: string}>()
@@ -34,7 +36,29 @@ export default function EditOperatorPage() {
     , [params.id]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className="container-fluid" style={{ height:'100%', flexDirection:'column', display:'flex', justifyContent:'center', alignItems:'center' }}>
+            <div className="row" style={{marginBottom:'20px', marginTop:'20px'}}>
+                <div className="col"/>
+                <div className="col-md-8">
+                <Skeleton count={1}  width={500} height={50} style={{marginBottom:'20px'}}/>
+                </div>
+                <div className="col"/>
+            </div>
+            <div className="row" style={{marginBottom:'20px', marginTop:'20px'}}>
+                <div className="col"/>
+                <div className="col-md-8">
+                    <Skeleton count={1} width={500} height={30}style={{marginBottom:'20px'}}/>
+                </div>
+                <div className="col"/>
+            </div>
+            <div className="row" style={{marginBottom:'20px', marginTop:'20px'}}>
+                <div className="col"/>
+                <div className="col-md-8">
+                    <Skeleton count={1} width={500} height={30} style={{marginBottom:'20px'}}/>
+                </div>
+                <div className="col"/>
+            </div>
+        </div>;
     }
     if (error) {
         return <div>{error}</div>;
@@ -47,11 +71,11 @@ export default function EditOperatorPage() {
                 withCredentials: true
             });
             showToast({msg:response.data.sucess, type:'Good',visible:true})
+            router.push('/company-home/operators')
         } catch (e: any) {
             showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
         } finally {
             setIsLoading(false)
-            router.push('/company-home/operators')
         }
     }
 
@@ -72,7 +96,7 @@ export default function EditOperatorPage() {
 
     return (
         <div className="container-fluid" style={{ height:'100%', flexDirection:'column', display:'flex', justifyContent:'center', alignItems:'center' }}>         
-            <Form title="Añadir un operador" onSubmit={edit} oldValues={operator}>
+            <Form title="Moddificar información del operador" onSubmit={edit} oldValues={operator}>
                 <div className="row" style={{marginBottom:'20px', marginTop:'20px'}}>
                     <div className="col"/>
                         <Form.Input 

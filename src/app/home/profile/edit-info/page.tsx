@@ -9,6 +9,7 @@ import axiosInstance from "lib/axiosInterceptor";
 import { HABLAR,FISICA,MENTAL,AUDITIVA,INTELECTUAL,PLURIDISCAPACIDAD,VISUAL } from "util/constants";
 import { ToastContext } from "app/context/ToastContext";
 import styles from './styles.module.scss'
+import { set } from "mongoose";
 
 export default function editInfoPage(){
     const {user, waiting, getUser} = useContext(UserContext);
@@ -41,15 +42,16 @@ export default function editInfoPage(){
         console.log('Editar informacion personal')
         setIsLoading(true)
         try{
-           const response = await axiosInstance.post(`/profile/edit-profile`,data,{
-                withCredentials:true
-           })
-           showToast({msg:response.data.sucess, type:'Good',visible:true})
-           getUser()
-        }catch(e:any){
-           showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
-        }finally{
+            const response = await axiosInstance.post(`/profile/edit-profile`,data,{
+            withCredentials:true
+            })
+            showToast({msg:response.data.sucess, type:'Good',visible:true})
+            getUser()
             router.push('/home/profile')
+        }catch(e:any){
+            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+        }finally{
+            setIsLoading(false);
         }
     }
 
@@ -146,7 +148,9 @@ export default function editInfoPage(){
                         id="phone" 
                         htmlfor="phone" 
                         label="Telefono" 
-                        type="text" 
+                        type="tel"
+                        pattern="[0-9]{9}"
+                        placeholder="123456789" 
                         className='col-md-6' />
                 </div> 
                 <div className='text-center'>

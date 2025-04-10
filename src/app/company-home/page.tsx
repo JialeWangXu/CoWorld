@@ -18,7 +18,7 @@ export default function CompanyJobListPage() {
     const [paginationLimit, setPaginationLimit]=useState(0);
 
     const router = useRouter();
-    const {company,getCompany,waiting} = useContext(CompanyContext)
+    const {company,getCompany,waiting} = useContext(CompanyContext);
 
     useEffect(()=>{
         if(company?.jobs){
@@ -39,11 +39,15 @@ export default function CompanyJobListPage() {
     
     useEffect(()=>{
         setShowJobList(inProgress? company?.jobs.filter((job) => job.currentStatus==="active").slice(0,5) : company?.jobs.filter((job) => job.currentStatus==="closed").slice(0,5));
+        setTotalPages(inProgress?Math.ceil(company?.jobs.filter((job) => job.currentStatus==="active").length/5):Math.ceil(company?.jobs.filter((job) => job.currentStatus==="closed").length/5));
         if(totalPages>5){
             setDemonstratingPages(5);
+            setPaginationLimit(5);
         }else{
             setDemonstratingPages(totalPages);
-        } 
+            setPaginationLimit(totalPages);
+        }
+        setCurrentPage(1); 
     },[inProgress])
 
     if (waiting) {
