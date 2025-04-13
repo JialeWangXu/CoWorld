@@ -2,10 +2,10 @@
 .text {
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-line-clamp: 2; 
             line-clamp: 2; 
     -webkit-box-orient: vertical;
- }
+}
 
 .jobCard{
     background-color: #d5f5e3;
@@ -36,13 +36,13 @@
     height: 110px;
     border-radius: 100%;
     padding: 0;
-  }
+}
 
 .hovA {
     &:hover{
         color: #306d1f;
         font-weight: bold;
-      }
+    }
     &:active{
         color: #306d1f;
         font-weight: bold;

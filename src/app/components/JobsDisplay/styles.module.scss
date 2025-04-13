@@ -20,7 +20,7 @@
     padding: 7px;
     border-radius: 6px;
     padding:20px;
-    margin-top: 2rem;
+    margin-top: .5rem;
 }
 
 .profilePhoto {
@@ -31,7 +31,7 @@
     height: 90px;
     border-radius: 100%;
     padding: 0px;
-  }
+}
 
   @media (max-width: 575.98px) { /* Bootstrap sm comienza en 576px, así que usamos 575.98px */
     .profilePhoto {
@@ -53,22 +53,6 @@
 
 }
 
-
-.disbilityCard{
-    width: 196px;
-    border-radius: 6px;
-    padding: 12px;
-    margin-right:5px;
-    margin-bottom: 1rem;
-}
-
-.jobRequirementCard{
-    margin-bottom:1rem;
-    background-color:#f4f6f6;
-    border-radius:6px;
-    padding:1rem;
-}
-
 .companyLogo {
     margin: auto;
     display: inline-block;
@@ -82,7 +66,7 @@
     &:hover{
         color: #306d1f;
         font-weight: bold;
-      }
+    }
     &:active{
         color: #306d1f;
         font-weight: bold;
@@ -94,16 +78,4 @@
     background-color: #f2f4f4;
     padding: 5px;
     border-radius: 8px;
-}
-
-.helpContainer{
-    display:flex;
-    flex-direction:column;
-    text-align:center; 
-    justify-content:center;
-    align-items:center;
-    min-height:85vh;
-    overflow:hidden; 
-    margin-bottom:20px; 
-    padding:1rem;
 }

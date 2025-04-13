@@ -8,7 +8,6 @@ import axiosInstance from "lib/axiosInterceptor";
 import { IJobAndCompany, JobFilters } from "types/JobFilter";
 import { DISABILITIES_INITIAL_VALUE } from "util/constants";
 import styles from "./styles.module.scss"
-import { useRouter } from "next/navigation";
 import { CardSkeleton } from "app/components/CardSkeleton";
 
 export default function HomePage(){

@@ -135,11 +135,11 @@ export default function ViewOneJobCandidatesPage(){
                         </div>
                         <div className="col-10">
                             <h4 style={{fontWeight:"bold"}}>{cant.user_id.firstname+" "+cant.user_id.lastname}</h4>
-                            {cant.disabilities.filter(({type,degree})=> degree>-1).length>0? 
-                            cant.disabilities.filter(({type,degree})=> degree>-1).map(({type,degree})=> `Discapacidad ${type}: Grado ${degree}`).join(" | "):""}
-                            <h6>{cant.city? cant.city:""}</h6>
-                            <h6>{cant.phone? cant.phone:""}</h6>
-                            <h6>{cant.user_id.email}</h6>
+                            <h5>{cant.disabilities.filter(({type,degree})=> degree>-1).length>0? 
+                            cant.disabilities.filter(({type,degree})=> degree>-1).map(({type,degree})=> `Discapacidad ${type}: Grado ${degree}`).join(" | "):""}</h5>
+                            <h5>{cant.city? cant.city:""}</h5>
+                            <h5>{cant.phone? cant.phone:""}</h5>
+                            <h5>{cant.user_id.email}</h5>
                             <p>{cant.status}</p>
                         </div>
                     </div>

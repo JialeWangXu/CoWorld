@@ -120,7 +120,7 @@ export default function CompanyJobListPage() {
                         <div className="col"/>
                         <div className={`${styles.jobCard} col-md-10 col-sm-12`} style={{padding:"20px"}}>
                             <h4 style={{fontWeight:"bold"}}>{job.jobTitle}</h4>
-                            <h6>{job.city} | {job.mode}</h6>
+                            <h5>{job.city} | {job.mode}</h5>
                             <p className={`${styles.text}`}>{job.description}</p>
                             <div className="justify-content-end">
                                 <button type="button" className="btn btn-light" onClick={()=>{router.push(`/company-home/edit-job/${job._id.toString()}`)}}>Modificar</button>
@@ -135,7 +135,7 @@ export default function CompanyJobListPage() {
                 </div>
             )}
             {showJobList?.length>0&&<div style={{ marginTop: '20px', textAlign: 'center' }}>
-               <button className={`${styles.paginationButton}`}
+                <button className={`${styles.paginationButton}`}
                     onClick={()=>{handlePrePagination(),handlePaginationJobs(currentPage-1)}}
                     disabled={currentPage===1}
                     >

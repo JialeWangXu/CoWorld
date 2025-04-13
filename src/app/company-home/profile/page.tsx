@@ -31,7 +31,7 @@ export default function profilePage(){
                     <h5>{company.url ? company.url :''}</h5>
                 </div>
                 <div className="col-md-2 col-sm-12" style={{display:"flex", flexDirection:'column',justifyContent:'end'}}>
-                    <EditButton nextPath="/company-home/profile/edit-info"/>
+                    <EditButton nextPath="/company-home/profile/edit-info" content="Editar"/>
                 </div>
             </div>
             <hr/>
@@ -42,7 +42,7 @@ export default function profilePage(){
                         {company.description? <p>{company.description}</p>:<p style={{color:'gray', fontSize:'1.2rem'}}>Cuéntenos algo sobre su empresa!:D </p>}
                     </div>
                     <div className="col-md-2 col-sm-12" style={{display:"flex", flexDirection:'column',justifyContent:'end'}}>
-                        <EditButton nextPath="/company-home/profile/edit-description"/>
+                        <EditButton nextPath="/company-home/profile/edit-description" content="Editar"/>
                     </div>
                 </div>
             </div>

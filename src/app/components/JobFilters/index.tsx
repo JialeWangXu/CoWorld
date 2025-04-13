@@ -101,6 +101,7 @@ export default function JobFilter ({filters,setFilters}:Props){
                         DefaultName="Experiencia"
                         options={JobFiltersOPTIONS.experience}
                         selected={filters.experience || ""}
+                        arialLable="Experiencia"
                         onChange={(v)=>(handleFilters("experience",v))}
                     />
                 </div>

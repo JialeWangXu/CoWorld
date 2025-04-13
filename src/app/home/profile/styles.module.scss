@@ -10,13 +10,25 @@
 .stateDisplay{
   background-color: #eaeded;
   padding: 5px;
+  margin-bottom: 8px;
   border-radius: 6px;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 
 .jobDisplay{
   background-color: #abebc6;
   padding: 7px;
   border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.infoDisplay{
+  margin-bottom: 4px;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 .studyCard{

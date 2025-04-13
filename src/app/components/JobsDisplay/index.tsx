@@ -14,15 +14,16 @@ export default function JobListDisplay({jobList}:Props){
                     <div className={`${styles.jobCard} ${styles.hov} col-sm-12`} onClick={()=>{router.push(`/home/view-job/${job._id.toString()}`)}}>
                         <div className="row" style={{display:"flex", flexWrap:"nowrap", marginLeft:"1rem"}}>
                             <div className="col-6" style={{paddingLeft:0}}>
-                            <h4 style={{fontWeight:"bold"}}>{job.jobTitle}</h4>
-                            <p style={{fontSize:"20px"}}>{job.city} | {job.mode}</p>
+                            <h3 style={{fontWeight:"bold"}}>{job.jobTitle}</h3>
+                            <p style={{fontSize:"1.25rem"}}>{job.city} | {job.mode}</p>
                             </div>
                             <div className="col-6">
                                 <div className="row" style={{display:"flex", flexWrap:"nowrap"}}>
                                     <div className="col-sm-8"style={{display:"flex", flexDirection:"column", textAlign:"end"}} >
                                         <h4 style={{fontWeight:"bold"}}>{job.company_id.companyName}</h4>
-                                        <h6>{job.company_id?.industry ? job.company_id?.industry:""}  {job.company_id?.scale ? job.company_id?.scale+" empleos":""}</h6>
-                                        <a href={`/home/view-company/${job.company_id?.company_id?.toString()}`} className="link-success">Ver perfil de la empresa</a>
+                                        <h5>{job.company_id?.industry ? job.company_id?.industry:""}</h5>
+                                        <h5>{job.company_id?.scale ? job.company_id?.scale+" empleos":""}</h5>
+                                        <a href={`/home/view-company/${job.company_id?.company_id?.toString()}`} style={{color:"#145a32 "}}>Ver perfil de la empresa</a>
                                     </div>
                                     <div className={`${styles.profilePhoto} col-sm-4`} style={{textAlign:'center'}}>
                                         <img src={ job.company_id.logo as Base64URLString||"/imgs/company.png"} 

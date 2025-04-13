@@ -94,7 +94,7 @@ export default function ViewOperatorsPage(){
     <div className="container-fluid">
         <div className="row" style={{marginBottom:"1.5rem"}}>
             <div className="col-md-6 col-sm-12" style={{display:'flex', alignItems:"left", gap:'5px', flexDirection:"column", marginLeft:"20px"}}>  
-                <h2>Lista de operadores:</h2>
+                <h3>Lista de operadores:</h3>
                 <p style={{color:"GrayText"}}>Los operadores tendrán acceso igual que usted, excepto en lo que respecta a la funcionalidad de gestión de operadores.</p>
             </div> 
             <div className="col"></div>
@@ -111,8 +111,8 @@ export default function ViewOperatorsPage(){
                         <div className="col"/>
                         <div className={`${styles.operatorCard} col-md-6 col-sm-12`} style={{padding:"20px"}}>
                             <h4 style={{fontWeight:"bold"}}>{operator.firstname} {operator.lastname}</h4>
-                            <h6>{operator.email}</h6>
-                            <h6 style={{ color: operator.changedPassword ? "green" : "gray" }}>Estado: {operator.changedPassword ? "Activado" : "Pendiente"}</h6>
+                            <h5>{operator.email}</h5>
+                            <h6 style={{ color: operator.changedPassword ? "#145a32" : "#616a6b" }}>Estado: {operator.changedPassword ? "Activado" : "Pendiente"}</h6>
                             <div className="justify-content-end">
                                 <button type="button" className="btn btn-light" onClick={()=>{router.push(`/company-home/operators/edit-operator/${operator._id.toString()}`)}}>Modificar</button>
                             </div>

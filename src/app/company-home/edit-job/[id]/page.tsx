@@ -56,13 +56,13 @@ export default function editInfoPage(){
         console.log('Editar informacion personal')
         setIsLoading(true)
         try{
-           const response = await axiosInstance.post(`/company-jobs/edit-job`,{...data, _id:params.id},{
+            const response = await axiosInstance.post(`/company-jobs/edit-job`,{...data, _id:params.id},{
                 withCredentials:true
-           })
-           showToast({msg:response.data.sucess, type:'Good',visible:true})
-           getCompany()
+            })
+            showToast({msg:response.data.sucess, type:'Good',visible:true})
+            getCompany()
         }catch(e:any){
-           showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
         }finally{
             router.push('/company-home')
         }
@@ -92,7 +92,7 @@ export default function editInfoPage(){
                     <Form.JobStatusSelect
                         id="currentStatus"
                         htmlfor="currentStatus"
-                        label="En progreso / Cerrar "
+                        label="Estado actual de la oferta: "
                         className="col-md-12"
                     />
                 </div>

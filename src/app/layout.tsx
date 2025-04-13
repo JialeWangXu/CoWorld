@@ -21,6 +21,9 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
       <html lang="en">
+        <head>
+          <title>CoWorld</title>
+        </head>
         <body className={inter.className}>
         <SkeletonTheme baseColor="#f2f4f4" highlightColor="#444">
           <BootstrapClient/>

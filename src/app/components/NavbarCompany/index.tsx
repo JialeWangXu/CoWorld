@@ -75,8 +75,8 @@ export function NavbarCompany(){
                     </li>
                 </ul>
                 }
-                <a className="nav-link ms-auto" href="/"
-                    onClick={()=>{handleLogOut()}}><img src='/imgs/power-off.png' style={{paddingRight:'8px'}}></img></a>
+                <a className="nav-link ms-auto" aria-label='Haz click al link para cerrar sesion.' href="/"
+                    onClick={()=>{handleLogOut()}}><img src='/imgs/power-off.png' style={{paddingRight:'8px'}} alt='Logo de cerrar sesion'></img></a>
                 </div>
             </div>
         </nav>

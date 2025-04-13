@@ -85,7 +85,7 @@ export default function candiateDetailPage(){
         }
         
     }
- 
+
     const dis = profile.disabilities.filter(({type,degree})=> degree>-1).map(({type,degree})=> `Discapacidad ${type}: Grado ${degree}`).join(" | ")
     return(
     <div className="container-fluid">
@@ -95,7 +95,7 @@ export default function candiateDetailPage(){
             </div>
             
             <div className="col-6">
-                <h3 style={{fontWeight:'bold'}}>{profile.firstname} {profile.lastname}</h3>
+                <h4 style={{fontWeight:'bold'}}>{profile.firstname} {profile.lastname}</h4>
                 <h5>{dis.length>0 ? dis:''}</h5>
                 <h5>{profile.city ? profile.city : ''}</h5>
                 <h5>{profile.phone ? profile.phone : ''}</h5>
@@ -116,7 +116,7 @@ export default function candiateDetailPage(){
         </div>
         <hr/>
         <div>
-            <h2 style={{fontWeight:'bold',marginLeft:"2rem"}}>Situación laboral y empleos previstos</h2>
+            <h3 style={{fontWeight:'bold',marginLeft:"2rem"}}>Situación laboral y empleos previstos</h3>
             <div className="row">
                 <div className="col-10" style={{marginLeft:"2rem"}}>
                     <ul style={{listStyle:'none', paddingLeft:'0'}}>
@@ -130,27 +130,27 @@ export default function candiateDetailPage(){
         </div>
         {(profile.description!=="")&&(<><hr/>
         <div>
-            <h2 style={{fontWeight:'bold',marginLeft:"2rem"}}>Descripción personal</h2>
+            <h3 style={{fontWeight:'bold',marginLeft:"2rem"}}>Descripción personal</h3>
             <div className="row">
                 <div className="col-10" style={{marginLeft:"2rem"}}>
-                    {profile.description? <p>{profile.description}</p>:<p style={{color:'gray', fontSize:'1.2rem'}}>Cuéntenos algo sobre usted!:D </p>}
+                    {profile.description? <p>{profile.description}</p>:<p style={{color:'gray', fontSize:'1.2rem'}}>El candidato no ha proporcionado su descripción personal.</p>}
                 </div>
 
             </div>
         </div></>)}
         {profile.studies.length>0&&(<><hr/>
         <div>
-            <h2 style={{fontWeight:'bold',marginLeft:"2rem"}}>Estudios</h2>
+            <h3 style={{fontWeight:'bold',marginLeft:"2rem"}}>Estudios</h3>
             <div className="row">
                 <div className="col-10" style={{marginLeft:"2rem"}}>
                     <ul style={{listStyle:'none', paddingLeft:'0'}}>
                         {profile.studies.map((study, index)=>{
                             return(
                                 <li key={index} style={{display:'flex', alignItems:"left", flexDirection:'column', marginBottom:"10px"}}className={`${styles.studyCard} `}>
-                                    <h5 style={{fontWeight:"bold"}}>{study.institution}</h5>
-                                    <h6>{study.title}</h6>
-                                    <h6>{study.specialty}</h6>
-                                    <h6>{study.iniDate.month <10 ? `0${study.iniDate.month}` : study.iniDate.month }/{study.iniDate.year} - {study.finDate ? study.finDate.month<10 ? `0${study.finDate.month}/${study.finDate.year}`:`${study.finDate.month}/${study.finDate.year}` : "Current"}</h6>
+                                    <h4 style={{fontWeight:"bold"}}>{study.institution}</h4>
+                                    <h5>{study.title}</h5>
+                                    <h5>{study.specialty}</h5>
+                                    <h5>{study.iniDate.month <10 ? `0${study.iniDate.month}` : study.iniDate.month }/{study.iniDate.year} - {study.finDate ? study.finDate.month<10 ? `0${study.finDate.month}/${study.finDate.year}`:`${study.finDate.month}/${study.finDate.year}` : "Current"}</h5>
                                 </li>
                             )
                         })}
@@ -162,17 +162,17 @@ export default function candiateDetailPage(){
         </div></>)}
         {profile.workExperience.length>0&&(<><hr/>
         <div>
-            <h2 style={{fontWeight:'bold',marginLeft:"2rem"}}>Experiencia Laboral</h2>
+            <h3 style={{fontWeight:'bold',marginLeft:"2rem"}}>Experiencia Laboral</h3>
             <div className="row">
                 <div className="col-10"style={{marginLeft:"2rem"}}>
                     <ul style={{listStyle:'none', paddingLeft:'0'}}>
                         {profile.workExperience.map((work, index)=>{
                             return(
                                 <li key={index} style={{display:'flex', alignItems:"left", flexDirection:'column', marginBottom:"10px"}}className={`${styles.workExpCard} `}>
-                                    <h5 style={{fontWeight:"bold"}}>{work.responsability}</h5>
-                                    <h6>{work.companyName}</h6>
-                                    {work.contractType&&<h6>{work.contractType}</h6>}
-                                    <h6>{work.iniDate.month <10 ? `0${work.iniDate.month}` : work.iniDate.month }/{work.iniDate.year} - {work.finDate ? work.finDate.month<10 ? `0${work.finDate.month}/${work.finDate.year}`:`${work.finDate.month}/${work.finDate.year}` : "Current"}</h6>
+                                    <h4 style={{fontWeight:"bold"}}>{work.responsability}</h4>
+                                    <h5>{work.companyName}</h5>
+                                    {work.contractType&&<h5>{work.contractType}</h5>}
+                                    <h5>{work.iniDate.month <10 ? `0${work.iniDate.month}` : work.iniDate.month }/{work.iniDate.year} - {work.finDate ? work.finDate.month<10 ? `0${work.finDate.month}/${work.finDate.year}`:`${work.finDate.month}/${work.finDate.year}` : "Current"}</h5>
                                 </li>
                             )
                         })}
@@ -184,14 +184,14 @@ export default function candiateDetailPage(){
         </div></>)}
         {profile.skills.length>0&&(<><hr/>
         <div>
-            <h2 style={{fontWeight:'bold',marginLeft:"2rem"}}>Habilidades</h2>
+            <h3 style={{fontWeight:'bold',marginLeft:"2rem"}}>Habilidades</h3>
             <div className="row">
                 <div className="col-10"style={{marginLeft:"2rem"}}>
                     <ul style={{listStyle:'none', paddingLeft:'0', flexWrap:"wrap",display:'flex', alignItems:"center", gap:'10px', marginBottom:0}}>
                         {profile.skills.map((skill, index)=>{
                             return(
                                 <li key={index} style={{display:'flex', alignItems:"left", flexDirection:'column', marginBottom:"10px"}}className={`${styles.skillCard} `}>
-                                    <h5 style={{fontWeight:"bold", marginBottom:0}}>{skill}</h5>
+                                    <h4 style={{fontWeight:"bold", marginBottom:0}}>{skill}</h4>
                                 </li>
                             )
                         })}
@@ -201,14 +201,14 @@ export default function candiateDetailPage(){
         </div></>)}
         {profile.certifications.length>0&&(<><hr/>
         <div>
-            <h2 style={{fontWeight:'bold',marginLeft:"2rem"}}>Licencias y certificaciones</h2>
+            <h3 style={{fontWeight:'bold',marginLeft:"2rem"}}>Licencias y certificaciones</h3>
             <div className="row">
                 <div className="col-10"style={{marginLeft:"2rem"}}>
                     <ul style={{listStyle:'none', paddingLeft:'0'}}>
                         {profile.certifications.map((certification, index)=>{
                             return(
                                 <li key={index} style={{display:'flex', alignItems:"left", flexDirection:'column', marginBottom:"10px"}}className={`${styles.certificationCard} `}>
-                                    <h5 style={{fontWeight:"550"}}>{certification.title} </h5> <h6 style={{fontWeight:"400", color:"#9e9e9e"}}>{certification.emitter}</h6>
+                                    <h4 style={{fontWeight:"550"}}>{certification.title} </h4> <h5 style={{fontWeight:"400", color:"#616a6b"}}>{certification.emitter}</h5>
                                 </li>
                             )
                         })}
@@ -219,14 +219,14 @@ export default function candiateDetailPage(){
         </div></>)}
         {profile.languages.length>0&&(<><hr/>
         <div>
-            <h2 style={{fontWeight:'bold',marginLeft:"2rem"}}>Idiomas</h2>
+            <h3 style={{fontWeight:'bold',marginLeft:"2rem"}}>Idiomas</h3>
             <div className="row">
                 <div className="col-10"style={{marginLeft:"2rem"}}>
                     <ul style={{listStyle:'none', paddingLeft:'0'}}>
                         {profile.languages.map((language, index)=>{
                             return(
                                 <li key={index} style={{display:'flex', alignItems:"left", flexDirection:'column', marginBottom:"10px"}}className={`${styles.languageCard} `}>
-                                    <h5 style={{fontWeight:"550"}}>{language.language} </h5> <h6 style={{fontWeight:"400", color:"#9e9e9e"}}>{language.level}</h6>
+                                    <h4 style={{fontWeight:"550"}}>{language.language} </h4> <h5 style={{fontWeight:"400", color:"#616a6b"}}>{language.level}</h5>
                                 </li>
                             )
                         })}

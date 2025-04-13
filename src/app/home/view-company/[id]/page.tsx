@@ -6,6 +6,7 @@ import { useParams } from "next/navigation";
 import styles from './../../styles.module.scss'
 import { useRouter } from "next/navigation";
 import { ProfileSkeleton } from "app/components/ProfileSkeleton";
+import JobListDisplay from "app/components/JobsDisplay";
 
 export default function companyViewPage(){
 
@@ -139,17 +140,17 @@ export default function companyViewPage(){
                         </div>
                         <div className="col-md-8 col-sm-8">
                             <h2 style={{fontWeight:'bold'}}>{company.companyName}</h2>
-                            <h5>{company.city ? company.city : ''}</h5>
-                            <h5>{company.industry ? company.industry : ''}</h5>
-                            <h5>{company.scale ? company.scale +' empleos' : ''}</h5>
-                            <h5>{company.url ? company.url :''}</h5>
+                            <p style={{fontSize:"1.25rem", marginBottom:"4px", fontWeight:500}}>{company.city ? company.city : ''}</p>
+                            <p style={{fontSize:"1.25rem", marginBottom:"4px", fontWeight:500}}>{company.industry ? company.industry : ''}</p>
+                            <p style={{fontSize:"1.25rem", marginBottom:"4px", fontWeight:500}}>{company.scale ? company.scale +' empleos' : ''}</p>
+                            <p style={{fontSize:"1.25rem", marginBottom:"4px", fontWeight:500}}>{company.url ? company.url :''}</p>
                         </div>
                         <div className="col-md-2 col-sm-2"></div>
                     </div>
                 </div>
                 <div className="container-fluid">
                     <div className="row" style={{marginBottom:"1.5rem"}}>
-                        <div className="col-md-6 col-sm-12" style={{display:'flex', alignItems:"center", gap:'5px', fontSize:"1.8rem"}}>  
+                        <div className="col-md-8 col-sm-12" style={{display:'flex', alignItems:"center", gap:'5px', fontSize:"1.8rem"}}>  
                             <a className={`${styles.hovA} nav-link ${activePage ==='Info' ? styles.activeA : ''}`}  href="#"
                                     onClick={()=>{setActivePage("Info")}} style={{fontSize:"1.8rem"}}> {`Información `} </a> | <a className={`${styles.hovA} nav-link ${activePage ==='Jobs' ? styles.activeA : ''}`} href="#"
                                     onClick={()=>{setActivePage("Jobs")}} style={{fontSize:"1.8rem"}}> {`Ofertas públicadas (${company.jobs.length})`} </a>
@@ -159,38 +160,13 @@ export default function companyViewPage(){
                         </div>
                     </div>
                     {
-                        activePage==="Info"? (<div className="row" style={{border:"solid", borderWidth:"1px", marginLeft:"6px", marginRight:"6px"}}>
+                        activePage==="Info"? (<div className="row" style={{border:"solid", borderWidth:"1px", marginLeft:"6px", marginRight:"6px", marginBottom:"1.5rem", padding:"1rem"}}>
                         <h2>Descripón de la empresa</h2>
                         <p style={{minHeight:"280px"}}>{company.description? company.description : "La empresa no ha añadido todavía su descripción."}</p>
                     </div> ):(<div>
-                        { <div className="container-fluid">
+                        { <div className="container">
                             {company.jobs.length > 0 ? (
-                                jobLits.map((job, index) => (
-                                    <div className="row" key={index} >
-                                            <div className={`${styles.jobCard} ${styles.hov} col-sm-12`} style={{marginTop:"1rem"}} onClick={()=>{router.push(`/home/view-job/${job._id.toString()}`)}}>
-                                                <div className="row" style={{display:"flex", flexWrap:"nowrap", marginLeft:"1rem"}}>
-                                                    <div className="col-6" style={{paddingLeft:0}}>
-                                                    <h4 style={{fontWeight:"bold"}}>{job.jobTitle}</h4>
-                                                    <p style={{fontSize:"20px"}}>{job.city} | {job.mode}</p>
-                                                    </div>
-                                                    <div className="col-6">
-                                                        <div className="row" style={{display:"flex", flexWrap:"nowrap"}}>
-                                                            <div className="col-sm-8"style={{display:"flex", flexDirection:"column", textAlign:"end"}} >
-                                                                <h4 style={{fontWeight:"bold"}}>{job.company_id.companyName}</h4>
-                                                                <h6>{job.company_id?.industry ? job.company_id?.industry:""}  {job.company_id?.scale ? job.company_id?.scale+" empleos":""}</h6>
-                                                            </div>
-                                                            <div className={`${styles.profilePhoto} col-sm-4`} style={{textAlign:'center'}}>
-                                                                <img src={ job.company_id.logo as Base64URLString||"/imgs/company.png"} 
-                                                                alt="logo de empresa" style={{width:'90px',height:'90px', borderRadius:'100%'}}/>
-                                                            </div>
-                                                            <div className="col-1" style={{padding:0, width:"36px"}}></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <p className={`${styles.text}`}>{job.description}</p>
-                                            </div>
-                                    </div>  
-                                ))
+                                <JobListDisplay jobList={company.jobs} />
                             ) : (
                                 <div className="row">
                                     <div className="col-sm-12" style={{fontSize:"1.4rem", color:"GrayText", fontWeight:"500"}}> No se ha encontrado ningún trabajo que cumpla con los filtros introducidos.</div>

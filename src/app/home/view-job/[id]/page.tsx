@@ -117,11 +117,11 @@ export default function jobViewPage(){
         setIsLoading(true)
         setdisableApply(true)
         try{
-           const response = await axiosInstance.post(`/candidate-home/apply-job`,{job:job._id},{
+            const response = await axiosInstance.post(`/candidate-home/apply-job`,{job:job._id},{
                 withCredentials:true
-           })
-           showToast({msg:response.data.sucess, type:'Good',visible:true})
-           if(user.savedJob.find(elem => elem===job._id)){
+            })
+            showToast({msg:response.data.sucess, type:'Good',visible:true})
+            if(user.savedJob.find(elem => elem===job._id)){
                 try{
                     const response = await axiosInstance.post(`/candidate-home/save-job`,{job:job._id},{
                         withCredentials:true
@@ -132,13 +132,13 @@ export default function jobViewPage(){
                 }catch(e:any){
                     showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
                 }
-           }
-           setIsLoading(false);
+            }
+            setIsLoading(false);
 
         }catch(e:any){
-           showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
-           setdisableApply(false);
-           setIsLoading(false);
+            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+            setdisableApply(false);
+            setIsLoading(false);
         }
     }
 
@@ -146,13 +146,13 @@ export default function jobViewPage(){
     <div>
         <div className="container-fluid" style={{ padding:"1.5rem"}}>
 
-           <div className="row">
+            <div className="row">
             <div className="row" style={{display:"flex", flexWrap:"nowrap", marginLeft:"1rem",marginRight:"1rem",marginBottom:"1rem"}}>
                     <div className="col-6" style={{paddingLeft:0}}>
                         <h2 style={{fontWeight:"bold"}}>{job?.jobTitle}</h2>
                         <p style={{fontSize:"20px"}}>{job?.city} | {job?.mode}</p>
-                        {(job.currentStatus==="closed")?(<div style={{display:"flex"}}><h6 style={{color:"red"}}>Ya no se aceptan solicitudes 🚫</h6></div>):(disableApply)?(<div style={{display:"flex", justifyContent:"center"}}><h6>Ha aplicado el puesto, esté atento a la notificación por correo electrónico o teléfono. ¡Buena suerte! &#128521;</h6></div>):( <div style={{display:"flex", gap:"8px", flexDirection:"row"}}>
-                                <button type="button" className="btn btn-success btn-lg" style={{fontWeight:"bold"}} onClick={handleApplyJob} disabled={isLoading&&disableApply}>{(isLoading&&disableApply)?<Spinner/>:"Aplicar ahora"}</button > 
+                        {(job.currentStatus==="closed")?(<div style={{display:"flex"}}><h6 style={{color:"red"}}>Ya no se aceptan solicitudes 🚫</h6></div>):(disableApply)?(<div id="alreadyApplicatedMessage" aria-live="polite" style={{display:"flex", justifyContent:"center"}}><p style={{fontWeight:"600", fontSize:"1rem"}}>Ha aplicado el puesto, esté atento a la notificación por correo electrónico o teléfono. ¡Buena suerte! &#128521;</p></div>):( <div style={{display:"flex", gap:"8px", flexDirection:"row"}}>
+                                <button type="button" aria-controls="alreadyApplicatedMessage" className="btn btn-success btn-lg" style={{fontWeight:"bold"}} onClick={handleApplyJob} disabled={isLoading&&disableApply}>{(isLoading&&disableApply)?<Spinner/>:"Aplicar ahora"}</button > 
                                 <button type="button" className="btn btn-outline-success btn-lg" disabled={isLoading} onClick={handleSaveJob}>{(isLoading)? <Spinner/> : saved?"Quitar de guardados":"Guardar"}</button>
                         </div>)}
                     </div>
@@ -160,8 +160,8 @@ export default function jobViewPage(){
                         <div className="row" style={{display:"flex", flexWrap:"nowrap",alignItems:"center"}}>
                             <div className="col-sm-8"style={{display:"flex", flexDirection:"column", textAlign:"end", alignItems:"end"}} >
                                 <h2 style={{fontWeight:"bold"}}>{job.company_id.companyName}</h2>
-                                <h6>{job.company_id?.industry ? job.company_id?.industry:""}  {job.company_id?.scale ? job.company_id?.scale+" empleos":""}</h6>
-                                <a href={`/home/view-company/${job.company_id?.company_id?.toString()}`} className="link-success">Ver perfil de la empresa</a>
+                                <p style={{fontSize:"1.25rem"}}>{job.company_id?.industry ? job.company_id?.industry:""}  {job.company_id?.scale ? job.company_id?.scale+" empleos":""}</p>
+                                <a href={`/home/view-company/${job.company_id?.company_id?.toString()}`} style={{color:"#145a32 "}}>Ver perfil de la empresa</a>
                             </div>
                             <div className={`${styles.profilePhoto} col-sm-4`} style={{textAlign:'center', marginLeft:"15px"}}>
                             <img src={ job.company_id?.logo as Base64URLString||"/imgs/company.png"} 
@@ -171,29 +171,29 @@ export default function jobViewPage(){
                         </div>
                     </div>
                 </div>            
-           </div>
-           <div className="row" style={{display:"flex", gap:"8px", flexWrap:"wrap", margin:"1rem", flexDirection:"row"}}>
+            </div>
+            <div className="row" style={{display:"flex", gap:"8px", flexWrap:"wrap", margin:"1rem", flexDirection:"row"}}>
 
             {
-                job.city&&(<div className={ `${styles.jobDetail} col`} style={{marginBottom:"1rem"}}><img src="/imgs/location.png"/><p className={ `${styles.jobDetailText}`}>{job.city}</p></div>)
+                job.city&&(<div className={ `${styles.jobDetail} col`} style={{marginBottom:"1rem"}}><img src="/imgs/location.png" alt="Icono de localización."/><p className={ `${styles.jobDetailText}`}>{job.city}</p></div>)
             }
             {
-                job.mode&&(<div className={ `${styles.jobDetail} col`} style={{marginBottom:"1rem"}}><img src="/imgs/suitcase.png"/><p className={ `${styles.jobDetailText}`}>{job.mode}</p></div>)
+                job.mode&&(<div className={ `${styles.jobDetail} col`} style={{marginBottom:"1rem"}}><img src="/imgs/suitcase.png" alt="Icono de modo de trabajo."/><p className={ `${styles.jobDetailText}`}>{job.mode}</p></div>)
             }
             {
-                job.workHours&&(<div className={ `${styles.jobDetail} col`} style={{marginBottom:"1rem"}}><img src="/imgs/time.png"/><p className={ `${styles.jobDetailText}`}>{job.workHours}</p></div>)
+                job.workHours&&(<div className={ `${styles.jobDetail} col`} style={{marginBottom:"1rem"}}><img src="/imgs/time.png" alt="Icono de horario de trabajo."/><p className={ `${styles.jobDetailText}`}>{job.workHours}</p></div>)
             }
             {
-                job.experience&&(<div className={ `${styles.jobDetail} col`} style={{marginBottom:"1rem"}}><img src="/imgs/expertise.png"/><p className={ `${styles.jobDetailText}`}>{job.experience==="No requerido"? job.experience+" experiencia": job.experience}</p></div>)
+                job.experience&&(<div className={ `${styles.jobDetail} col`} style={{marginBottom:"1rem"}}><img src="/imgs/expertise.png" alt="Icono de experiencia requerida de trabajo."/><p className={ `${styles.jobDetailText}`}>{job.experience==="No requerido"? job.experience+" experiencia": job.experience}</p></div>)
             }
             {
-                job.intership&&(<div className={ `${styles.jobDetail} col`} style={{marginBottom:"1rem"}}><img src="/imgs/internship.png"/><p className={ `${styles.jobDetailText}`}>Becario</p></div>)
+                job.intership&&(<div className={ `${styles.jobDetail} col`} style={{marginBottom:"1rem"}}><img src="/imgs/internship.png" alt="Icono de si el trabajo busca becario."/><p className={ `${styles.jobDetailText}`}>Becario</p></div>)
             }
 
-           </div>
+            </div>
 
-           <div className="row" style={{margin:"1rem"}}>
-            <h5 style={{paddingLeft:0, fontWeight:"bold",marginBottom:"1rem"}}>Las restricciones disponibles para cada tipo de discapacidad son: </h5>
+            <div className="row" style={{margin:"1rem"}}>
+            <p style={{paddingLeft:0, fontWeight:"bold",marginBottom:"1rem", fontSize:"1.25rem"}}>Las restricciones disponibles para cada tipo de discapacidad son: </p>
             {   
 
             job.disabilities.map((elem)=>(
@@ -201,19 +201,19 @@ export default function jobViewPage(){
                 style={elem.type===FISICA? {backgroundColor: "#f5b7b1"}: elem.type===AUDITIVA?{backgroundColor: "#fad7a0"}:
                 elem.type===VISUAL?{backgroundColor: "#f9e79f"}:elem.type===HABLAR?{backgroundColor: "#abebc6"}:
                 elem.type===MENTAL?{backgroundColor: "#a9cce3"}:elem.type===INTELECTUAL?{backgroundColor: "#aed6f1"}:elem.type===PLURIDISCAPACIDAD?{backgroundColor: "#d7bde2"}:{}}>
-                <h6 style={{fontWeight:"bold"}}>{"Discapacidad "+elem.type}</h6>
+                <p style={{fontWeight:"bolder", fontSize:"1rem"}}>{"Discapacidad "+elem.type}</p>
                 <p> {elem.degree===-1? "No hay restricciones en cuanto al grado de esta discapacidad.":"Grado "+elem.degree+" o inferior."}</p>
                 </div>
             ))
             }
-           </div>
+            </div>
 
         </div>
         <hr/>
         <div className="container-fluid" style={{ padding:"1.5rem"}}>
 
             <div className={`${styles.jobRequirementCard} container-fluid`}>
-                <h2 style={{fontWeight:"bold", marginBottom:".5rem"}}>Requisitos</h2>
+                <h3 style={{fontWeight:"bold", marginBottom:".5rem"}}>Requisitos</h3>
                 <h4 style={{fontWeight:"bold"}}>Estudios mínimos</h4>
                 {
                     <p style={{fontSize:"1.2rem"}}>{job.minumumEducation? job.minumumEducation:"No especificado."}</p>
@@ -244,13 +244,13 @@ export default function jobViewPage(){
                 }
             </div>
             <div className={`${styles.jobRequirementCard} container-fluid`}>
-                <h2 style={{fontWeight:"bold", marginBottom:".5rem"}}>Descripción del puesto</h2>
+                <h3 style={{fontWeight:"bold", marginBottom:".5rem"}}>Descripción del puesto</h3>
                 {
-                     <p style={{fontSize:"1.2rem"}}>{job.description? job.description: "La empresa no ha añadido una descripción a esta oferta."}</p>
+                    <p style={{fontSize:"1.2rem"}}>{job.description? job.description: "La empresa no ha añadido una descripción a esta oferta."}</p>
                 }
             </div>
-            {(job.currentStatus==="closed")?(<div style={{display:"flex", justifyContent:"center"}}><h6 style={{color:"red"}}>Ya no se aceptan solicitudes 🚫</h6></div>):(disableApply&&job.currentStatus!=="closed")?(<div style={{display:"flex", justifyContent:"center"}}><h6>Ha aplicado el puesto, esté atento a la notificación por correo electrónico o teléfono. ¡Buena suerte! &#128521;</h6></div>):( <div style={{display:"flex", gap:"8px", flexDirection:"row", justifyContent:"center"}}>
-                    <button type="button" className="btn btn-success btn-lg" style={{fontWeight:"bold"}} onClick={handleApplyJob} disabled={isLoading&&disableApply}>{(isLoading&&disableApply)?<Spinner/>:"Aplicar ahora"}</button > 
+            {(job.currentStatus==="closed")?(<div style={{display:"flex", justifyContent:"center"}}><h6 style={{color:"red"}}>Ya no se aceptan solicitudes 🚫</h6></div>):(disableApply&&job.currentStatus!=="closed")?(<div id="alreadyApplicatedMessage2" aria-live="polite" style={{display:"flex", justifyContent:"center"}}><p style={{fontWeight:"600", fontSize:"1rem"}}>Ha aplicado el puesto, esté atento a la notificación por correo electrónico o teléfono. ¡Buena suerte! &#128521;</p></div>):( <div style={{display:"flex", gap:"8px", flexDirection:"row", justifyContent:"center"}}>
+                    <button type="button" aria-controls="alreadyApplicatedMessage2" className="btn btn-success btn-lg" style={{fontWeight:"bold"}} onClick={handleApplyJob} disabled={isLoading&&disableApply}>{(isLoading&&disableApply)?<Spinner/>:"Aplicar ahora"}</button > 
                     <button type="button" className="btn btn-outline-success btn-lg" disabled={isLoading} onClick={handleSaveJob}>{(isLoading)? <Spinner/> : saved?"Quitar de guardados":"Guardar"}</button>
             </div>)}
         </div>

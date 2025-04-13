@@ -69,7 +69,7 @@ export function NavbarCandidate(){
                     </li>
                 </ul>
                 <a className="nav-link ms-auto" href="/"
-                    onClick={()=>{handleLogOut()}}><img src='/imgs/power-off.png' style={{paddingRight:'8px'}}></img></a>
+                    onClick={()=>{handleLogOut()}}><img src='/imgs/power-off.png' aria-label='Haz click al link para cerrar sesion.' style={{paddingRight:'8px'}} alt='Logo de cerrar sesión.'></img></a>
                 </div>
             </div>
         </nav>
