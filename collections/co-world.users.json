@@ -1,0 +1,104 @@
+[{
+  "_id": {
+    "$oid": "67c4d90c66cb96d88ab2fd08"
+  },
+  "firstname": "Jorge",
+  "lastname": "Perez",
+  "email": "jorgeP@gmail.com",
+  "password": "$2b$10$hsLbQMKz03wJXzV9JjogUeO8X5xHEc2d6IqXr1tlB4u/Td3wC6d4S",
+  "role": 0,
+  "createdAt": {
+    "$date": "2025-03-02T22:17:48.562Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-13T18:26:41.786Z"
+  },
+  "__v": 13,
+  "savedJob": [
+    {
+      "$oid": "67eafd3fe94819b3f312a258"
+    },
+    {
+      "$oid": "67f0e427e24c97cdf6f70ca7"
+    },
+    {
+      "$oid": "67eda7049ffc4c59f079b3b0"
+    },
+    {
+      "$oid": "67f0decde24c97cdf6f70c11"
+    },
+    {
+      "$oid": "67ed9f228d3ea9f5e244286d"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "67eaffd0e94819b3f312a2aa"
+  },
+  "firstname": "Pam",
+  "lastname": "Beesly",
+  "email": "PamB@gmail.com",
+  "password": "$2b$10$AzemxWxetWtHGNWQmu.A7.BQggK.GbK4Bze0Bq5MMteErBbZIJ/UC",
+  "savedJob": [],
+  "role": 0,
+  "createdAt": {
+    "$date": "2025-03-31T20:49:20.968Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-31T20:52:19.594Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f565402f00ebfaa34607a1"
+  },
+  "firstname": "Monica",
+  "lastname": "Geller",
+  "email": "monicageller@gmail.com",
+  "password": "$2b$10$I5PtqdUnVPH5VHvYGfZV5OgCmqgq/EE5Lv05vi/ZiWCiXeS3IlVXC",
+  "savedJob": [
+    {
+      "$oid": "67f6ac6cb2d6fc08fd81123f"
+    },
+    {
+      "$oid": "67f0decde24c97cdf6f70c11"
+    },
+    {
+      "$oid": "67f6ae1eb2d6fc08fd811287"
+    },
+    {
+      "$oid": "67f0e38ee24c97cdf6f70c98"
+    },
+    {
+      "$oid": "67f6ad9eb2d6fc08fd811279"
+    }
+  ],
+  "role": 0,
+  "createdAt": {
+    "$date": "2025-04-08T18:04:48.037Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T18:14:00.752Z"
+  },
+  "__v": 39
+},
+{
+  "_id": {
+    "$oid": "67f568702f00ebfaa3460800"
+  },
+  "firstname": "Ross",
+  "lastname": "Geller Bing",
+  "email": "rossgeller@gmail.com",
+  "password": "$2b$10$Z9j3GJeVBYOQDtkRMeBHSujwSnipp.nf8ugFIVFTg2Um99xL2Kdt.",
+  "savedJob": [],
+  "role": 0,
+  "createdAt": {
+    "$date": "2025-04-08T18:18:24.720Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-08T19:29:10.810Z"
+  },
+  "__v": 0
+}]

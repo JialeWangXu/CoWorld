@@ -1,0 +1,3844 @@
+[{
+  "_id": {
+    "$oid": "67d722df899e2808b8d650d7"
+  },
+  "company_id": {
+    "$oid": "67c2153276ec547b9d23e11e"
+  },
+  "applicants": [
+    {
+      "user": {
+        "$oid": "67c4d90c66cb96d88ab2fd08"
+      },
+      "status": "comunicado",
+      "_id": {
+        "$oid": "67e5a5e04eb895415aef7386"
+      }
+    }
+  ],
+  "currentStatus": "active",
+  "jobTitle": "Becario TI",
+  "city": "Madrid",
+  "mode": "Híbrido",
+  "workHours": "Parcial - Mañana",
+  "experience": "No requerido",
+  "intership": false,
+  "workCategory": "Informática y telecomunicaciones",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67d722df899e2808b8d650d8"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": 1,
+      "_id": {
+        "$oid": "67d722df899e2808b8d650d9"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67d722df899e2808b8d650da"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 1,
+      "_id": {
+        "$oid": "67d722df899e2808b8d650db"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67d722df899e2808b8d650dc"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67d722df899e2808b8d650dd"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67d722df899e2808b8d650de"
+      }
+    }
+  ],
+  "minumumEducation": "Grado",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Intermedio",
+      "_id": {
+        "$oid": "67d722df899e2808b8d650df"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67d722df899e2808b8d650e0"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Java",
+    "Vue3",
+    ".Net Core",
+    "SQL",
+    "Scrum"
+  ],
+  "companysRequirements": "¿Qué necesitamos?\n\n· Que puedas firmar un convenio de prácticas (mínimo 6 meses).\n\n· Estar cursando último año de carrera.\n\n· Disponibilidad de incorporación a plantilla después de las prácticas.\n\n· Actitud resolutiva, proactiva y muchas ganas de aprender.\n\n· Espíritu innovador con interés en las nuevas tecnologías, estándares de la industria, buenas prácticas y tendencias emergentes en el ámbito de la transformación digital.\n\nTe esperamos 🚀",
+  "description": "¿Te gustaría hacer las prácticas con nosotros? Queremos seguir sumando talento a nuestro equipo 😊\n\nCoWorld somos todas las personas que la formamos. Un equipo de más de 139.000 profesionales, tan diverso cómo diversos son los 50 países en los que estamos presentes y los diferentes sectores en los que desarrollamos nuestra actividad; telecomunicaciones, entidades financieras, industria, utilities, energía, administración pública y sanidad.\n\n¿Nuestra misión? Ofrecer soluciones de negocio y definir su estrategia, combinand\n¿Qué ofrecemos?\n\n· Prácticas remuneradas.\n\n· Posibilidad de permanecer indefinidamente en el equipo después de tus prácticas.\n\n· Oportunidad de trabajar en proyectos reales desde el primer día.\n\n· Horario flexible, siempre recomendamos una jornada completa para que tu experiencia sea lo más satisfactoria posible y con el objetivo de que luego puedas incorporarte a plantilla.\n\n· Trabajar con grandes profesionales que promoverán tu desarrollo profesional y personal.",
+  "createdAt": {
+    "$date": "2025-03-16T19:13:35.575Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-27T19:24:16.750Z"
+  },
+  "__v": 0,
+  "companyName": "CoWorld"
+},
+{
+  "_id": {
+    "$oid": "67d730e0899e2808b8d6519b"
+  },
+  "company_id": {
+    "$oid": "67c2153276ec547b9d23e11e"
+  },
+  "applicants": [
+    {
+      "user": {
+        "$oid": "67c4d90c66cb96d88ab2fd08"
+      },
+      "status": "comunicado",
+      "_id": {
+        "$oid": "67e5ba90e81265265c1008ff"
+      }
+    }
+  ],
+  "currentStatus": "closed",
+  "jobTitle": "Junior Full-Stack Developer",
+  "city": "Madrid",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Informática y telecomunicaciones",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": 1,
+      "_id": {
+        "$oid": "67e5d0e7f5043a15c70364e5"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67e5d0e7f5043a15c70364e6"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67e5d0e7f5043a15c70364e7"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67e5d0e7f5043a15c70364e8"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67e5d0e7f5043a15c70364e9"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67e5d0e7f5043a15c70364ea"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67e5d0e7f5043a15c70364eb"
+      }
+    }
+  ],
+  "minumumEducation": "Grado",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67d730e0899e2808b8d651a3"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67d730e0899e2808b8d651a4"
+      }
+    },
+    {
+      "language": "Chino",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67d7520e0cf527ae8174a099"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Next.js",
+    "React",
+    "Mongoose",
+    "MREN Stack",
+    "Express",
+    "Node.js"
+  ],
+  "companysRequirements": "Requisitos valorables: \n\nNivel alto de inglés\nExperiencia en el desarrollo y/o definición de soluciones multicanal\nExperiencia de 1 años o superior en tecnologías ReactJS, ReactNative, NodeJS.\nConocimiento de entorno Cloud\nCuriosidad sobre la tecnología.\nAptitudes de arquitectura.\nOrientación hacia la innovación.",
+  "description": "¿Estás buscando dar un nuevo paso en tu carrera? ¿Te interesa crecer en el mundo de la consultoría y trabajar para clientes en el ámbito nacional e internacional?\n\n¡Estamos buscando gente como tú! Anímate, ¡INSCRÍBETE A NUESTRA OFERTA!\n\nEn nuestras oficinas de Madrid y Barcelona, dentro del equipo de canales digitales estamos buscando perfiles de Software Engineers y Lead Engineers, para proyectos de ámbito internacional.\n\n¿Cuáles serán tus funciones?\n\nLiderar la construcción de una solución.\nAportar valor desde el conocimiento tecnológico al equipo\nDesarrollar, probar y documentar elementos estructurales de la solución.\nGarantizar la sostenibilidad y alineamiento de las soluciones con las necesidades del cliente.\nRealizar diagnósticos, estructurar y resolver retos/problemas complejos.",
+  "createdAt": {
+    "$date": "2025-03-16T20:13:20.919Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-27T22:27:51.111Z"
+  },
+  "__v": 7,
+  "companyName": "CoWorld"
+},
+{
+  "_id": {
+    "$oid": "67eafd3fe94819b3f312a258"
+  },
+  "company_id": {
+    "$oid": "67c2382cef05ef4f78864b6c"
+  },
+  "companyName": "Beautify",
+  "applicants": [
+    {
+      "user": {
+        "$oid": "67eaffd0e94819b3f312a2aa"
+      },
+      "status": "a comunicar",
+      "_id": {
+        "$oid": "67eb0328e94819b3f312a37d"
+      }
+    }
+  ],
+  "currentStatus": "active",
+  "jobTitle": "Auxiliar administrativo/a",
+  "city": "Vizcaya",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Administración de empresas",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eafd3fe94819b3f312a259"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eafd3fe94819b3f312a25a"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": 1,
+      "_id": {
+        "$oid": "67eafd3fe94819b3f312a25b"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eafd3fe94819b3f312a25c"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eafd3fe94819b3f312a25d"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eafd3fe94819b3f312a25e"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eafd3fe94819b3f312a25f"
+      }
+    }
+  ],
+  "minumumEducation": "Ciclo Formativo Grado Medio",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Intermedio",
+      "_id": {
+        "$oid": "67eafd3fe94819b3f312a260"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67eafd3fe94819b3f312a261"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Gestión administrativo",
+    "Archivo",
+    "Secretaría",
+    "Presupuesto",
+    "Microsoft Tools",
+    "Aptitudes secretario"
+  ],
+  "companysRequirements": "Se valora conocimientos de contabilidad e inglés. Incluir Fotografía.",
+  "description": "Empresa del sector comercio de Oviedo necesita cubrir el puesto de Auxiliar Administrativo. Labor de gestión administrativa comercial de ventas con facturación, y gestión administrativa de compras. ",
+  "createdAt": {
+    "$date": "2025-03-31T20:38:23.896Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-31T21:03:36.407Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67eb0615e94819b3f312a3d2"
+  },
+  "company_id": {
+    "$oid": "67eb03cbe94819b3f312a38b"
+  },
+  "companyName": "Dunder Mifflin Paper",
+  "applicants": [
+    {
+      "user": {
+        "$oid": "67c4d90c66cb96d88ab2fd08"
+      },
+      "status": "a comunicar",
+      "_id": {
+        "$oid": "67f2eded1793137de25bbcbc"
+      }
+    }
+  ],
+  "currentStatus": "active",
+  "jobTitle": "HR Human Resource",
+  "city": "Vizcaya",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "4 - 6 años",
+  "intership": false,
+  "workCategory": "Recursos humanos",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda5489ffc4c59f079b372"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda5489ffc4c59f079b373"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda5489ffc4c59f079b374"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda5489ffc4c59f079b375"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda5489ffc4c59f079b376"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda5489ffc4c59f079b377"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda5489ffc4c59f079b378"
+      }
+    }
+  ],
+  "minumumEducation": "Grado",
+  "languages": [
+    {
+      "language": "English",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67eb0615e94819b3f312a3da"
+      }
+    },
+    {
+      "language": "Spanish",
+      "level": "Intermedio",
+      "_id": {
+        "$oid": "67eb0615e94819b3f312a3db"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "SAP",
+    "Pay Roll",
+    "Talent Adquicision",
+    "Human Resources"
+  ],
+  "companysRequirements": "- Minimum of 2 years' experience in HR administration & payroll preparation ideally in a similar HR Global Business Services function\n- Strong knowledge of MS Office Suite and ideally of SAP HCM or any other HR system\n- Advanced knowledge of Excel required, other reporting knowledge is a plus\n- First experience with outsourced Payroll processes beneficial\nInterest in working in a project environment and contributing to HR change projects\n- Ideally working knowledge of German or any other European labor legislation\n-Ability to work effectively and efficiently under tight deadlines\n- Analytical, adaptive, proactive personality with strong communication and customer service skills",
+  "description": "As our HR Admin & Payroll Specialist for Global Business Services (DACH) you will support various HR functions, complying with agreed deadlines in each process and ensuring an optimal quality in the results delivered.\n\nBe part of our newly formed international Global Business Services Center, where you will be responsible to ensure legal compliance with all current regulations in all processes are carried out, and proactively seek opportunities to improve the quality and efficiency of the service for specific countries.",
+  "createdAt": {
+    "$date": "2025-03-31T21:16:05.261Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T21:11:09.698Z"
+  },
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "67ed9df98d3ea9f5e2442853"
+  },
+  "company_id": {
+    "$oid": "67c2153276ec547b9d23e11e"
+  },
+  "companyName": "CoWorld",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Becario Test / QA",
+  "city": "Vizcaya",
+  "mode": "Híbrido",
+  "workHours": "Parcial - Mañana",
+  "experience": "No requerido",
+  "intership": true,
+  "workCategory": "Informática y telecomunicaciones",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67ed9dfa8d3ea9f5e2442854"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": 0,
+      "_id": {
+        "$oid": "67ed9dfa8d3ea9f5e2442855"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67ed9dfa8d3ea9f5e2442856"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67ed9dfa8d3ea9f5e2442857"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67ed9dfa8d3ea9f5e2442858"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67ed9dfa8d3ea9f5e2442859"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67ed9dfa8d3ea9f5e244285a"
+      }
+    }
+  ],
+  "minumumEducation": "Grado",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Intermedio",
+      "_id": {
+        "$oid": "67ed9dfa8d3ea9f5e244285b"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67ed9dfa8d3ea9f5e244285c"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Testing",
+    "Kreya",
+    "SoapUI",
+    "Mock"
+  ],
+  "companysRequirements": "nivel alto de inglés y disponibilidad para asignación y desplazamiento en proyectos de ámbito internacional (EUROPA). Deseable conocimientos/experiencia en análisis de requisitos funcionales. Capacidades para diseñar y ejecutar casos de pruebas. Deseable: Conocimiento en las herramientas Tricentis (qTest, Tosca) pero tambien en otras como, Kreya o SoapUI",
+  "description": "Responsabilidades:\n\nAprovechar los conocimientos sobre pruebas de automatización.\nGestionar las herramientas de pruebas, incluida la herramienta de pruebas de automatización, la herramienta de seguimiento de defectos, la herramienta de gestión de pruebas, etc.\nPlanificar y controlar que cualquier cambio en el sistema se valide de acuerdo con las especificaciones y los requisitos.\nSupervisar y documentar los planes de prueba, las pruebas y los resultados de las mismas.\n\nFormando parte de CoWorld, pondrás a prueba el futuro.\n\nCoWorld es el lugar donde lo esencial es el núcleo, y nuestro núcleo son las personas. Personas que impulsan el futuro, que abren nuevos caminos y que cambian las reglas del juego. Porque en CoWorld, quien deja huella hoy y mañana, eres tú.",
+  "createdAt": {
+    "$date": "2025-04-02T20:28:42.010Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-02T20:28:42.010Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ed9f228d3ea9f5e244286d"
+  },
+  "company_id": {
+    "$oid": "67eb03cbe94819b3f312a38b"
+  },
+  "companyName": "Dunder Mifflin Paper",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Comercial de ventas",
+  "city": "Madrid",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Comercial y ventas",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda55b9ffc4c59f079b38e"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda55b9ffc4c59f079b38f"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda55b9ffc4c59f079b390"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda55b9ffc4c59f079b391"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda55b9ffc4c59f079b392"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda55b9ffc4c59f079b393"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda55b9ffc4c59f079b394"
+      }
+    }
+  ],
+  "minumumEducation": "Sin estudios",
+  "languages": [
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67ed9f228d3ea9f5e2442875"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Atención telefónica",
+    "Venta telefónica",
+    "Customer service",
+    "Soporte a usuario a telefonía",
+    "Gestión de call centers"
+  ],
+  "companysRequirements": "🔎 ¿Qué buscamos?\n\n• Profesionales comprometidos, con habilidades comerciales y comunicativas, versatilidad para alcanzar objetivos y capacidad resolutiva.\n\n• Experiencia mínima de 2 años en telemarketing, ventas o captación de clientes.\n\n🎯 Funciones principales:\n\nContactar con empresas para ofrecer nuestros propios productos de manera directa y personalizada. No se trabaja por campañas, sino con un enfoque continuo de nuestros servicios",
+  "description": "¿Tienes experiencia como teleoperador/a? ¿Buscas estabilidad laboral? ¿Tienes dotes comerciales y orientación al cliente?\n\nSi es así, ¡Te estamos buscando!\n\nEn nuestro gabinete jurídico, con más de 20 años de experiencia en servicios especializados, destacamos por ofrecer calidad, cercanía y profesionalidad. Ahora buscamos ampliar nuestro equipo con personas dinámicas, comunicativas y orientadas a resultados.",
+  "createdAt": {
+    "$date": "2025-04-02T20:33:38.676Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-02T21:00:11.863Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "67ed9fdc8d3ea9f5e244287c"
+  },
+  "company_id": {
+    "$oid": "67eb03cbe94819b3f312a38b"
+  },
+  "companyName": "Dunder Mifflin Paper",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Montador(a)/Repartidor(a)",
+  "city": "Vizcaya",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Compras, logística y almacén",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": 0,
+      "_id": {
+        "$oid": "67ed9fdc8d3ea9f5e244287d"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67ed9fdc8d3ea9f5e244287e"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67ed9fdc8d3ea9f5e244287f"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67ed9fdc8d3ea9f5e2442880"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67ed9fdc8d3ea9f5e2442881"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67ed9fdc8d3ea9f5e2442882"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": 0,
+      "_id": {
+        "$oid": "67ed9fdc8d3ea9f5e2442883"
+      }
+    }
+  ],
+  "minumumEducation": "Educación Secundaria Obligatoria",
+  "languages": [
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67ed9fdc8d3ea9f5e2442884"
+      }
+    },
+    {
+      "language": "Ingles",
+      "level": "Intermedio",
+      "_id": {
+        "$oid": "67ed9fdc8d3ea9f5e2442885"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Conducción de furgonetas",
+    "Manejo de cargas",
+    "Ofimática",
+    "Atención al cliente"
+  ],
+  "companysRequirements": "Requisitos mínimos:\nImprescindible carnet de conducir, buena forma física y nivel de inglés hablado suficiente para mantener una pequeña conversación con los clientes durante el montaje y reparto de muebles.\nSe valora actitud comercial y habilidades de trabajo en equipo.",
+  "description": "Empresa de diseño, producción, importación y venta de mobiliario para exterior en establecimientos propios precisa incorporar Montador/Repartidor de Papeles a jornada completa en Estepona.",
+  "createdAt": {
+    "$date": "2025-04-02T20:36:44.397Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-02T20:36:44.397Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67eda4d59ffc4c59f079b342"
+  },
+  "company_id": {
+    "$oid": "67c2382cef05ef4f78864b6c"
+  },
+  "companyName": "Beautify",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "ASESOR FINANCIERO MADRID",
+  "city": "Madrid",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "No requerido",
+  "intership": false,
+  "workCategory": "Finanzas y banca",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda4d59ffc4c59f079b343"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda4d59ffc4c59f079b344"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda4d59ffc4c59f079b345"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda4d59ffc4c59f079b346"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda4d59ffc4c59f079b347"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda4d59ffc4c59f079b348"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda4d59ffc4c59f079b349"
+      }
+    }
+  ],
+  "minumumEducation": "Ciclo Formativo Grado Medio",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67eda4d59ffc4c59f079b34a"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67eda4d59ffc4c59f079b34b"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Gestión Documental",
+    "Negociación",
+    "Gestión"
+  ],
+  "companysRequirements": "Tus tareas en el día a día consistirán en:\n- Realización de estudios financieros a clientes.\n- Gestión del proceso hipotecario.\n- Negociación con entidades financieras.\n- Gestión documental.\n- Solicitud de tasaciones.\n- Organización de la firma ante notario",
+  "description": "Si buscas trabajo en el sector financiero, en Kiron desde nuestra oficinas podemos ofrecerte una profesión con futuro.\n\n¿Qué te ofrecemos?\n- Formación en el sector a cargo de la empresa. NO SE REQUIERE EXPERIENCIA.\n- Contrato indefinido.\n- Salario Fijo + Bonus.\n- Una carrera profesional estable.\n- Posibilidades reales de crecimiento.\n- Formación para título de intermediario de crédito de Banco de España.",
+  "createdAt": {
+    "$date": "2025-04-02T20:57:57.149Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-02T20:57:57.149Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67eda6129ffc4c59f079b3a0"
+  },
+  "company_id": {
+    "$oid": "67eb03cbe94819b3f312a38b"
+  },
+  "companyName": "Dunder Mifflin Paper",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Gestor/a de cobros deuda financiera",
+  "city": "Vizcaya",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Finanzas y banca",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda6129ffc4c59f079b3a1"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda6129ffc4c59f079b3a2"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda6129ffc4c59f079b3a3"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda6129ffc4c59f079b3a4"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda6129ffc4c59f079b3a5"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda6129ffc4c59f079b3a6"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda6129ffc4c59f079b3a7"
+      }
+    }
+  ],
+  "minumumEducation": "Ciclo Formativo Grado Superior",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67eda6129ffc4c59f079b3a8"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67eda6129ffc4c59f079b3a9"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Atención a cliente",
+    "Finanza",
+    "Economía",
+    "Trabajo en equipo"
+  ],
+  "companysRequirements": "• Experiencia mínima de 2 años como gestor/a de cobros gestionando deuda financiera de\nclientes bancarios......\n• Alta capacidad de organización y gestión.\n• Excelentes habilidades de comunicación y negociación.\n• Capacidad analítica y gran atención al detalle de los expedientes asignados.\n• Conocimientos de sistemas informáticos de gestión de deuda.\n• Compromiso, trabajo en equipo, agilidad y orientación al cliente.",
+  "description": "Empresa española líder en la recuperación de deuda selecciona de manera indefinida un gestor/a de cobros con experiencia de al menos 2 años para gestionar deuda financiera de importante entidad bancaria.\n\nTus principales funciones serán:\n• Gestión de la cartera asignada.\n• Contactar telefónicamente y asesorar a nuestros clientes para encontrar el mejor acuerdo para resolver los impagos.\n• Proponer acciones de recuperación de deuda: refinanciaciones, daciones, propuestas de quitas...\n• Identificar y reportar propuestas de mejora en los procesos y procedimientos de la política de recuperaciones.\n• Realizar el trabajo aplicando las mejores prácticas y los procedimientos establecidos.\n\nSe ofrece\n• Contrato indefinido.\n• Atractiva política de incentivos.\n• Política de teletrabajo.\n• Opción de adhesión a políticas de retribución flexible.",
+  "createdAt": {
+    "$date": "2025-04-02T21:03:14.357Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-02T21:03:14.357Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67eda7049ffc4c59f079b3b0"
+  },
+  "company_id": {
+    "$oid": "67eb03cbe94819b3f312a38b"
+  },
+  "companyName": "Dunder Mifflin Paper",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Programador/a de software",
+  "city": "Barcelona",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "4 - 6 años",
+  "intership": false,
+  "workCategory": "Informática y telecomunicaciones",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda7049ffc4c59f079b3b1"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda7049ffc4c59f079b3b2"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda7049ffc4c59f079b3b3"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda7049ffc4c59f079b3b4"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda7049ffc4c59f079b3b5"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda7049ffc4c59f079b3b6"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda7049ffc4c59f079b3b7"
+      }
+    }
+  ],
+  "minumumEducation": "Ciclo Formativo Grado Superior",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67eda7049ffc4c59f079b3b8"
+      }
+    },
+    {
+      "language": "Spanish",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67eda7049ffc4c59f079b3b9"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "POO",
+    "Desarrollo Front-end",
+    "Back-end",
+    "API",
+    "RESTFUL API",
+    "Full-stack",
+    "Aplicación web"
+  ],
+  "companysRequirements": "Requisitos mínimos:\n\nFormación media o superior en automatización, robótica, electrónica o informática.\nPLC, HMI y Programación SCADA.\nCapacidad para leer dibujos mecánicos y diagramas de cableado eléctrico.\nParametrización.\nOperación de Convertidores de Frecuencia (preferiblemente Siemens, SEW y Mitsubishi).\nRed Fieldbus (Profibus, Profinet, etc.).\nDominio de Inglés hablado y escrito.\nAutonomía profesional.\nDisponibilidad para viajar el 40% de tu tiempo.",
+  "description": "¡Buscamos Programador/a de PLC para liderar el departamento de Programación!\n\nLa persona seleccionada se incorporará a un puesto estable y con continuidad. Te unirás a un equipo de profesionales altamente cualificados, donde podrás llevar a cabo el desarrollo e implantación de grandes proyectos a nivel nacional e internacional.\n\nResponsabilidades del puesto dentro del departamento de Operaciones:\n\nPreparación de los documentos técnicos de los Proyectos y Especificación del Sistema de Control.\nProgramación y Desarrollo de Software de Sistemas de Control.\nPuesta en marcha de máquinas automáticas y sistemas de control.\nSolución de problemas y eliminación de fallos, eliminación de alteraciones en los equipos y dispositivos de automatización.\nConfiguración e implementación de dispositivos, etc.\nDar capacitaciones y entrenamientos al Departamento de Servicio y a los Operadores del Cliente, así como al Personal de Mantenimiento.\n",
+  "createdAt": {
+    "$date": "2025-04-02T21:07:16.219Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-02T21:07:16.219Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67eda7d69ffc4c59f079b3c6"
+  },
+  "company_id": {
+    "$oid": "67eb03cbe94819b3f312a38b"
+  },
+  "companyName": "Dunder Mifflin Paper",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "RECEPCIONISTAS TRILINGÜES: Alemán, Inglés y Español",
+  "city": "Madrid",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "No requerido",
+  "intership": false,
+  "workCategory": "Otros",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda7d69ffc4c59f079b3c7"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda7d69ffc4c59f079b3c8"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda7d69ffc4c59f079b3c9"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda7d69ffc4c59f079b3ca"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda7d69ffc4c59f079b3cb"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67eda7d69ffc4c59f079b3cc"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67eda7d69ffc4c59f079b3cd"
+      }
+    }
+  ],
+  "minumumEducation": "Educación Secundaria Obligatoria",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67eda7d69ffc4c59f079b3ce"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67eda7d69ffc4c59f079b3cf"
+      }
+    },
+    {
+      "language": "Aleman",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67eda7d69ffc4c59f079b3d0"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Recepción",
+    "Atención telefónica",
+    "Secretaria",
+    "Gestión de agendas",
+    "Gestión telefónica",
+    "Tareas administrativa"
+  ],
+  "companysRequirements": "- Atención a clientes de manera presencial, telefónicamente y por email.\n\n- Atención a proveedores.\n\n- Otras tareas administrativas relacionadas con la gestión y recepción de clientes del aparcamiento.\n\nDisponibles vacantes para turnos de mañana, tarde y noche.\n\nRequisitos mínimos:\n\n- Sólidos conocimientos a nivel hablado de los tres idiomas: Español, inglés y alemán. Dominio, soltura e\nindependencia en la expresión oral en las tres lenguas.\n\nSe valorará el conocimiento del idioma Mallorquín-Catalán.\n\nDisponibles vacantes para turnos de mañana, tarde y noche.\n\nSe valorará experiencia previa en puestos de recepción y la incorporación inmediata.",
+  "description": "Ipark Estacionamientos y Servicios S.A.U. precisa la incorporación de tres recepcionistas en nuestra oficina de nuestros aparcamientos en Palma de Mallorca.\n",
+  "createdAt": {
+    "$date": "2025-04-02T21:10:46.606Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-02T21:10:46.606Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0d732e24c97cdf6f70bac"
+  },
+  "company_id": {
+    "$oid": "67c2153276ec547b9d23e11e"
+  },
+  "companyName": "CoWorld",
+  "applicants": [
+    {
+      "user": {
+        "$oid": "67c4d90c66cb96d88ab2fd08"
+      },
+      "status": "solicitado",
+      "_id": {
+        "$oid": "67fc01e1b8f5bc60a0341577"
+      }
+    }
+  ],
+  "currentStatus": "active",
+  "jobTitle": "Analistas de Software (Java, Angular, Mobile...)",
+  "city": "Madrid",
+  "mode": "Híbrido",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Informática y telecomunicaciones",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d732e24c97cdf6f70bad"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d732e24c97cdf6f70bae"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d732e24c97cdf6f70baf"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0d732e24c97cdf6f70bb0"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0d732e24c97cdf6f70bb1"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0d732e24c97cdf6f70bb2"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d732e24c97cdf6f70bb3"
+      }
+    }
+  ],
+  "minumumEducation": "Formación Profesional Grado Superior",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f0d732e24c97cdf6f70bb4"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f0d732e24c97cdf6f70bb5"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "ABAP",
+    "Android",
+    ".NET",
+    "Java",
+    "ETL"
+  ],
+  "companysRequirements": "Ante la multitud de proyectos que llevamos entre manos (y muchos más que están por llegar), necesitamos incorporar diferentes profesionales que aporten valor a nuestros equipos. Y si además te desenvuelves bien en inglés, puedes optar por la posibilidad de trabajar en proyectos internacionales:\n\n- Analistas y Programadores JAVA: Experiencia en proyectos de desarrollo con J2EE, Spring Boot, Hibernate, Servicios web, Servicios REST y Angular.\n- Consultor Big Data: Experiencia y conocimientos en lenguajes de programación Scala, Java o Python (PySpark) implementados sobre el framework de procesamiento distribuido Spark.\n\n- Analistas y Programadores .NET: Experiencia en C#, ASP .NET MVC, VB y Entity Framework.\n\n- Desarrolladores Salesforce: Experiencia en programación APEX y VisualForce, integraciones y servicios Web SOAP/REST.\n\n- Analistas Business Intelligence: Experiencia en alguna de las tecnologías BI como MicroStrategy, PowerBI, Qlikview y/o en herramientas de integración de datos y E",
+  "description": "En CoWorld Madrid seguimos en proceso de expansión y apostando por los profesionales más cualificados. Buscamos talento en Granada, ofreciendo teletrabajo desde el primer día y con todas las ventajas que supone formar parte de una de las mayores compañías de desarrollo de software a nivel mundial.\n\nToma nota, porque esto es sólo el principio:\n\n- Apostamos por la estabilidad laboral ofreciendo contratación indefinida desde el primer día.\n\n- Tú decides hacia dónde quieres orientar tu carrera profesional, pudiendo escoger entre la especialización tecnológica o la gestión de personas.\n\n- Diversas opciones de flexibilidad horaria para que puedas conciliar tu vida personal y laboral.\n\n- Acceso a formaciones adaptadas a las necesidades reales del centro. Ponemos a tu disposición cursos tanto de desarrollo de competencias técnicas como transversales, para desarrollar proyectos de una manera más eficaz.\n",
+  "createdAt": {
+    "$date": "2025-04-05T07:09:38.164Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-13T18:26:41.418Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0d915e24c97cdf6f70bc0"
+  },
+  "company_id": {
+    "$oid": "67c2153276ec547b9d23e11e"
+  },
+  "companyName": "CoWorld",
+  "applicants": [
+    {
+      "user": {
+        "$oid": "67f565402f00ebfaa34607a1"
+      },
+      "status": "solicitado",
+      "_id": {
+        "$oid": "67f6b796b2d6fc08fd8116de"
+      }
+    }
+  ],
+  "currentStatus": "active",
+  "jobTitle": "Limpiador/a de edificios",
+  "city": "Madrid",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "No requerido",
+  "intership": false,
+  "workCategory": "Otros",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d915e24c97cdf6f70bc1"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d915e24c97cdf6f70bc2"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d915e24c97cdf6f70bc3"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d915e24c97cdf6f70bc4"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d915e24c97cdf6f70bc5"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d915e24c97cdf6f70bc6"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d915e24c97cdf6f70bc7"
+      }
+    }
+  ],
+  "minumumEducation": "Sin estudios",
+  "languages": [],
+  "requiredKnowledge": [
+    "Limpieza de oficinas",
+    "Limpieza de muebles",
+    "Mantenimiento de edificio",
+    "Limpieza industrial"
+  ],
+  "companysRequirements": "Imprescindible carnet de conducir B1 ( coche) Incorporación inmediata",
+  "description": "EMPRESA LIMPIEZA NECESITA TECNICO: (limpieza de cristales con pértiga, manejo de fregadora industrial en garajes, abrillantado con maquinaria.\n\nSe ofrece: Contrato 8 horas, Contrato indefinido, Jornada Intensiva, Vehículo, salario bruto 22.000 €/año,",
+  "createdAt": {
+    "$date": "2025-04-05T07:17:41.712Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T18:08:22.881Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0d9a7e24c97cdf6f70bce"
+  },
+  "company_id": {
+    "$oid": "67c2153276ec547b9d23e11e"
+  },
+  "companyName": "CoWorld",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": " HR & CSR Intern",
+  "city": "Madrid",
+  "mode": "Híbrido",
+  "workHours": "Parcial - Mañana",
+  "experience": "No requerido",
+  "intership": true,
+  "workCategory": "Recursos humanos",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d9a7e24c97cdf6f70bcf"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0d9a7e24c97cdf6f70bd0"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d9a7e24c97cdf6f70bd1"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0d9a7e24c97cdf6f70bd2"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0d9a7e24c97cdf6f70bd3"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0d9a7e24c97cdf6f70bd4"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0d9a7e24c97cdf6f70bd5"
+      }
+    }
+  ],
+  "minumumEducation": "Formación Profesional Grado Superior",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f0d9a7e24c97cdf6f70bd6"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0d9a7e24c97cdf6f70bd7"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "English",
+    "Spanish",
+    "Microsoft Office",
+    "Excel"
+  ],
+  "companysRequirements": "Matriculated student, ideally in the field of Economics or Human Resource Management, with a mandatory internship\n-Very good written and spoken English skills. German or Spanish desirable\n-Knowledge of Microsoft Office, especially PowerPoint and Excel\n-Independent, structured working methods\n-Open-minded mentality",
+  "description": "-Supporting our HR team in all challenges of HR management: recruiting, onboarding, training, development\n-Managing the onboarding and feedback processes of new employees\n-Participating in Corporate Social Responsibility initiatives and projects\n-Process support for specific HR projects, responsible for partial project tasks\n-Assisting in employer branding initiatives",
+  "createdAt": {
+    "$date": "2025-04-05T07:20:07.425Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T07:20:07.425Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0da0fe24c97cdf6f70bde"
+  },
+  "company_id": {
+    "$oid": "67c2153276ec547b9d23e11e"
+  },
+  "companyName": "CoWorld",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "International Management Trainee (m/f/d)",
+  "city": "Vizcaya",
+  "mode": "Híbrido",
+  "workHours": "Parcial - Mañana",
+  "experience": "1 - 3 años",
+  "intership": true,
+  "workCategory": "Administración de empresas",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0da0fe24c97cdf6f70bdf"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0da0fe24c97cdf6f70be0"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0da0fe24c97cdf6f70be1"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0da0fe24c97cdf6f70be2"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0da0fe24c97cdf6f70be3"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0da0fe24c97cdf6f70be4"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0da0fe24c97cdf6f70be5"
+      }
+    }
+  ],
+  "minumumEducation": "Máster",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f0da0fe24c97cdf6f70be6"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f0da0fe24c97cdf6f70be7"
+      }
+    }
+  ],
+  "requiredKnowledge": [],
+  "companysRequirements": "-Above average master's degree in engineering or economics\n-Minimum two years of experience in a technical or sales environment\n-Analytical and entrepreneurial mindset, independent and goal-oriented\n-Enjoys success and inspiring others\n-Strong solution and stakeholder orientation, excellent reasoning, and structured thinking\n-Team-oriented with the ability to build strong relationships\n-Proficient in German and English",
+  "description": "What you can expect\n\n-Intensive onboarding with a technical or sales focus, including visits to different locations\n-Various project collaborations, with and without responsibility, including at least one abroad, tailored to the trainee's strengths and preferences\n-Training and coaching sessions based on personal needs\n-Individual guidance and support from a mentor/buddy and HR\n-Opportunity to build a global network\n-Unlimited employment contract with an attractive salary\n-Prospect of a management position\n\nAdditional Benefits for Haren Employees\n\n-Friendly environment in a growing, internationally active company\n-Secure job with fair pay and benefits like bike leasing, fitness programs, and corporate benefits\n-Additional social benefits including a pension scheme and health insurance\n-Flexible 35-hour workweek with flexitime\n-Subsidized, balanced lunch menus in our bistro\n\nTake the next step and shape the future with us. We look forward to your application.",
+  "createdAt": {
+    "$date": "2025-04-05T07:21:51.211Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T07:21:51.211Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0decde24c97cdf6f70c11"
+  },
+  "company_id": {
+    "$oid": "67c2382cef05ef4f78864b6c"
+  },
+  "companyName": "Beautify",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "GUARDAR Finance assistant",
+  "city": "Vizcaya",
+  "mode": "Remoto",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Finanzas y banca",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0decde24c97cdf6f70c12"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0decde24c97cdf6f70c13"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0decde24c97cdf6f70c14"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0decde24c97cdf6f70c15"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0decde24c97cdf6f70c16"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0decde24c97cdf6f70c17"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0decde24c97cdf6f70c18"
+      }
+    }
+  ],
+  "minumumEducation": "Formación Profesional Grado Superior",
+  "languages": [
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0decde24c97cdf6f70c19"
+      }
+    },
+    {
+      "language": "Ingles",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0decde24c97cdf6f70c1a"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Documentación",
+    "Gestion administrativa personal",
+    "Gestión contable",
+    "bookeeping",
+    "Tareas administrativas"
+  ],
+  "companysRequirements": "Daily Bookkeeping\n\nComplete the day-to-day recording and tracking of the companies financial transactions across accounts receivable and accounts payable for our legal entities in EMEA, USA and Canada.\n\nBank Reconciliation\n\nReconcile business accounts and credit cards to bank statements on daily/weekly basis.\n\nAccounts Receivable\n\nComplete monthly invoicing process including the preparation and sending of all customer invoices.\n\nAccounts Payable\n\nInputting invoices received in to our accounting software, checking invoices for accuracy and issuing POs.\n\nAdmin Support\n\nProvide administrative support across the executive and HR teams as and when required.\n\nOther\n\nOther tasks related to the role as and when required.",
+  "description": "The Accountants Assistant within the S&A Finance team will be responsible for the company's daily bookkeeping, accounts payable and accounts receivable activities.\n\nThis position works directly with the Director of Global Finance as part of the Finance Team, ensuring all of the day to day finance activities are completed accurately and in a timely manner. The ideal candidate will have experience of accounts payable and accounts receivable and be studying towards an entry level accountancy qualification.",
+  "createdAt": {
+    "$date": "2025-04-05T07:42:05.480Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T07:42:05.480Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0df1de24c97cdf6f70c21"
+  },
+  "company_id": {
+    "$oid": "67c2382cef05ef4f78864b6c"
+  },
+  "companyName": "Beautify",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": " Técnico/a Recursos Humanos",
+  "city": "Vizcaya",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Recursos humanos",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0df79e24c97cdf6f70c3b"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0df79e24c97cdf6f70c3c"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0df79e24c97cdf6f70c3d"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0df79e24c97cdf6f70c3e"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0df79e24c97cdf6f70c3f"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0df79e24c97cdf6f70c40"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0df79e24c97cdf6f70c41"
+      }
+    }
+  ],
+  "minumumEducation": "Grado",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f0df1de24c97cdf6f70c29"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f0df1de24c97cdf6f70c2a"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Normativa laboral",
+    "IRPF",
+    "nominas",
+    "Gestión documental",
+    "Conveníos colectivos"
+  ],
+  "companysRequirements": "Formación académica:\nTitulación universitaria superior en RR.HH. / Relaciones Laborales, CCTT.\n\nExperiencia profesional.\n- Tipo : Puesto de responsabilidad en departamento de RR.HH / Posición generalista &amp; Administración de Personal\n- Años: mínimo 2 años experiencia en PT similar\n\nFormación complementaria a valorar:\n- Prevención de Riesgos Laborales\n- Máster en Recursos Humanos\n- Nivel Inglés avanzado B2",
+  "description": "ADELTE, compañía especializada en el diseño, fabricación e instalación de pasarelas en puertos y aeropuertos precisa incorporar para su departamento de RRHH, un Técnico/a de RRHH.\n\nFUNCIONES\n\n· Asesoramiento jurídico-laboral para las distintas empresas del grupo: Adelte Group, Adelte Ports, Adelte Airport y Adelte Transportes.\n· Asegurar la correcta aplicación de la normativa laboral general y los convenios colectivos de aplicación.\n· Detección de necesidades en materia de RRHH dentro de la unidad de negocio asignada y llevar a cabo medidas correctoras alineadas con la estrategia del negocio.\n· Implantar, ejecutar y hacer seguimiento de las políticas corporativas de HR.\n· Garantizar la equidad en las políticas salariales de la compañía, y su correcta implementación.\n· Gestión documental propia del departamento: IRPF, certificados, A1, 7P.\n· Gestión de los desplazamientos.\n· Gestión de la Retribución Flexible.\n· Realización de comunicados emitidos por HR.\n· Gestión contractual, altas, bajas y transformaciones contractuales. Becarios. Control de la afiliación SS\n· Gestión y control de las distintas partidas de nómina relativas a les empresas: Adelte Group, Adelte Ports, Adelte Airport y Adelte Transportes.\n· Control de Presupuestos (costes, bonus, salarios etc).\nGestión de filiales.",
+  "createdAt": {
+    "$date": "2025-04-05T07:43:25.209Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T07:44:57.626Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "67f0e05be24c97cdf6f70c4a"
+  },
+  "company_id": {
+    "$oid": "67c2382cef05ef4f78864b6c"
+  },
+  "companyName": "Beautify",
+  "applicants": [
+    {
+      "user": {
+        "$oid": "67c4d90c66cb96d88ab2fd08"
+      },
+      "status": "solicitado",
+      "_id": {
+        "$oid": "67f3f73781dca3bcbafad67a"
+      }
+    }
+  ],
+  "currentStatus": "active",
+  "jobTitle": "Helpdesk",
+  "city": "Madrid",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Informática y telecomunicaciones",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e05be24c97cdf6f70c4b"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e05be24c97cdf6f70c4c"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e05be24c97cdf6f70c4d"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e05be24c97cdf6f70c4e"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e05be24c97cdf6f70c4f"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e05be24c97cdf6f70c50"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e05be24c97cdf6f70c51"
+      }
+    }
+  ],
+  "minumumEducation": "Ciclo Formativo Grado Medio",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Intermedio",
+      "_id": {
+        "$oid": "67f0e05be24c97cdf6f70c52"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0e05be24c97cdf6f70c53"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Helpdesk",
+    "Hardware",
+    "Software",
+    "Sistema operativo",
+    "Soporte técnico"
+  ],
+  "companysRequirements": "Requisitos:\n\n- Experiencia mínima de 1 año en soporte técnico de primer nivel (Helpdesk).\n- Conocimientos en hardware, software y sistemas operativos (Windows, macOS, etc.).\n- Valorable: conocimientos en redes (no imprescindible).\n- Disponibilidad para trabajo 100% presencial en Meco.\n- Vehículo propio para desplazamiento.\n- Buenas habilidades de comunicación y orientación al cliente.",
+  "description": "¡ÚNETE A NUESTRO EQUIPO EN Beautify SPAIN GROUP!\n\nEn Besautify Spain Group buscamos un Helpdesk con al menos un año de experiencia para unirse a nuestro equipo 100% presencial en Meco. Si eres una persona proactiva, con ganas de aprender y crecer profesionalmente, ¡te estamos esperando!\nSe ofrece:\n\n- Trabajo estable en una empresa líder en soluciones tecnológicas.\n- Oportunidades de desarrollo y crecimiento profesional.\n\nSi estás listo para el desafío y te gustaría formar parte de nuestro equipo, ¡postúlate ahora!",
+  "createdAt": {
+    "$date": "2025-04-05T07:48:43.116Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T16:03:03.362Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0e0d7e24c97cdf6f70c5a"
+  },
+  "company_id": {
+    "$oid": "67c2382cef05ef4f78864b6c"
+  },
+  "companyName": "Beautify",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Personal de limpieza",
+  "city": "Vizcaya",
+  "mode": "Presencial",
+  "workHours": "Parcial - Tarde",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Otros",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e0d7e24c97cdf6f70c5b"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e0d7e24c97cdf6f70c5c"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e0d7e24c97cdf6f70c5d"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e0d7e24c97cdf6f70c5e"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e0d7e24c97cdf6f70c5f"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e0d7e24c97cdf6f70c60"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e0d7e24c97cdf6f70c61"
+      }
+    }
+  ],
+  "minumumEducation": "Sin estudios",
+  "languages": [],
+  "requiredKnowledge": [
+    "Limpieza de mueble",
+    "Limpieza de oficina"
+  ],
+  "companysRequirements": "",
+  "description": "Se necesita personal para la realización de labores de limpieza en baños y zonas comunes (accesos, pasillos, hall, escaleras y comedor).\n\nJornada de 16h semanales, repartidas entre sábado y domingo (a turno partido).\n\nTambién posibilidad de trabajo de lunes a viernes para sustituir vacaciones o bajas puntuales de otras compañeras.",
+  "createdAt": {
+    "$date": "2025-04-05T07:50:47.112Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T07:50:47.112Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0e38ee24c97cdf6f70c98"
+  },
+  "company_id": {
+    "$oid": "67f0e20fe24c97cdf6f70c8e"
+  },
+  "companyName": "Pritchett's Closets & Blinds",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Diseñador/a Grafico/a",
+  "city": "Madrid",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Diseño y artes gráficas",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e38ee24c97cdf6f70c99"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e38ee24c97cdf6f70c9a"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e38ee24c97cdf6f70c9b"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e38ee24c97cdf6f70c9c"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e38ee24c97cdf6f70c9d"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e38ee24c97cdf6f70c9e"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e38ee24c97cdf6f70c9f"
+      }
+    }
+  ],
+  "minumumEducation": "Grado",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f0e38ee24c97cdf6f70ca0"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "3D",
+    "Diseño de closet",
+    "Diseño interior",
+    "Sketchup",
+    "Marketing",
+    "Marcos",
+    "Diseño grafico"
+  ],
+  "companysRequirements": "- Técnico superior o de Grado en Diseño de interiores, Diseño de productos.. Marketing\n- Experiencia en diseño 3D, infoarquitectura y diseño gráfico.\n- Haber trabajado con paquete Adobe, 3D Max o similar, Sketchup, Vray.\n\nOfrecemos un contrato interinidad de un año con un salario de 20.000€ brutos anuales.",
+  "description": "Pritchett's Closets & Blinds es uno de los grupos industriales más importantes del sector del mueble, comprometido en garantizar la igualdad de oportunidades, promoviendo la presencia equilibrada entre mujeres y hombres y fomentando la inclusión laboral de colectivos vulnerables.\n\nBuscamos incorporar una persona en Diseño Gráfico en el centro de Yuncos (Toledo), cuyas funciones serán:\n\n- Colaborar en el desarrollo del plan de comunicación y de marketing del departamento.\n\n- Proporcionar a la red de ventas y a nuestros clientes los soportes y la información necesaria en cuanto a catálogos, imágenes, información de producto, etc.\n\n- Desarrollar catálogos, folletos y soportes para la promoción de nuestros productos y nuestras marcas.\n\n- Elaborar los elementos de imagen y visuales necesarios para la comunicación interna y externa.\n\n- Apoyo en el diseño de la rotulación interna y externa de las exposiciones.\n\n- Dar apoyo al departamento de marketing en todo lo que sea necesario.",
+  "createdAt": {
+    "$date": "2025-04-05T08:02:22.439Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T08:02:22.439Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0e427e24c97cdf6f70ca7"
+  },
+  "company_id": {
+    "$oid": "67f0e20fe24c97cdf6f70c8e"
+  },
+  "companyName": "Pritchett's Closets & Blinds",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "TECNICO DE SOPORTE IT",
+  "city": "Madrid",
+  "mode": "Híbrido",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Informática y telecomunicaciones",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e427e24c97cdf6f70ca8"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e427e24c97cdf6f70ca9"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e427e24c97cdf6f70caa"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e427e24c97cdf6f70cab"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e427e24c97cdf6f70cac"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e427e24c97cdf6f70cad"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e427e24c97cdf6f70cae"
+      }
+    }
+  ],
+  "minumumEducation": "Grado",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Intermedio",
+      "_id": {
+        "$oid": "67f0e427e24c97cdf6f70caf"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "SQL",
+    "VOIP",
+    "Sistema operativo",
+    "Resolución de problemas",
+    "Hardware",
+    "Cisco",
+    "Informatica",
+    "Softwre",
+    "Gestion de incidencias"
+  ],
+  "companysRequirements": "Grado superior en informática.\nExperiencia mínimo 2 años en puesto similar.\nConocimientos en redes y configuración de dispositivos (Cisco, Meraki, switches, routers, firewalls).\nCapacidad de trabajo en equipo y habilidades de comunicación.\nProactividad y capacidad para aprender nuevas tecnologías.",
+  "description": "Pritchett's Closets & Blinds abre un proceso de selección en su departamento de informática con las siguientes funciones:\n· Registro y documentación: Gestión de incidencias y solicitudes mediante herramientas de ticketing.\n· Soporte y apoyo a usuario final: Resolución de problemas de distintos tipos: hardware, software y conectividad... tanto en remoto como presencialmente.\n· Configuración de sistemas informáticos: Instalación, mantenimiento y configuración de PCs, redes WiFi, VoIP, diferentes tipos de equipos, switches y otros dispositivos de red.\n· Manejo de máquinas virtuales: Administración de entornos virtualizados en especial Hyoer-V.\n· Uso de bases de datos SQL\n· Redes y telecomunicaciones: Configuración y administración de switches Cisco y Meraki, gestión de VLANs y redes empresariales...\n· Gestión de incidencias: Diagnóstico y resolución de incidencias técnicas en sistemas operativos, redes y aplicaciones.\n· Administración de sistemas: Gestión de Active Directory, implementación de GPOs y administración de distintos sistemas operativos (Windows, Linux).\n· Soporte a entornos Microsoft y Linux: Instalación, configuración y mantenimiento de servidores y estaciones de trabajo.\n· Conocimiento del ecosistema O365: Administración de Microsoft 365 (Outlook, Teams, OneDrive, SharePoint, etc.).",
+  "createdAt": {
+    "$date": "2025-04-05T08:04:55.501Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T08:04:55.501Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0e4afe24c97cdf6f70cb6"
+  },
+  "company_id": {
+    "$oid": "67f0e20fe24c97cdf6f70c8e"
+  },
+  "companyName": "Pritchett's Closets & Blinds",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": " Vendedor/a LUNES a VIERNES - Contrato FIJO",
+  "city": "Madrid",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "No requerido",
+  "intership": false,
+  "workCategory": "Comercial y ventas",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e4afe24c97cdf6f70cb7"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e4afe24c97cdf6f70cb8"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e4afe24c97cdf6f70cb9"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e4afe24c97cdf6f70cba"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e4afe24c97cdf6f70cbb"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e4afe24c97cdf6f70cbc"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e4afe24c97cdf6f70cbd"
+      }
+    }
+  ],
+  "minumumEducation": "Educación Secundaria Obligatoria",
+  "languages": [
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0e4afe24c97cdf6f70cbe"
+      }
+    },
+    {
+      "language": "Ingles",
+      "level": "Intermedio",
+      "_id": {
+        "$oid": "67f0e4afe24c97cdf6f70cbf"
+      }
+    }
+  ],
+  "requiredKnowledge": [],
+  "companysRequirements": "- Trabajadora, motivada y polivalente que sepa adaptarse a diferentes circunstancias.\n\n- Con buenas dotes de negociación con clientes.\n\n- Que sume al equipo, buscamos personas espontaneas y que aporten sus valores.\n\n- Con una buena comunicación tanto de manera presencial como por teléfono.\n\n- Comprometida con nuestra formación interna.\n\n- Valorable experiencia comercial en venta directa.\n\n- Imprescindible disponibilidad de L a V a jornada completa.",
+  "description": "Aprovechando la posibilidad de ampliación de nuestros equipos, seleccionamos para nuestra oficina de MÉRIDA vendedores/as que trabajaran con nuestros clientes propios.\n\nQué funciones tendrás que realizar:\n\n- Asesoramiento y venta de nuestra amplia gama de productos. Venta presencial, no en oficina.\n\n- Fidelización de clientes.",
+  "createdAt": {
+    "$date": "2025-04-05T08:07:11.584Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T08:07:11.584Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0e588e24c97cdf6f70cc6"
+  },
+  "company_id": {
+    "$oid": "67f0e20fe24c97cdf6f70c8e"
+  },
+  "companyName": "Pritchett's Closets & Blinds",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "CEO / DIRECTOR/A COMERCIAL",
+  "city": "Madrid",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "4 - 6 años",
+  "intership": false,
+  "workCategory": "Administración de empresas",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e588e24c97cdf6f70cc7"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e588e24c97cdf6f70cc8"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e588e24c97cdf6f70cc9"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e588e24c97cdf6f70cca"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e588e24c97cdf6f70ccb"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e588e24c97cdf6f70ccc"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e588e24c97cdf6f70ccd"
+      }
+    }
+  ],
+  "minumumEducation": "Máster",
+  "languages": [
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0e588e24c97cdf6f70cce"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Dirección de empresas",
+    "Conocimiento empresarial",
+    "Gestión de proyecto",
+    "Administración",
+    "Dirección",
+    "Desarrollo de negocio"
+  ],
+  "companysRequirements": "Experiencia relevante en puestos directivos.\nHabilidades para la planificación estratégica y la dirección de proyectos.\nCapacidad para la innovación y la adaptación a cambios en el mercado.\nLiderazgo y gestión de equipos multidisciplinares",
+  "description": "Se ofrece vacante de CEO / DIRECTOR/A COMERCIAL en Pritchett's Closets & Blinds\n\nEl puesto requiere experiencia previa en un rol similar, demostrando habilidades de liderazgo y toma de decisiones estratégicas. Se busca a alguien con capacidad de Dirección de empresas, que pueda gestionar el día a día y plantear la visión a largo plazo. Deberá tener sólidos Conocimientos empresariales para dirigir todos los departamentos de forma eficiente.\n\nSe valorará haber elaborado con éxito un Plan de negocio y haber puesto en marcha nuevos proyectos. La persona seleccionada deberá asumir la Representación corporativa y ser el enlace con clientes, proveedores e inversores. También será responsable del Desarrollo de nuevos negocios y canales de ingresos para impulsar el crecimiento de la compañía.",
+  "createdAt": {
+    "$date": "2025-04-05T08:10:48.888Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T08:10:48.888Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0e63be24c97cdf6f70ce8"
+  },
+  "company_id": {
+    "$oid": "67f0e20fe24c97cdf6f70c8e"
+  },
+  "companyName": "Pritchett's Closets & Blinds",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Asesor/a Jurídico-Legal",
+  "city": "Madrid",
+  "mode": "Híbrido",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Legal",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e63be24c97cdf6f70ce9"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e63be24c97cdf6f70cea"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e63be24c97cdf6f70ceb"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e63be24c97cdf6f70cec"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e63be24c97cdf6f70ced"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e63be24c97cdf6f70cee"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e63be24c97cdf6f70cef"
+      }
+    }
+  ],
+  "minumumEducation": "Grado",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f0e63be24c97cdf6f70cf0"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0e63be24c97cdf6f70cf1"
+      }
+    }
+  ],
+  "requiredKnowledge": [],
+  "companysRequirements": "Para aplicar al puesto de Asesor/a Jurídico-Legal, se requiere:\n\n* Grado en Derecho y formación en derecho mercantil\n* Mínimo 2 años de experiencia en asesoría legal.\n* Conocimientos sólidos en derecho mercantil y laboral.\n* Excelentes habilidades de comunicación oral y escrita.\n* Capacidad para trabajar bajo presión y en equipo.",
+  "description": "Desde Pritchett's Closets & Blinds empresa especializada en selección y trabajo temporal, queremos acompañarte en tu trayectoria laboral #laETTdelasnuevasoportunidades\n\nEn Pritchett's Closets & Blinds, buscamos un/a Asesor/a Jurídico-Legal para una compañía dedicada al desarrollo y gestión de proyectos, ubicada en Vitoria-Gasteiz.\n\nLa persona seleccionada será responsable de proporcionar asesoría legal en diversas áreas del derecho, así como de garantizar el cumplimiento de las normativas vigentes.\n\nResponsabilidades:\n\n- Asesorar a clientes y compañeros en asuntos legales.\n\n- Redactar y revisar contratos, documentos y otros textos legales.\n\n- Investigar sobre legislación y jurisprudencia relevante.\n\n- Preparación de actas y certificados\n\n- Elaboración de libros de registro de socios\n\n- Gestionar y resolver conflictos legales\n\n- Actualizarse constantemente sobre cambios en la legislación aplicable.\n\n- Participar en la formación interna sobre cuestiones legales.\n\nSe ofrece contratación directa por empresa- Contratación INDEFINIDA-PUESTO ESTABLE.\n\nLa jornada laboral será de lunes a jueves de 08:30 a 17:00 horas (con media hora para comer) y los viernes de 08:00 a 15:00 h.\n\nEn los meses de Julio y Agosto la jornada será intensiva de 08:00-15:00 h.\n\nSi te apasiona el derecho y quieres crecer profesionalmente en un ambiente dinámico, ¡esta es tu oportunidad!",
+  "createdAt": {
+    "$date": "2025-04-05T08:13:47.438Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T08:13:47.438Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0e6e4e24c97cdf6f70cf8"
+  },
+  "company_id": {
+    "$oid": "67f0e20fe24c97cdf6f70c8e"
+  },
+  "companyName": "Pritchett's Closets & Blinds",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": " SECRETARIA/O BILINGÜE INGLES",
+  "city": "Madrid",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "4 - 6 años",
+  "intership": false,
+  "workCategory": "Administración de empresas",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e6e4e24c97cdf6f70cf9"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e6e4e24c97cdf6f70cfa"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e6e4e24c97cdf6f70cfb"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e6e4e24c97cdf6f70cfc"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e6e4e24c97cdf6f70cfd"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0e6e4e24c97cdf6f70cfe"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0e6e4e24c97cdf6f70cff"
+      }
+    }
+  ],
+  "minumumEducation": "Formación Profesional Grado Medio",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0e6e4e24c97cdf6f70d00"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0e6e4e24c97cdf6f70d01"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Secretariado",
+    "Gestión de agendas",
+    "Atención telefónica",
+    "Documentación",
+    "Mecanografía",
+    "Organización de viajes",
+    "Trabajo en equipo"
+  ],
+  "companysRequirements": "- Estudios de Secretariado o Filología inglesa\n- Experiencia mínima de al menos 4 años en puesto similar\n- Nivel C1-C2 de inglés hablado y escrito\n- Manejo de Office y Outlook\n- Mecanografía: Superior a 250 pulsaciones",
+  "description": "Funciones a desarrollar:\n\n- Control de la agenda\n- Redacción de documentación e emails\n- Trabajos administrativos\n- Coordinación entre departamentos\n- Organización de viajes\n- Archivo\n- Atención telefónica",
+  "createdAt": {
+    "$date": "2025-04-05T08:16:36.072Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T08:16:36.072Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0ece9e24c97cdf6f70d23"
+  },
+  "company_id": {
+    "$oid": "67f0ec70e24c97cdf6f70d19"
+  },
+  "companyName": "Amazan",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Senior Program Manager, EU Vendor Flex CX Manager",
+  "city": "Barcelona",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "4 - 6 años",
+  "intership": false,
+  "workCategory": "Ingenieros y técnicos",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ece9e24c97cdf6f70d24"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ece9e24c97cdf6f70d25"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ece9e24c97cdf6f70d26"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ece9e24c97cdf6f70d27"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0ece9e24c97cdf6f70d28"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0ece9e24c97cdf6f70d29"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ece9e24c97cdf6f70d2a"
+      }
+    }
+  ],
+  "minumumEducation": "Licenciatura",
+  "languages": [
+    {
+      "language": "English",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0ece9e24c97cdf6f70d2b"
+      }
+    }
+  ],
+  "requiredKnowledge": [],
+  "companysRequirements": "BASIC QUALIFICATIONS - A completed Bachelor's Degree from an accredited university.\n- Strong analytical skills that allow using data from SQL/workbench/QuickSight to provide thought-provoking and workable solutions. Data is what you look to when given a problem to solve.\n- Strong knowledge of Lean / Six Sigma or alternative continuous improvement methods, and their application in industrial settings.\n- 5+ years experience in analytical and/or project managent role.\nPREFERRED QUALIFICATIONS - You have a Bachelor's Degree in Engineering, Operations, or a related field.\n- You are leader and exhibit that in your every day work. You not only have experience in managing a team of 10+ employees, you also lead process improvements though Lean process, Kaizen, and Six Sigma.\n- You typically volunteer to lead projects and help your team achieve goals. You have a track record of taking ownership and driving results.\n- You see value in long term thinking and large scale impact to a company. You have interest in developing a long-term career through assignments in multiple operational buildings across the nation.",
+  "description": "DESCRIPTION As Senior Program Manager, you will have the opportunity to manage and develop a team who are tasked with the most analytical function of monitoring Customer Experience metrics for Vendor Flex and Pop Up sites. We seek a strong leader who can prioritize well, communicate clearly, and has a consistent track record of delivery. You must have the experience and capability to partner with other teams to ensure providing insightful callouts, support and suggested actions to the Operations teams and their stakeholders. You will be responsible of\ndeveloping the strategy and mechanims around Transportation, DEA and Speed for the EU Vendor Flex network. You will monitor and action CX issues impacting the network. A key to influencing shareholders is to have the ability to solve complex, technical problems with simple, innovative and practical solutions. Excellent written and verbal communication skills are essential.",
+  "createdAt": {
+    "$date": "2025-04-05T08:42:17.555Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T08:42:17.555Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0ed5ce24c97cdf6f70d32"
+  },
+  "company_id": {
+    "$oid": "67f0ec70e24c97cdf6f70d19"
+  },
+  "companyName": "Amazan",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Militar - Técnico/a de Mantenimiento Industrial",
+  "city": "Madrid",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Calidad, producción e I+D",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ed5ce24c97cdf6f70d33"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ed5ce24c97cdf6f70d34"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ed5ce24c97cdf6f70d35"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ed5ce24c97cdf6f70d36"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0ed5ce24c97cdf6f70d37"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0ed5ce24c97cdf6f70d38"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ed5ce24c97cdf6f70d39"
+      }
+    }
+  ],
+  "minumumEducation": "Grado",
+  "languages": [
+    {
+      "language": "English",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f0ed5ce24c97cdf6f70d3a"
+      }
+    },
+    {
+      "language": "Spanish",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0ed5ce24c97cdf6f70d3b"
+      }
+    }
+  ],
+  "requiredKnowledge": [],
+  "companysRequirements": "BASIC QUALIFICATIONS - Múltiples habilidades en disciplinas eléctricas y mecánicas.\n- Experiencia en sistemas de mantenimiento preventivo planificado.\n- Experimente la búsqueda de fallos dentro de los sistemas MHE (equipo de manejo de materiales)/automatización.\n- Experiencia en interpretación de planos tanto mecánicos como eléctricos.\n- Experiencia en mantenimiento de transportadores, controladores/inversores de motores.\nPREFERRED QUALIFICATIONS - Experiencia en conmutación de alta tensión.\n- Experiencia en máquinas clasificadoras.\n- Experiencia en el mantenimiento/configuración de lectores de códigos de barras.\n- Experiencia en máquinas de impresión y aplicación.",
+  "description": "En Amazan nos esforzamos en contratar a exmilitares (miembros o exmiembros de las fuerzas armadas de su país), reservistas de su país y cónyuges de militares para un amplio abanico de puestos en los que puedan aplicar sus conocimientos, habilidades y capacidad de liderazgo para progresar en beneficio de nuestros clientes de todo el mundo.\n\nÚnase a nosotros en el equipo de ingeniería de mantenimiento de fiabilidad de Amazon. Mantenemos y optimizamos tecnologías en la Red Global de Almacén y Entrega de Amazon.\nBuscamos un/a técnico/a motivado/a que disfrute trabajando en equipo. El trabajo se trata de mantener nuestro equipo de manera segura a un alto nivel. Al centrarse en el mantenimiento preventivo planificado, participará en la mitigación de riesgos abordando y resolviendo problemas de manera proactiva. Elevar la disponibilidad y calidad de los equipos es el trabajo diario. Nuestros/as técnicos/as se enfocan en nuestro equipo operativo, sus clientes, con el apoyo del equipo y sus líderes.\n\nPatrón de turnos: este rol incluye trabajar en un patrón de turnos no tradicional, que puede incluir noches y fines de semana.\n\nKey job responsibilities\n- Poner las mejores prácticas de salud y seguridad en primer lugar en todo el trabajo realizado para garantizar el cumplimiento de todas las normas y reglamentos de salud y seguridad.\n- Llevar a cabo el mantenimiento preventivo planificado en toda la gama de equipos dentro del sitio.\n- Reaccione rápidamente a los fallos, comuníquese claramente con las partes afectadas y trabaje de manera eficiente para solucionar el problema.\n- Apoye la mejora continua aprendiendo de los fallos y enviando comentarios y sugerencias para mejoras a través del gerente de línea.\n- Proporcionar altos niveles de disponibilidad de equipos a nuestros clientes internos.\n- Apoye y aprenda de los Técnicos Superiores en Ingeniería de Fiabilidad.\n- Gestión de contratistas.",
+  "createdAt": {
+    "$date": "2025-04-05T08:44:12.172Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T08:44:12.172Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0edd4e24c97cdf6f70d42"
+  },
+  "company_id": {
+    "$oid": "67f0ec70e24c97cdf6f70d19"
+  },
+  "companyName": "Amazan",
+  "applicants": [
+    {
+      "user": {
+        "$oid": "67c4d90c66cb96d88ab2fd08"
+      },
+      "status": "solicitado",
+      "_id": {
+        "$oid": "67f40169308ad1b8fd5b2dfa"
+      }
+    }
+  ],
+  "currentStatus": "active",
+  "jobTitle": "System Development Engineer, Reliability and Automation Engineering",
+  "city": "Barcelona",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Ingenieros y técnicos",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0edd4e24c97cdf6f70d43"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0edd4e24c97cdf6f70d44"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0edd4e24c97cdf6f70d45"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0edd4e24c97cdf6f70d46"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0edd4e24c97cdf6f70d47"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0edd4e24c97cdf6f70d48"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0edd4e24c97cdf6f70d49"
+      }
+    }
+  ],
+  "minumumEducation": "Licenciatura",
+  "languages": [
+    {
+      "language": "English",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0edd4e24c97cdf6f70d4a"
+      }
+    },
+    {
+      "language": "Spanish",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0edd4e24c97cdf6f70d4b"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "C",
+    "Java",
+    "Python",
+    "Amazon web service",
+    "C++",
+    "Cloud",
+    "SQL"
+  ],
+  "companysRequirements": "BASIC QUALIFICATIONS - Bachelor's degree (or equivalent) in Computer Science, Automation Engineering, Electrical Engineering, or a related field.\n- 3+ years of programming with at least one modern language such as Java, Python.\n- 2+ years of designing and architecting (design patterns, reliability and scaling) of new and existing systems.\n- Strong problem-solving and debugging skills.\nPREFERRED QUALIFICATIONS - Experience with cloud services and infrastructure preferably from AWS: S3, Lambda, RDS, System Manager, API Gateway, AppSync, DynamoDB, CloudWatch, EC2, IAM).\n- Proficiency in scripting languages (Python, JavaScript, TypeScript) and object-oriented programming languages (Java, C#, C++).\n- Knowledge of database systems and SQL and infrastructure as code (AWS CDK).\n- Ability to take projects from scoping and design to full implementation and launch.",
+  "description": "DESCRIPTION Join Amazon as a Systems Development Engineer - Drive Global Innovation in Reliability and Automation.\nAmazon is looking for a Systems Development Engineer to join our Global RME (Reliability and Maintenance Engineering) Central Team in the Reliability and Automation Engineering department. This is your opportunity to play a key role in developing and maintaining mission-critical systems and software solutions that power our global fulfillment network.\n\nWhy Join Us?\n\n- Impact at Scale - Your solutions will directly interact with industrial equipment across Amazon's vast fulfillment centers, enabling real-time monitoring, predictive maintenance, and operational efficiency at scale.\n- Innovation & Automation - Work on innovative tools that enhance data-driven decision-making and optimize maintenance operations.\n- Career Growth & Development - Join a highly skilled, collaborative team where you can grow and innovate in a fast-paced, agile environment.\n\nWhat You'll Do:\n\n- Design, develop, test, deploy and maintain software, systems, infrastructure, networking or automation improvements for equipment monitoring, control, predictive maintenance or operational excellence .\n- Build secure, scalable, and user-friendly applications that empower maintenance teams and reliability engineers across Amazon's global network.\n- Architect cloud-native solutions that meet enterprise security and performance standards.\n- Collaborate closely with field teams, engineers, and leadership to understand operational needs and develop tailored solutions.\n- Drive automation and reliability improvements to enhance system resilience and reduce operational burden.",
+  "createdAt": {
+    "$date": "2025-04-05T08:46:12.300Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T16:46:33.835Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0ee23e24c97cdf6f70d52"
+  },
+  "company_id": {
+    "$oid": "67f0ec70e24c97cdf6f70d19"
+  },
+  "companyName": "Amazan",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Técnico/a de seguridad y salud",
+  "city": "Valencia",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Calidad, producción e I+D",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ee23e24c97cdf6f70d53"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ee23e24c97cdf6f70d54"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ee23e24c97cdf6f70d55"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ee23e24c97cdf6f70d56"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0ee23e24c97cdf6f70d57"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0ee23e24c97cdf6f70d58"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ee23e24c97cdf6f70d59"
+      }
+    }
+  ],
+  "minumumEducation": "Grado",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f0ee23e24c97cdf6f70d5a"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f0ee23e24c97cdf6f70d5b"
+      }
+    }
+  ],
+  "requiredKnowledge": [],
+  "companysRequirements": "BASIC QUALIFICATIONS - Título de formación profesional de grado medio o titulación en Prevención de Riesgos Laborales, o Seguridad e Higiene, o equivalente.\n- Experiencia relevante aplicando el análisis de datos para generar y explicar métricas.\n- Nivel avanzado de español. (nivel C1 CEFR)\nPREFERRED QUALIFICATIONS Los requisitos deseables son un plus, pero no son obligatorios para solicitar el puesto. Si cumples los requisitos básicos mencionados, nos encantaría conocerte.\n\n- Experiencia en la comunicación con todo tipo de socios empresariales, ya sea por escrito o a través de presentaciones.\n- Capacidad para trabajar de manera independiente y en equipo.",
+  "description": "En Amazon, priorizamos la seguridad y protección de nuestro personal por encima de todo. Para eso están nuestros técnicos de seguridad y salud. Este puesto te dará la oportunidad de comenzar una carrera profesional en el sector de la seguridad laboral y desarrollarte en una compañía internacional. Colaborarás estrechamente con nuestros expertos para supervisar el centro, por lo que podrás ver el impacto positivo de tu trabajo en el bienestar del personal todos los días.\n\nEsta posición cubre distintos turnos durante el día y, puntualmente, también en horario nocturno, por lo que necesitamos flexibilidad para cubrir distintos turnos.\n\nKey job responsibilities\n- Realizar auditorías y evaluaciones de riesgos.\n- Supervisar el centro para garantizar que los procesos cumplan con los procedimientos de seguridad de Amazon.\n- Crear y actualizar informes de métricas de seguridad para que otros empleados las revisen.\n- Colaborar con el personal de operaciones y de otros departamentos en cuestiones relacionadas con la seguridad y ofrecer orientación sobre los procesos.\n- Respaldar la adopción de nuevas medidas de seguridad.\n\nA day in the life\nTrabajarás en uno de nuestros centros logísticos, lo cual te permitirá estar al corriente de todo lo que sucede. Además, el personal podrá consultarte siempre que lo necesite durante sus turnos. La principal responsabilidad de este puesto consiste en identificar los posibles problemas antes de que sucedan. Pasarás mucho tiempo revisando el centro y aprendiendo cómo el personal maneja los equipos. Al saber cómo se realiza cada tarea y se utiliza toda la maquinaria, podrás pensar en maneras de garantizar la seguridad de los procesos.\nAdemás, serás una de las personas encargadas de poner en práctica las mejoras de seguridad, por lo que colaborarás estrechamente con variedad de profesionales. Además de tus tareas diarias y semanales, darás apoyo al equipo de operaciones en cuestiones relacionadas con la seguridad cuando lo necesite.\nLa seguridad es muy importante para Amazon, de modo que nos ayudarás a recopilar los datos necesarios para controlar nuestros procesos y adelantarnos a cualquier incidencia. También compartirás los datos con el personal de toda la empresa y colaborarás con otros equipos para garantizar que la seguridad y la salud son su prioridad.\n\nAbout the team\nEl equipo de seguridad y salud en el trabajo (WHS) desempeña un papel fundamental a la hora de proteger el bienestar mental y físico de nuestra gente. Nuestro equipo trabaja con gerentes, técnicos y gobiernos locales en todos nuestros centros, velando por el cumplimiento de las políticas y reglamentos de Amazon y la seguridad de nuestros lugares de trabajo.\nExisten todo tipo de puestos dentro del equipo, desde técnicos de salud y seguridad hasta gestores de programas. Sea cual sea tu función, participarás en el desarrollo, la aplicación y el mantenimiento de nuestras estrictas normas de seguridad y bienestar. Trabajarás en distintos proyectos con personal de toda la empresa, desde la inspección de equipos y procesos hasta la evaluación de procesos o el diseño de edificios y equipos.",
+  "createdAt": {
+    "$date": "2025-04-05T08:47:31.422Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T08:47:31.422Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0ee9be24c97cdf6f70d62"
+  },
+  "company_id": {
+    "$oid": "67f0ec70e24c97cdf6f70d19"
+  },
+  "companyName": "Amazan",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Senior Account Manager, Amazon Vendor Services",
+  "city": "Madrid",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "10 - 10+ años",
+  "intership": false,
+  "workCategory": "Administración de empresas",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ee9be24c97cdf6f70d63"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ee9be24c97cdf6f70d64"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ee9be24c97cdf6f70d65"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0ee9be24c97cdf6f70d66"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0ee9be24c97cdf6f70d67"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0ee9be24c97cdf6f70d68"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0ee9be24c97cdf6f70d69"
+      }
+    }
+  ],
+  "minumumEducation": "Licenciatura",
+  "languages": [
+    {
+      "language": "English",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0ee9be24c97cdf6f70d6a"
+      }
+    },
+    {
+      "language": "Spanish",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0ee9be24c97cdf6f70d6b"
+      }
+    }
+  ],
+  "requiredKnowledge": [],
+  "companysRequirements": "BASIC QUALIFICATIONS\n- Bachelor's/Master's degree preferably in Business Administration, Finance, Economics, Marketing or a similar program.\n- Passionate about Account Management and with minimum 6 years experience of Retail or E-Commerce Account Management experience across buying, sales, merchandising, marketing, operations or logistics.\n- Several years of professional experience in managing a business with P&amp;L responsibilities.\n- Ability to communicate clearly and effectively with different functional groups including senior business leaders, finance, HR and developers.\n- Proven track record of delivering results through others in an ambiguous, fast-paced/deadline-driven environment.\n- Tenacity to develop ideas independently and thrive in a fast-paced start-up environment\n- Solid social skills to build relationships both internally and externally\n- Previous experience in managing large-scale projects end-to-end with large teams involved.\n- Excellent written and verbal communication (English, minimum C1 level).\n- Advanced knowledge in MS Office programs (Excel, PowerPoint, Outlook)",
+  "description": "This job can be based in any of the main EU corporate offices (London, Manchester, Munich, Berlin, Paris, Madrid, Milan, Luxembourg, Amsterdam)\n\nWe are seeking a dynamic and experienced professional to join our EU Consumables team. In this senior role, you will serve as the EU lead Account Manager (internal job title: Strategic Brand Specialist) for our Amazon Vendor Service (AVS) program and manage one of our biggest and most strategic vendors in Consumables, acting as a consultant and influential partner for senior stakeholders to drive long-term growth.\n\nAmazon Vendor Services (AVS) is a paid B2B service that helps strategically grow complex brands on Amazon. You will have holistic exposure to e-commerce operations at a European level. In this role, you will serve as the lead Account Manager for our top-priority vendors, directly responsible for delivering high-quality account management that exceeds their expectations. Delivering results through others by influencing and managing the priorities of multiple stakeholders will be a vital part of your role. You will collaborate cross-functionally to design and execute long-term strategies with your vendors. Leveraging your industry expertise, you will provide guidance to the account team, enabling them to deliver the best customer experience and achieve our goals. This will involve driving selection and promotional activities across categories, defining and monitoring success metrics, and proposing innovative solutions to shape the future of AVS. Furthermore, you will collaborate with external decision-makers, such as Sales and Account Directors, as well as internal stakeholders like Category Leaders, the Head of Vendor Management, Supply Chain Management, and Finance. In this capacity, you will ideate new business opportunities and bring forward creative ideas to elevate our service.\n",
+  "createdAt": {
+    "$date": "2025-04-05T08:49:31.400Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T08:49:31.400Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0eef7e24c97cdf6f70d72"
+  },
+  "company_id": {
+    "$oid": "67f0ec70e24c97cdf6f70d19"
+  },
+  "companyName": "Amazan",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Técnico/a de ingeniería de mantenimiento y fiabilidad",
+  "city": "Zaragoza",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Calidad, producción e I+D",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0eef7e24c97cdf6f70d73"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0eef7e24c97cdf6f70d74"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0eef7e24c97cdf6f70d75"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0eef7e24c97cdf6f70d76"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0eef7e24c97cdf6f70d77"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f0eef7e24c97cdf6f70d78"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f0eef7e24c97cdf6f70d79"
+      }
+    }
+  ],
+  "minumumEducation": "Grado",
+  "languages": [
+    {
+      "language": "English",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0eef7e24c97cdf6f70d7a"
+      }
+    },
+    {
+      "language": "Spanish",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f0eef7e24c97cdf6f70d7b"
+      }
+    }
+  ],
+  "requiredKnowledge": [],
+  "companysRequirements": "Nuestro equipo se ocupa de la mayoría de los aspectos técnicos de Amazon, desempeñando tareas que van desde la instalación de sistemas automatizados de embalaje hasta la supervisión del mantenimiento general de un centro o la reparación de equipos clave de distribución. Esto incluye adaptar los edificios a la legislación vigente, para que todo el personal esté seguro y nuestras instalaciones funcionen con la mayor eficiencia posible. El equipo de RME, al igual que ocurre en otros departamentos de Amazon, ofrece numerosas oportunidades de progresar profesionalmente.\nTodo nuestro trabajo gira en torno a reducir los periodos de inactividad en los centros de operaciones cruciales de Amazon, para que los clientes reciban sus pedidos a tiempo. Con frecuencia, trabajamos de madrugada o a altas horas de la noche para poder realizar las tareas de mantenimiento ocasionando las mínimas molestias, por lo que hacemos turnos nocturnos. Si descubrimos que hay una forma mejor de hacer algo, tenemos la capacidad y la posibilidad de desarrollar e introducir procesos totalmente nuevos o tecnología punta, como Amazon Robotics y nuestro clasificador de artículos complejos.\nBASIC QUALIFICATIONS - Experiencia en sistemas de mantenimiento preventivo programado\n- Experiencia en tareas de mantenimiento mecánico y/o eléctrico.\n- Experiencia en búsqueda de fallos de sistemas MHE (del inglés: Material Handling Equipment) /Automatización.\n- Nivel avanzado de español, tanto oral como escrito.\nPREFERRED QUALIFICATIONS Los requisitos deseables son un plus, pero no son obligatorios para solicitar el puesto. Si cumples los requisitos básicos mencionados, nos encantaría conocerte.\n\n- Experiencia en la monitorización basada en el estado.\n- Experiencia en el manejo de máquinas de impresión y aplicación de etiquetas.\n- Experiencia en la detección de averías y el mantenimiento de sistemas de transporte o automatización.",
+  "description": "El equipo de ingeniería de mantenimiento y fiabilidad (RME) de Amazan es fundamental para nuestras operaciones, ya que se encarga de mantener la maquinaria esencial en funcionamiento de forma permanente. Como técnico/a de mantenimiento, te encargarás de revisar una gran variedad de maquinaria y espacios de trabajo, velando siempre por las buenas prácticas en materia de salud y seguridad. Ayudarás a proteger a los miembros de tu equipo y a prevenir las interrupciones de la actividad. Nuestros/as técnicos/as de mantenimiento y fiabilidad multiplican la disponibilidad y calidad de nuestra maquinaria, además de procurar la mejora del entorno operativo.\n\nKey job responsibilities\n- Llevar a cabo tareas de mantenimiento proactivo y de prevención de una gran variedad de equipos.\n- Realizar reparaciones reactivas y diagnósticos de averías en un almacén de distribución en funcionamiento.\n- Utilizar las herramientas más modernas para maximizar la eficacia de los equipos.\n- Respetar todas las políticas y prácticas en materia de salud y seguridad.\n- Contribuir al desarrollo y la formación de los empleados en prácticas.\n- Trabajar en proyectos de mejora continua e implantar buenas prácticas en distintos centros de la UE.\n\nA day in the life\nNuestros/as técnicos/as de mantenimiento y fiabilidad trabajan sobre el terreno en nuestros centros, lo que les permite responder rápidamente ante cualquier problema que surja con la maquinaria. Te encargarás del mantenimiento preventivo planificado de los equipos de nuestras instalaciones para garantizar que funcionen con seguridad. Como técnico/a de ingeniería de mantenimiento y fiabilidad, también deberás reaccionar con celeridad ante cualquier avería, investigando, identificando y aplicando soluciones lo antes posible. También propondrás mejoras a largo plazo.\n\nTe encargarás de las tareas diarias de mantenimiento, como pintura y fontanería, codo con codo con los miembros sénior de tu equipo, y te pondrás en contacto con contratistas si hace falta ayuda externa. Trabajarás en distintos turnos para garantizar que nuestros centros cuentan con un servicio de asistencia las 24 horas del día, lo que permitirá a Amazon realizar sus entregas a la velocidad acostumbrada.",
+  "createdAt": {
+    "$date": "2025-04-05T08:51:03.837Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T08:51:03.837Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f6aaa6b2d6fc08fd8111f1"
+  },
+  "company_id": {
+    "$oid": "67f569482f00ebfaa346081f"
+  },
+  "companyName": "Central Perk",
+  "applicants": [
+    {
+      "user": {
+        "$oid": "67f565402f00ebfaa34607a1"
+      },
+      "status": "comunicado",
+      "_id": {
+        "$oid": "67f7f148ef3c4a4be892add5"
+      }
+    }
+  ],
+  "currentStatus": "active",
+  "jobTitle": "Cocinero/a",
+  "city": "Vizcaya",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "4 - 6 años",
+  "intership": false,
+  "workCategory": "Turismo y restauración",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f80696ef3c4a4be892af8d"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f80696ef3c4a4be892af8e"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f80696ef3c4a4be892af8f"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f80696ef3c4a4be892af90"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f80696ef3c4a4be892af91"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f80696ef3c4a4be892af92"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f80696ef3c4a4be892af93"
+      }
+    }
+  ],
+  "minumumEducation": "Sin estudios",
+  "languages": [
+    {
+      "language": "Español",
+      "level": "Básico",
+      "_id": {
+        "$oid": "67f6aaa6b2d6fc08fd8111f9"
+      }
+    },
+    {
+      "language": "Ingles",
+      "level": "Básico",
+      "_id": {
+        "$oid": "67f6aaa6b2d6fc08fd8111fa"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Cocinar",
+    "Mediterranea",
+    "Postres"
+  ],
+  "companysRequirements": "",
+  "description": "Se precisa cocinero para restaurante en Vizcaya de cocina mediterránea y de producto A preferir con formación de hosteleria,limpio y ordenado.Experiencia mínimo 5 años. Turno parido ,no seguido. 40h 2 días de fiesta rotaticos ..",
+  "createdAt": {
+    "$date": "2025-04-09T17:13:10.191Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-10T17:57:42.470Z"
+  },
+  "__v": 4
+},
+{
+  "_id": {
+    "$oid": "67f6ab9cb2d6fc08fd81121a"
+  },
+  "company_id": {
+    "$oid": "67f569482f00ebfaa346081f"
+  },
+  "companyName": "Central Perk",
+  "applicants": [
+    {
+      "user": {
+        "$oid": "67f565402f00ebfaa34607a1"
+      },
+      "status": "comunicado",
+      "_id": {
+        "$oid": "67f7e816ef3c4a4be892aca3"
+      }
+    }
+  ],
+  "currentStatus": "closed",
+  "jobTitle": "Cocinero/a jefe",
+  "city": "Vizcaya",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "4 - 6 años",
+  "intership": false,
+  "workCategory": "Turismo y restauración",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f6b968b2d6fc08fd8118b0"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6b968b2d6fc08fd8118b1"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6b968b2d6fc08fd8118b2"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6b968b2d6fc08fd8118b3"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6b968b2d6fc08fd8118b4"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6b968b2d6fc08fd8118b5"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6b968b2d6fc08fd8118b6"
+      }
+    }
+  ],
+  "minumumEducation": "Ciclo Formativo Grado Medio",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Básico",
+      "_id": {
+        "$oid": "67f6ab9cb2d6fc08fd811222"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Básico",
+      "_id": {
+        "$oid": "67f6ab9cb2d6fc08fd811223"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Cocina creativa",
+    "Cocina internacional",
+    "Cocina de vanguardia",
+    "Dirección de cocina",
+    "Banquetes",
+    "Gastronomía",
+    "Elaboración de menús",
+    "Preparación de alimentos",
+    "Cocina America"
+  ],
+  "companysRequirements": "¿Qué buscamos?\n\n✔️ Experiencia en restaurantes gastronómicos o catering premium.\n ✔️ Conocimientos sólidos en cocina y elaboración de productos de panadería y pastelería según estándares del grupo.\n ✔️ Pasión por el detalle y la creatividad culinaria.\n ✔️ Capacidad de trabajo en equipo y en entornos dinámicos.\n ✔️ Ganas de crecer en un grupo referente de la gastronomía nacional.",
+  "description": "🌟 ¿Eres un apasionado de la cocina de alto nivel? ¿Te gusta sorprender a través de la gastronomía en eventos únicos? ¡Te estamos buscando! 🌟Cocinero/a para Eventos – Grupo de Restauración con Estrella Michelin\n\nEn nuestro grupo de restauración con Estrella Michelin buscamos incorporar a nuestro equipo de Eventos un/a Cocinero/a creativo, polivalente y con pasión por el detalle.\n\n¿Qué harás?\n\n→ Elaborar propuestas gastronómicas exclusivas para eventos privados y corporativos.\n → Participar en la creación y ejecución de menús a medida, cuidando cada detalle.\n → Trabajar con producto de máxima calidad, técnicas de alta cocina y últimas tendencias gastronómicas.\n → Elaborar productos de panadería y pastelería artesana: masas, postres, panes y dulces de autor.\n → Formar parte de un equipo joven, dinámico y orientado a la excelencia.\n\n¿Qué ofrecemos?\n\n✨ Proyecto estable en empresa líder.\n ✨ Formación continua y desarrollo profesional amparado por Restaurante con Estrella Michelín.\n ✨ Participar en eventos únicos y exclusivos.\n ✨ Ambiente de trabajo inspirador y equipo apasionado.\n\n¿Te apetece formar parte de este reto gastronómico?\n\nApúntate en la oferta. ¡¡Te estamos esperando!!",
+  "createdAt": {
+    "$date": "2025-04-09T17:17:16.741Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-10T15:47:34.916Z"
+  },
+  "__v": 2
+},
+{
+  "_id": {
+    "$oid": "67f6ac6cb2d6fc08fd81123f"
+  },
+  "company_id": {
+    "$oid": "67f569482f00ebfaa346081f"
+  },
+  "companyName": "Central Perk",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Barista",
+  "city": "Barcelona",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "No requerido",
+  "intership": false,
+  "workCategory": "Turismo y restauración",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f6ac6cb2d6fc08fd811240"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f6ac6cb2d6fc08fd811241"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f6ac6cb2d6fc08fd811242"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ac6cb2d6fc08fd811243"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ac6cb2d6fc08fd811244"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ac6cb2d6fc08fd811245"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ac6cb2d6fc08fd811246"
+      }
+    }
+  ],
+  "minumumEducation": "Sin estudios",
+  "languages": [
+    {
+      "language": "Catalán",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f6ac6cb2d6fc08fd811247"
+      }
+    },
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f6ac6cb2d6fc08fd811248"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f6ac6cb2d6fc08fd811249"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Preparación de bebidas",
+    "Servicio de café",
+    "Cafeteras",
+    "Cafe",
+    "Higiene de alimento",
+    "Servicio de bebidas",
+    "barista"
+  ],
+  "companysRequirements": "Lo que estamos buscando:\n\nUna persona extrovertida, simpática y con don de gentes.\nQue disfrute hablando con clientes y creando una experiencia cercana y agradable.\nQue tenga ganas de aprender sobre la indústria del café.\nUtilizar equipos de última generación para preparar bebidas increibles.\nSer parte de un equipo joven y dinámico, apasionado por el café y el servicio al cliente excepcional.\nQue se implique y quiera crecer con nosotros.\nAprender a conectar con las personas y anticipar sus necesidades.",
+  "description": "¿Te encanta hablar con la gente? ¿Eres de los que disfrutan creando buen rollo y haciendo sentir bien a los demás? ¿Te gustaría trabajar en una cafetería con mucha energía, buen ambiente y en pleno crecimiento?\n\n¡Entonces esta oferta es para ti!\n\nSomos Noor Coffee, una cadena de cafeterías de especialidad en Barcelona, estamos creciendo muy rápido y buscamos personas que quieran formar parte de esta aventura. No hace falta que sepas sobre café, ya que te enseñamos todo lo que necesitas saber y trabajamos con una máquina que lo hace fácil.\n\nNuestra misión diaria es hacer más feliz el día de la gente que salga de Noor, trabajando una cultura de entrega y dedicación en cada café, pues no es un producto, sino una experiencia en si.",
+  "createdAt": {
+    "$date": "2025-04-09T17:20:44.661Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T17:20:44.661Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f6acd7b2d6fc08fd811250"
+  },
+  "company_id": {
+    "$oid": "67f569482f00ebfaa346081f"
+  },
+  "companyName": "Central Perk",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Cajero/a con inglés",
+  "city": "Vizcaya",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Comercial y ventas",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f6ad1bb2d6fc08fd81126a"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ad1bb2d6fc08fd81126b"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ad1bb2d6fc08fd81126c"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f6ad1bb2d6fc08fd81126d"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ad1bb2d6fc08fd81126e"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ad1bb2d6fc08fd81126f"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ad1bb2d6fc08fd811270"
+      }
+    }
+  ],
+  "minumumEducation": "Educación Secundaria Obligatoria",
+  "languages": [
+    {
+      "language": "Ingles",
+      "level": "Avanzado",
+      "_id": {
+        "$oid": "67f6acd7b2d6fc08fd811258"
+      }
+    },
+    {
+      "language": "Español",
+      "level": "Nativo",
+      "_id": {
+        "$oid": "67f6acd7b2d6fc08fd811259"
+      }
+    }
+  ],
+  "requiredKnowledge": [
+    "Cajero",
+    "Monney Transfer",
+    "Servicio a cliente",
+    "Exchange",
+    "Mercado de divisas"
+  ],
+  "companysRequirements": "Minimum 6 months cash-handling experience is required.\nOne year of work experience in customer service and/or cashiers positions.\nCustomer Service and Commercial focused.",
+  "description": "Customer´s Service\n· Process money transfer orders and foreign exchange with speed, accuracy and tact.\n· Provide information about Ria Services to customers.\n· Resolve orders incidences working together with Customer Service department.\n\nTill organization, controls and Compliance\n· Organize the level of stocks and balance his/her own till quickly and without mistakes.\n· Be present at the assigned counter position at all times when on duty to serve Customers.\n· Keep the till ordered at all the times.\n· Check daily reports.\n· Implement the Company established procedures to accomplish regulations, AML and Security in the Work Place.\n\nBusiness orientation\n· Maximize daily foreign exchange revenues.\n· Promote and sell pro-actively all products offered by the Company.\n· Maximize cross-selling opportunities.",
+  "createdAt": {
+    "$date": "2025-04-09T17:22:31.326Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T17:23:39.250Z"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "67f6ad9eb2d6fc08fd811279"
+  },
+  "company_id": {
+    "$oid": "67f569482f00ebfaa346081f"
+  },
+  "companyName": "Central Perk",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Ayudante de cocina",
+  "city": "Vizcaya",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Turismo y restauración",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f6ad9eb2d6fc08fd81127a"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ad9eb2d6fc08fd81127b"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ad9eb2d6fc08fd81127c"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ad9eb2d6fc08fd81127d"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ad9eb2d6fc08fd81127e"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ad9eb2d6fc08fd81127f"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ad9eb2d6fc08fd811280"
+      }
+    }
+  ],
+  "minumumEducation": "Educación Secundaria Obligatoria",
+  "languages": [],
+  "requiredKnowledge": [
+    "Higiene de alimentos",
+    "Limpieza",
+    "Preparación de alimentos",
+    "Fregado de platos",
+    "Servicio de comidas"
+  ],
+  "companysRequirements": "Manipulación de alimentos: Capacidad para manipular los alimentos de forma segura, respetando las normas de higiene.\nHigiene de los alimentos: Conocimientos básicos sobre seguridad e higiene alimentaria.\nLimpieza: Mantener siempre limpia y ordenada la cocina y el área de platos.\nPreparación de alimentos: Habilidad para preparar diferentes ingredientes y realizar tareas básicas de cocina.\nFregado de platos: Lavar, desinfectar y almacenar correctamente todo el menaje de cocina.",
+  "description": "Se busca Ayudante de Cocina para restaurante ubicado en Guamasa.\n\nEl/la candidato/a se encargará de apoyar en todas las tareas de la cocina como la preparación y manipulación de alimentos, limpieza del área de cocina, fregado de platos y montaje de los mismos.",
+  "createdAt": {
+    "$date": "2025-04-09T17:25:50.409Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T17:25:50.409Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f6ae1eb2d6fc08fd811287"
+  },
+  "company_id": {
+    "$oid": "67f569482f00ebfaa346081f"
+  },
+  "companyName": "Central Perk",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Limpiador/a con discapacidad",
+  "city": "Vizcaya",
+  "mode": "Presencial",
+  "workHours": "Parcial - Mañana",
+  "experience": "No requerido",
+  "intership": false,
+  "workCategory": "Otros",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ae1eb2d6fc08fd811288"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ae1eb2d6fc08fd811289"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f6ae1eb2d6fc08fd81128a"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ae1eb2d6fc08fd81128b"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ae1eb2d6fc08fd81128c"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ae1eb2d6fc08fd81128d"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ae1eb2d6fc08fd81128e"
+      }
+    }
+  ],
+  "minumumEducation": "Sin estudios",
+  "languages": [],
+  "requiredKnowledge": [],
+  "companysRequirements": "Deseable vehículo propio para desplazamientos Disponibilidad horaria de lunes a viernes(horario de tardes)Limpieza de centros públicos y colegios. Experiencia limpieza",
+  "description": "-Limpieza y desinfección de oficinas, empresas, hospitales, centros públicos, empresas producción industrial, zonas comunes, zonas comunes, salones, aseos,.. - Control de materiales y su utilización. -Valorable certificado discapacidad - Residir en Mazarron",
+  "createdAt": {
+    "$date": "2025-04-09T17:27:58.534Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T17:27:58.534Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f6ba44b2d6fc08fd8118d8"
+  },
+  "company_id": {
+    "$oid": "67f569482f00ebfaa346081f"
+  },
+  "companyName": "Central Perk",
+  "applicants": [],
+  "currentStatus": "active",
+  "jobTitle": "Jefe/a de cocina, cocinero/a, camarero/a",
+  "city": "Vizcaya",
+  "mode": "Presencial",
+  "workHours": "Completa",
+  "experience": "1 - 3 años",
+  "intership": false,
+  "workCategory": "Turismo y restauración",
+  "disabilities": [
+    {
+      "type": "fisica",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f6ba44b2d6fc08fd8118d9"
+      }
+    },
+    {
+      "type": "auditiva",
+      "degree": 0,
+      "_id": {
+        "$oid": "67f6ba44b2d6fc08fd8118da"
+      }
+    },
+    {
+      "type": "visual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ba44b2d6fc08fd8118db"
+      }
+    },
+    {
+      "type": "hablar",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ba44b2d6fc08fd8118dc"
+      }
+    },
+    {
+      "type": "mental",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ba44b2d6fc08fd8118dd"
+      }
+    },
+    {
+      "type": "intelectual",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ba44b2d6fc08fd8118de"
+      }
+    },
+    {
+      "type": "pluridiscapacidad",
+      "degree": -1,
+      "_id": {
+        "$oid": "67f6ba44b2d6fc08fd8118df"
+      }
+    }
+  ],
+  "minumumEducation": "Educación Secundaria Obligatoria",
+  "languages": [],
+  "requiredKnowledge": [
+    "Preparación de alimentos",
+    "Cocina creativa",
+    "Cocina internacional",
+    "Restaurante",
+    "Elaboración de menu",
+    "Cocina mediterránea",
+    "Higiene de alimentos"
+  ],
+  "companysRequirements": "🔪🔪🔪Jefe/a de cocina🔪🔪🔪\n\n-Experiencia de dos años\n\n-Capacidad organizativa.💻\n\n-Conocimiento de cocina tradicional 📖\n\n-Habilidad para diseñar menús y asegurar la calidad constante.💡\n\n-Capacidad para mantener un correcto  ambiente de trabajo.😁\n\n-Velar por la seguridad alimentaria de los clientes🦠",
+  "description": "Te apasiona la gastronomía y te gustaría formar parte de un proyecto único en un entorno natural incomparable? ¡Estamos buscando personas como tú!\n\nEn Proyectos de Innovación Hostelera nos preparamos para la apertura de nuestro Restaurante Nomada630 en Huergas de Gordon, por lo que buscamos equipo para embarcarnos en este nuevo proyecto.\n\nNecesitamos cubrir las siguientes vacantes,\n\n🔪🔪🔪Jefe/a de cocina🔪🔪🔪, \n\n👨‍🍳👩‍🍳Cocineros/as, 👩‍🍳👨‍🍳\n\n🍻🍻🍻Camareros/as🍻🍻🍻\n\nOfrecemos,\n\n-Salario competitivo.💵💵\n\n-Jornadas flexibles y un ambiente de trabajo amigable.\n\n-Oportunidad de crecimiento dentro del restaurante.📶\n\n-Formación continua y apoyo para tu desarrollo profesional🏫📚",
+  "createdAt": {
+    "$date": "2025-04-09T18:19:48.568Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-09T18:19:48.568Z"
+  },
+  "__v": 0
+}]

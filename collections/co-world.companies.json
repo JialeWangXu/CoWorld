@@ -1,0 +1,114 @@
+[{
+  "_id": {
+    "$oid": "67c2153276ec547b9d23e11e"
+  },
+  "firstname": "Jiale",
+  "lastname": "Wang",
+  "email": "coworld@gmail.com",
+  "password": "$2b$10$twE8c146XNOhBObC6fjahOEQmG1a5Ir1qlzKyodqkWjK2Ohn0CL.i",
+  "role": 1,
+  "companyName": "CoWorld",
+  "cif": "A12341234",
+  "createdAt": {
+    "$date": "2025-02-28T19:57:38.031Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-14T17:31:26.738Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c2382cef05ef4f78864b6c"
+  },
+  "firstname": "Isabel",
+  "lastname": "Perez",
+  "email": "wangjiale0928@gmail.com",
+  "password": "$2b$10$BDt.DmqnssjWfFUvCuYuB.7bijqrogvC3JLk2y8KMpSIUh2ekHBEe",
+  "role": 1,
+  "companyName": "Beautify",
+  "cif": "B11111111",
+  "createdAt": {
+    "$date": "2025-02-28T22:26:52.646Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-28T22:26:52.646Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67eb03cbe94819b3f312a38b"
+  },
+  "firstname": "David",
+  "lastname": "Wallace",
+  "email": "DavidW@gmail.com",
+  "password": "$2b$10$4zj2YTPdSgV6nrOHTDgik.8Ac6gPrqm3HC1NloVnB46u6loS4L4hu",
+  "role": 1,
+  "companyName": "Dunder Mifflin Paper",
+  "cif": "B11111112",
+  "createdAt": {
+    "$date": "2025-03-31T21:06:19.753Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-31T21:12:45.124Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0e20fe24c97cdf6f70c8e"
+  },
+  "firstname": "Jay",
+  "lastname": "Pritchett",
+  "email": "JayP@gmail.com",
+  "password": "$2b$10$.yn0n1yQ8/nCvhiTBGS2aeOpP2SpnzSHpjbxgc9cMbJud4vreqcQu",
+  "role": 1,
+  "companyName": "Pritchett's Closets & Blinds",
+  "cif": "B11111115",
+  "createdAt": {
+    "$date": "2025-04-05T07:55:59.142Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T18:05:28.154Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f0ec70e24c97cdf6f70d19"
+  },
+  "firstname": "Jeff",
+  "lastname": "Bezos",
+  "email": "jeffB@gmail.com",
+  "password": "$2b$10$1yxWmtQFDUTVxRnFUnVv8eX3A0A/tg/r7n3vwMYui2ilY6RGhqcLe",
+  "role": 1,
+  "companyName": "Amazan",
+  "cif": "B11111116",
+  "createdAt": {
+    "$date": "2025-04-05T08:40:16.946Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-05T18:07:43.428Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f569482f00ebfaa346081f"
+  },
+  "firstname": "Chandler",
+  "lastname": "Bing Bing",
+  "email": "chandlerbing@gmail.com",
+  "password": "$2b$10$38oxLDz3iOynWZiqo528RezPlVIT3AmTGSq.xGdtF9yPICnipA04G",
+  "role": 1,
+  "companyName": "Central Perk",
+  "cif": "B11111117",
+  "createdAt": {
+    "$date": "2025-04-08T18:22:00.186Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-10T17:49:36.367Z"
+  },
+  "__v": 0
+}]

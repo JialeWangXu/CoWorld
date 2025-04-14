@@ -1,0 +1,63 @@
+[{
+  "_id": {
+    "$oid": "67f2ba8561e3a62b267f4221"
+  },
+  "firstname": "Bea",
+  "lastname": "Perez Gamacho",
+  "email": "beaperez@gmail.com",
+  "password": "$2b$10$zw./uFwZJiQSsmXGmBVwUuw0JuEon/6X.7KyNCH64weuX84QSuZwO",
+  "changedPassword": true,
+  "role": 2,
+  "company_id": {
+    "$oid": "67c2153276ec547b9d23e11e"
+  },
+  "createdAt": {
+    "$date": "2025-04-06T17:31:49.761Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-06T19:27:27.064Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f402e3308ad1b8fd5b2e85"
+  },
+  "firstname": "Jesus",
+  "lastname": "Rodrigo",
+  "email": "jesusR@gmail.com",
+  "password": "$2b$10$PfwJwF2oUTlggO1.49u2euvt.cQpC3KdaiBfBD9zCrFqgA2qtu6h.",
+  "changedPassword": true,
+  "role": 2,
+  "company_id": {
+    "$oid": "67c2153276ec547b9d23e11e"
+  },
+  "createdAt": {
+    "$date": "2025-04-07T16:52:51.463Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-07T16:55:03.392Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f569f32f00ebfaa3460847"
+  },
+  "firstname": "Phoebe",
+  "lastname": "Buffay",
+  "email": "phoebeB@gmail.com",
+  "password": "$2b$10$2kSOKDY9SyfDy4IKUQ9uHOYx7eo0Lqh4sfpWgSY1lvoCSWIz8mJGK",
+  "changedPassword": true,
+  "role": 2,
+  "company_id": {
+    "$oid": "67f569482f00ebfaa346081f"
+  },
+  "createdAt": {
+    "$date": "2025-04-08T18:24:51.890Z"
+  },
+  "updatedAt": {
+    "$date": "2025-04-10T16:22:02.084Z"
+  },
+  "__v": 0
+}]
