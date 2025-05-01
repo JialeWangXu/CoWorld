@@ -14,7 +14,6 @@ const resend = new Resend(RESEND_KEY);
 export async function POST(request:NextRequest) {
 
     const accessToken = request.cookies.get('accessTokenCookie').value;
-    console.log("He cogido access"+accessToken)
 
     try{
         await connectMD();
@@ -24,7 +23,6 @@ export async function POST(request:NextRequest) {
 
         //@ts-ignore
         const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
-        console.log("Access aprobado")
 
         // Primero se valida si tiene todos los campos rellenados:
         if(!firstname|| !lastname || !email){

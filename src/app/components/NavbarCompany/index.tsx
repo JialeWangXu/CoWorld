@@ -14,26 +14,22 @@ export function NavbarCompany(){
     const {showToast} = useContext(ToastContext);
     const router = useRouter();
 
-    // solo es para que cuando pinch un enlace,el enlace se queda activado
+    // solo es para que cuando pincha un enlace,el enlace se queda activado
     const handleActivePage = (page:string) => {
         setActivePage(page);
     }
 
     const handleLogOut = async () =>{
-        try{
-        console.log('cerrando')
-        
+        try{        
         const {data} =await axios.post(`/api/auth/logout`)
         showToast({msg:data.sucess, type:'Good',visible:true})
         router.push('/')
-        console.log('fin')
         }catch(e){
             showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
         }
     }
     const handleProfile = async () =>{
         try{
-        console.log('ir profile-------------------------------------------------')
         await getCompany()
         router.push('/company-home/profile')
         }catch(e){

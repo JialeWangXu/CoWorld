@@ -4,7 +4,6 @@ import axiosInstance from "lib/axiosInterceptor"
 import { companyDetail } from "types/JobFilter"
 import { useParams } from "next/navigation";
 import styles from './../../styles.module.scss'
-import { useRouter } from "next/navigation";
 import { ProfileSkeleton } from "app/components/ProfileSkeleton";
 import JobListDisplay from "app/components/JobsDisplay";
 
@@ -26,8 +25,7 @@ export default function companyViewPage(){
         const [loading, setLoading] = useState(true);
         const [error, setError] = useState("");
         const [activePage,setActivePage] = useState("Info");
-        const params = useParams<{ id: string}>()
-        const router = useRouter();
+        const params = useParams<{ id: string}>();
         const [currentPage, setCurrentPage] = useState(1);
         const [totalPages, setTotalPages] = useState(1);
         const [jobLits, setJobList] = useState([]);
@@ -57,7 +55,6 @@ export default function companyViewPage(){
                             companyName:data.profile.company_id.companyName,
                             jobs:jobs.data.jobList
                         }
-                        console.table(companyDetail)
                         setCompany(companyDetail)
                         setCurrentPage(1);
                         setTotalPages(Math.ceil(jobs.data.jobList.length/5));

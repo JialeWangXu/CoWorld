@@ -1,7 +1,7 @@
 'use client'
 import { Form } from "app/components/Form";
 import { useContext, useEffect, useState } from "react";
-import { FormProperties, study, workExperience } from "app/context/FormContext";
+import { FormProperties, workExperience } from "app/context/FormContext";
 import { UserContext } from "app/context/UserContext";
 import { useSnipper } from "app/hooks/useSnipper";
 import { useRouter } from "next/navigation";
@@ -49,12 +49,8 @@ export default function editWorkExpPage(){
 
 
     const update = async (data:any)=>{
-        console.log('Modificar 1 experiencia laboral')
-
-
 
         const {finDate, iniDate, ...rest} = data
-        console.log(finDate)
         if(!trabajando){
             if(finDate===undefined ){
                 setError('Fecha de fin no puede ser nula')
@@ -73,20 +69,19 @@ export default function editWorkExpPage(){
         }
         setIsLoading(true)        
         try{
-           const response = await axiosInstance.post(`/profile/edit-profile`,{...finalData, modifyWorkExp:true, index:params.index},{
+            const response = await axiosInstance.post(`/profile/edit-profile`,{...finalData, modifyWorkExp:true, index:params.index},{
                 withCredentials:true
-           })
-           showToast({msg:response.data.sucess, type:'Good',visible:true})
-           getUser()
+            })
+            showToast({msg:response.data.sucess, type:'Good',visible:true})
+            getUser()
         }catch(e:any){
-           showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
         }finally{
             router.push('/home/profile')
         }
     }
 
     const deleteWorkExp = async ()=>{
-        console.log('Eliminar experiencia laboral');
         setIsLoading(true);
         setDeleted(true)
         try{

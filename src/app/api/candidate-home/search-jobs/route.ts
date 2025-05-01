@@ -1,5 +1,4 @@
 import { connectMD } from "lib/mongodb";
-import { ObjectId } from "mongodb";
 import jwt from 'jsonwebtoken';
 import Job from "models/Job";
 import { NextRequest, NextResponse } from "next/server";
@@ -16,7 +15,6 @@ export  async function POST(request:NextRequest){
             const accessToken = request.cookies.get('accessTokenCookie').value;
              //@ts-ignore
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
-            console.log("Access aprobado para editar")
 
             try{
                 const body = await request.json();
@@ -168,8 +166,6 @@ export  async function POST(request:NextRequest){
                         createdAt: -1
                     }}
                 ])
-
-                console.log("Encontrado el trabajo"+job.length)
 
                 const jobParser = job.map(job => ({
                     ...job,

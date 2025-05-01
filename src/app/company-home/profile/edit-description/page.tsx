@@ -21,26 +21,24 @@ export default function editDescriptionPage(){
             const initialValues = {
                 description: company.description
             }
-            console.log(initialValues)
             setOldValues(initialValues)
         }
     }, [waiting, company])
 
     if(waiting){
-        return<div>Cargandno contenido</div> // muy probable que tengo que hacer un esqueleto
+        return<div>Cargandno contenido</div>
     }
 
     const edit = async (data:any)=>{
-        console.log('Editar descripcion de la empresa')
         setIsLoading(true)
         try{
-           const response = await axiosInstance.post(`/company-profile/edit-profile`,data,{
+            const response = await axiosInstance.post(`/company-profile/edit-profile`,data,{
                 withCredentials:true
-           })
-           showToast({msg:response.data.sucess, type:'Good',visible:true})
-           getCompany()
+            })
+            showToast({msg:response.data.sucess, type:'Good',visible:true})
+            getCompany()
         }catch(e:any){
-           showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
         }finally{
             router.push('/company-home/profile')
         }

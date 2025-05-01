@@ -80,7 +80,6 @@ export default function HomePage(){
             }finally{
                 if(!controller.signal.aborted){
                     setLoading(false);
-                    console.log("UCrrent page es:"+currentPage)
                 }
             }
         }
@@ -89,11 +88,9 @@ export default function HomePage(){
             clearTimeout(debounce)
         }
         if(!searched){
-            console.log("Buscando por API")
             const timeOut = setTimeout(()=>fetchFilteredJobs(1),500)
             setDebounce(timeOut)
         }else{
-            console.log("Buscando de buscados")
             var jobs:IJobAndCompany[] = filterJobs(jobList,filter);
             setTotalPages(Math.ceil(jobs.length/5));
             if(Math.ceil(jobs.length/5)>5){
@@ -118,8 +115,6 @@ export default function HomePage(){
     const filterJobs=(jobs: IJobAndCompany[], filters: JobFilters) =>{
         if(jobs?.length>0){
         let temp:IJobAndCompany[] = [...jobs];
-        console.log("Temp es: "+JSON.stringify(temp))
-        console.log("El filtro actual es"+JSON.stringify(filters))
         if(filters?.city.length > 0){
             temp = temp.filter(job => filters.city.includes(job.city));
 
@@ -129,7 +124,6 @@ export default function HomePage(){
         }
         if(filters?.disabilities.length>0){
             let tempFilter = filters.disabilities.filter(({type, degree})=> degree>-1);
-            console.log("El tempFilter es: "+JSON.stringify(tempFilter))
             temp = temp.filter( job => {let aux=true;tempFilter.forEach(element => {
                 let jobDegree = job?.disabilities.find(ele => ele.type === element.type)?.degree;
                 if(jobDegree<element.degree && jobDegree!==-1){
@@ -222,7 +216,6 @@ export default function HomePage(){
                 const {data} = await axiosInstance.post(`/candidate-home/search-jobs` ,{search: search},{
                     withCredentials:true
                 })
-                console.log("Lo que hemos buscado es: "+JSON.stringify(data.job));
                 setJobList(data.job);
                 setTotalPages(Math.ceil(data.job.length/5));
                 setCurrentPage(1);
@@ -234,7 +227,6 @@ export default function HomePage(){
                     setDemonstratingPages(Math.ceil(data.job.length/5));
                     setPaginationLimit(Math.ceil(data.job.length/5));
                 }
-                console.log("Ha seteado el list con lo qu eha buscado: "+searchedList.length)
                 setError("");
     
             }catch(e){
@@ -266,8 +258,7 @@ export default function HomePage(){
     }
 
     const handlePaginationSearched =(page:number)=>{
-        const start=(page-1)*5
-        console.log("El start es: "+start+" y el page es: "+page);
+        const start=(page-1)*5;
         setSearchedList(
             jobList.slice(start, start+5)
         )
@@ -275,7 +266,6 @@ export default function HomePage(){
     }
 
     const handlePaginationJobs= async(page:number)=>{
-        console.log("Ha entrado aqui")
         try{
             const param ={
                 city: filter.city.join(','),
@@ -318,8 +308,6 @@ export default function HomePage(){
     const handlePrePagination =()=>{
         if( currentPage%5==1 ){
             if(currentPage!==1){
-                console.log("El current page es: "+currentPage+" y el total pages es: "+totalPages)
-                console.log("Demonstrating pages es: "+demonstratingPages+" y el pagination limit es: "+paginationLimit)
                 setDemonstratingPages(currentPage-1);
                 setPaginationLimit(5);
             }

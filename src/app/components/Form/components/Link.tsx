@@ -1,5 +1,3 @@
-'use client'
-
 interface linkProps {
     text: string;
     linkText: string;

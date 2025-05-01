@@ -34,9 +34,9 @@ export function MultiSelectModal({buttonName,options,title,selected,modalId,moda
         onChange(selected);
     }
 
-     useEffect(()=>{
-         setValues(selected);
-     },[selected])
+    useEffect(()=>{
+        setValues(selected);
+    },[selected])
 
     return(
         <div style={{display: "flex", justifyContent: "center",marginBottom:"2rem"}}>

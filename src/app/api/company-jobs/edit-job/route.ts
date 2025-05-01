@@ -1,5 +1,4 @@
 import { connectMD } from "lib/mongodb";
-import { ObjectId } from "mongodb";
 import jwt from 'jsonwebtoken';
 import Job from "models/Job";
 import { message } from "util/message";
@@ -14,13 +13,10 @@ export async function POST(request:NextRequest){
         await connectMD();
 
         const accessToken = request.cookies.get('accessTokenCookie').value;
-        console.log("He cogido access"+accessToken)
 
         try{
             //@ts-ignore
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
-            console.log("Access aprobado")
-            console.log(data._id)
 
             const body = await request.json();
 

@@ -15,13 +15,11 @@ export  async function POST(request:NextRequest){
             const accessToken = request.cookies.get('accessTokenCookie').value;
              //@ts-ignore
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
-            console.log("Access aprobado para editar")
 
             try{
                 const body = await request.json();
 
                 const {id} = body
-                console.log("El id es :"+id)
 
                 const job= await Job.aggregate([
                     {$match:{_id: new ObjectId(id)}},
@@ -40,8 +38,6 @@ export  async function POST(request:NextRequest){
                     }},
                     {$unwind:{path:"$companyProfile",preserveNullAndEmptyArrays: true}}
                 ])
-
-                console.log("Encontrado el trabajo"+job.length)
 
                 const jobParser = job.map(job => ({
                     ...job,

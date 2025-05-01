@@ -15,7 +15,6 @@ export async function POST(request:NextRequest) {
             const accessToken = request.cookies.get('accessTokenCookie').value;
             //@ts-ignore
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
-            console.log("Access aprobado para editar")
             try{
                 const body = await request.json();
                 const {activePage,page} = body;
@@ -67,7 +66,6 @@ export async function POST(request:NextRequest) {
                         error:message.error.genericError
                     },{status:400})
                 }
-                console.log("Encontrado el trabajo"+job.length)
 
                 const jobParser = job.map(job => ({
                     ...job,
@@ -81,7 +79,6 @@ export async function POST(request:NextRequest) {
                 })) as IJobAndCompany[];
 
                 const totalPage = Math.ceil(jobParser.length/5);
-                console.log("En total hay x paginas"+jobParser.length)
                 const start= (parseInt(page)-1)*5;
                 const slciedJobList = jobParser.slice(start,start+5);
 

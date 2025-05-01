@@ -59,8 +59,6 @@ export const CompanyProvider=({children}:companyProviderProps)=>{
             isOperator: role.data.isOperator,
         }
         setCompany(company);
-        console.log("Seteado empresa");
-        console.log("es operdador? "+company.isOperator)
         setWaiting(false);
         }catch(e){
             console.log("Hubido problema en cargar datos de empresa:"+e);
@@ -68,10 +66,7 @@ export const CompanyProvider=({children}:companyProviderProps)=>{
         }
     }
     useEffect(()=>{
-        console.log("cargando contenido de empresa")
         getCompany()
-        console.log("Ajustando la empresa   "+company)
-        console.log("Terminod e cargar")
     },[]) //No ponemos dependencia de actualizacion en aqui es porqu sino se causa un bulce infinito de actualizacionnes.
           //Por eso actualizamos manualmente cada vez hay cambio en el profile, haciendo getCompany(). 
 

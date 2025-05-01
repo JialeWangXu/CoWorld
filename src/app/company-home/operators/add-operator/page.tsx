@@ -1,7 +1,7 @@
 'use client'
 import { Form } from "app/components/Form";
 import { useContext, useEffect, useState } from "react";
-import {  FormProperties, operator } from "app/context/FormContext";
+import {  FormProperties } from "app/context/FormContext";
 import { useSnipper } from "app/hooks/useSnipper";
 import { useRouter } from "next/navigation";
 import axiosInstance from "lib/axiosInterceptor";
@@ -29,7 +29,6 @@ export default function addCertificationPage(){
     }, [])
 
     const add = async (data:any)=>{
-        console.log('Aniadir 1 operator')
         setIsLoading(true)        
         try{
             const response = await axiosInstance.post(`/company-operator/add-operator`,{...data},{
@@ -89,7 +88,7 @@ export default function addCertificationPage(){
                 <div className='text-center'>
                     <Form.SubmitButton text="Guardar" loading={isLoading}/>
                     <p style={{color:"GrayText"}}>Le enviaremos un correo electrónico a la dirección proporcionada para notificarle que debe cambiar su contraseña e iniciar sesión.</p>
-                    <Form.Links href="/home/profile" text="" linkText='Volver'/>
+                    <Form.Links href="/company-home/operators" text="" linkText='Volver'/>
                 </div>   
             </Form>
         </div>

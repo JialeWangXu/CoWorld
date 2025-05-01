@@ -44,13 +44,11 @@ export default function editStudyPage(){
     , [waiting, user])
 
     if(waiting){
-        return<div>Cargandno contenido</div> // muy probable que tengo que hacer un esqueleto
+        return<div>Cargandno contenido</div>
     }
 
 
     const update = async (data:any)=>{
-        console.log('Aniadir 1 estudio personal')
-
         const {finDate, iniDate, ...rest} = data
         if(!cursando){
             if(finDate===undefined ){
@@ -70,20 +68,19 @@ export default function editStudyPage(){
         }
         setIsLoading(true)        
         try{
-           const response = await axiosInstance.post(`/profile/edit-profile`,{...finalData, modifyStudy:true, index:params.index},{
+            const response = await axiosInstance.post(`/profile/edit-profile`,{...finalData, modifyStudy:true, index:params.index},{
                 withCredentials:true
-           })
-           showToast({msg:response.data.sucess, type:'Good',visible:true})
-           getUser()
+            })
+            showToast({msg:response.data.sucess, type:'Good',visible:true})
+            getUser()
         }catch(e:any){
-           showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
         }finally{
             router.push('/home/profile')
         }
     }
 
     const deleteStudy = async ()=>{
-        console.log('Eliminar estudio');
         setIsLoading(true);
         setDeleted(true)
         try{

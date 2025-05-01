@@ -1,4 +1,3 @@
-'use client'
 import {useContext} from 'react';
 import styles from './styles.module.scss'
 import { FormContext } from '../../../context/FormContext';

@@ -12,7 +12,6 @@ export default function LoginInPage() {
     const [oldValues, setOldValues] = useState<FormProperties>({});
 
     const login = async (data:any)=>{
-        console.log('inicio')
         setIsLoading(true)
         await authFetch({endpoint:'login',nextPath:'/home',fetchdata:data})
         setIsLoading(false)
@@ -29,15 +28,15 @@ export default function LoginInPage() {
         <div className="card m-0 p-0" style={{ width: '100%', height: '100vh' }}>
             <div className="row g-0 h-100">
                 <div className="col-sm-5 d-none d-md-block">
-                  <img src="/imgs/team-green.jpg" className="img-fluid" alt="Log in image" style={{ width: '100%', height: '100%' }}/>
+                    <img src="/imgs/team-green.jpg" className="img-fluid" alt="Log in image" style={{ width: '100%', height: '100%' }}/>
                 </div>
                 <div className="col-md-7">
                     <div className="card-body" style={{ height:'100%', flexDirection:'column', display:'flex', justifyContent:'center', alignItems:'center' }}>
                         
                         <div className='row mb-3'>
-                          <div className='col'></div>
-                          <img src="/imgs/CoWorldLogoLogin.png" alt="CoWorld logo" className='col-sm-8' style={{ width: '80%', height: 'auto' }}/>
-                          <div className='col'></div>
+                            <div className='col'></div>
+                            <img src="/imgs/CoWorldLogoLogin.png" alt="CoWorld logo" className='col-sm-8' style={{ width: '80%', height: 'auto' }}/>
+                        <div className='col'></div>
                         </div>
                         <Form title="Iniciar sesión" onSubmit={login} oldValues={oldValues}>
                             <Form.Input 
@@ -63,4 +62,4 @@ export default function LoginInPage() {
             </div>
         </div>
     ); 
-  }         
+}         

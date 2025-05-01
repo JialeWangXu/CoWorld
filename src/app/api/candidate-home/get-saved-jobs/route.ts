@@ -2,7 +2,6 @@ import { connectMD } from "lib/mongodb";
 import jwt from 'jsonwebtoken';
 import { NextRequest, NextResponse } from "next/server";
 import { message } from "util/message";
-import Job from "models/Job";
 import {ObjectId} from "mongodb"
 import { IJobAndCompany } from "types/JobFilter";
 import User from "models/User";
@@ -16,7 +15,7 @@ export async function POST(request:NextRequest) {
             const accessToken = request.cookies.get('accessTokenCookie').value;
             //@ts-ignore
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
-            console.log("Access aprobado para editar")
+
             try{
                 const body = await request.json();
                 const{page}=body;
@@ -41,17 +40,14 @@ export async function POST(request:NextRequest) {
                     }},
                     {
                         $project: {
-                          savedJobPopulated:1,
-                          firstname:1,
-                          lastname:1,
-                          email:1,
-                          _id:1
+                            savedJobPopulated:1,
+                            firstname:1,
+                            lastname:1,
+                            email:1,
+                            _id:1
                         }
-                      }
+                    }
                 ])
-
-
-                console.log("Encontrado el trabajo "+JSON.stringify(user[0].savedJobPopulated))
 
                 const jobParser = user[0].savedJobPopulated.map(job => ({
                     ...job,
@@ -65,7 +61,6 @@ export async function POST(request:NextRequest) {
                 })) as IJobAndCompany[];
 
                 const totalPage = Math.ceil(jobParser.length/5);
-                console.log("En total hay x paginas"+jobParser.length)
                 const start= (parseInt(page)-1)*5;
                 const slciedJobList = jobParser.slice(start,start+5);
 

@@ -1,9 +1,8 @@
 'use client'
-import { useState, useContext, useEffect } from "react"
+import { useState, useEffect } from "react"
 import styles from './../styles.module.scss'
 import axiosInstance from "lib/axiosInterceptor"
 import { IJobAndCompany } from "types/JobFilter"
-import { useRouter } from "next/navigation"
 import { ListsSkeleton } from "app/components/ListsSkeleton"
 import JobListDisplay from "app/components/JobsDisplay"
 
@@ -14,7 +13,6 @@ export default function ApplicationViewPage(){
     const [savedJobList, setSavedJobList] = useState<IJobAndCompany[]>([]);
     const [loading, setLoading] = useState(true);
     const [error,setError] = useState("");
-    const router = useRouter();
     const [currentPage,setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [demonstratingPages, setDemonstratingPages]= useState(0);
@@ -117,8 +115,6 @@ export default function ApplicationViewPage(){
         
     const displayPagesNumber= ()=>{
         const start = demonstratingPages -(paginationLimit-1);
-        console.log("start",start)
-        console.log("paginationLimit",paginationLimit)
         return Array.from({ length: paginationLimit }, (_, i) => start + i).map((index)=>(<button key={index}
             className={`${styles.paginationButton}`}
             onClick={()=>{ handlePaginationJobs(index,activePage)}}

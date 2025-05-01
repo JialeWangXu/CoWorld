@@ -10,15 +10,11 @@ export async function POST(request:NextRequest){
     try{
 
         await connectMD();
-
         const accessToken = request.cookies.get('accessTokenCookie').value;
-        console.log("He cogido access"+accessToken)
 
         try{
             //@ts-ignore
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
-            console.log("Access aprobado")
-            console.log(data._id)
 
             const body = await request.json();
 

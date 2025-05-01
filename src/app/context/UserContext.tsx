@@ -54,7 +54,6 @@ export const UserProvider=({children}:userProviderProps)=>{
             savedJob:data.profile.user_id.savedJob
         }
         setUser(user);
-        console.log("Seteado usuario");
         setWaiting(false);
         }catch(e){
             console.log("Hubido problema en cargar datos de usuario:"+e);
@@ -62,9 +61,7 @@ export const UserProvider=({children}:userProviderProps)=>{
         }
     }
     useEffect(()=>{
-        console.log("cargando contenido de usuario")
         getUser()
-        console.log("Terminod e cargar")
     },[]) //No ponemos dependencia de actualizacion en aqui es porqu sino se causa un bulce infinito de actualizacionnes.
           //Por eso actualizamos manualmente cada vez hay cambio en el profile, haciendo getUser(). 
 

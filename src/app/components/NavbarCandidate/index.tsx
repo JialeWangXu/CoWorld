@@ -20,19 +20,16 @@ export function NavbarCandidate(){
 
     const handleLogOut = async () =>{
         try{
-        console.log('cerrando')
         
         const {data} =await axios.post(`/api/auth/logout`)
         showToast({msg:data.sucess, type:'Good',visible:true})
         router.push('/')
-        console.log('fin')
         }catch(e){
             showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
         }
     }
     const handleProfile = async () =>{
         try{
-        console.log('ir profile-------------------------------------------------')
         await getUser()
         router.push('/home/profile')
         }catch(e){

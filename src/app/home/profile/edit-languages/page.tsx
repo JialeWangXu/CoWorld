@@ -1,7 +1,7 @@
 'use client'
 import { Form } from "app/components/Form";
 import { useContext, useEffect, useState } from "react";
-import { certification, FormProperties, language, workExperience } from "app/context/FormContext";
+import { FormProperties, language } from "app/context/FormContext";
 import { UserContext } from "app/context/UserContext";
 import { useSnipper } from "app/hooks/useSnipper";
 import { useRouter } from "next/navigation";
@@ -27,21 +27,20 @@ export default function addLanguagePage(){
     , [waiting, user])
 
     if(waiting){
-        return<div>Cargandno contenido</div> // muy probable que tengo que hacer un esqueleto
+        return<div>Cargandno contenido</div>
     }
 
 
     const add = async (data:any)=>{
-        console.log('Aniadir 1 lenguage')
         setIsLoading(true)        
         try{
-           const response = await axiosInstance.post(`/profile/edit-profile`,{...data, newLanguage:true},{
+            const response = await axiosInstance.post(`/profile/edit-profile`,{...data, newLanguage:true},{
                 withCredentials:true
-           })
-           showToast({msg:response.data.sucess, type:'Good',visible:true})
-           getUser()
+            })
+            showToast({msg:response.data.sucess, type:'Good',visible:true})
+            getUser()
         }catch(e:any){
-           showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
         }finally{
             router.push('/home/profile')
         }

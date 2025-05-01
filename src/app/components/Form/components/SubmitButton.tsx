@@ -1,4 +1,3 @@
-'use client'
 import { Spinner } from '../../Spinner'
 
 interface submitButtonProps {

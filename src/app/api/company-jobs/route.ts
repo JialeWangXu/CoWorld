@@ -16,7 +16,6 @@ export async function POST(request:NextRequest) {
         try{
             //@ts-ignore
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
-            console.log("Access aprobado")
             const body = await request.json();
             const {id} = body;
 

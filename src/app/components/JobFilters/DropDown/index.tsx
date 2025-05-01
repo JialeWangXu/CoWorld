@@ -1,7 +1,3 @@
-'use client'
-
-import { useEffect, useState } from "react";
-
 interface Props {
     DefaultName:string;
     options: string[];
@@ -12,15 +8,9 @@ interface Props {
 
 export function DropDown({DefaultName,options,selected,onChange, arialLable}:Props){
 
-    const [values, setValues] = useState(selected);
-
-    // useEffect(()=>{
-    //     setValues(selected);
-    // },[selected])
-
     return(
         <div  style={{display:'flex', justifyContent:"center", gap:'5px', marginBottom:"2rem"}}>
-            <select aria-label={arialLable} className="form-select" id={DefaultName}  onChange={(event: React.ChangeEvent<HTMLSelectElement>)=>{setValues(event.target.value),onChange(event.target.value)}} value={values}  style={{width:'200px', borderColor:"rgb(25, 135, 84)", color:"rgb(25, 135, 84)", cursor:"pointer"}}> 
+            <select aria-label={arialLable} className="form-select" id={DefaultName}  onChange={(event: React.ChangeEvent<HTMLSelectElement>)=>{onChange(event.target.value)}} value={selected? selected: ""}  style={{width:'200px', borderColor:"rgb(25, 135, 84)", color:"rgb(25, 135, 84)", cursor:"pointer"}}> 
                 <option value={""}>{DefaultName}</option>
                 {options.map(option => <option key={option} value={option}>{option}</option>)}
             </select>

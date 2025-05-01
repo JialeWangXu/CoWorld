@@ -35,13 +35,11 @@ export default function addStudyPage(){
     , [waiting, user])
 
     if(waiting){
-        return<div>Cargandno contenido</div> // muy probable que tengo que hacer un esqueleto
+        return<div>Cargandno contenido</div>
     }
 
 
     const add = async (data:any)=>{
-        console.log('Aniadir 1 estudio personal')
-
         const {finDate, iniDate, ...rest} = data
         if(!cursando){
             if(finDate===undefined ){
@@ -61,13 +59,13 @@ export default function addStudyPage(){
         }
         setIsLoading(true)        
         try{
-           const response = await axiosInstance.post(`/profile/edit-profile`,{...finalData, newStudy:true},{
+            const response = await axiosInstance.post(`/profile/edit-profile`,{...finalData, newStudy:true},{
                 withCredentials:true
-           })
-           showToast({msg:response.data.sucess, type:'Good',visible:true})
-           getUser()
+            })
+            showToast({msg:response.data.sucess, type:'Good',visible:true})
+            getUser()
         }catch(e:any){
-           showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
         }finally{
             router.push('/home/profile')
         }

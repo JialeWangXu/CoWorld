@@ -1,6 +1,4 @@
-'use client'
-
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FISICA, AUDITIVA, VISUAL, HABLAR, MENTAL, INTELECTUAL, PLURIDISCAPACIDAD } from "util/constants";
 
 interface Props {
@@ -26,7 +24,7 @@ export function DisabilitiestSelectionModal({buttonName,options,title,selected,o
     
 
 
-     const handleOnchange=(event: React.ChangeEvent<HTMLSelectElement>, id:string)=>{
+    const handleOnchange=(event: React.ChangeEvent<HTMLSelectElement>, id:string)=>{
         setValues(prevValues =>
             prevValues.map(e =>
                 e.type === id ? { ...e, degree: Number(event.target.value) } : e

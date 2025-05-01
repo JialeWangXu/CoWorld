@@ -14,7 +14,6 @@ interface inputProps {
 export function LanguageInput({id, label, className}: inputProps) {
     const {formProperties, setFormProperties} = useContext(FormContext)!;
     const [error , setError] = useState("");
-   
     const initailLanguages = ()=>{
         const value = formProperties[id]
         return Array.isArray(value) ? value as language[] : [];

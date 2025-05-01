@@ -19,7 +19,7 @@ export interface ICompanyWithProfileSimple {
     logo:string;
     scale: string;
     industry: string;
-  }
+}
 
 export interface IJobAndCompany extends Omit<IJob,'company_id'>{
     company_id:ICompanyWithProfileSimple;

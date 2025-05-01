@@ -1,6 +1,4 @@
-'use client'
-
-import {useContext, useState} from 'react';
+import {useContext} from 'react';
 import { FormContext } from '../../../context/FormContext';
 
 

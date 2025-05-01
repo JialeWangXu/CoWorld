@@ -38,7 +38,7 @@ export async function POST(request:NextRequest){
                         as:"userInfo"
                     }},
                     {$unwind:{path:"$userInfo", preserveNullAndEmptyArrays:true}},
-                  ]);
+                ]);
                 if(!candidates){
                     return NextResponse.json(
                         {error:message.error.candiateLoadError},
@@ -61,7 +61,6 @@ export async function POST(request:NextRequest){
                 })) as IUserSimpleWithSimpleUserProfile[]
 
                 const totalPage = Math.ceil(candidateParser.length/5);
-                console.log("En total hay x paginas"+candidateParser.length)
                 const start= (parseInt(page)-1)*5;
                 const slicedJobList = candidateParser.slice(start,start+5);
 

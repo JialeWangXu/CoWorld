@@ -6,9 +6,8 @@ import { UserContext } from "app/context/UserContext";
 import { useSnipper } from "app/hooks/useSnipper";
 import { useRouter } from "next/navigation";
 import axiosInstance from "lib/axiosInterceptor";
-import { HABLAR,FISICA,MENTAL,AUDITIVA,INTELECTUAL,PLURIDISCAPACIDAD,VISUAL } from "util/constants";
 import { ToastContext } from "app/context/ToastContext";
-import styles from './styles.module.scss'
+
 
 
 export default function editStatePage(){
@@ -24,26 +23,24 @@ export default function editStatePage(){
                 huntingJob: user.huntingJob,
                 desiredJob: user.desiredJob
             }
-            console.log(initialValues)
             setOldValues(initialValues)
         }
     }, [waiting, user])
 
     if(waiting){
-        return<div>Cargandno contenido</div> // muy probable que tengo que hacer un esqueleto
+        return<div>Cargandno contenido</div>
     }
 
     const edit = async (data:any)=>{
-        console.log('Editar estado laboral')
         setIsLoading(true)
         try{
-           const response = await axiosInstance.post(`/profile/edit-profile`,data,{
+            const response = await axiosInstance.post(`/profile/edit-profile`,data,{
                 withCredentials:true
-           })
-           showToast({msg:response.data.sucess, type:'Good',visible:true})
-           getUser()
+            })
+            showToast({msg:response.data.sucess, type:'Good',visible:true})
+            getUser()
         }catch(e:any){
-           showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
         }finally{
             router.push('/home/profile')
         }

@@ -3,12 +3,10 @@ import { CompanyContext } from "app/context/CompanyContext";
 import { useContext } from "react";
 import { EditButton } from "app/components/PerfilComponents/EditButton";
 import styles from './styles.module.scss'
-import { useRouter } from "next/navigation";
 import { ProfileSkeleton } from "app/components/ProfileSkeleton";
 
 export default function profilePage(){
     const {company,getCompany,waiting} = useContext(CompanyContext)
-    const router = useRouter();
 
     if (waiting) {
         return <ProfileSkeleton/>

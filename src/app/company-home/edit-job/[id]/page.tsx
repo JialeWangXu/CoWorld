@@ -43,17 +43,15 @@ export default function editInfoPage(){
                 companysRequirements: job.companysRequirements,
                 description: job.description,
             }
-            console.log(initialValues)
             setOldValues(initialValues)
         }
     }, [waiting, company])
 
     if(waiting){
-        return<div>Cargandno contenido</div> // muy probable que tengo que hacer un esqueleto
+        return<div>Cargandno contenido</div>
     }
 
     const edit = async (data:any)=>{
-        console.log('Editar informacion personal')
         setIsLoading(true)
         try{
             const response = await axiosInstance.post(`/company-jobs/edit-job`,{...data, _id:params.id},{
@@ -69,7 +67,6 @@ export default function editInfoPage(){
     }
 
     const deleteJob = async ()=>{
-        console.log('Eliminar oferta');
         setIsLoading(true);
         setDeleted(true)
         try{

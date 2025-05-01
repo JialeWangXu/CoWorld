@@ -9,7 +9,6 @@ import axiosInstance from "lib/axiosInterceptor";
 import { HABLAR,FISICA,MENTAL,AUDITIVA,INTELECTUAL,PLURIDISCAPACIDAD,VISUAL } from "util/constants";
 import { ToastContext } from "app/context/ToastContext";
 import styles from './styles.module.scss'
-import { set } from "mongoose";
 
 export default function editInfoPage(){
     const {user, waiting, getUser} = useContext(UserContext);
@@ -29,17 +28,15 @@ export default function editInfoPage(){
                 ...Object.fromEntries(
                     user.disabilities.map(({ type, degree }) => [type, degree]))
             }
-            console.log(initialValues)
             setOldValues(initialValues)
         }
     }, [waiting, user])
 
     if(waiting){
-        return<div>Cargandno contenido</div> // muy probable que tengo que hacer un esqueleto
+        return<div>Cargandno contenido</div>
     }
 
     const edit = async (data:any)=>{
-        console.log('Editar informacion personal')
         setIsLoading(true)
         try{
             const response = await axiosInstance.post(`/profile/edit-profile`,data,{

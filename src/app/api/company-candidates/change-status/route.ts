@@ -13,16 +13,11 @@ export async function POST(request:NextRequest) {
         try{
             //@ts-ignore
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
-            console.log("Access aprobado")
             const body = await request.json();
             const{id, candidate,status} = body;
             
             const job = await Job.findOne({_id:id});
-            console.log("El candidate es    "+candidate)
-
             const index = job.applicants.findIndex(elem=> elem.user.toString() === candidate);
-            console.log("El index es: "+index)
-
             job.applicants.set(index, {user: new ObjectId(candidate), status:status});
             const resul = await job.save();
             if(!resul){

@@ -1,8 +1,8 @@
-import { useEffect,useState } from "react";
+import { useEffect } from "react";
 import { JobFilters } from "types/JobFilter";
 import { MultiSelectModal } from "./MultiSelection";
 import { DisabilitiestSelectionModal } from "./DisabilitiesSelection";
-import { Checkbox } from "./Checkbox/Checkbox";
+import { Checkbox } from "./Checkbox";
 import { DropDown } from "./DropDown";
 import { JobFiltersOPTIONS,DISABILITIES_INITIAL_VALUE } from "util/constants";
 
@@ -10,8 +10,8 @@ import { JobFiltersOPTIONS,DISABILITIES_INITIAL_VALUE } from "util/constants";
 interface Props {
     filters: JobFilters
     setFilters: (filters: JobFilters) => void
-  }
-  
+}
+
 export default function JobFilter ({filters,setFilters}:Props){
 
     useEffect(()=>{

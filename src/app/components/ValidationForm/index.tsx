@@ -29,14 +29,14 @@ export function ValidationForm({children, title, onSubmit}: FormProviderProps) {
         const forms = document.querySelectorAll('.needs-validation');
         Array.from(forms).forEach(form => {
             form.addEventListener('submit', event => {
-              if (!(form as HTMLFormElement).checkValidity()) {
+            if (!(form as HTMLFormElement).checkValidity()) {
                 event.preventDefault()
                 event.stopPropagation()
                 onSubmit(formProperties);// Llamar a la hook onSubmit con los datos del formulario
-              }
-              form.classList.add('was-validated')
+            }
+            form.classList.add('was-validated')
             }, false)
-          })
+        })
     }
     ,[])
 

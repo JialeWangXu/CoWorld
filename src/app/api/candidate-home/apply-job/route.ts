@@ -13,7 +13,6 @@ export async function POST(request:NextRequest) {
             const accessToken = request.cookies.get('accessTokenCookie').value;
             //@ts-ignore
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
-            console.log("Access aprobado para editar")
             try{
                 const body = await request.json();
                 const {job} = body;

@@ -1,14 +1,13 @@
 'use client'
 import { Form } from "app/components/Form";
 import { useContext, useEffect, useState } from "react";
-import { FormProperties,newjob } from "app/context/FormContext";
+import { FormProperties } from "app/context/FormContext";
 import { CompanyContext } from "app/context/CompanyContext";
 import { useSnipper } from "app/hooks/useSnipper";
 import { useRouter } from "next/navigation";
 import axiosInstance from "lib/axiosInterceptor";
 import { HABLAR,FISICA,MENTAL,AUDITIVA,INTELECTUAL,PLURIDISCAPACIDAD,VISUAL } from "util/constants";
 import { ToastContext } from "app/context/ToastContext";
-import styles from './styles.module.scss'
 
 export default function editInfoPage(){
     const {company, waiting, getCompany} = useContext(CompanyContext);
@@ -36,26 +35,24 @@ export default function editInfoPage(){
                 companysRequirements:"",
                 description:"",
             }
-            console.log(initialValues)
             setOldValues(initialValues)
         }
     }, [waiting, company])
 
     if(waiting){
-        return<div>Cargandno contenido</div> // muy probable que tengo que hacer un esqueleto
+        return<div>Cargandno contenido</div>
     }
 
     const edit = async (data:any)=>{
-        console.log('Editar informacion personal')
         setIsLoading(true)
         try{
-           const response = await axiosInstance.post(`/company-jobs/add-job`,data,{
+            const response = await axiosInstance.post(`/company-jobs/add-job`,data,{
                 withCredentials:true
-           })
-           showToast({msg:response.data.sucess, type:'Good',visible:true})
-           getCompany()
+            })
+            showToast({msg:response.data.sucess, type:'Good',visible:true})
+            getCompany()
         }catch(e:any){
-           showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
+            showToast({msg:e.response.data.error as string, type:'Bad',visible:true})
         }finally{
             router.push('/company-home')
         }

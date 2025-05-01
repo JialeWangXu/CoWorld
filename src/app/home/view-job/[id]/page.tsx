@@ -67,10 +67,7 @@ export default function jobViewPage(){
                     })
                     setError("");
                     setJob(data.job)
-                    console.table(data.job.applicants)
-                    console.log(user.user_id)
                     if(data.job.applicants.find(elem => elem.user===user.user_id)){
-                        console.log("Ha detectado tiene aplicado este trabajo......")
                         setdisableApply(true);
                     }
                     if(user?.savedJob.includes(data.job._id)){
@@ -96,7 +93,6 @@ export default function jobViewPage(){
     }
 
     const handleSaveJob= async()=>{
-        console.log('Guardar o desguardar el trabajo')
         setIsLoading(true)
         try{
             const response = await axiosInstance.post(`/candidate-home/save-job`,{job:job._id},{
@@ -113,7 +109,6 @@ export default function jobViewPage(){
     }
 
     const handleApplyJob= async()=>{
-        console.log('Aplicar el trabajo')
         setIsLoading(true)
         setdisableApply(true)
         try{
