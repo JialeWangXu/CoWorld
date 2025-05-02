@@ -5,12 +5,12 @@ import { IJobAndCompany } from "types/JobFilter"
 import { useParams } from "next/navigation";
 import styles from './../../styles.module.scss'
 import { IJob } from "models/Job";
-import { UserContext } from "app/context/UserContext";
-import { useSnipper } from "app/hooks/useSnipper";
+import { UserContext } from "../../../../context/UserContext";
+import { useSnipper } from "hooks/useSnipper";
 import { Spinner } from '../../../components/Spinner'
 import { DetailPageSkeleton } from "app/components/DetailPageSkeleton";
 import { AUDITIVA, DISABILITIES_INITIAL_VALUE, FISICA, HABLAR, INTELECTUAL, MENTAL, PLURIDISCAPACIDAD, VISUAL} from "util/constants";
-import { ToastContext } from "app/context/ToastContext";
+import { ToastContext } from "../../../../context/ToastContext";
 
 
 export default function jobViewPage(){

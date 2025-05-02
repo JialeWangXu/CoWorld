@@ -2,7 +2,7 @@
 import {  useEffect, useState, useContext } from "react";
 import { useRouter } from "next/navigation";
 import styles from './styles.module.scss'
-import { CompanyContext } from "app/context/CompanyContext";
+import { CompanyContext } from "../../context/CompanyContext";
 import { ListsSkeleton } from "app/components/ListsSkeleton";
 
 export default function CompanyJobListPage() {

@@ -1,8 +1,8 @@
 'use client';
 import { ValidationForm } from "app/components/ValidationForm";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useAuthFetch } from "app/hooks/useAuthFetch";
-import { useSnipper } from "app/hooks/useSnipper";
+import { useAuthFetch } from "hooks/useAuthFetch";
+import { useSnipper } from "hooks/useSnipper";
 
 export default function CompanyRegisterPage(){
     const authFetch=useAuthFetch();

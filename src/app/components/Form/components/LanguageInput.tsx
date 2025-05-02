@@ -1,8 +1,6 @@
 'use client'
 import {useContext, useEffect, useState} from 'react';
-import { FormContext } from '../../../context/FormContext';
-
-import { language } from '../../../context/FormContext';
+import { FormContext,language } from '../../../../context/FormContext';
 
 interface inputProps {
     id: string;

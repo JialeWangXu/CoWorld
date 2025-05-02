@@ -1,12 +1,12 @@
 'use client'
 import { Form } from "app/components/Form";
 import { useContext, useEffect, useState } from "react";
-import { FormProperties, language } from "app/context/FormContext";
-import { UserContext } from "app/context/UserContext";
-import { useSnipper } from "app/hooks/useSnipper";
+import { FormProperties, language } from "../../../../context/FormContext";
+import { UserContext } from "../../../../context/UserContext";
+import { useSnipper } from "hooks/useSnipper";
 import { useRouter } from "next/navigation";
 import axiosInstance from "lib/axiosInterceptor";
-import { ToastContext } from "app/context/ToastContext";
+import { ToastContext } from "../../../../context/ToastContext";
 
 export default function addLanguagePage(){
     const {user, waiting, getUser} = useContext(UserContext);

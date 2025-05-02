@@ -3,7 +3,7 @@
 import JobFilter from "app/components/JobFilters";
 import JobListDisplay from "app/components/JobsDisplay";
 import { useState, useEffect } from "react";
-import useLocalStorage from "app/hooks/useLocalStorage";
+import useLocalStorage from "hooks/useLocalStorage";
 import axiosInstance from "lib/axiosInterceptor";
 import { IJobAndCompany, JobFilters } from "types/JobFilter";
 import { DISABILITIES_INITIAL_VALUE } from "util/constants";

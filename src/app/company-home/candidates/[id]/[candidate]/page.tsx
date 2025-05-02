@@ -6,9 +6,9 @@ import { INITIAL_CANDIATE_DETAIL } from "util/constants";
 import axiosInstance from "lib/axiosInterceptor";
 import styles from './styles.module.scss'
 import { useRouter } from "next/navigation";
-import { useSnipper } from "app/hooks/useSnipper";
+import { useSnipper } from "hooks/useSnipper";
 import { Spinner } from '../../../../components/Spinner'
-import { ToastContext } from "app/context/ToastContext";
+import { ToastContext } from "../../../../../context/ToastContext";
 import { ProfileSkeleton } from "app/components/ProfileSkeleton";
 
 export default function candiateDetailPage(){

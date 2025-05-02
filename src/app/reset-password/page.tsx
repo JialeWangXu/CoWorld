@@ -1,13 +1,13 @@
 'use client'
 import { Form } from '../components/Form';
-import { useSnipper } from "app/hooks/useSnipper";
+import { useSnipper } from "hooks/useSnipper";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useAuthFetch } from "app/hooks/useAuthFetch";
+import { useAuthFetch } from "hooks/useAuthFetch";
 import styles from './styles.module.scss'
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { AxiosRequestConfig } from 'axios';
-import { FormProperties } from 'app/context/FormContext';
+import { FormProperties } from '../../context/FormContext';
 
 export default function ResetPwdPage(){
     const [token, setToken] = useState<string | null>(null);

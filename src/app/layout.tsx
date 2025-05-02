@@ -1,6 +1,6 @@
 import React from 'react'
 import {Inter} from 'next/font/google'
-import { ToastProvider } from './context/ToastContext';
+import { ToastProvider } from '../context/ToastContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BootstrapClient from './components/Bootstrap/BootstrapClient';
 import { SkeletonTheme } from 'react-loading-skeleton'

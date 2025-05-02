@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form } from '../components/Form';
-import { useAuthFetch } from "app/hooks/useAuthFetch";
-import { useSnipper } from "app/hooks/useSnipper";
-import { FormProperties } from 'app/context/FormContext';
+import { useAuthFetch } from "hooks/useAuthFetch";
+import { useSnipper } from "hooks/useSnipper";
+import { FormProperties } from '../../context/FormContext';
 
 export default function CompanyLoginInPage() {
     const authFetch = useAuthFetch();

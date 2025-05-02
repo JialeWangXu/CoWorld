@@ -1,10 +1,10 @@
 'use client'
 import { Form } from '../components/Form';
-import { useSnipper } from "app/hooks/useSnipper";
+import { useSnipper } from "hooks/useSnipper";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useAuthFetch } from "app/hooks/useAuthFetch";
+import { useAuthFetch } from "hooks/useAuthFetch";
 import styles from './styles.module.scss'
-import { FormProperties } from 'app/context/FormContext';
+import { FormProperties } from '../../context/FormContext';
 import { useEffect, useState } from 'react';
 
 export default function ForgetPwdPage(){

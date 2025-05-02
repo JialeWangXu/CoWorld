@@ -5,7 +5,7 @@ import { Input } from '../Form/components/Input';
 import { Links } from '../Form/components/Link';
 import { SubmitButton } from '../Form/components/SubmitButton';
 import { Checkbox } from '../Form/components/Checkbox';
-import { FormContext,FormProperties } from '../../context/FormContext';
+import { FormContext, FormProperties } from '../../../context/FormContext';
 
 
 // los props que necesitamos para el formulario

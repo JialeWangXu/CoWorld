@@ -3,8 +3,8 @@ import { useState, useEffect, useContext } from "react";
 import { useRouter, useParams } from "next/navigation";
 import axiosInstance from "lib/axiosInterceptor";
 import { Form } from "app/components/Form";
-import { useSnipper } from "app/hooks/useSnipper";
-import { ToastContext } from "app/context/ToastContext";
+import { useSnipper } from "hooks/useSnipper";
+import { ToastContext } from "../../../../../context/ToastContext";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import axiosInstance from "lib/axiosInterceptor";
 import { ListsSkeleton } from "app/components/ListsSkeleton"
 import styles from './styles.module.scss'
-import { operator } from "app/context/FormContext";
+import { operator } from "../../../context/FormContext";
 
 export default function ViewOperatorsPage(){
 

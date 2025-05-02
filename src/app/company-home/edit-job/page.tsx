@@ -1,13 +1,13 @@
 'use client'
 import { Form } from "app/components/Form";
 import { useContext, useEffect, useState } from "react";
-import { FormProperties } from "app/context/FormContext";
-import { CompanyContext } from "app/context/CompanyContext";
-import { useSnipper } from "app/hooks/useSnipper";
+import { FormProperties } from "../../../context/FormContext";
+import { CompanyContext } from "../../../context/CompanyContext";
+import { useSnipper } from "hooks/useSnipper";
 import { useRouter } from "next/navigation";
 import axiosInstance from "lib/axiosInterceptor";
 import { HABLAR,FISICA,MENTAL,AUDITIVA,INTELECTUAL,PLURIDISCAPACIDAD,VISUAL } from "util/constants";
-import { ToastContext } from "app/context/ToastContext";
+import { ToastContext } from "../../../context/ToastContext";
 
 export default function editInfoPage(){
     const {company, waiting, getCompany} = useContext(CompanyContext);

@@ -2,8 +2,8 @@
 import axiosInstance from "lib/axiosInterceptor"
 import { useRouter, usePathname } from "next/navigation"
 import { useContext, useEffect } from "react"
-import { ToastContext } from "app/context/ToastContext";
-import { UserContext } from "app/context/UserContext";
+import { ToastContext } from "../../../context/ToastContext";
+import { UserContext } from "../../../context/UserContext";
 
 interface accessCheckerProps {
     children: React.ReactNode;

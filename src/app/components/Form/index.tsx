@@ -21,7 +21,7 @@ import { Checkbox } from './components/Checkbox';
 import { TagInput } from './components/TagInput';
 import { TextAreas } from './components/TextAreas';
 import { SubmitButton } from './components/SubmitButton';
-import { FormContext,FormProperties } from '../../context/FormContext';
+import { FormContext,FormProperties } from '../../../context/FormContext';
 
 
 

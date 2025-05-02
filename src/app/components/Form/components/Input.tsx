@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 import styles from './styles.module.scss'
-import { FormContext } from '../../../context/FormContext';
+import { FormContext } from '../../../../context/FormContext';
 
 interface inputProps {
     id: string;

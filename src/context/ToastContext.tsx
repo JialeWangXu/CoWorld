@@ -1,6 +1,6 @@
 'use client'
 import React, { createContext, useState } from "react"
-import {Toast, toastType} from '../components/Toast/index'
+import {Toast, toastType} from '../app/components/Toast/index'
 
 export interface toastContextType{ // solo parte de datos, para inicializar mas conveniente
     msg:string,

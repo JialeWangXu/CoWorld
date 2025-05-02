@@ -1,5 +1,5 @@
 'use client'
-import { CompanyContext } from "app/context/CompanyContext";
+import { CompanyContext } from "../../../context/CompanyContext";
 import { useContext } from "react";
 import { EditButton } from "app/components/PerfilComponents/EditButton";
 import styles from './styles.module.scss'

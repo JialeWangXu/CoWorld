@@ -1,11 +1,11 @@
 'use client'
 import styles from './styles.module.scss'
 import { useState } from 'react';
-import { ToastContext } from "app/context/ToastContext";
+import { ToastContext } from "../../../context/ToastContext";
 import { useContext } from 'react';
 import axios from 'axios';
 import { useRouter } from "next/navigation";
-import { UserContext } from 'app/context/UserContext';
+import { UserContext } from '../../../context/UserContext';
 
 export function NavbarCandidate(){
 

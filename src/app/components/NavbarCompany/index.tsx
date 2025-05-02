@@ -1,11 +1,11 @@
 'use client'
 import styles from './styles.module.scss'
 import { useState } from 'react';
-import { ToastContext } from "app/context/ToastContext";
+import { ToastContext } from "../../../context/ToastContext";
 import { useContext } from 'react';
 import axios from 'axios';
 import { useRouter } from "next/navigation";
-import { CompanyContext } from 'app/context/CompanyContext';
+import { CompanyContext } from '../../../context/CompanyContext';
 
 export function NavbarCompany(){
 

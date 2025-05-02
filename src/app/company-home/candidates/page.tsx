@@ -1,6 +1,6 @@
 'use client'
 import { useContext, useEffect, useState } from "react";
-import { CompanyContext } from "app/context/CompanyContext";
+import { CompanyContext } from "../../../context/CompanyContext";
 import styles from './styles.module.scss'
 import { useRouter } from "next/navigation";
 import { ListsSkeleton } from "app/components/ListsSkeleton";

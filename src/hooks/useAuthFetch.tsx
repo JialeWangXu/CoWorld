@@ -1,6 +1,6 @@
 import { useRouter } from "next/navigation";
 import axios,{AxiosRequestConfig} from "axios";
-import { ToastContext } from "app/context/ToastContext";
+import { ToastContext } from "../context/ToastContext";
 import { useContext } from "react";
 
 interface authProps{

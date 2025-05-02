@@ -1,5 +1,5 @@
 'use client'
-import { UserContext } from "app/context/UserContext";
+import { UserContext } from "../../../context/UserContext";
 import { useContext } from "react";
 import { EditButton } from "app/components/PerfilComponents/EditButton";
 import styles from './styles.module.scss'
