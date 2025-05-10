@@ -18,8 +18,8 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  //matcher: ['/home/:path*'],
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'] 
+  //matcher: ['/home/:path*']
+  matcher: ['/((?!api|_next/static|_next/image).*)','/home/:path*','/company-home/:path*' ] 
   // recomendacion de documentacion oficial, hace que el middleware ignora estos reques
 };
 

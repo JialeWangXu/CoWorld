@@ -63,7 +63,9 @@ export default function ApplicationViewPage(){
         if(activePage==="guardados"){
             try{
                 setLoading(true);
-                const savedJob = await axiosInstance.post(`/candidate-home/get-saved-jobs`,{ page:page},{
+                const savedJob = 
+                await axiosInstance.post(`/candidate-home/get-saved-jobs`,
+                    { page:page},{
                     withCredentials:true
                 })
                 setError("");
@@ -88,7 +90,9 @@ export default function ApplicationViewPage(){
         }else{
             try{
                 setLoading(true);
-                const {data} = await axiosInstance.post(`/candidate-home/get-applied-jobs`,{activePage:activePage, page:page} ,{
+                const {data} = 
+                await axiosInstance.post(`/candidate-home/get-applied-jobs`,
+                    {activePage:activePage, page:page} ,{
                     withCredentials:true
                 })
                 setError("");

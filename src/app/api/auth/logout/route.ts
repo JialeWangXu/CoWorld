@@ -8,7 +8,6 @@ export async function POST(){
         const cookieStore = await cookies();
         cookieStore.delete('accessTokenCookie');
         cookieStore.delete('refreshTokenCookie');
-        console.log('Elimino cookies')
         return NextResponse.json({
             sucess:message.sucess.UserLoggedOut
         },{status:200})

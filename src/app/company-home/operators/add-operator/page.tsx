@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import axiosInstance from "lib/axiosInterceptor";
 import { ToastContext } from "../../../../context/ToastContext";
 
-export default function addCertificationPage(){
+export default function addOperatorPage(){
 
     const [oldValues, setOldValues] = useState<FormProperties>({});
     const {isLoading,setIsLoading} = useSnipper();

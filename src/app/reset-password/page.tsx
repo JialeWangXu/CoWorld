@@ -1,7 +1,6 @@
 'use client'
 import { Form } from '../components/Form';
 import { useSnipper } from "hooks/useSnipper";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAuthFetch } from "hooks/useAuthFetch";
 import styles from './styles.module.scss'
 import { useState, useEffect } from 'react';
@@ -29,8 +28,6 @@ export default function ResetPwdPage(){
     
     const resetPwd = async(data:any)=>{
         setIsLoading(true)
-        console.log('obtengo token:')
-        console.log(token)
         const config:AxiosRequestConfig<any> ={
             headers:{
                 token: token ?? ''

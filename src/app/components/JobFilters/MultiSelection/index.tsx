@@ -50,7 +50,7 @@ export function MultiSelectModal({buttonName,options,title,selected,modalId,moda
                 (<div className={`${styles.selectedNumber}`}>{selected.length}</div>)}
                 </div>}
             </button>
-            <div className="modal fade" id={modalId} tabIndex={-1} aria-labelledby={modalLableId} aria-hidden="true">
+            <div className="modal fade" id={modalId} tabIndex={-1} aria-labelledby={modalLableId} >
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">

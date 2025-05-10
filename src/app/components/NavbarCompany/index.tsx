@@ -47,7 +47,6 @@ export function NavbarCompany(){
                 <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                {!waiting&&
                 <ul className="navbar-nav linknav">
                     <li className="nav-item">
                     <a className={`${styles.hov} nav-link ${activePage ==='ofertas' ? styles.active : ''}`} aria-current="page" href="/company-home"
@@ -59,7 +58,7 @@ export function NavbarCompany(){
                     </li>
                     {(company?.isOperator!==2)&&<li className="nav-item">
                     <a className={`${styles.hov} nav-link ${activePage ==='operators' ? styles.active : ''}`} href="/company-home/operators"
-                    onClick={()=> handleActivePage('operators')}>Operatores</a>
+                    onClick={()=> handleActivePage('operators')}>Operadores</a>
                     </li>}
                     { company?.isOperator!==2&& ( <li className="nav-item">
                     <a className={`${styles.hov} nav-link ${activePage ==='perfil' ? styles.active : ''}`}  href="/company-home/profile"
@@ -70,7 +69,6 @@ export function NavbarCompany(){
                     onClick={()=>{handleActivePage('ayuda')}}>Ayuda</a>
                     </li>
                 </ul>
-                }
                 <a className="nav-link ms-auto" aria-label='Haz click al link para cerrar sesion.' href="/"
                     onClick={()=>{handleLogOut()}}><img src='/imgs/power-off.png' style={{paddingRight:'8px'}} alt='Logo de cerrar sesion'></img></a>
                 </div>

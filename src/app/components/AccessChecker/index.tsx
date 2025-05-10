@@ -29,7 +29,7 @@ export default function AccessChecker({children}:accessCheckerProps){
     }, [user,router, path]) // cada vez si el usuario ir a paginas protegidas, se comprueba su token de acceso
 
     if(waiting){
-        return<div>Cargandno contenido</div> // muy probable que tengo que hacer un esqueleto
+        return<div>Cargandno contenido</div>
     }
     return <>{children}</>
 }

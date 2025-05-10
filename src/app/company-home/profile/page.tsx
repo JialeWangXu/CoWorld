@@ -5,7 +5,7 @@ import { EditButton } from "app/components/PerfilComponents/EditButton";
 import styles from './styles.module.scss'
 import { ProfileSkeleton } from "app/components/ProfileSkeleton";
 
-export default function profilePage(){
+export default function companyProfilePage(){
     const {company,getCompany,waiting} = useContext(CompanyContext)
 
     if (waiting) {

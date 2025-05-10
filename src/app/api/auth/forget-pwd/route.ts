@@ -16,10 +16,8 @@ export async function POST(request:NextRequest) {
     
     try{
         await connectMD()
-        console.log("Contectado a BD")
         const body = await request.json()
         const {email} = body
-        console.log("leido email")
 
         if(!isEmail(email)){
             return NextResponse.json({
@@ -27,14 +25,18 @@ export async function POST(request:NextRequest) {
             },{status:400})
         }
 
-        console.log("email correcto")
-
         const findUser = await User.findOne({email:email});
         const findCompany = await Company.findOne({email:email});
         const findOperator = await Operator.findOne({email:email});
 
         if(!findUser&&!findCompany&&!findOperator){
             console.log("no encuentra")
+            return NextResponse.json({
+                error: message.error.notFoundEmail
+            },{status:400})
+        }
+
+        if(findOperator&&!findOperator.changedPassword){
             return NextResponse.json({
                 error: message.error.notFoundEmail
             },{status:400})
@@ -48,8 +50,6 @@ export async function POST(request:NextRequest) {
             email:targetEntity.email,
             userId: targetEntity._id,
         }
-
-        console.log("crea token")
 
         // dejamos que se invalida este proceso en una hora 60*60*1000
         const token = jwt.sign({data:tokenForChangePwd},process.env.RESET_PWD_TOKEN_SECRETE,{expiresIn:'1h'});

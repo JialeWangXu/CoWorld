@@ -1,6 +1,5 @@
 'use client';
 import React, { useEffect, useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form } from './components/Form';
 import { useAuthFetch } from "hooks/useAuthFetch";
 import { useSnipper } from "hooks/useSnipper";

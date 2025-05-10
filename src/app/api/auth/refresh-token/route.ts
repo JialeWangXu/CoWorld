@@ -5,10 +5,8 @@ import { message } from 'util/message';
 
 export async function POST(request:NextRequest) {
     try{
-        console.log("Request Headers:", Array.from(request.headers.entries())); //ELIMINAMOS CUADO TERMINA
         const refreshToken = request.cookies.get('refreshTokenCookie')?.value;
         if(!refreshToken){
-            console.log('No tienes refresh')
             return NextResponse.json({
                 error: message.error.noToken
             },{status:401})
@@ -16,7 +14,6 @@ export async function POST(request:NextRequest) {
 
         const isVliadToken = jwt.verify(refreshToken,process.env.REFRESH_TOKEN_SECRET);
         if(!isVliadToken){
-            console.log('No es valido refresh tiene que logear')
             return NextResponse.json({
                 error: message.error.invalidToken
             },{status:401})
@@ -26,7 +23,6 @@ export async function POST(request:NextRequest) {
         // Si el refreshToken es valido, generamos un nuevo accessToken con la data del refreshToken
         const newAccsessToken = jwt.sign({data},process.env.ACCESS_TOKEN_SECRET,{expiresIn:'15m'})
 
-        console.log('devuevlo nuevo access')
         const response = NextResponse.json({
             newAccsessToken: newAccsessToken
         },{status:200})
@@ -38,9 +34,6 @@ export async function POST(request:NextRequest) {
             httpOnly:true,
             path: "/"
         });
-
-        console.log("Response Headers:", Array.from(response.headers.entries()));
-        console.log("MIRAR SI ESTA ACTUALIZANDO COOKIE"+response.cookies.get('accessTokenCookie').value)
 
         return response;
 

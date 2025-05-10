@@ -53,7 +53,7 @@ export async function POST(request:NextRequest) {
                     ...job,
                     company_id: {
                         company_id:job.companyProfile.company_id,
-                        companyName: job.companyProfile.companyName,
+                        companyName: job.companyName,
                         logo:job.companyProfile?.logo,
                         scale:job.companyProfile?.scale,
                         industry:job.companyProfile?.industry

@@ -83,7 +83,6 @@ export default function HomePage(){
                 }
             }
         }
-
         if(debounce){
             clearTimeout(debounce)
         }

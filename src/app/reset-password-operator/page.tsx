@@ -1,7 +1,6 @@
 'use client'
 import { Form } from '../components/Form';
 import { useSnipper } from "hooks/useSnipper";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAuthFetch } from "hooks/useAuthFetch";
 import styles from './styles.module.scss'
 import { useState, useEffect } from 'react';
@@ -9,7 +8,7 @@ import { useSearchParams } from 'next/navigation';
 import { AxiosRequestConfig } from 'axios';
 import { FormProperties } from '../../context/FormContext';
 
-export default function ResetPwdPage(){
+export default function ResetPwdOperatorPage(){
     const [token, setToken] = useState<string | null>(null);
     const [oldValues, setOldValues] = useState<FormProperties>({});
     const searchParams = useSearchParams();
@@ -30,8 +29,6 @@ export default function ResetPwdPage(){
     
     const resetPwd = async(data:any)=>{
         setIsLoading(true)
-        console.log('obtengo token:')
-        console.log(token)
         const config:AxiosRequestConfig<any> ={
             headers:{
                 token: token ?? ''

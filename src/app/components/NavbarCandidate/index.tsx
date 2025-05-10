@@ -56,10 +56,10 @@ export function NavbarCandidate(){
                     <a className={`${styles.hov} nav-link ${activePage ==='misEmpleos' ? styles.active : ''}`} href="/home/view-applications"
                     onClick={()=> handleActivePage('misEmpleos')}>Mis Empleos</a>
                     </li>
-                    { !waiting && user && (                    <li className="nav-item">
+                    <li className="nav-item">
                     <a className={`${styles.hov} nav-link ${activePage ==='perfil' ? styles.active : ''}`}  href="/home/profile"
                     onClick={()=>{handleActivePage('perfil'), handleProfile()}}>Perfil</a>
-                    </li>)}
+                    </li>
                     <li className="nav-item">
                     <a className={`${styles.hov} nav-link ${activePage ==='ayuda' ? styles.active : ''}`} href="/home/help"
                     onClick={()=>{handleActivePage('ayuda')}}>Ayuda</a>

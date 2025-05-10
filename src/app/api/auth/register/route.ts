@@ -75,7 +75,6 @@ export async function POST(request:NextRequest) {
         await newUser.save();
 
         // creo el perfil ya tambien para el usuario nuevo
-        console.log("El usuario creado :"+newUser._id)
         const profile: ICandidateProfileDocument = new CandidateProfile({
             user_id: newUser._id,
             phone: "",

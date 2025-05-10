@@ -1,6 +1,5 @@
 'use client';
 import { ValidationForm } from "app/components/ValidationForm";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAuthFetch } from "hooks/useAuthFetch";
 import { useSnipper } from "hooks/useSnipper";
 

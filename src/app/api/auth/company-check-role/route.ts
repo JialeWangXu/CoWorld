@@ -8,12 +8,9 @@ export async function GET(request:NextRequest) {
         await connectMD();
 
         const accessToken = request.cookies.get('accessTokenCookie').value;
-        console.log("He cogido access"+accessToken)
         try{
             //@ts-ignore
             const {data} = jwt.verify(accessToken,process.env.ACCESS_TOKEN_SECRET)
-            console.log("Access aprobado")
-            console.log(data.isOperator)
             const isOperator = data.isOperator
             return NextResponse.json({
                 isOperator:isOperator
