@@ -61,5 +61,5 @@ export interface ICompanyProfileDocument extends Document{
 }
 
 // Para evitar el error de cuando el model ya esta creada.
-const CompanyProfile = mongoose.models.CompanyProfile || mongoose.model('CompanyProfile', companyProfileSchema);
+const CompanyProfile = mongoose.models.CompanyProfile as mongoose.Model<ICompanyProfileDocument> || mongoose.model<ICompanyProfileDocument>('CompanyProfile', companyProfileSchema);
 export default CompanyProfile;

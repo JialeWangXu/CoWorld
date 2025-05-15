@@ -223,5 +223,5 @@ export interface ICandidateProfileDocument extends Document{
 }
 
 // Para evitar el error de cuando el model ya esta creada.
-const CandidateProfile = mongoose.models.CandidateProfile || mongoose.model('CandidateProfile', candidateProfileSchema);
+const CandidateProfile = mongoose.models.CandidateProfile as mongoose.Model<ICandidateProfileDocument> || mongoose.model<ICandidateProfileDocument>('CandidateProfile', candidateProfileSchema);
 export default CandidateProfile;

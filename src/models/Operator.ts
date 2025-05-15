@@ -64,5 +64,5 @@ export interface IOperatorDocument extends Document{
 }
 
 // Para evitar el error de cuando el model ya esta creada.
-const Operator = mongoose.models.Operator || mongoose.model('Operator', operatorSchema);
+const Operator = mongoose.models.Operator as mongoose.Model<IOperatorDocument> || mongoose.model<IOperatorDocument>('Operator', operatorSchema);
 export default Operator;

@@ -54,5 +54,5 @@ export interface IUserDocument extends Document{
 }
 
 // Para evitar el error de cuando el model ya esta creada.
-const User = mongoose.models.User || mongoose.model('User', userSchema);
+const User = mongoose.models.User as mongoose.Model<IUserDocument>|| mongoose.model<IUserDocument>('User', userSchema);
 export default User;

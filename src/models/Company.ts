@@ -61,5 +61,5 @@ export interface ICompanyDocument extends Document{
 }
 
 // Para evitar el error de cuando el model ya esta creada.
-const Company = mongoose.models.Company || mongoose.model('Company', companySchema);
+const Company = mongoose.models.Company as mongoose.Model<ICompanyDocument> || mongoose.model<ICompanyDocument>('Company', companySchema);
 export default Company;

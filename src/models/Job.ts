@@ -159,5 +159,5 @@ export interface IJobDocument extends Document{
 }
 
 // Para evitar el error de cuando el model ya esta creada.
-const Job = mongoose.models.Job || mongoose.model('Job', jobSchema);
+const Job = mongoose.models.Job as mongoose.Model<IJobDocument> || mongoose.model<IJobDocument>('Job', jobSchema);
 export default Job;
