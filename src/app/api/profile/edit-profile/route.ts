@@ -167,9 +167,9 @@ export async function POST(request:NextRequest) {
                 const {iniDate, finDate, institution, specialty, title, index }=body;
                 const profile = await CandidateProfile.findOne({user_id: data._id});
                 if(finDate !== undefined){
-                    profile.studies.set(index, {iniDate:iniDate, finDate:finDate, institution:institution, specialty:specialty, title:title} );
+                    profile.studies[index] = {iniDate:iniDate, finDate:finDate, institution:institution, specialty:specialty, title:title};
                 }else{
-                    profile.studies.set(index, {iniDate:iniDate, institution:institution, specialty:specialty, title:title} );
+                    profile.studies[index] = {iniDate:iniDate, institution:institution, specialty:specialty, title:title};
                 }
                 const resul = await profile.save();
                 if(!resul){
@@ -247,9 +247,9 @@ export async function POST(request:NextRequest) {
                 const {iniDate, finDate, responsability, companyName, contractType,index }=body;
                 const profile = await CandidateProfile.findOne({user_id: data._id});
                 if(finDate !== undefined){
-                    profile.workExperience.set(index, { responsability:responsability, companyName:companyName, contractType:contractType, iniDate:iniDate, finDate:finDate} );
+                    profile.workExperience[index] = { responsability:responsability, companyName:companyName, contractType:contractType, iniDate:iniDate, finDate:finDate };
                 }else{
-                    profile.workExperience.set(index, {responsability:responsability, companyName:companyName, contractType:contractType, iniDate:iniDate} );
+                    profile.workExperience[index]= {responsability:responsability, companyName:companyName, contractType:contractType, iniDate:iniDate};
                 }
                 const resul = await profile.save();
                 if(!resul){
@@ -327,7 +327,7 @@ export async function POST(request:NextRequest) {
             if(modifyCertification){
             const {title, emitter,index }=body;
             const profile = await CandidateProfile.findOne({user_id: data._id});
-            profile.certifications.set(index, { title:title, emitter:emitter} );
+            profile.certifications[index]={ title:title, emitter:emitter};
             const resul = await profile.save();
             if(!resul){
                 return NextResponse.json({
@@ -383,7 +383,7 @@ export async function POST(request:NextRequest) {
             if(modifyLanguage){
             const {language, level,index }=body;
             const profile = await CandidateProfile.findOne({user_id: data._id});
-            profile.languages.set(index, { language:language, level:level} );
+            profile.languages[index]={ language:language, level:level};
             const resul = await profile.save();
             if(!resul){
                 return NextResponse.json({

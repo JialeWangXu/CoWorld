@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
             }, {status:400})
         }
 
-        const {password:UserPass, ...rest} = findUser._doc;
+        const { password: UserPass, ...rest } = findUser.toObject();
         // Generar tokens para la sesion
         const accsessToken = jwt.sign({data:rest},process.env.ACCESS_TOKEN_SECRET,{expiresIn:'15m'})
         const refreshToken = jwt.sign({data:rest},process.env.REFRESH_TOKEN_SECRET,{expiresIn:'7d'})        

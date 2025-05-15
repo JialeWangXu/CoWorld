@@ -58,7 +58,8 @@ export async function POST(request: NextRequest) {
         if(findOperator){
             operatorCompany = await Company.findOne({_id:findOperator.company_id});
         }
-        const {password:UserPass, ...rest} = operatorCompany? operatorCompany._doc : findCompany._doc;
+        const companyObj = operatorCompany ? operatorCompany.toObject() : findCompany.toObject();
+        const {password: UserPass, ...rest} = companyObj;
 
 
         // Generar tokens para la sesion

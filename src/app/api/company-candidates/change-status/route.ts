@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectMD } from "lib/mongodb";
-import { ObjectId } from "mongodb";
 import Job from "models/Job";
 import jwt from 'jsonwebtoken';
 import { message } from "util/message";
+
 
 export async function POST(request:NextRequest) {
     
@@ -18,7 +18,7 @@ export async function POST(request:NextRequest) {
             
             const job = await Job.findOne({_id:id});
             const index = job.applicants.findIndex(elem=> elem.user.toString() === candidate);
-            job.applicants.set(index, {user: new ObjectId(candidate), status:status});
+            job.applicants[index]={user: candidate, status:status};
             const resul = await job.save();
             if(!resul){
                 return NextResponse.json({

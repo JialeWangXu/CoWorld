@@ -184,7 +184,7 @@ export interface ICandidateProfileDocument extends Document{
                 month:number;
                 year:number; // maximo restringimos desde front}
             };
-            finDate:{
+            finDate?:{
                 month:number;
                 year:number; // maximo restringimos desde front
             };
@@ -200,7 +200,7 @@ export interface ICandidateProfileDocument extends Document{
                 month: number;
                 year: number; // maximo restringimos desde front}
             };
-            finDate:{
+            finDate?:{
                 month: number;
                 year: number; // maximo restringimos desde front
             };
