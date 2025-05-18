@@ -44,7 +44,9 @@ Sistema operativo: Windows, Linux o macOS
 
 ## Help
 
-Para que la aplicación funcione correctamente, es imprescindible tener bien configurado MongoDB y no olvidar configurar claves de token JWT para la parte de autenticación.
+- Para que la aplicación funcione correctamente, es imprescindible tener bien configurado MongoDB y no olvidar configurar claves de token JWT para la parte de autenticación.
+
+- Es probable que al abrir la aplicación por primera vez, en algunos archivos pages de la parte Front-end se muestre un aviso de que no se encuentra la ubicación del archivo style.module.scss. Este problema es común en SCSS y se debe ejecutar la aplicación para que reconozca las rutas de los archivos SCSS. Una vez levantada la aplicación por primera vez, los avisos desaparecen. 
 
 ## Author
 
