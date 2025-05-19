@@ -34,8 +34,13 @@ Sistema operativo: Windows, Linux o macOS
 2. Instala las dependencias: npm install
    
 3. Configura las variables de entorno (.env):
+   - MONGODB_URL
+   - RESEND_KEY
+   - ACCESS_TOKEN_SECRET 
+   - REFRESH_TOKEN_SECRET
+   - RESET_PWD_TOKEN_SECRETE
+   - REACT_EDITOR=atom
 
-   
 ### Executing program
 
 1. Ejecuta la aplicación con el comando: npm run dev
