@@ -81,7 +81,7 @@ export async function POST(request:NextRequest) {
             
             // Section to edit situacion laboral
             const {huntingJob, desiredJob, state} = body;
-            if(huntingJob){
+            if(state){
                 const resul = await CandidateProfile.findOneAndUpdate(
                     { user_id: data._id },
                     {
