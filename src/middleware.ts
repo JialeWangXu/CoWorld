@@ -7,13 +7,16 @@ export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
   const accessToken = request.cookies.get('accessTokenCookie');
 
-  if (!accessToken && path.startsWith('/home')) { // sino, significa el usuario esta en la paginas relacionados con la autenticacion 
+  if (!accessToken && (path.startsWith('/home') || path.startsWith('/company-home'))) { // sino, significa el usuario esta en la paginas relacionados con la autenticacion 
     const url = request.nextUrl.clone(); // hacer una copia del objeto Request actual para modificar el url a pagina de logear
-    url.pathname = '/';
+    if (path.startsWith('/company-home')) {
+      url.pathname = '/company-login'; // si esta en la pagina de empresa, redirigir a login de empresa 
+    }else{
+      url.pathname = '/';
+    }
     return NextResponse.redirect(url);
   }
 
-  console.log('Middleware triggered for:', request.nextUrl.pathname); // ELIMINA CUANDO TERMINAMOS!
   return NextResponse.next();
 }
 
